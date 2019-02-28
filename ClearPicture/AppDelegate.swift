@@ -41,6 +41,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
 
+    
 
 }
 
+extension CPHomeViewController  {
+    
+    func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
+        guard let layout = collection.collectionViewLayout as? SnapPagingLayout else { return }
+        layout.willBeginDragging()
+    }
+    
+    func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
+        guard let layout = collection.collectionViewLayout as? SnapPagingLayout else { return }
+        layout.willEndDragging(withVelocity: velocity, targetContentOffset: targetContentOffset)
+    }
+    
+}

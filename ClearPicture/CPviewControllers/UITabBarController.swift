@@ -36,7 +36,8 @@ class tabbarcontroller: UITabBarController {
         makeButtons(sender: nfcbutton)
         makeButtons(sender: signupbutton)
         
-        
+        hideLabels()
+        hideBurrons()
         
         layerGradient.colors = [ UIColor(named: "DarkBlue")?.cgColor as Any , UIColor(named: "LightBlue")?.cgColor as Any]
         layerGradient.startPoint = CGPoint(x: 0, y: 0.5)
@@ -85,11 +86,7 @@ class tabbarcontroller: UITabBarController {
         button.center = CGPoint(x: UIScreen.main.bounds.width / 2, y:
             UIScreen.main.bounds.height - 40)
         
-        ButtonGradient.colors = [ UIColor(named: "PlisButtonDarkPurple")?.cgColor as Any , UIColor(named: "PlusButtonLightPurple")?.cgColor as Any]
-        ButtonGradient.startPoint = CGPoint(x: 0, y: 0.5)
-        ButtonGradient.endPoint = CGPoint(x: 0.15, y: 0.5)
-        ButtonGradient.frame = CGRect(x: 0, y: 0, width: view.bounds.width, height: view.bounds.height)
-        self.button.layer.addSublayer(ButtonGradient)
+        self.button.layer.addSublayer(setGradiants(gradian: ButtonGradient))
 
         
         let heightDifference = button.frame.size.height - self.tabBar.frame.size.height
@@ -155,7 +152,6 @@ class tabbarcontroller: UITabBarController {
         let signUpButtonGradiant = CAGradientLayer()
         
         
-        
         sender.frame.size = CGSize(width: 48, height: 48)
         sender.backgroundColor = .white
         sender.layer.borderWidth = 4
@@ -166,73 +162,51 @@ class tabbarcontroller: UITabBarController {
             UIScreen.main.bounds.height - 70)
         
         if (sender == signinButton){
-            signinButtonGradiant.colors = [ UIColor(named: "PlisButtonDarkPurple")?.cgColor as Any , UIColor(named: "PlusButtonLightPurple")?.cgColor as Any]
-            signinButtonGradiant.startPoint = CGPoint(x: 0, y: 0.5)
-            signinButtonGradiant.endPoint = CGPoint(x: 0.15, y: 0.5)
-            signinButtonGradiant.frame = CGRect(x: 0, y: 0, width: view.bounds.width, height: view.bounds.height)
-            sender.layer.addSublayer(signinButtonGradiant)
+            
+            sender.layer.addSublayer(setGradiants(gradian: signinButtonGradiant))
             
             let image = UIImage(named: "signInIcon") as UIImage?
-            let imageView = UIImageView(image: image)
-            imageView.frame = CGRect(x: ( sender.bounds.size.width)/4,
-                                     y: ( sender.bounds.size.width)/4,
-                                     width: ( sender.bounds.size.width)/2,
-                                     height: ( sender.bounds.size.width)/2 )
-            sender.addSubview(imageView)
+            sender.addSubview(setImageView(img: image!, btn: sender))
             
-            signinLabel.frame.size = CGSize(width: 55, height: 30)
+            signinLabel.frame.size = CGSize(width: 40, height: 10)
             signinLabel.layer.masksToBounds = true
             signinLabel.center = CGPoint(x: UIScreen.main.bounds.width / 2, y:
                 UIScreen.main.bounds.height - 70)
             signinLabel.text = "Sign In"
-            signinLabel.font = UIFont(name:"AvenirNextLTPro-Regular", size: 1.0)
+            signinLabel.font = UIFont.systemFont(ofSize: 9)
             signinLabel.textColor = UIColor(named: "PlusButtonLightPurple")
             view.addSubview(signinLabel)
         }
         else if (sender == nfcbutton) {
-            NfcButtonGradiant.colors = [ UIColor(named: "PlisButtonDarkPurple")?.cgColor as Any , UIColor(named: "PlusButtonLightPurple")?.cgColor as Any]
-            NfcButtonGradiant.startPoint = CGPoint(x: 0, y: 0.5)
-            NfcButtonGradiant.endPoint = CGPoint(x: 0.15, y: 0.5)
-            NfcButtonGradiant.frame = CGRect(x: 0, y: 0, width: view.bounds.width, height: view.bounds.height)
-            sender.layer.addSublayer(NfcButtonGradiant)
+            
+            sender.layer.addSublayer(setGradiants(gradian: NfcButtonGradiant))
             
             let image = UIImage(named: "nfcIcon") as UIImage?
-            let imageView = UIImageView(image: image)
-            imageView.frame = CGRect(x: ( sender.bounds.size.width)/4,
-                                     y: ( sender.bounds.size.width)/4,
-                                     width: ( sender.bounds.size.width)/2,
-                                     height: ( sender.bounds.size.width)/2 )
-            sender.addSubview(imageView)
+            sender.addSubview(setImageView(img: image!, btn: sender))
             
             nfcLabel.frame.size = CGSize(width: 80, height: 30)
             nfcLabel.layer.masksToBounds = true
             nfcLabel.center = CGPoint(x: UIScreen.main.bounds.width / 2, y:
                 UIScreen.main.bounds.height - 70)
             nfcLabel.text = "NFC Scan"
-            nfcLabel.font = UIFont(name:"AvenirNextLTPro-Regular", size: 1.0)
+            nfcLabel.font = UIFont.systemFont(ofSize: 9)
             nfcLabel.textColor = UIColor(named: "PlusButtonLightPurple")
             view.addSubview(nfcLabel)
             
         } else if (sender == signupbutton) {
-            signUpButtonGradiant.colors = [ UIColor(named: "PlisButtonDarkPurple")?.cgColor as Any , UIColor(named: "PlusButtonLightPurple")?.cgColor as Any]
-            signUpButtonGradiant.startPoint = CGPoint(x: 0, y: 0.5)
-            signUpButtonGradiant.endPoint = CGPoint(x: 0.15, y: 0.5)
-            signUpButtonGradiant.frame = CGRect(x: 0, y: 0, width: view.bounds.width, height: view.bounds.height)
-            sender.layer.addSublayer(signUpButtonGradiant)
+            
+            sender.layer.addSublayer(setGradiants(gradian: signUpButtonGradiant))
             
             let image = UIImage(named: "signUpIcon") as UIImage?
-            let imageView = UIImageView(image: image)
-            imageView.frame = CGRect(x: ( sender.bounds.size.width)/4,
-                                     y: ( sender.bounds.size.width)/4,
-                                     width: ( sender.bounds.size.width)/2,
-                                     height: ( sender.bounds.size.width)/2 )
-            sender.addSubview(imageView)
+            sender.addSubview(setImageView(img: image!, btn: sender))
             
-            signupLabel.frame.size = CGSize(width: 62, height: 20)
+            signupLabel.frame.size = CGSize(width: 40, height: 10)
             //signupLabel.layer.masksToBounds = true
             signupLabel.center = CGPoint(x: UIScreen.main.bounds.width / 2, y:
                 UIScreen.main.bounds.height - 70)
-            signupLabel.font = UIFont(name:"AvenirNextLTPro", size: 5)
+            
+            //signupLabel.font = UIFont(name:"AvenirNextLTPro", size: 1)
+            signupLabel.font = UIFont.systemFont(ofSize: 9)
             signupLabel.text = "Sign Up"
             signupLabel.textColor = UIColor(named: "PlusButtonLightPurple")
             view.addSubview(signupLabel)
@@ -246,6 +220,26 @@ class tabbarcontroller: UITabBarController {
   
     }
     
+    func setGradiants(gradian : CAGradientLayer) -> CAGradientLayer {
+        
+        gradian.colors = [ UIColor(named: "PlisButtonDarkPurple")?.cgColor as Any , UIColor(named: "PlusButtonLightPurple")?.cgColor as Any]
+        gradian.startPoint = CGPoint(x: 0, y: 0.5)
+        gradian.endPoint = CGPoint(x: 0.15, y: 0.5)
+        gradian.frame = CGRect(x: 0, y: 0, width: view.bounds.width, height: view.bounds.height)
+        
+        return gradian
+    }
+    
+    func setImageView(img : UIImage,btn : UIButton) -> UIImageView{
+        
+        let imageView = UIImageView(image: img)
+        imageView.frame = CGRect(x: ( btn.bounds.size.width)/4,
+                                 y: ( btn.bounds.size.width)/4,
+                                 width: ( btn.bounds.size.width)/2,
+                                 height: ( btn.bounds.size.width)/2 )
+        
+        return imageView
+    }
     
     @objc func pressed(sender: UIButton!) {
 
@@ -257,24 +251,24 @@ class tabbarcontroller: UITabBarController {
                 
                 self.signinButton.center = CGPoint(x: (UIScreen.main.bounds.width / 2) - 85, y:
                     UIScreen.main.bounds.height - 125)
-                self.signinLabel.center = CGPoint(x: (UIScreen.main.bounds.width / 2) - 85, y:
-                    UIScreen.main.bounds.height - 90)
+                self.signinLabel.center = CGPoint(x: (UIScreen.main.bounds.width / 2) - 81, y:
+                    UIScreen.main.bounds.height - 95)
                 
             })
             UIView.animate(withDuration: 0.5, animations:{
                 
                 self.nfcbutton.center = CGPoint(x: UIScreen.main.bounds.width / 2, y:
                     UIScreen.main.bounds.height - 175)
-                self.nfcLabel.center = CGPoint(x: UIScreen.main.bounds.width / 2, y:
-                    UIScreen.main.bounds.height - 133)
+                self.nfcLabel.center = CGPoint(x: (UIScreen.main.bounds.width / 2) + 18, y:
+                    UIScreen.main.bounds.height - 143)
                 
             })
             UIView.animate(withDuration: 0.7, animations:{
                 
                 self.signupbutton.center = CGPoint(x: (UIScreen.main.bounds.width/2) + 85, y:
                     UIScreen.main.bounds.height - 125)
-                self.signupLabel.center = CGPoint(x: (UIScreen.main.bounds.width/2) + 85, y:
-                    UIScreen.main.bounds.height - 90)
+                self.signupLabel.center = CGPoint(x: (UIScreen.main.bounds.width/2) + 84, y:
+                    UIScreen.main.bounds.height - 95)
                 
             })
             
@@ -285,13 +279,11 @@ class tabbarcontroller: UITabBarController {
                self.view.addSubview(self.overlay)
             })
            
-            view.bringSubviewToFront(signinButton)
-            view.bringSubviewToFront(signinLabel)
-            view.bringSubviewToFront(nfcbutton)
-            view.bringSubviewToFront(nfcLabel)
-            view.bringSubviewToFront(signupbutton)
-            view.bringSubviewToFront(signupLabel)
-            view.bringSubviewToFront(button)
+            
+            bringSubViewstoFront()
+            visibleLabels()
+            visibleBurrons()
+            
             
         } else {
             bRec = true
@@ -314,12 +306,58 @@ class tabbarcontroller: UITabBarController {
                 self.signupLabel.center = self.button.center
             })
             
+            hideLabels()
+            
+            
         }
 
 
 
     }
     
-   
+    func bringSubViewstoFront() {
+        
+        view.bringSubviewToFront(signinButton)
+        view.bringSubviewToFront(signinLabel)
+        view.bringSubviewToFront(nfcbutton)
+        view.bringSubviewToFront(nfcLabel)
+        view.bringSubviewToFront(signupbutton)
+        view.bringSubviewToFront(signupLabel)
+        view.bringSubviewToFront(button)
+        
+    }
+    
+    func hideLabels() {
+        
+        signinLabel.isHidden = true
+        nfcLabel.isHidden = true
+        signupLabel.isHidden = true
+        
+    }
+    
+    func visibleLabels() {
+        
+        signinLabel.isHidden = false
+        nfcLabel.isHidden = false
+        signupLabel.isHidden = false
+        
+    }
+    
+    func hideBurrons () {
+        
+        signinButton.isHidden = true
+        nfcbutton.isHidden = true
+        signupbutton.isHidden = true
+        
+    }
+    
+    func visibleBurrons () {
+        
+        signinButton.isHidden = false
+        nfcbutton.isHidden = false
+        signupbutton.isHidden = false
+        
+    }
+    
     
 }

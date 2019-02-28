@@ -122,7 +122,7 @@
                                                 <rect key="frame" x="22.5" y="145" width="330" height="240.5"/>
                                                 <subviews>
                                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceHorizontal="YES" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" indicatorStyle="black" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="QcP-BL-uy1">
-                                                        <rect key="frame" x="33" y="28" width="264" height="196.5"/>
+                                                        <rect key="frame" x="33" y="42" width="264" height="168.5"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="D5D-fz-56p">
                                                             <size key="itemSize" width="262" height="179"/>
@@ -132,7 +132,7 @@
                                                         </collectionViewFlowLayout>
                                                         <cells>
                                                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="imageCollectionViewCell" id="e6Q-Hc-1uv" customClass="imageCollectionViewCell" customModule="ClearPicture" customModuleProvider="target">
-                                                                <rect key="frame" x="0.0" y="9" width="262" height="179"/>
+                                                                <rect key="frame" x="0.0" y="-5.5" width="262" height="179"/>
                                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
                                                                     <rect key="frame" x="0.0" y="0.0" width="262" height="179"/>
@@ -160,12 +160,12 @@
                                                         </connections>
                                                     </collectionView>
                                                     <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="WQa-dq-ZcN">
-                                                        <rect key="frame" x="145.5" y="204.5" width="39" height="37"/>
+                                                        <rect key="frame" x="145.5" y="205.5" width="39" height="37"/>
                                                         <color key="pageIndicatorTintColor" red="0.65098039220000004" green="0.6588235294" blue="0.6705882353" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <color key="currentPageIndicatorTintColor" red="0.37055522200000002" green="0.37056469920000001" blue="0.37055957319999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     </pageControl>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wEN-rj-xZx">
-                                                        <rect key="frame" x="33" y="20.5" width="264" height="12"/>
+                                                        <rect key="frame" x="33" y="25" width="264" height="12"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="12" id="8ux-d0-Bzp"/>
                                                         </constraints>
@@ -178,12 +178,12 @@
                                                 <constraints>
                                                     <constraint firstItem="wEN-rj-xZx" firstAttribute="centerX" secondItem="PW7-Zm-zrV" secondAttribute="centerX" id="CfL-ua-wnn"/>
                                                     <constraint firstItem="QcP-BL-uy1" firstAttribute="centerX" secondItem="PW7-Zm-zrV" secondAttribute="centerX" id="JlM-t4-ybw"/>
-                                                    <constraint firstItem="QcP-BL-uy1" firstAttribute="baseline" secondItem="WQa-dq-ZcN" secondAttribute="firstBaseline" constant="20" id="MmC-bm-EVj"/>
+                                                    <constraint firstItem="QcP-BL-uy1" firstAttribute="baseline" secondItem="WQa-dq-ZcN" secondAttribute="firstBaseline" constant="5" id="MmC-bm-EVj"/>
                                                     <constraint firstItem="WQa-dq-ZcN" firstAttribute="centerX" secondItem="PW7-Zm-zrV" secondAttribute="centerX" id="PMO-bQ-g3g"/>
-                                                    <constraint firstItem="QcP-BL-uy1" firstAttribute="top" secondItem="wEN-rj-xZx" secondAttribute="bottom" constant="-4.5" id="fOH-LG-tk3"/>
+                                                    <constraint firstItem="QcP-BL-uy1" firstAttribute="top" secondItem="wEN-rj-xZx" secondAttribute="bottom" constant="5" id="fOH-LG-tk3"/>
                                                     <constraint firstItem="QcP-BL-uy1" firstAttribute="centerY" secondItem="PW7-Zm-zrV" secondAttribute="centerY" multiplier="1.05" id="fn1-q1-Qf6"/>
                                                     <constraint firstItem="QcP-BL-uy1" firstAttribute="width" secondItem="PW7-Zm-zrV" secondAttribute="width" multiplier="0.8" id="qt8-i7-cQh"/>
-                                                    <constraint firstItem="QcP-BL-uy1" firstAttribute="height" secondItem="PW7-Zm-zrV" secondAttribute="height" multiplier="0.82" id="uCw-8R-qJF"/>
+                                                    <constraint firstItem="QcP-BL-uy1" firstAttribute="height" secondItem="PW7-Zm-zrV" secondAttribute="height" multiplier="0.7" id="uCw-8R-qJF"/>
                                                     <constraint firstItem="wEN-rj-xZx" firstAttribute="width" secondItem="QcP-BL-uy1" secondAttribute="width" id="uU5-he-n4S"/>
                                                 </constraints>
                                                 <userDefinedRuntimeAttributes>
