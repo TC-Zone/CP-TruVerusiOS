@@ -17,7 +17,7 @@
 		C555BA46221D153300FEB20D /* CPConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C555BA45221D153300FEB20D /* CPConstants.swift */; };
 		C555BA48221D15F600FEB20D /* CPHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C555BA47221D15F600FEB20D /* CPHelper.swift */; };
 		C59E98022223A84C000CBBCF /* Fonts in Resources */ = {isa = PBXBuildFile; fileRef = C59E98012223A84C000CBBCF /* Fonts */; };
-		C59E98052223AFB4000CBBCF /* UITabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C59E98042223AFB4000CBBCF /* UITabBarController.swift */; };
+		C59E98052223AFB4000CBBCF /* CustomTabbarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C59E98042223AFB4000CBBCF /* CustomTabbarController.swift */; };
 		C59E98072223AFFB000CBBCF /* UIviewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C59E98062223AFFB000CBBCF /* UIviewExtensions.swift */; };
 		C5E5589C22250E2F00DF2F34 /* imageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5E5589B22250E2F00DF2F34 /* imageCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
@@ -36,7 +36,7 @@
 		C555BA45221D153300FEB20D /* CPConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CPConstants.swift; sourceTree = "<group>"; };
 		C555BA47221D15F600FEB20D /* CPHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CPHelper.swift; sourceTree = "<group>"; };
 		C59E98012223A84C000CBBCF /* Fonts */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Fonts; sourceTree = "<group>"; };
-		C59E98042223AFB4000CBBCF /* UITabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITabBarController.swift; sourceTree = "<group>"; };
+		C59E98042223AFB4000CBBCF /* CustomTabbarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabbarController.swift; sourceTree = "<group>"; };
 		C59E98062223AFFB000CBBCF /* UIviewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIviewExtensions.swift; sourceTree = "<group>"; };
 		C5E5589B22250E2F00DF2F34 /* imageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = imageCollectionViewCell.swift; sourceTree = "<group>"; };
 		ED42EC3428E6411FBF6AEE09 /* Pods_ClearPicture.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ClearPicture.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -126,7 +126,7 @@
 			children = (
 				C59E98012223A84C000CBBCF /* Fonts */,
 				C555BA31221D112200FEB20D /* CPHomeViewController.swift */,
-				C59E98042223AFB4000CBBCF /* UITabBarController.swift */,
+				C59E98042223AFB4000CBBCF /* CustomTabbarController.swift */,
 				C59E98062223AFFB000CBBCF /* UIviewExtensions.swift */,
 				C5E5589B22250E2F00DF2F34 /* imageCollectionViewCell.swift */,
 			);
@@ -267,7 +267,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C555BA46221D153300FEB20D /* CPConstants.swift in Sources */,
-				C59E98052223AFB4000CBBCF /* UITabBarController.swift in Sources */,
+				C59E98052223AFB4000CBBCF /* CustomTabbarController.swift in Sources */,
 				C5E5589C22250E2F00DF2F34 /* imageCollectionViewCell.swift in Sources */,
 				C555BA48221D15F600FEB20D /* CPHelper.swift in Sources */,
 				C555BA43221D14C900FEB20D /* CPAPIManager.swift in Sources */,
