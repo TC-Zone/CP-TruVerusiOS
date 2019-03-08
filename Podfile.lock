@@ -3,6 +3,19 @@ PODS:
   - AlamofireObjectMapper (5.2.0):
     - Alamofire (~> 4.7)
     - ObjectMapper (~> 3.4)
+  - GoogleSignIn (4.4.0):
+    - "GoogleToolboxForMac/NSDictionary+URLArguments (~> 2.1)"
+    - "GoogleToolboxForMac/NSString+URLArguments (~> 2.1)"
+    - GTMSessionFetcher/Core (~> 1.1)
+  - GoogleToolboxForMac/DebugUtils (2.2.0):
+    - GoogleToolboxForMac/Defines (= 2.2.0)
+  - GoogleToolboxForMac/Defines (2.2.0)
+  - "GoogleToolboxForMac/NSDictionary+URLArguments (2.2.0)":
+    - GoogleToolboxForMac/DebugUtils (= 2.2.0)
+    - GoogleToolboxForMac/Defines (= 2.2.0)
+    - "GoogleToolboxForMac/NSString+URLArguments (= 2.2.0)"
+  - "GoogleToolboxForMac/NSString+URLArguments (2.2.0)"
+  - GTMSessionFetcher/Core (1.2.1)
   - IHProgressHUD (0.1.4)
   - Kingfisher (5.0.0)
   - ObjectMapper (3.4.1)
@@ -12,6 +25,7 @@ PODS:
 DEPENDENCIES:
   - Alamofire (~> 4.7)
   - AlamofireObjectMapper
+  - GoogleSignIn
   - IHProgressHUD (~> 0.1.4)
   - Kingfisher
   - ObjectMapper
@@ -22,6 +36,9 @@ SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - Alamofire
     - AlamofireObjectMapper
+    - GoogleSignIn
+    - GoogleToolboxForMac
+    - GTMSessionFetcher
     - IHProgressHUD
     - Kingfisher
     - ObjectMapper
@@ -31,12 +48,15 @@ SPEC REPOS:
 SPEC CHECKSUMS:
   Alamofire: 3ec537f71edc9804815215393ae2b1a8ea33a844
   AlamofireObjectMapper: 92b6ce2423a9d159e686f6a1d514a009bf903ddc
+  GoogleSignIn: 7ff245e1a7b26d379099d3243a562f5747e23d39
+  GoogleToolboxForMac: ff31605b7d66400dcec09bed5861689aebadda4d
+  GTMSessionFetcher: 32aeca0aa144acea523e1c8e053089dec2cb98ca
   IHProgressHUD: a01846bfbb581c761c79747c67b08387c3bdfae3
   Kingfisher: 2b0dd651e4fe5a07305b8242fde56f8e2d410f58
   ObjectMapper: 5311bd50ca732930959e7ca1a2de43ab823a5ced
   SwiftyJSON: c4bcba26dd9ec7a027fc8eade48e2c911f229e96
   XCDYouTubeKit: c8567fd5cb388a3099fa26eee4b30df2a467847d
 
-PODFILE CHECKSUM: 32e9613bf4fc13aad6cb84b41e28ec8414c17e9c
+PODFILE CHECKSUM: 551d2afd527574df9d6962d09c004486939be6aa
 
 COCOAPODS: 1.5.3

@@ -8,6 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		B4598C09B8254E5ED0701580 /* Pods_ClearPicture.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED42EC3428E6411FBF6AEE09 /* Pods_ClearPicture.framework */; };
+		C5052E1E222CE51E006ACC89 /* CPInitialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5052E1D222CE51E006ACC89 /* CPInitialViewController.swift */; };
+		C5052E21222D20FD006ACC89 /* CPSignIn.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C5052E20222D20FD006ACC89 /* CPSignIn.storyboard */; };
+		C5052E24222D2BBA006ACC89 /* CPSignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5052E23222D2BBA006ACC89 /* CPSignUpViewController.swift */; };
+		C5496F8C222F9D7000E9F788 /* credentials.plist in Resources */ = {isa = PBXBuildFile; fileRef = C5496F8B222F9D7000E9F788 /* credentials.plist */; };
+		C5496F912230CED000E9F788 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C5496F8F2230CECF00E9F788 /* FBSDKCoreKit.framework */; };
+		C5496F922230CED000E9F788 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C5496F902230CECF00E9F788 /* FBSDKLoginKit.framework */; };
 		C555BA30221D112200FEB20D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C555BA2F221D112200FEB20D /* AppDelegate.swift */; };
 		C555BA32221D112200FEB20D /* CPHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C555BA31221D112200FEB20D /* CPHomeViewController.swift */; };
 		C555BA35221D112200FEB20D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C555BA33221D112200FEB20D /* Main.storyboard */; };
@@ -17,14 +23,22 @@
 		C555BA46221D153300FEB20D /* CPConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C555BA45221D153300FEB20D /* CPConstants.swift */; };
 		C555BA48221D15F600FEB20D /* CPHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C555BA47221D15F600FEB20D /* CPHelper.swift */; };
 		C59E98022223A84C000CBBCF /* Fonts in Resources */ = {isa = PBXBuildFile; fileRef = C59E98012223A84C000CBBCF /* Fonts */; };
-		C59E98052223AFB4000CBBCF /* CustomTabbarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C59E98042223AFB4000CBBCF /* CustomTabbarController.swift */; };
-		C59E98072223AFFB000CBBCF /* UIviewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C59E98062223AFFB000CBBCF /* UIviewExtensions.swift */; };
-		C5E5589C22250E2F00DF2F34 /* imageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5E5589B22250E2F00DF2F34 /* imageCollectionViewCell.swift */; };
+		C59E98052223AFB4000CBBCF /* CustomTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C59E98042223AFB4000CBBCF /* CustomTabBarController.swift */; };
+		C59E98072223AFFB000CBBCF /* CPUIViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C59E98062223AFFB000CBBCF /* CPUIViewExtensions.swift */; };
+		C5E5589C22250E2F00DF2F34 /* CPImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5E5589B22250E2F00DF2F34 /* CPImageCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		4EB8039B26AA8597890BDC01 /* Pods-ClearPicture.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ClearPicture.release.xcconfig"; path = "Pods/Target Support Files/Pods-ClearPicture/Pods-ClearPicture.release.xcconfig"; sourceTree = "<group>"; };
 		761AE840ADDE2B398963D750 /* Pods-ClearPicture.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ClearPicture.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ClearPicture/Pods-ClearPicture.debug.xcconfig"; sourceTree = "<group>"; };
+		C5052E1D222CE51E006ACC89 /* CPInitialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CPInitialViewController.swift; sourceTree = "<group>"; };
+		C5052E20222D20FD006ACC89 /* CPSignIn.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CPSignIn.storyboard; sourceTree = "<group>"; };
+		C5052E23222D2BBA006ACC89 /* CPSignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CPSignUpViewController.swift; sourceTree = "<group>"; };
+		C538A9152230D56C000AB070 /* ClearPicture-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ClearPicture-Bridging-Header.h"; sourceTree = "<group>"; };
+		C538A9192230F4BC000AB070 /* ClearPicture.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ClearPicture.entitlements; sourceTree = "<group>"; };
+		C5496F8B222F9D7000E9F788 /* credentials.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = credentials.plist; sourceTree = "<group>"; };
+		C5496F8F2230CECF00E9F788 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
+		C5496F902230CECF00E9F788 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
 		C555BA2C221D112200FEB20D /* ClearPicture.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ClearPicture.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C555BA2F221D112200FEB20D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C555BA31221D112200FEB20D /* CPHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CPHomeViewController.swift; sourceTree = "<group>"; };
@@ -36,9 +50,9 @@
 		C555BA45221D153300FEB20D /* CPConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CPConstants.swift; sourceTree = "<group>"; };
 		C555BA47221D15F600FEB20D /* CPHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CPHelper.swift; sourceTree = "<group>"; };
 		C59E98012223A84C000CBBCF /* Fonts */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Fonts; sourceTree = "<group>"; };
-		C59E98042223AFB4000CBBCF /* CustomTabbarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabbarController.swift; sourceTree = "<group>"; };
-		C59E98062223AFFB000CBBCF /* UIviewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIviewExtensions.swift; sourceTree = "<group>"; };
-		C5E5589B22250E2F00DF2F34 /* imageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = imageCollectionViewCell.swift; sourceTree = "<group>"; };
+		C59E98042223AFB4000CBBCF /* CustomTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBarController.swift; sourceTree = "<group>"; };
+		C59E98062223AFFB000CBBCF /* CPUIViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CPUIViewExtensions.swift; sourceTree = "<group>"; };
+		C5E5589B22250E2F00DF2F34 /* CPImageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CPImageCollectionViewCell.swift; sourceTree = "<group>"; };
 		ED42EC3428E6411FBF6AEE09 /* Pods_ClearPicture.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ClearPicture.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -48,6 +62,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				B4598C09B8254E5ED0701580 /* Pods_ClearPicture.framework in Frameworks */,
+				C5496F912230CED000E9F788 /* FBSDKCoreKit.framework in Frameworks */,
+				C5496F922230CED000E9F788 /* FBSDKLoginKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -71,6 +87,24 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		C5052E1F222D207F006ACC89 /* CPInitialViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				C555BA31221D112200FEB20D /* CPHomeViewController.swift */,
+				C5E5589B22250E2F00DF2F34 /* CPImageCollectionViewCell.swift */,
+				C5052E1D222CE51E006ACC89 /* CPInitialViewController.swift */,
+			);
+			path = CPInitialViewControllers;
+			sourceTree = "<group>";
+		};
+		C5052E22222D2BA0006ACC89 /* CPSignIn */ = {
+			isa = PBXGroup;
+			children = (
+				C5052E23222D2BBA006ACC89 /* CPSignUpViewController.swift */,
+			);
+			path = CPSignIn;
+			sourceTree = "<group>";
+		};
 		C555BA23221D112200FEB20D = {
 			isa = PBXGroup;
 			children = (
@@ -78,6 +112,7 @@
 				C555BA2D221D112200FEB20D /* Products */,
 				6CEAA2F087D814916D0A3980 /* Pods */,
 				6DC9294AF8ED9036483BB452 /* Frameworks */,
+				C538A9152230D56C000AB070 /* ClearPicture-Bridging-Header.h */,
 			);
 			sourceTree = "<group>";
 		};
@@ -92,13 +127,18 @@
 		C555BA2E221D112200FEB20D /* ClearPicture */ = {
 			isa = PBXGroup;
 			children = (
+				C538A9192230F4BC000AB070 /* ClearPicture.entitlements */,
 				C59E98002223A79A000CBBCF /* CPviewControllers */,
 				C555BA44221D152400FEB20D /* Helper */,
 				C555BA41221D14A600FEB20D /* Manager */,
 				C555BA2F221D112200FEB20D /* AppDelegate.swift */,
 				C555BA33221D112200FEB20D /* Main.storyboard */,
-				C555BA36221D112600FEB20D /* Assets.xcassets */,
+				C5052E20222D20FD006ACC89 /* CPSignIn.storyboard */,
 				C555BA38221D112600FEB20D /* LaunchScreen.storyboard */,
+				C555BA36221D112600FEB20D /* Assets.xcassets */,
+				C5496F8F2230CECF00E9F788 /* FBSDKCoreKit.framework */,
+				C5496F902230CECF00E9F788 /* FBSDKLoginKit.framework */,
+				C5496F8B222F9D7000E9F788 /* credentials.plist */,
 				C555BA3B221D112600FEB20D /* Info.plist */,
 			);
 			path = ClearPicture;
@@ -125,10 +165,10 @@
 			isa = PBXGroup;
 			children = (
 				C59E98012223A84C000CBBCF /* Fonts */,
-				C555BA31221D112200FEB20D /* CPHomeViewController.swift */,
-				C59E98042223AFB4000CBBCF /* CustomTabbarController.swift */,
-				C59E98062223AFFB000CBBCF /* UIviewExtensions.swift */,
-				C5E5589B22250E2F00DF2F34 /* imageCollectionViewCell.swift */,
+				C5052E22222D2BA0006ACC89 /* CPSignIn */,
+				C5052E1F222D207F006ACC89 /* CPInitialViewControllers */,
+				C59E98042223AFB4000CBBCF /* CustomTabBarController.swift */,
+				C59E98062223AFFB000CBBCF /* CPUIViewExtensions.swift */,
 			);
 			path = CPviewControllers;
 			sourceTree = "<group>";
@@ -145,6 +185,7 @@
 				C555BA29221D112200FEB20D /* Frameworks */,
 				C555BA2A221D112200FEB20D /* Resources */,
 				213763FA1DBC941988BE6B10 /* [CP] Embed Pods Frameworks */,
+				11F53FA57FAC78663FA291B8 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -161,12 +202,19 @@
 		C555BA24221D112200FEB20D /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = CP;
 				LastSwiftUpdateCheck = 1010;
 				LastUpgradeCheck = 1010;
 				ORGANIZATIONNAME = Trumpcode;
 				TargetAttributes = {
 					C555BA2B221D112200FEB20D = {
 						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1010;
+						SystemCapabilities = {
+							com.apple.Keychain = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -194,8 +242,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				C555BA3A221D112600FEB20D /* LaunchScreen.storyboard in Resources */,
+				C5496F8C222F9D7000E9F788 /* credentials.plist in Resources */,
 				C555BA37221D112600FEB20D /* Assets.xcassets in Resources */,
 				C555BA35221D112200FEB20D /* Main.storyboard in Resources */,
+				C5052E21222D20FD006ACC89 /* CPSignIn.storyboard in Resources */,
 				C59E98022223A84C000CBBCF /* Fonts in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -203,6 +253,28 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		11F53FA57FAC78663FA291B8 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-ClearPicture/Pods-ClearPicture-resources.sh",
+				"${PODS_ROOT}/GoogleSignIn/Resources/GoogleSignIn.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleSignIn.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ClearPicture/Pods-ClearPicture-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		213763FA1DBC941988BE6B10 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -214,6 +286,8 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-ClearPicture/Pods-ClearPicture-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/AlamofireObjectMapper/AlamofireObjectMapper.framework",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/IHProgressHUD/IHProgressHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
 				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
@@ -226,6 +300,8 @@
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireObjectMapper.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IHProgressHUD.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
@@ -266,13 +342,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C5052E1E222CE51E006ACC89 /* CPInitialViewController.swift in Sources */,
 				C555BA46221D153300FEB20D /* CPConstants.swift in Sources */,
-				C59E98052223AFB4000CBBCF /* CustomTabbarController.swift in Sources */,
-				C5E5589C22250E2F00DF2F34 /* imageCollectionViewCell.swift in Sources */,
+				C59E98052223AFB4000CBBCF /* CustomTabBarController.swift in Sources */,
+				C5E5589C22250E2F00DF2F34 /* CPImageCollectionViewCell.swift in Sources */,
 				C555BA48221D15F600FEB20D /* CPHelper.swift in Sources */,
 				C555BA43221D14C900FEB20D /* CPAPIManager.swift in Sources */,
 				C555BA32221D112200FEB20D /* CPHomeViewController.swift in Sources */,
-				C59E98072223AFFB000CBBCF /* UIviewExtensions.swift in Sources */,
+				C5052E24222D2BBA006ACC89 /* CPSignUpViewController.swift in Sources */,
+				C59E98072223AFFB000CBBCF /* CPUIViewExtensions.swift in Sources */,
 				C555BA30221D112200FEB20D /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -420,8 +498,14 @@
 			baseConfigurationReference = 761AE840ADDE2B398963D750 /* Pods-ClearPicture.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = ClearPicture/ClearPicture.entitlements;
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = 6Q5Z3UP42B;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/ClearPicture",
+				);
 				INFOPLIST_FILE = ClearPicture/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -429,6 +513,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.trumpcode.ClearPicture;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "ClearPicture-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -439,9 +525,15 @@
 			baseConfigurationReference = 4EB8039B26AA8597890BDC01 /* Pods-ClearPicture.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = ClearPicture/ClearPicture.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = 6Q5Z3UP42B;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/ClearPicture",
+				);
 				INFOPLIST_FILE = ClearPicture/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -449,6 +541,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.trumpcode.ClearPicture;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "ClearPicture-Bridging-Header.h";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

@@ -12,7 +12,8 @@ target 'ClearPicture' do
   pod 'AlamofireObjectMapper'
   pod 'XCDYouTubeKit', '~> 2.7'
   pod 'SwiftyJSON', '~> 4.2.0'
-
+  pod 'GoogleSignIn'
+  
   # Pods for ClearPicture
 
 end
