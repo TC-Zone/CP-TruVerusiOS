@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CPTopNavigator" customModule="Truverus" customModuleProvider="target">
+            <connections>
+                <outlet property="MenuButton" destination="Ziy-31-Vtk" id="tvG-6B-gTq"/>
+                <outlet property="view" destination="zdB-Z9-kgD" id="K6D-Ag-oYw"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="zdB-Z9-kgD">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="75"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ziy-31-Vtk">
+                    <rect key="frame" x="35" y="26.5" width="20" height="22"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="22" id="hPW-wd-gZa"/>
+                        <constraint firstAttribute="width" constant="20" id="lM5-6G-I9Y"/>
+                    </constraints>
+                    <state key="normal" image="MenuIcon"/>
+                    <connections>
+                        <action selector="MenuAction:" destination="-1" eventType="touchUpInside" id="aEK-iH-uRn"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="Ziy-31-Vtk" firstAttribute="centerY" secondItem="VWp-W4-1iH" secondAttribute="centerY" id="TUm-So-XHk"/>
+                <constraint firstItem="Ziy-31-Vtk" firstAttribute="leading" secondItem="VWp-W4-1iH" secondAttribute="leading" constant="35" id="l2j-po-uRH"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="VWp-W4-1iH"/>
+            <point key="canvasLocation" x="133" y="37"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="MenuIcon" width="20" height="13"/>
+    </resources>
+</document>

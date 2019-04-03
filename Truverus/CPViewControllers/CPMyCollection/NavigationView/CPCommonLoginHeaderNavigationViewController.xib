@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Trade Gothic LT Bold No. 2.ttf">
+            <string>TradeGothicLT-BoldTwo</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CPCommonLoginHeaderNavigationViewController" customModule="Truverus" customModuleProvider="target">
+            <connections>
+                <outlet property="backButton" destination="JJU-J6-5bz" id="lmP-qx-asl"/>
+                <outlet property="headerLable" destination="OfX-N0-FG3" id="Mgl-Xb-HKr"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="s5G-3f-X1y"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LOGIN" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OfX-N0-FG3">
+                    <rect key="frame" x="22.5" y="21" width="330" height="28"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="330" id="Chj-pA-svN"/>
+                        <constraint firstAttribute="height" constant="28" id="O5v-Oq-8QF"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="TradeGothicLT-BoldTwo" family="TradeGothic LT" pointSize="23"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JJU-J6-5bz">
+                    <rect key="frame" x="29" y="7.5" width="20" height="35"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="35" id="Mvl-hZ-WvP"/>
+                        <constraint firstAttribute="width" constant="20" id="cb6-Lv-Aeg"/>
+                    </constraints>
+                    <state key="normal" image="back"/>
+                </button>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="JJU-J6-5bz" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="Kd2-xN-7Hm"/>
+                <constraint firstItem="JJU-J6-5bz" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="29" id="YVn-1C-hto"/>
+                <constraint firstItem="OfX-N0-FG3" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" multiplier="1.4" id="av9-tC-mKv"/>
+                <constraint firstItem="OfX-N0-FG3" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="pWU-zI-lpA"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <point key="canvasLocation" x="-175.19999999999999" y="-421.88905547226392"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="back" width="21" height="14"/>
+    </resources>
+</document>
