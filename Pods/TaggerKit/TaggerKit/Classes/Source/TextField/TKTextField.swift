@@ -83,8 +83,13 @@ public class TKTextField: UITextField {
 	@objc func pressedReturn() {
 		guard sender != nil && receiver != nil else { return }
 		sender?.addNewTag(named: text)
-        self.text = ""
 	}
 	
+    func cleartext() {
+        
+        self.text = ""
+        
+    }
 	
+    
 }

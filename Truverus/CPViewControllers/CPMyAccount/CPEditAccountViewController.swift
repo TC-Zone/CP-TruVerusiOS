@@ -8,11 +8,21 @@
 
 import UIKit
 import TaggerKit
+import AVFoundation
+import Photos
+import MobileCoreServices
 
-class CPEditAccountViewController: UIViewController , UIPickerViewDelegate , UIPickerViewDataSource {
+class CPEditAccountViewController: UIViewController , UIPickerViewDelegate , UIPickerViewDataSource, UIScrollViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate , UITextFieldDelegate{
 
     
-
+    @IBOutlet weak var SportScroll: UIScrollView!
+    @IBOutlet weak var SportTagContainer: UIView!
+    @IBOutlet weak var SportSearchContainer: UIView!
+    @IBOutlet weak var FavoriteSportTextField: TKTextField!
+    @IBOutlet weak var FavoriteSportView: UIView!
+    
+    @IBOutlet weak var FashionScroll: UIScrollView!
+    @IBOutlet weak var FashionTagsView: UIView!
     @IBOutlet weak var fashionContainer: UIView!
     @IBOutlet weak var searchContainer: UIView!
     @IBOutlet weak var FashionTagsCollection: UICollectionView!
@@ -39,34 +49,87 @@ class CPEditAccountViewController: UIViewController , UIPickerViewDelegate , UIP
     let productTags = TKCollectionView()
     let allTags     = TKCollectionView()
     
+    let sportTags = TKCollectionView()
+    let allsporttags = TKCollectionView()
+    
+    var imagePicker : UIImagePickerController!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         CreateProfilePic()
         InitTextFields()
+        settextDelegates()
+        self.hideKeyboardWhenTappedAround()
+        createTagViews(sender: FashionTagsView)
+        createTagViews(sender: FavoriteSportView)
         handlefashiontags()
+        handleSporttags()
         
         FashionInterestsTextField.addTarget(self, action: #selector(textFieldDidChange(_:)), for: UIControl.Event.editingChanged)
         FashionInterestsTextField.addTarget(self, action: #selector(textFieldDidEndChange(_:)), for: UIControl.Event.editingDidEnd)
+        FashionInterestsTextField.addTarget(self, action: #selector(textFieldDidEndChange(_:)), for: UIControl.Event.editingDidEndOnExit)
         
-        // Do any additional setup after loading the view.
+        FavoriteSportTextField.addTarget(self, action: #selector(textFieldDidChange(_:)), for: UIControl.Event.editingChanged)
+        FavoriteSportTextField.addTarget(self, action: #selector(textFieldDidEndChange(_:)), for: UIControl.Event.editingDidEnd)
+        FavoriteSportTextField.addTarget(self, action: #selector(textFieldDidEndChange(_:)), for: UIControl.Event.editingDidEndOnExit)
+        FashionScroll.delegate = self
+        SportScroll.delegate = self
+       
     }
     
+    func settextDelegates() {
+        
+        EmployementStatusTextField.delegate = self
+        AddressTextField.delegate = self
+        BirthdayTextField.delegate = self
+        GenderTextField.delegate = self
+        ContactNoTextField.delegate = self
+        EmailTextField.delegate = self
+        NameTextfield.delegate = self
+        
+    }
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        if scrollView.contentOffset.x != 0 {
+            scrollView.contentOffset.x = 0
+        }
+
+    }
 
     @objc func textFieldDidChange(_ textField:UITextField) {
-        // your code here
-        //FashionSearchView.alpha = 1
-        
+        if (textField == FavoriteSportTextField){
+            SportSearchContainer.isHidden = false
+        }else {
         searchContainer.isHidden = false
-        
+        }
     }
     
     @objc func textFieldDidEndChange(_ textField:UITextField) {
-        // your code here
-        //FashionSearchView.alpha = 1
+        
         FashionInterestsTextField.text = ""
         searchContainer.isHidden = true
+        FavoriteSportTextField.text = ""
+        SportSearchContainer.isHidden = true
         
+    }
+
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        
+        EmployementStatusTextField.resignFirstResponder()
+        AddressTextField.resignFirstResponder()
+        BirthdayTextField.resignFirstResponder()
+        GenderTextField.resignFirstResponder()
+        ContactNoTextField.resignFirstResponder()
+        EmailTextField.resignFirstResponder()
+        NameTextfield.resignFirstResponder()
+        
+        return true
     }
     
     func handlefashiontags() {
@@ -104,9 +167,48 @@ class CPEditAccountViewController: UIViewController , UIPickerViewDelegate , UIP
         
     }
     
+    func handleSporttags() {
+        
+        sportTags.tags = ["Tech", "Design", "Writing", "Social Media"]
+        
+        // These are intended to be all the tags the user has added in the app, which are going to be filtered
+        allsporttags.tags = ["Cars", "Skateboard", "Freetime", "Humor", "Travel", "Music", "Places", "Journalism", "Music", "Sports"]
+        
+        /*
+         We set this collection's action to .removeTag,
+         becasue these are supposed to be the tags the user has already added
+         */
+        sportTags.action = .removeTag
+        
+        
+        // Set the current controller as the delegate of both collections
+        sportTags.delegate = self
+        allsporttags.delegate = self
+        
+        // "testCollection" takes the tags sent by "searchCollection"
+        allsporttags.receiver = sportTags
+        
+        // The tags in "searchCollection" are going to be added, so we set the action to addTag
+        allsporttags.action = .addTag
+        
+        
+        // Set the sender and receiver of the TextField
+        FavoriteSportTextField.sender     = allsporttags
+        FavoriteSportTextField.receiver     = sportTags
+        
+        add(sportTags, toView: SportTagContainer)
+        add(allsporttags, toView: SportSearchContainer)
+        SportSearchContainer.isHidden = true
+        
+    }
+    
     override func tagIsBeingAdded(name: String?) {
         // Example: save testCollection.tags to UserDefault
         print("added \(name!)")
+        FashionInterestsTextField.text = ""
+        searchContainer.isHidden = true
+        FavoriteSportTextField.text = ""
+        SportSearchContainer.isHidden = true
     }
     
     override func tagIsBeingRemoved(name: String?) {
@@ -155,6 +257,18 @@ class CPEditAccountViewController: UIViewController , UIPickerViewDelegate , UIP
         CreateTextFields(TextField: AddressTextField)
         CreateTextFields(TextField: EmployementStatusTextField)
         //CreateTextFields(TextField: FashionInterestsTextField)
+        createTagViewsTextfields(sender: FashionInterestsTextField)
+        createTagViewsTextfields(sender: FavoriteSportTextField)
+        
+    }
+    
+    func createTagViews(sender : UIView) {
+        
+        sender.layer.borderColor = UIColor(named: "TextGray")?.cgColor
+        sender.layer.borderWidth = 1.0
+        sender.layer.cornerRadius = 23
+        
+        
         
     }
     
@@ -177,6 +291,56 @@ class CPEditAccountViewController: UIViewController , UIPickerViewDelegate , UIP
         
     }
     
+    func createTagViewsTextfields(sender : UITextField) {
+        
+        
+        let clearButton = UIButton(frame: CGRect(x: 0, y: 3, width: 15, height: 15))
+        clearButton.setImage(UIImage(named: "close icon")!, for: [])
+        
+        let rightview = UIView()
+        rightview.frame = CGRect(x: 5, y: 3, width: 30, height: 20)
+        
+        rightview.addSubview(clearButton)
+        
+        if(sender == FashionInterestsTextField){
+            
+            sender.rightView = rightview
+            clearButton.addTarget(self, action: #selector(clearClicked), for: .touchUpInside)
+            
+            sender.clearButtonMode = .never
+            sender.rightViewMode = .whileEditing
+            
+            
+        } else if(sender == FavoriteSportTextField){
+            
+            sender.rightView = rightview
+            clearButton.addTarget(self, action: #selector(clearClicked2), for: .touchUpInside)
+            
+            sender.clearButtonMode = .never
+            sender.rightViewMode = .whileEditing
+            
+            
+        }
+  
+        
+    }
+    
+    @objc func clearClicked(sender:UIButton)
+    {
+        print("clear clicked")
+        FashionInterestsTextField.text = ""
+        searchContainer.isHidden = true
+        FashionInterestsTextField.resignFirstResponder()
+    }
+    
+    @objc func clearClicked2(sender:UIButton)
+    {
+        print("clear clicked")
+        FavoriteSportTextField.text = ""
+        SportSearchContainer.isHidden = true
+        FavoriteSportTextField.resignFirstResponder()
+    }
+    
     func createGenderAndBirthdayText(sender : UITextField , img : UIImage) {
         
         
@@ -193,9 +357,11 @@ class CPEditAccountViewController: UIViewController , UIPickerViewDelegate , UIP
         let button = UIButton(frame: CGRect(x: 5, y: 3, width: 15, height: 15))
         button.setBackgroundImage(img, for: .normal)
         
+        
         if(sender == GenderTextField){
             
             button.addTarget(self, action: #selector(genderbuttonaction), for: .touchUpInside)
+            
             
         } else if(sender == BirthdayTextField) {
             
@@ -365,6 +531,64 @@ class CPEditAccountViewController: UIViewController , UIPickerViewDelegate , UIP
     
     
     @IBAction func ChangePhotoButtonAction(_ sender: Any) {
+        
+        let alertControl = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+        
+        imagePicker = UIImagePickerController()
+        imagePicker.delegate = self
+        imagePicker.mediaTypes = [kUTTypeImage as String]
+        
+        if (UIImagePickerController.isSourceTypeAvailable(.camera))
+        {
+            
+            let cameraAction = UIAlertAction(title: "Use Camera", style: .default) { (action) in
+                self.imagePicker.mediaTypes = [kUTTypeImage as String]
+                self.imagePicker.sourceType = .camera
+                self.imagePicker.allowsEditing = true
+                
+                self.present(self.imagePicker, animated: true, completion: nil)
+            }
+            alertControl.addAction(cameraAction)
+        }
+        
+        if (UIImagePickerController.isSourceTypeAvailable(.photoLibrary))
+        {
+            
+            let PhotoLibraryAction = UIAlertAction(title: "Use Photo Library", style: .default) { (action) in
+                self.imagePicker.mediaTypes = [kUTTypeImage as String]
+                self.imagePicker.sourceType = .photoLibrary
+                self.imagePicker.allowsEditing = true
+                
+                self.present(self.imagePicker, animated: true, completion: nil)
+            }
+            alertControl.addAction(PhotoLibraryAction)
+        }
+        
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        
+        
+        
+        alertControl.addAction(cancelAction)
+        
+        present(alertControl, animated: true, completion: nil)
+        
+    }
+    
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        dismiss(animated: true, completion: nil)
+        
+        
+        
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        
+        let chosenImage = info[UIImagePickerController.InfoKey.editedImage] as! UIImage
+        ProfilePicture.contentMode = .scaleAspectFill
+        ProfilePicture.image = chosenImage
+        
+        dismiss(animated: true, completion: nil)
+        
     }
     /*
     // MARK: - Navigation

@@ -49,9 +49,6 @@ extension TKCollectionView: UICollectionViewDataSource {
 				receiver!.tagsCollectionView.performBatchUpdates({
 					receiver!.tagsCollectionView.insertItems(at: [indexPath])
 				}, completion: nil)
-                TKTextField.awakeFromNib()
-                let tk = TKTextField()
-                tk.pressedReturn()
 			}
 		}
         

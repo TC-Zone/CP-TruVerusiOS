@@ -11,6 +11,9 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
+        <array key="AvenirNextLTPro-Demi.otf">
+            <string>AvenirNextLTPro-Demi</string>
+        </array>
         <array key="AvenirNextLTPro-Regular.otf">
             <string>AvenirNextLTPro-Regular</string>
         </array>
@@ -406,7 +409,7 @@ Jeans, Latest Trends, Vintage</string>
             <objects>
                 <viewController storyboardIdentifier="CPEditAccountViewController" id="cEk-tb-fMK" customClass="CPEditAccountViewController" customModule="Truverus" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="UBV-to-uO7">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="1300"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="1400"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fxs-Au-ReY">
@@ -431,10 +434,10 @@ Jeans, Latest Trends, Vintage</string>
                                 </constraints>
                             </view>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hzY-Sm-c5j">
-                                <rect key="frame" x="0.0" y="149" width="375" height="1229"/>
+                                <rect key="frame" x="0.0" y="149" width="375" height="1329"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bRA-JZ-ptd">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="1300"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="1251"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="name_edit" translatesAutoresizingMaskIntoConstraints="NO" id="gNX-da-yS8">
                                                 <rect key="frame" x="50" y="97" width="13" height="15"/>
@@ -641,7 +644,7 @@ Jeans, Latest Trends, Vintage</string>
                                                 </constraints>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" name="AvenirNextLTPro-Regular" family="Avenir Next LT Pro" pointSize="15"/>
-                                                <textInputTraits key="textInputTraits" autocorrectionType="yes" spellCheckingType="yes" enablesReturnKeyAutomatically="YES" smartDashesType="yes" smartInsertDeleteType="yes" smartQuotesType="yes"/>
+                                                <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zgi-Uz-DGm">
                                                 <rect key="frame" x="47" y="718" width="281" height="38"/>
@@ -649,12 +652,117 @@ Jeans, Latest Trends, Vintage</string>
                                                     <constraint firstAttribute="height" constant="38" id="Gjn-X2-2Iy"/>
                                                 </constraints>
                                             </containerView>
-                                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="K7o-St-PjM">
-                                                <rect key="frame" x="47" y="758" width="281" height="105"/>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Mdw-Ky-dMy">
+                                                <rect key="frame" x="47" y="757" width="281" height="110"/>
+                                                <subviews>
+                                                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HSf-tI-xh4">
+                                                        <rect key="frame" x="8" y="8" width="265" height="94"/>
+                                                        <subviews>
+                                                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="K7o-St-PjM">
+                                                                <rect key="frame" x="0.0" y="0.0" width="265" height="250"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" priority="250" constant="250" id="3OK-8s-hWN"/>
+                                                                </constraints>
+                                                            </containerView>
+                                                        </subviews>
+                                                        <constraints>
+                                                            <constraint firstItem="K7o-St-PjM" firstAttribute="width" secondItem="HSf-tI-xh4" secondAttribute="width" id="1ET-O4-N6i"/>
+                                                            <constraint firstAttribute="trailing" secondItem="K7o-St-PjM" secondAttribute="trailing" id="Gbn-zo-QDA"/>
+                                                            <constraint firstItem="K7o-St-PjM" firstAttribute="leading" secondItem="HSf-tI-xh4" secondAttribute="leading" id="OSy-9M-291"/>
+                                                            <constraint firstItem="K7o-St-PjM" firstAttribute="top" secondItem="HSf-tI-xh4" secondAttribute="top" id="Xgd-L3-0i7"/>
+                                                            <constraint firstAttribute="bottom" secondItem="K7o-St-PjM" secondAttribute="bottom" id="luJ-LY-93c"/>
+                                                        </constraints>
+                                                    </scrollView>
+                                                </subviews>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="105" id="v0x-MU-YeX"/>
+                                                    <constraint firstItem="HSf-tI-xh4" firstAttribute="leading" secondItem="Mdw-Ky-dMy" secondAttribute="leading" constant="8" id="PBB-oZ-UjE"/>
+                                                    <constraint firstAttribute="trailing" secondItem="HSf-tI-xh4" secondAttribute="trailing" constant="8" id="QXl-Ge-rph"/>
+                                                    <constraint firstAttribute="bottom" secondItem="HSf-tI-xh4" secondAttribute="bottom" constant="8" id="ZVV-fN-DAI"/>
+                                                    <constraint firstItem="HSf-tI-xh4" firstAttribute="top" secondItem="Mdw-Ky-dMy" secondAttribute="top" constant="8" id="lnD-Qu-EDg"/>
+                                                    <constraint firstAttribute="height" constant="110" id="ykh-6i-jAw"/>
+                                                </constraints>
+                                            </view>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="favsport_edit" translatesAutoresizingMaskIntoConstraints="NO" id="mxr-cO-D9Y">
+                                                <rect key="frame" x="50" y="891.5" width="13" height="15"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="15" id="Em6-z3-4ir"/>
+                                                    <constraint firstAttribute="width" constant="13" id="kwT-jS-hwc"/>
+                                                </constraints>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Favorite Sports" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XId-es-d1q">
+                                                <rect key="frame" x="75" y="887" width="225" height="20"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="20" id="4kX-Fh-y4N"/>
+                                                    <constraint firstAttribute="width" constant="225" id="aq2-2N-hYS"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="TradeGothicLT-BoldTwo" family="TradeGothic LT" pointSize="16"/>
+                                                <color key="textColor" name="TextAreaGray"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="John Doe" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="CHt-m8-mcc" customClass="TKTextField" customModule="TaggerKit">
+                                                <rect key="frame" x="47" y="917" width="281" height="42"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="42" id="2BL-BX-1Bn"/>
+                                                </constraints>
+                                                <nil key="textColor"/>
+                                                <fontDescription key="fontDescription" name="AvenirNextLTPro-Regular" family="Avenir Next LT Pro" pointSize="15"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3hs-Qa-D50">
+                                                <rect key="frame" x="47" y="961" width="281" height="38"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="38" id="rb3-xj-huJ"/>
                                                 </constraints>
                                             </containerView>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="b0f-pV-uto">
+                                                <rect key="frame" x="47" y="1000" width="281" height="110"/>
+                                                <subviews>
+                                                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I5C-io-Klg">
+                                                        <rect key="frame" x="8" y="8" width="265" height="94"/>
+                                                        <subviews>
+                                                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3W2-mP-Af0">
+                                                                <rect key="frame" x="0.0" y="0.0" width="265" height="250"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" priority="250" constant="250" id="dmp-uN-EH6"/>
+                                                                </constraints>
+                                                            </containerView>
+                                                        </subviews>
+                                                        <constraints>
+                                                            <constraint firstAttribute="bottom" secondItem="3W2-mP-Af0" secondAttribute="bottom" id="JgM-mC-DrK"/>
+                                                            <constraint firstItem="3W2-mP-Af0" firstAttribute="top" secondItem="I5C-io-Klg" secondAttribute="top" id="a2O-2P-0qd"/>
+                                                            <constraint firstItem="3W2-mP-Af0" firstAttribute="width" secondItem="I5C-io-Klg" secondAttribute="width" id="cgM-xM-Ljv"/>
+                                                            <constraint firstItem="3W2-mP-Af0" firstAttribute="leading" secondItem="I5C-io-Klg" secondAttribute="leading" id="hez-cz-zcT"/>
+                                                            <constraint firstAttribute="trailing" secondItem="3W2-mP-Af0" secondAttribute="trailing" id="yAY-qf-MrO"/>
+                                                        </constraints>
+                                                    </scrollView>
+                                                </subviews>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="trailing" secondItem="I5C-io-Klg" secondAttribute="trailing" constant="8" id="I7t-ef-2ac"/>
+                                                    <constraint firstAttribute="height" constant="110" id="cgj-Y0-YCU"/>
+                                                    <constraint firstItem="I5C-io-Klg" firstAttribute="leading" secondItem="b0f-pV-uto" secondAttribute="leading" constant="8" id="fQm-xC-wbM"/>
+                                                    <constraint firstAttribute="bottom" secondItem="I5C-io-Klg" secondAttribute="bottom" constant="8" id="fRA-Kw-CA6"/>
+                                                    <constraint firstItem="I5C-io-Klg" firstAttribute="top" secondItem="b0f-pV-uto" secondAttribute="top" constant="8" id="g1b-OC-vQ0"/>
+                                                </constraints>
+                                            </view>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dTr-0z-uDf">
+                                                <rect key="frame" x="47" y="1165" width="281" height="42"/>
+                                                <color key="backgroundColor" name="TextAreaGray"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="42" id="Vzd-9x-cde"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="AvenirNextLTPro-Demi" family="Avenir Next LT Pro" pointSize="19"/>
+                                                <state key="normal" title="Update Profile">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                        <integer key="value" value="20"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                                </userDefinedRuntimeAttributes>
+                                            </button>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
@@ -663,23 +771,29 @@ Jeans, Latest Trends, Vintage</string>
                                             <constraint firstItem="dD2-hM-F9U" firstAttribute="width" secondItem="bRA-JZ-ptd" secondAttribute="width" multiplier="0.75" id="3ih-RN-R2S"/>
                                             <constraint firstItem="1zk-1K-IPa" firstAttribute="centerX" secondItem="bRA-JZ-ptd" secondAttribute="centerX" id="47L-Mt-jjn"/>
                                             <constraint firstItem="4bg-1f-7EZ" firstAttribute="centerX" secondItem="bRA-JZ-ptd" secondAttribute="centerX" multiplier="1.35" id="4sl-GD-b5V"/>
+                                            <constraint firstItem="dTr-0z-uDf" firstAttribute="trailing" secondItem="b0f-pV-uto" secondAttribute="trailing" id="5WV-aJ-rI1"/>
                                             <constraint firstItem="NGS-1u-Vt3" firstAttribute="leading" secondItem="u7I-9Y-R52" secondAttribute="trailing" constant="12" id="5nL-le-vKZ"/>
                                             <constraint firstItem="dD2-hM-F9U" firstAttribute="centerX" secondItem="bRA-JZ-ptd" secondAttribute="centerX" id="5yp-6l-QUp"/>
                                             <constraint firstItem="n1r-AG-3qq" firstAttribute="leading" secondItem="aGT-S3-mKS" secondAttribute="trailing" constant="12" id="6uA-6h-2kF"/>
                                             <constraint firstItem="VGf-VG-Nf5" firstAttribute="top" secondItem="6fY-o1-RHS" secondAttribute="top" multiplier="1.01" id="73C-3n-KyA"/>
+                                            <constraint firstAttribute="bottom" secondItem="Mdw-Ky-dMy" secondAttribute="bottom" constant="384" id="8ej-wN-tAn"/>
                                             <constraint firstItem="NGS-1u-Vt3" firstAttribute="centerX" secondItem="bRA-JZ-ptd" secondAttribute="centerX" id="9Kv-wR-Ypb"/>
+                                            <constraint firstItem="b0f-pV-uto" firstAttribute="trailing" secondItem="3hs-Qa-D50" secondAttribute="trailing" id="A2C-n6-ATy"/>
                                             <constraint firstItem="1zk-1K-IPa" firstAttribute="width" secondItem="bRA-JZ-ptd" secondAttribute="width" multiplier="0.75" id="ANK-Hb-rde"/>
                                             <constraint firstItem="01v-MX-W5W" firstAttribute="top" secondItem="adZ-k5-Uuw" secondAttribute="bottom" constant="20" id="Ams-Ag-Mou"/>
-                                            <constraint firstItem="K7o-St-PjM" firstAttribute="width" secondItem="zgi-Uz-DGm" secondAttribute="width" id="BMW-OE-rK9"/>
+                                            <constraint firstItem="XId-es-d1q" firstAttribute="top" secondItem="Mdw-Ky-dMy" secondAttribute="bottom" constant="20" id="AwY-tX-Um8"/>
                                             <constraint firstItem="NGS-1u-Vt3" firstAttribute="top" secondItem="vFD-Fh-UWi" secondAttribute="bottom" constant="20" id="CyQ-Yt-obE"/>
+                                            <constraint firstItem="b0f-pV-uto" firstAttribute="width" secondItem="3hs-Qa-D50" secondAttribute="width" id="DFb-ho-Ww7"/>
                                             <constraint firstItem="n1r-AG-3qq" firstAttribute="centerX" secondItem="bRA-JZ-ptd" secondAttribute="centerX" id="F62-LJ-JJs"/>
+                                            <constraint firstItem="Mdw-Ky-dMy" firstAttribute="top" secondItem="zgi-Uz-DGm" secondAttribute="bottom" constant="1" id="FN2-Ti-1nE"/>
+                                            <constraint firstItem="CHt-m8-mcc" firstAttribute="centerX" secondItem="bRA-JZ-ptd" secondAttribute="centerX" id="FcA-io-sa6"/>
                                             <constraint firstItem="6fY-o1-RHS" firstAttribute="top" secondItem="iX1-fa-sxt" secondAttribute="bottom" constant="20" id="HyX-WD-EEl"/>
                                             <constraint firstItem="aGT-S3-mKS" firstAttribute="top" secondItem="n1r-AG-3qq" secondAttribute="top" multiplier="1.005" id="J6p-X2-UDf"/>
                                             <constraint firstItem="lPD-oY-5vl" firstAttribute="top" secondItem="qPu-LG-0Uj" secondAttribute="top" multiplier="1.01" id="Jy5-z0-1Og"/>
                                             <constraint firstItem="6fY-o1-RHS" firstAttribute="centerX" secondItem="bRA-JZ-ptd" secondAttribute="centerX" multiplier="0.54" id="LCh-Xf-QoP"/>
-                                            <constraint firstItem="K7o-St-PjM" firstAttribute="firstBaseline" secondItem="zgi-Uz-DGm" secondAttribute="baseline" constant="2" id="Ml7-N6-ZXa"/>
                                             <constraint firstItem="RX0-jF-Tt2" firstAttribute="width" secondItem="bRA-JZ-ptd" secondAttribute="width" multiplier="0.35" id="Nto-nQ-SEy"/>
                                             <constraint firstItem="pfQ-WZ-hUJ" firstAttribute="top" secondItem="HAk-2G-t2g" secondAttribute="bottom" constant="10" id="O0v-tE-Yo5"/>
+                                            <constraint firstItem="b0f-pV-uto" firstAttribute="top" secondItem="3hs-Qa-D50" secondAttribute="bottom" constant="1" id="OH1-M1-MME"/>
                                             <constraint firstItem="EOi-oP-J1m" firstAttribute="top" secondItem="n1r-AG-3qq" secondAttribute="bottom" constant="10" id="Odb-C9-3Ws"/>
                                             <constraint firstItem="6fY-o1-RHS" firstAttribute="leading" secondItem="VGf-VG-Nf5" secondAttribute="trailing" constant="13.5" id="OjP-7c-ffG"/>
                                             <constraint firstItem="vFD-Fh-UWi" firstAttribute="top" secondItem="6fY-o1-RHS" secondAttribute="bottom" constant="10" id="Ot2-BM-nei"/>
@@ -688,10 +802,14 @@ Jeans, Latest Trends, Vintage</string>
                                             <constraint firstItem="4bg-1f-7EZ" firstAttribute="leading" secondItem="FRp-1t-JLM" secondAttribute="trailing" constant="11.5" id="PDJ-eH-DJf"/>
                                             <constraint firstItem="qPu-LG-0Uj" firstAttribute="leading" secondItem="lPD-oY-5vl" secondAttribute="trailing" constant="12" id="RJs-nl-B1d"/>
                                             <constraint firstItem="exu-Ta-XGY" firstAttribute="top" secondItem="BKo-Kr-veb" secondAttribute="top" multiplier="1.015" id="RrG-Sz-uh2"/>
+                                            <constraint firstItem="3hs-Qa-D50" firstAttribute="width" secondItem="CHt-m8-mcc" secondAttribute="width" id="SB1-pp-FIQ"/>
                                             <constraint firstItem="EOi-oP-J1m" firstAttribute="width" secondItem="bRA-JZ-ptd" secondAttribute="width" multiplier="0.75" id="Tla-2l-UGM"/>
+                                            <constraint firstItem="Mdw-Ky-dMy" firstAttribute="centerX" secondItem="bRA-JZ-ptd" secondAttribute="centerX" id="U6I-2A-l3W"/>
+                                            <constraint firstItem="3hs-Qa-D50" firstAttribute="leading" secondItem="CHt-m8-mcc" secondAttribute="leading" id="Uft-aJ-csZ"/>
                                             <constraint firstItem="u7I-9Y-R52" firstAttribute="top" secondItem="NGS-1u-Vt3" secondAttribute="top" multiplier="1.005" id="V2T-Ci-Orj"/>
+                                            <constraint firstItem="dTr-0z-uDf" firstAttribute="leading" secondItem="b0f-pV-uto" secondAttribute="leading" id="Vwd-52-Rd4"/>
                                             <constraint firstItem="HAk-2G-t2g" firstAttribute="leading" secondItem="gNX-da-yS8" secondAttribute="trailing" constant="12" id="WTb-3G-CoO"/>
-                                            <constraint firstItem="K7o-St-PjM" firstAttribute="trailing" secondItem="zgi-Uz-DGm" secondAttribute="trailing" id="XhK-PG-Uxu"/>
+                                            <constraint firstItem="XId-es-d1q" firstAttribute="leading" secondItem="mxr-cO-D9Y" secondAttribute="trailing" constant="12" id="Y9w-oA-L78"/>
                                             <constraint firstItem="qPu-LG-0Uj" firstAttribute="top" secondItem="1zk-1K-IPa" secondAttribute="bottom" constant="20" id="YFI-xq-Ak4"/>
                                             <constraint firstItem="zgi-Uz-DGm" firstAttribute="width" secondItem="bRA-JZ-ptd" secondAttribute="width" multiplier="0.75" id="Yuh-XX-fmt"/>
                                             <constraint firstItem="HAk-2G-t2g" firstAttribute="width" secondItem="bRA-JZ-ptd" secondAttribute="width" multiplier="0.6" id="Yz5-NF-Ffv"/>
@@ -699,6 +817,9 @@ Jeans, Latest Trends, Vintage</string>
                                             <constraint firstItem="EOi-oP-J1m" firstAttribute="centerX" secondItem="bRA-JZ-ptd" secondAttribute="centerX" id="atj-cq-Ala"/>
                                             <constraint firstItem="4bg-1f-7EZ" firstAttribute="top" secondItem="6fY-o1-RHS" secondAttribute="top" id="aup-lh-1dp"/>
                                             <constraint firstItem="RX0-jF-Tt2" firstAttribute="top" secondItem="4bg-1f-7EZ" secondAttribute="bottom" constant="10" id="bmH-sW-Cdh"/>
+                                            <constraint firstItem="CHt-m8-mcc" firstAttribute="top" secondItem="XId-es-d1q" secondAttribute="bottom" constant="10" id="cKO-wh-zLq"/>
+                                            <constraint firstItem="dTr-0z-uDf" firstAttribute="width" secondItem="b0f-pV-uto" secondAttribute="width" id="edc-3C-a8e"/>
+                                            <constraint firstItem="dTr-0z-uDf" firstAttribute="top" secondItem="b0f-pV-uto" secondAttribute="bottom" constant="55" id="h8h-8z-60B"/>
                                             <constraint firstItem="RX0-jF-Tt2" firstAttribute="centerX" secondItem="bRA-JZ-ptd" secondAttribute="centerX" multiplier="1.4" id="hJJ-eh-xxR"/>
                                             <constraint firstItem="dD2-hM-F9U" firstAttribute="top" secondItem="01v-MX-W5W" secondAttribute="bottom" constant="10" id="j7Y-at-XpA"/>
                                             <constraint firstItem="adZ-k5-Uuw" firstAttribute="width" secondItem="bRA-JZ-ptd" secondAttribute="width" multiplier="0.75" id="lZp-6v-egA"/>
@@ -707,19 +828,26 @@ Jeans, Latest Trends, Vintage</string>
                                             <constraint firstItem="BKo-Kr-veb" firstAttribute="top" secondItem="pfQ-WZ-hUJ" secondAttribute="bottom" constant="20" id="nI4-ky-KIO"/>
                                             <constraint firstItem="zgi-Uz-DGm" firstAttribute="centerX" secondItem="bRA-JZ-ptd" secondAttribute="centerX" id="neT-bc-VFN"/>
                                             <constraint firstItem="adZ-k5-Uuw" firstAttribute="centerX" secondItem="bRA-JZ-ptd" secondAttribute="centerX" id="nm0-Nl-9g1"/>
+                                            <constraint firstItem="XId-es-d1q" firstAttribute="centerX" secondItem="bRA-JZ-ptd" secondAttribute="centerX" id="nsn-6N-Rh6"/>
+                                            <constraint firstItem="b0f-pV-uto" firstAttribute="leading" secondItem="3hs-Qa-D50" secondAttribute="leading" id="oeq-UP-Hjl"/>
                                             <constraint firstItem="HAk-2G-t2g" firstAttribute="centerX" secondItem="bRA-JZ-ptd" secondAttribute="centerX" id="opd-xS-FLg"/>
                                             <constraint firstItem="01v-MX-W5W" firstAttribute="centerX" secondItem="bRA-JZ-ptd" secondAttribute="centerX" id="or2-ie-yNH"/>
-                                            <constraint firstAttribute="bottom" secondItem="K7o-St-PjM" secondAttribute="bottom" constant="437" id="pwL-Wz-Rdk"/>
+                                            <constraint firstItem="mxr-cO-D9Y" firstAttribute="top" secondItem="XId-es-d1q" secondAttribute="top" multiplier="1.005" id="ozz-Ib-ekd"/>
                                             <constraint firstItem="n1r-AG-3qq" firstAttribute="top" secondItem="dD2-hM-F9U" secondAttribute="bottom" constant="20" id="qVx-tV-UrF"/>
                                             <constraint firstItem="rPG-UZ-WZu" firstAttribute="top" secondItem="01v-MX-W5W" secondAttribute="top" multiplier="1.005" id="qiD-zG-Mhx"/>
+                                            <constraint firstItem="Mdw-Ky-dMy" firstAttribute="width" secondItem="bRA-JZ-ptd" secondAttribute="width" multiplier="0.75" id="rhn-gx-255"/>
                                             <constraint firstItem="qPu-LG-0Uj" firstAttribute="centerX" secondItem="bRA-JZ-ptd" secondAttribute="centerX" id="tCB-AU-3aV"/>
                                             <constraint firstItem="adZ-k5-Uuw" firstAttribute="top" secondItem="NGS-1u-Vt3" secondAttribute="bottom" constant="10" id="tIh-2n-Fay"/>
                                             <constraint firstItem="01v-MX-W5W" firstAttribute="leading" secondItem="rPG-UZ-WZu" secondAttribute="trailing" constant="12" id="u1m-LM-srD"/>
+                                            <constraint firstItem="CHt-m8-mcc" firstAttribute="width" secondItem="bRA-JZ-ptd" secondAttribute="width" multiplier="0.75" id="ui2-BN-sKK"/>
                                             <constraint firstItem="vFD-Fh-UWi" firstAttribute="centerX" secondItem="bRA-JZ-ptd" secondAttribute="centerX" multiplier="0.6" id="uyG-0E-RzT"/>
                                             <constraint firstItem="BKo-Kr-veb" firstAttribute="leading" secondItem="exu-Ta-XGY" secondAttribute="trailing" constant="12" id="vzz-vy-vz6"/>
                                             <constraint firstItem="FRp-1t-JLM" firstAttribute="top" secondItem="4bg-1f-7EZ" secondAttribute="top" id="wOR-IE-W0k"/>
+                                            <constraint firstItem="3hs-Qa-D50" firstAttribute="top" secondItem="CHt-m8-mcc" secondAttribute="bottom" constant="2" id="wWl-Pz-OBb"/>
+                                            <constraint firstAttribute="bottom" secondItem="dTr-0z-uDf" secondAttribute="bottom" constant="44" id="x4v-Bx-lVg"/>
                                             <constraint firstItem="1zk-1K-IPa" firstAttribute="top" secondItem="BKo-Kr-veb" secondAttribute="bottom" constant="10" id="xJ1-FB-6LV"/>
                                             <constraint firstItem="iX1-fa-sxt" firstAttribute="centerX" secondItem="bRA-JZ-ptd" secondAttribute="centerX" id="xKI-z8-4Qa"/>
+                                            <constraint firstItem="3hs-Qa-D50" firstAttribute="trailing" secondItem="CHt-m8-mcc" secondAttribute="trailing" id="ygz-dF-zfM"/>
                                             <constraint firstItem="pfQ-WZ-hUJ" firstAttribute="centerX" secondItem="bRA-JZ-ptd" secondAttribute="centerX" id="zPx-Im-dZh"/>
                                             <constraint firstItem="gNX-da-yS8" firstAttribute="top" secondItem="HAk-2G-t2g" secondAttribute="top" id="zj4-fS-j8Q"/>
                                         </constraints>
@@ -727,7 +855,7 @@ Jeans, Latest Trends, Vintage</string>
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="bRA-JZ-ptd" firstAttribute="leading" secondItem="hzY-Sm-c5j" secondAttribute="leading" id="Pp8-6d-e8R"/>
-                                    <constraint firstAttribute="bottom" secondItem="bRA-JZ-ptd" secondAttribute="bottom" constant="-74" id="YzS-yp-Oa8"/>
+                                    <constraint firstAttribute="bottom" secondItem="bRA-JZ-ptd" secondAttribute="bottom" constant="78" id="YzS-yp-Oa8"/>
                                     <constraint firstItem="bRA-JZ-ptd" firstAttribute="top" secondItem="hzY-Sm-c5j" secondAttribute="top" id="ZA6-ke-JV2"/>
                                     <constraint firstAttribute="trailing" secondItem="bRA-JZ-ptd" secondAttribute="trailing" id="sxe-bC-kbY"/>
                                 </constraints>
@@ -772,14 +900,14 @@ Jeans, Latest Trends, Vintage</string>
                             <constraint firstItem="Fxs-Au-ReY" firstAttribute="leading" secondItem="16P-KB-kir" secondAttribute="leading" id="cto-oT-kcM"/>
                             <constraint firstItem="fnu-na-d3S" firstAttribute="trailing" secondItem="GMc-vd-3sy" secondAttribute="trailing" multiplier="1.015" id="hm7-9A-cqi"/>
                             <constraint firstItem="fnu-na-d3S" firstAttribute="centerY" secondItem="GMc-vd-3sy" secondAttribute="centerY" multiplier="1.16" id="mp7-R6-1AQ"/>
-                            <constraint firstItem="bRA-JZ-ptd" firstAttribute="height" secondItem="UBV-to-uO7" secondAttribute="height" priority="250" id="pW2-6r-99T"/>
+                            <constraint firstItem="bRA-JZ-ptd" firstAttribute="height" secondItem="UBV-to-uO7" secondAttribute="height" priority="250" constant="-149" id="pW2-6r-99T"/>
                             <constraint firstItem="GMc-vd-3sy" firstAttribute="centerX" secondItem="Fxs-Au-ReY" secondAttribute="centerX" id="ujX-GS-yEr"/>
                             <constraint firstItem="hzY-Sm-c5j" firstAttribute="trailing" secondItem="16P-KB-kir" secondAttribute="trailing" id="vDC-TC-hkS"/>
                             <constraint firstItem="YFc-wp-a7v" firstAttribute="top" secondItem="16P-KB-kir" secondAttribute="top" id="wCG-db-Zh0"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="16P-KB-kir"/>
                     </view>
-                    <size key="freeformSize" width="375" height="1300"/>
+                    <size key="freeformSize" width="375" height="1400"/>
                     <connections>
                         <outlet property="AddressTextField" destination="adZ-k5-Uuw" id="fH6-GP-8PG"/>
                         <outlet property="BirthdayTextField" destination="RX0-jF-Tt2" id="6kL-kn-lF2"/>
@@ -788,9 +916,16 @@ Jeans, Latest Trends, Vintage</string>
                         <outlet property="EmailTextField" destination="1zk-1K-IPa" id="1sP-Dq-dAa"/>
                         <outlet property="EmployementStatusTextField" destination="dD2-hM-F9U" id="dtk-0b-JJI"/>
                         <outlet property="FashionInterestsTextField" destination="EOi-oP-J1m" id="6aH-YE-9b2"/>
+                        <outlet property="FashionScroll" destination="HSf-tI-xh4" id="BQ5-rS-GI0"/>
+                        <outlet property="FashionTagsView" destination="Mdw-Ky-dMy" id="jAW-Uu-rln"/>
+                        <outlet property="FavoriteSportTextField" destination="CHt-m8-mcc" id="pf1-42-CLq"/>
+                        <outlet property="FavoriteSportView" destination="b0f-pV-uto" id="Auj-cd-3KX"/>
                         <outlet property="GenderTextField" destination="vFD-Fh-UWi" id="n0W-aC-C6U"/>
                         <outlet property="NameTextfield" destination="pfQ-WZ-hUJ" id="jG6-Ql-DCy"/>
                         <outlet property="ProfilePicture" destination="GMc-vd-3sy" id="MZc-Jm-2ev"/>
+                        <outlet property="SportScroll" destination="I5C-io-Klg" id="jbj-wI-pUy"/>
+                        <outlet property="SportSearchContainer" destination="3hs-Qa-D50" id="T2W-6L-Ehp"/>
+                        <outlet property="SportTagContainer" destination="3W2-mP-Af0" id="g4d-gN-JAL"/>
                         <outlet property="fashionContainer" destination="K7o-St-PjM" id="LE2-dZ-jta"/>
                         <outlet property="searchContainer" destination="zgi-Uz-DGm" id="hhy-DI-OIO"/>
                     </connections>
@@ -815,6 +950,7 @@ Jeans, Latest Trends, Vintage</string>
         <image name="fashion" width="34" height="17"/>
         <image name="fashion_edit" width="22" height="11"/>
         <image name="fav sport" width="27" height="27"/>
+        <image name="favsport_edit" width="19" height="19"/>
         <image name="gender" width="26" height="29"/>
         <image name="gender_edit" width="18" height="20"/>
         <image name="name_edit" width="14" height="16"/>
