@@ -1229,13 +1229,96 @@
                     <view key="view" contentMode="scaleToFill" id="6gP-hR-Bmf">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="532"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" name="readmorecolor"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="fHT-7E-RPh">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="532"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="zAe-FX-2Un">
+                                    <size key="itemSize" width="179" height="294"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="PendingCell" id="6gd-TM-I2B" customClass="CPPendingCollectionViewCell" customModule="Truverus" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="179" height="294"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                            <rect key="frame" x="0.0" y="0.0" width="179" height="294"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="86o-FX-Xqs">
+                                                    <rect key="frame" x="0.0" y="0.0" width="179" height="220"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="220" id="Mn8-q5-nXZ"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="asdcsccscsdcsdcsdcsdcdscsc" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7XP-1a-u80">
+                                                    <rect key="frame" x="0.0" y="220" width="179" height="46"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="46" id="whg-Jb-F99"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="TradeGothicLT-BoldTwo" family="TradeGothic LT" pointSize="12"/>
+                                                    <color key="textColor" name="TextAreaGray"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wYe-IP-ce3">
+                                                    <rect key="frame" x="104" y="266" width="73" height="22"/>
+                                                    <color key="backgroundColor" name="CancelRed"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="73" id="N4j-9q-yCx"/>
+                                                        <constraint firstAttribute="height" constant="22" id="kAN-lw-nel"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="TradeGothicLT-BoldTwo" family="TradeGothic LT" pointSize="12"/>
+                                                    <state key="normal" title="Cancel">
+                                                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </state>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                            <integer key="value" value="10"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                                    </userDefinedRuntimeAttributes>
+                                                </button>
+                                            </subviews>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="7XP-1a-u80" secondAttribute="trailing" id="3BD-Vi-LBF"/>
+                                            <constraint firstItem="7XP-1a-u80" firstAttribute="top" secondItem="86o-FX-Xqs" secondAttribute="bottom" id="7Zq-Ax-uuf"/>
+                                            <constraint firstItem="7XP-1a-u80" firstAttribute="leading" secondItem="6gd-TM-I2B" secondAttribute="leading" id="Cae-rb-Hfw"/>
+                                            <constraint firstItem="86o-FX-Xqs" firstAttribute="top" secondItem="6gd-TM-I2B" secondAttribute="top" id="POc-ud-7kg"/>
+                                            <constraint firstItem="86o-FX-Xqs" firstAttribute="leading" secondItem="6gd-TM-I2B" secondAttribute="leading" id="aPK-Q7-Nha"/>
+                                            <constraint firstItem="wYe-IP-ce3" firstAttribute="top" secondItem="7XP-1a-u80" secondAttribute="bottom" id="cbY-6u-RVN"/>
+                                            <constraint firstAttribute="trailing" secondItem="wYe-IP-ce3" secondAttribute="trailing" constant="2" id="s4J-4c-6wj"/>
+                                            <constraint firstItem="7XP-1a-u80" firstAttribute="top" secondItem="86o-FX-Xqs" secondAttribute="bottom" id="uKA-nm-NN4"/>
+                                            <constraint firstAttribute="bottom" secondItem="wYe-IP-ce3" secondAttribute="bottom" constant="6" id="wG7-ve-3NV"/>
+                                            <constraint firstAttribute="trailing" secondItem="86o-FX-Xqs" secondAttribute="trailing" id="whf-L9-odu"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="CellButton" destination="wYe-IP-ce3" id="JrS-Ia-4iB"/>
+                                            <outlet property="CellImage" destination="86o-FX-Xqs" id="LFv-cG-BJ7"/>
+                                            <outlet property="CellTitle" destination="7XP-1a-u80" id="FEx-7A-eie"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="fHT-7E-RPh" firstAttribute="leading" secondItem="EpQ-hi-TvY" secondAttribute="leading" id="03z-NA-cQV"/>
+                            <constraint firstItem="fHT-7E-RPh" firstAttribute="top" secondItem="6gP-hR-Bmf" secondAttribute="top" id="Qmo-NO-G0x"/>
+                            <constraint firstItem="fHT-7E-RPh" firstAttribute="trailing" secondItem="EpQ-hi-TvY" secondAttribute="trailing" id="fd2-Qf-gfc"/>
+                            <constraint firstItem="fHT-7E-RPh" firstAttribute="bottom" secondItem="EpQ-hi-TvY" secondAttribute="bottom" id="uXD-Bh-tTg"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="EpQ-hi-TvY"/>
                     </view>
+                    <connections>
+                        <outlet property="PendingCollectionView" destination="fHT-7E-RPh" id="kdO-IJ-EHU"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="U4f-4Q-wKM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1396" y="1538"/>
+            <point key="canvasLocation" x="1396" y="1537.3313343328336"/>
         </scene>
         <!--Requests View Controller-->
         <scene sceneID="Rpt-rf-ugz">
@@ -1244,13 +1327,118 @@
                     <view key="view" contentMode="scaleToFill" id="kXH-Mb-HLM">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="532"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="0.70679030880000004" green="1" blue="0.0" alpha="0.24959867290000001" colorSpace="custom" customColorSpace="displayP3"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="RRe-EE-1oD">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="532"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="CYz-hV-Cz3">
+                                    <size key="itemSize" width="179" height="294"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="RequestCell" id="MWG-0H-rgE" customClass="CPRequestsCollectionViewCell" customModule="Truverus" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="179" height="294"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                            <rect key="frame" x="0.0" y="0.0" width="179" height="294"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="DPM-k9-uHW">
+                                                    <rect key="frame" x="0.0" y="0.0" width="179" height="220"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="220" id="hGr-Hk-mze"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qas-OX-2Ip">
+                                                    <rect key="frame" x="0.0" y="220" width="179" height="46"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="46" id="1fy-Qb-Zd6"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="TradeGothicLT-BoldTwo" family="TradeGothic LT" pointSize="12"/>
+                                                    <color key="textColor" name="TextAreaGray"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9T1-kz-6wF">
+                                                    <rect key="frame" x="93.5" y="266" width="73" height="22"/>
+                                                    <color key="backgroundColor" name="CancelRed"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="73" id="64W-Wz-aDA"/>
+                                                        <constraint firstAttribute="height" constant="22" id="lPZ-aL-kAM"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="TradeGothicLT-BoldTwo" family="TradeGothic LT" pointSize="12"/>
+                                                    <state key="normal" title="Cancel">
+                                                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </state>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                            <integer key="value" value="10"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                                    </userDefinedRuntimeAttributes>
+                                                </button>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FOn-tJ-NA6">
+                                                    <rect key="frame" x="12.5" y="266" width="73" height="22"/>
+                                                    <color key="backgroundColor" name="AcceptGreen"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="73" id="Gr6-jZ-1Ar"/>
+                                                        <constraint firstAttribute="height" constant="22" id="TnY-7M-36y"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="TradeGothicLT-BoldTwo" family="TradeGothic LT" pointSize="12"/>
+                                                    <state key="normal" title="Accept">
+                                                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </state>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                            <integer key="value" value="10"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                                    </userDefinedRuntimeAttributes>
+                                                </button>
+                                            </subviews>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstItem="Qas-OX-2Ip" firstAttribute="leading" secondItem="MWG-0H-rgE" secondAttribute="leading" id="5Si-1h-O8t"/>
+                                            <constraint firstItem="DPM-k9-uHW" firstAttribute="top" secondItem="MWG-0H-rgE" secondAttribute="top" id="7W3-z1-pkD"/>
+                                            <constraint firstItem="9T1-kz-6wF" firstAttribute="centerX" secondItem="MWG-0H-rgE" secondAttribute="centerX" multiplier="1.45" id="8cZ-0G-uDh"/>
+                                            <constraint firstItem="DPM-k9-uHW" firstAttribute="leading" secondItem="MWG-0H-rgE" secondAttribute="leading" id="GWw-Gj-y5h"/>
+                                            <constraint firstAttribute="trailing" secondItem="DPM-k9-uHW" secondAttribute="trailing" id="Iyj-9w-sUa"/>
+                                            <constraint firstAttribute="trailing" secondItem="Qas-OX-2Ip" secondAttribute="trailing" id="PDi-if-e2g"/>
+                                            <constraint firstAttribute="bottom" secondItem="9T1-kz-6wF" secondAttribute="bottom" constant="6" id="TSU-sk-BDk"/>
+                                            <constraint firstItem="FOn-tJ-NA6" firstAttribute="centerX" secondItem="MWG-0H-rgE" secondAttribute="centerX" multiplier="0.55" id="WRd-UI-Fk8"/>
+                                            <constraint firstAttribute="bottom" secondItem="FOn-tJ-NA6" secondAttribute="bottom" constant="6" id="YNt-fW-tG7"/>
+                                            <constraint firstItem="9T1-kz-6wF" firstAttribute="top" secondItem="Qas-OX-2Ip" secondAttribute="bottom" id="YXN-5J-KAC"/>
+                                            <constraint firstItem="Qas-OX-2Ip" firstAttribute="top" secondItem="DPM-k9-uHW" secondAttribute="bottom" id="dmE-F2-axO"/>
+                                            <constraint firstItem="Qas-OX-2Ip" firstAttribute="top" secondItem="DPM-k9-uHW" secondAttribute="bottom" id="ycb-Zy-Zve"/>
+                                            <constraint firstItem="FOn-tJ-NA6" firstAttribute="top" secondItem="Qas-OX-2Ip" secondAttribute="bottom" id="z1h-K1-fpM"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="CellAcceptButton" destination="FOn-tJ-NA6" id="vsS-Y9-kZY"/>
+                                            <outlet property="CellCancelButton" destination="9T1-kz-6wF" id="bCb-M6-Uf8"/>
+                                            <outlet property="CellImage" destination="DPM-k9-uHW" id="0rN-x4-FZo"/>
+                                            <outlet property="CellTitle" destination="Qas-OX-2Ip" id="e7H-ff-jxA"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="RRe-EE-1oD" firstAttribute="leading" secondItem="vOj-M4-z5w" secondAttribute="leading" id="2Uz-kW-00d"/>
+                            <constraint firstItem="RRe-EE-1oD" firstAttribute="top" secondItem="kXH-Mb-HLM" secondAttribute="top" id="7BD-Ot-kwq"/>
+                            <constraint firstItem="RRe-EE-1oD" firstAttribute="trailing" secondItem="vOj-M4-z5w" secondAttribute="trailing" id="bBI-te-Zcd"/>
+                            <constraint firstItem="RRe-EE-1oD" firstAttribute="bottom" secondItem="vOj-M4-z5w" secondAttribute="bottom" id="gXV-Y3-n7d"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="vOj-M4-z5w"/>
                     </view>
+                    <connections>
+                        <outlet property="RequestsCollectionView" destination="RRe-EE-1oD" id="WPV-FN-OV7"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OPB-Lp-SWr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-898" y="1538"/>
+            <point key="canvasLocation" x="-898.39999999999998" y="1537.3313343328336"/>
         </scene>
     </scenes>
     <resources>
@@ -1268,14 +1456,17 @@
         <image name="play Button" width="23" height="23"/>
         <image name="settings" width="20" height="20"/>
         <image name="user icon" width="89" height="89"/>
+        <namedColor name="AcceptGreen">
+            <color red="0.13333333333333333" green="0.65098039215686276" blue="0.45098039215686275" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="CancelRed">
+            <color red="0.83137254901960789" green="0.043137254901960784" blue="0.043137254901960784" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <namedColor name="TextAreaGray">
             <color red="0.42745098039215684" green="0.43137254901960786" blue="0.44313725490196076" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="TextGray">
             <color red="0.30196078431372547" green="0.30196078431372547" blue="0.30196078431372547" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
-        <namedColor name="readmorecolor">
-            <color red="0.14901960784313725" green="0.63137254901960782" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>

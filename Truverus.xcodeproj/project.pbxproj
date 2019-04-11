@@ -20,6 +20,9 @@
 		C510BD6A2248EC8300A41F6B /* CPSignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C510BD692248EC8300A41F6B /* CPSignInViewController.swift */; };
 		C510BD6D2249E19700A41F6B /* CPCommonLoginHeaderNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C510BD6B2249E19700A41F6B /* CPCommonLoginHeaderNavigationViewController.swift */; };
 		C510BD6E2249E19700A41F6B /* CPCommonLoginHeaderNavigationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C510BD6C2249E19700A41F6B /* CPCommonLoginHeaderNavigationViewController.xib */; };
+		C51AB2EC22572DD400F37BDB /* CPInboxCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C51AB2EB22572DD400F37BDB /* CPInboxCollectionViewCell.swift */; };
+		C51AB2F022575BF600F37BDB /* CPPendingCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C51AB2EF22575BF600F37BDB /* CPPendingCollectionViewCell.swift */; };
+		C51AB2F3225762C800F37BDB /* CPRequestsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C51AB2F2225762C800F37BDB /* CPRequestsCollectionViewCell.swift */; };
 		C535C4DB223A746600F502AD /* CPCustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C535C4DA223A746600F502AD /* CPCustomTableViewCell.swift */; };
 		C535C4DD223BBD9200F502AD /* CPParallaxTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C535C4DC223BBD9200F502AD /* CPParallaxTableView.swift */; };
 		C5674CB52251E75200E7FEAF /* CPMyAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5674CB42251E75200E7FEAF /* CPMyAccountViewController.swift */; };
@@ -35,6 +38,18 @@
 		C580115D2232867E00DC0092 /* CPConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C580115C2232867E00DC0092 /* CPConstants.swift */; };
 		C580115F223286B800DC0092 /* CPHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C580115E223286B800DC0092 /* CPHelper.swift */; };
 		C5801162223287B500DC0092 /* CPAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5801161223287B500DC0092 /* CPAPIManager.swift */; };
+		C5A02AAA225B0B590032D4C2 /* CPRemovePopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5A02AA9225B0B590032D4C2 /* CPRemovePopupViewController.swift */; };
+		C5A02AAC225B4F140032D4C2 /* CPCommunity.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C5A02AAB225B4F140032D4C2 /* CPCommunity.storyboard */; };
+		C5A02AAF225B51390032D4C2 /* CPCommunityHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5A02AAE225B51390032D4C2 /* CPCommunityHomeViewController.swift */; };
+		C5A02AB5225B55910032D4C2 /* CPFeedbackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5A02AB4225B55910032D4C2 /* CPFeedbackViewController.swift */; };
+		C5A02AB7225B57210032D4C2 /* CPPromotionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5A02AB6225B57210032D4C2 /* CPPromotionsViewController.swift */; };
+		C5A02AB9225B572F0032D4C2 /* CPEventsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5A02AB8225B572F0032D4C2 /* CPEventsViewController.swift */; };
+		C5A02ABB225B68450032D4C2 /* CPFeedbackCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5A02ABA225B68450032D4C2 /* CPFeedbackCollectionViewCell.swift */; };
+		C5A02ABD225C5C330032D4C2 /* CPFeedbackSubViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5A02ABC225C5C330032D4C2 /* CPFeedbackSubViewController.swift */; };
+		C5A02ABF225C75B90032D4C2 /* RatingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5A02ABE225C75B90032D4C2 /* RatingController.swift */; };
+		C5A02AC1225DC2FD0032D4C2 /* CPPromotionCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5A02AC0225DC2FD0032D4C2 /* CPPromotionCollectionViewCell.swift */; };
+		C5A02AC3225DCEE10032D4C2 /* CPPromotionSubviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5A02AC2225DCEE10032D4C2 /* CPPromotionSubviewViewController.swift */; };
+		C5A02AC7225E0BAE0032D4C2 /* CommunityFlowStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5A02AC6225E0BAE0032D4C2 /* CommunityFlowStruct.swift */; };
 		C5E434E622364B1000A17F5C /* CPMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5E434E522364B1000A17F5C /* CPMenuViewController.swift */; };
 		C5E434F2223650C200A17F5C /* Trade Gothic LT Bold Oblique.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C5E434E8223650C200A17F5C /* Trade Gothic LT Bold Oblique.ttf */; };
 		C5E434F3223650C200A17F5C /* Trade Gothic LT Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C5E434E9223650C200A17F5C /* Trade Gothic LT Light.ttf */; };
@@ -81,6 +96,9 @@
 		C510BD692248EC8300A41F6B /* CPSignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CPSignInViewController.swift; sourceTree = "<group>"; };
 		C510BD6B2249E19700A41F6B /* CPCommonLoginHeaderNavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CPCommonLoginHeaderNavigationViewController.swift; sourceTree = "<group>"; };
 		C510BD6C2249E19700A41F6B /* CPCommonLoginHeaderNavigationViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CPCommonLoginHeaderNavigationViewController.xib; sourceTree = "<group>"; };
+		C51AB2EB22572DD400F37BDB /* CPInboxCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CPInboxCollectionViewCell.swift; sourceTree = "<group>"; };
+		C51AB2EF22575BF600F37BDB /* CPPendingCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CPPendingCollectionViewCell.swift; sourceTree = "<group>"; };
+		C51AB2F2225762C800F37BDB /* CPRequestsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CPRequestsCollectionViewCell.swift; sourceTree = "<group>"; };
 		C535C4DA223A746600F502AD /* CPCustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CPCustomTableViewCell.swift; sourceTree = "<group>"; };
 		C535C4DC223BBD9200F502AD /* CPParallaxTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CPParallaxTableView.swift; sourceTree = "<group>"; };
 		C5674CB42251E75200E7FEAF /* CPMyAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CPMyAccountViewController.swift; sourceTree = "<group>"; };
@@ -98,6 +116,18 @@
 		C580115C2232867E00DC0092 /* CPConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CPConstants.swift; sourceTree = "<group>"; };
 		C580115E223286B800DC0092 /* CPHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CPHelper.swift; sourceTree = "<group>"; };
 		C5801161223287B500DC0092 /* CPAPIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CPAPIManager.swift; sourceTree = "<group>"; };
+		C5A02AA9225B0B590032D4C2 /* CPRemovePopupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CPRemovePopupViewController.swift; sourceTree = "<group>"; };
+		C5A02AAB225B4F140032D4C2 /* CPCommunity.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CPCommunity.storyboard; sourceTree = "<group>"; };
+		C5A02AAE225B51390032D4C2 /* CPCommunityHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CPCommunityHomeViewController.swift; sourceTree = "<group>"; };
+		C5A02AB4225B55910032D4C2 /* CPFeedbackViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CPFeedbackViewController.swift; sourceTree = "<group>"; };
+		C5A02AB6225B57210032D4C2 /* CPPromotionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CPPromotionsViewController.swift; sourceTree = "<group>"; };
+		C5A02AB8225B572F0032D4C2 /* CPEventsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CPEventsViewController.swift; sourceTree = "<group>"; };
+		C5A02ABA225B68450032D4C2 /* CPFeedbackCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CPFeedbackCollectionViewCell.swift; sourceTree = "<group>"; };
+		C5A02ABC225C5C330032D4C2 /* CPFeedbackSubViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CPFeedbackSubViewController.swift; sourceTree = "<group>"; };
+		C5A02ABE225C75B90032D4C2 /* RatingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingController.swift; sourceTree = "<group>"; };
+		C5A02AC0225DC2FD0032D4C2 /* CPPromotionCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CPPromotionCollectionViewCell.swift; sourceTree = "<group>"; };
+		C5A02AC2225DCEE10032D4C2 /* CPPromotionSubviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CPPromotionSubviewViewController.swift; sourceTree = "<group>"; };
+		C5A02AC6225E0BAE0032D4C2 /* CommunityFlowStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityFlowStruct.swift; sourceTree = "<group>"; };
 		C5E434E522364B1000A17F5C /* CPMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CPMenuViewController.swift; sourceTree = "<group>"; };
 		C5E434E8223650C200A17F5C /* Trade Gothic LT Bold Oblique.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Trade Gothic LT Bold Oblique.ttf"; sourceTree = "<group>"; };
 		C5E434E9223650C200A17F5C /* Trade Gothic LT Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Trade Gothic LT Light.ttf"; sourceTree = "<group>"; };
@@ -181,10 +211,6 @@
 			isa = PBXGroup;
 			children = (
 				C510BD6F2249E19F00A41F6B /* NavigationView */,
-				C510BD5E2248E62800A41F6B /* CPCollectionViewController.swift */,
-				C5F0CF28224E2EEB00252330 /* CPCollectionTabCollectionViewCell.swift */,
-				C510BD602248E63B00A41F6B /* CPPendingListViewController.swift */,
-				C510BD622248E64700A41F6B /* CPRequestsViewController.swift */,
 				C510BD642248E73400A41F6B /* CPNoCollectionViewController.swift */,
 			);
 			path = CPMyCollection;
@@ -202,10 +228,40 @@
 		C510BD6F2249E19F00A41F6B /* NavigationView */ = {
 			isa = PBXGroup;
 			children = (
+				C51AB2F1225762A800F37BDB /* Requests */,
+				C51AB2ED22575BC100F37BDB /* Collection */,
+				C51AB2EE22575BD500F37BDB /* PendingList */,
 				C510BD6B2249E19700A41F6B /* CPCommonLoginHeaderNavigationViewController.swift */,
 				C510BD6C2249E19700A41F6B /* CPCommonLoginHeaderNavigationViewController.xib */,
 			);
 			path = NavigationView;
+			sourceTree = "<group>";
+		};
+		C51AB2ED22575BC100F37BDB /* Collection */ = {
+			isa = PBXGroup;
+			children = (
+				C510BD5E2248E62800A41F6B /* CPCollectionViewController.swift */,
+				C5F0CF28224E2EEB00252330 /* CPCollectionTabCollectionViewCell.swift */,
+			);
+			path = Collection;
+			sourceTree = "<group>";
+		};
+		C51AB2EE22575BD500F37BDB /* PendingList */ = {
+			isa = PBXGroup;
+			children = (
+				C510BD602248E63B00A41F6B /* CPPendingListViewController.swift */,
+				C51AB2EF22575BF600F37BDB /* CPPendingCollectionViewCell.swift */,
+			);
+			path = PendingList;
+			sourceTree = "<group>";
+		};
+		C51AB2F1225762A800F37BDB /* Requests */ = {
+			isa = PBXGroup;
+			children = (
+				C510BD622248E64700A41F6B /* CPRequestsViewController.swift */,
+				C51AB2F2225762C800F37BDB /* CPRequestsCollectionViewCell.swift */,
+			);
+			path = Requests;
 			sourceTree = "<group>";
 		};
 		C5674CB32251E72700E7FEAF /* CPMyAccount */ = {
@@ -230,6 +286,8 @@
 			isa = PBXGroup;
 			children = (
 				C5674CCF225259E900E7FEAF /* CPInboxViewController.swift */,
+				C51AB2EB22572DD400F37BDB /* CPInboxCollectionViewCell.swift */,
+				C5A02AA9225B0B590032D4C2 /* CPRemovePopupViewController.swift */,
 			);
 			path = CPInbox;
 			sourceTree = "<group>";
@@ -269,6 +327,7 @@
 				C5F0CF2A2251D1A100252330 /* MyAccount.storyboard */,
 				C5F0CF20224DE30F00252330 /* NFC.storyboard */,
 				C5674CCC2252597700E7FEAF /* Inbox.storyboard */,
+				C5A02AAB225B4F140032D4C2 /* CPCommunity.storyboard */,
 				C58011502232861200DC0092 /* Assets.xcassets */,
 				C58011522232861200DC0092 /* LaunchScreen.storyboard */,
 				C5F0CEFE224A38DA00252330 /* FBSDKCoreKit.framework */,
@@ -303,6 +362,7 @@
 		C5801163223287DA00DC0092 /* CPViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				C5A02AAD225B51170032D4C2 /* CPCommunity */,
 				C5674CCE225259CF00E7FEAF /* CPInbox */,
 				C5674CB7225216C000E7FEAF /* CPNavigation */,
 				C5674CB32251E72700E7FEAF /* CPMyAccount */,
@@ -317,6 +377,47 @@
 				C5E434FC2236626D00A17F5C /* CPSlideInTransition.swift */,
 			);
 			path = CPViewControllers;
+			sourceTree = "<group>";
+		};
+		C5A02AAD225B51170032D4C2 /* CPCommunity */ = {
+			isa = PBXGroup;
+			children = (
+				C5A02AB3225B55690032D4C2 /* Events */,
+				C5A02AB1225B55550032D4C2 /* Promotion */,
+				C5A02AB0225B554A0032D4C2 /* Feedback */,
+				C5A02AAE225B51390032D4C2 /* CPCommunityHomeViewController.swift */,
+				C5A02AC6225E0BAE0032D4C2 /* CommunityFlowStruct.swift */,
+			);
+			path = CPCommunity;
+			sourceTree = "<group>";
+		};
+		C5A02AB0225B554A0032D4C2 /* Feedback */ = {
+			isa = PBXGroup;
+			children = (
+				C5A02AB4225B55910032D4C2 /* CPFeedbackViewController.swift */,
+				C5A02ABA225B68450032D4C2 /* CPFeedbackCollectionViewCell.swift */,
+				C5A02ABC225C5C330032D4C2 /* CPFeedbackSubViewController.swift */,
+				C5A02ABE225C75B90032D4C2 /* RatingController.swift */,
+			);
+			path = Feedback;
+			sourceTree = "<group>";
+		};
+		C5A02AB1225B55550032D4C2 /* Promotion */ = {
+			isa = PBXGroup;
+			children = (
+				C5A02AB6225B57210032D4C2 /* CPPromotionsViewController.swift */,
+				C5A02AC0225DC2FD0032D4C2 /* CPPromotionCollectionViewCell.swift */,
+				C5A02AC2225DCEE10032D4C2 /* CPPromotionSubviewViewController.swift */,
+			);
+			path = Promotion;
+			sourceTree = "<group>";
+		};
+		C5A02AB3225B55690032D4C2 /* Events */ = {
+			isa = PBXGroup;
+			children = (
+				C5A02AB8225B572F0032D4C2 /* CPEventsViewController.swift */,
+			);
+			path = Events;
 			sourceTree = "<group>";
 		};
 		C5DDEC252237BE5E00E839C3 /* CPProductScreen */ = {
@@ -451,6 +552,7 @@
 				C5E434F5223650C200A17F5C /* Trade Gothic LT Bold.ttf in Resources */,
 				C5E434F7223650C200A17F5C /* Trade Gothic LT Extended.ttf in Resources */,
 				C58011542232861200DC0092 /* LaunchScreen.storyboard in Resources */,
+				C5A02AAC225B4F140032D4C2 /* CPCommunity.storyboard in Resources */,
 				C5674CC72252233900E7FEAF /* CPTopNavigator.xib in Resources */,
 				C58011512232861200DC0092 /* Assets.xcassets in Resources */,
 				C580114F2232860F00DC0092 /* Main.storyboard in Resources */,
@@ -565,21 +667,31 @@
 			files = (
 				C5674CC92252234F00E7FEAF /* CPTopNavigator.swift in Sources */,
 				C5F0CF07224B588700252330 /* ProfilePictureStruct.swift in Sources */,
+				C5A02AC7225E0BAE0032D4C2 /* CommunityFlowStruct.swift in Sources */,
 				C5E434E622364B1000A17F5C /* CPMenuViewController.swift in Sources */,
 				C5674CCB2252373800E7FEAF /* CPEditAccountViewController.swift in Sources */,
 				C504D7092248A05B00DAB0A0 /* CPMyCollectionScreenViewController.swift in Sources */,
 				C5E4351122377E1D00A17F5C /* CPCustomSegmentedControll.swift in Sources */,
+				C5A02AB7225B57210032D4C2 /* CPPromotionsViewController.swift in Sources */,
 				C580115F223286B800DC0092 /* CPHelper.swift in Sources */,
 				C580115D2232867E00DC0092 /* CPConstants.swift in Sources */,
 				C5E434FD2236626D00A17F5C /* CPSlideInTransition.swift in Sources */,
+				C51AB2F022575BF600F37BDB /* CPPendingCollectionViewCell.swift in Sources */,
 				C510BD5F2248E62800A41F6B /* CPCollectionViewController.swift in Sources */,
 				C5F0CF14224CA4FF00252330 /* User+CoreDataProperties.swift in Sources */,
 				C5F0CF23224DF55E00252330 /* CPNfcViewController.swift in Sources */,
+				C5A02ABF225C75B90032D4C2 /* RatingController.swift in Sources */,
+				C5A02ABB225B68450032D4C2 /* CPFeedbackCollectionViewCell.swift in Sources */,
 				C504D7072248A01E00DAB0A0 /* CPProductScreenViewController.swift in Sources */,
+				C5A02AAA225B0B590032D4C2 /* CPRemovePopupViewController.swift in Sources */,
 				C5F0CEFB224A0B5C00252330 /* CPExtenssions.swift in Sources */,
 				C5674CD0225259E900E7FEAF /* CPInboxViewController.swift in Sources */,
 				C510BD632248E64700A41F6B /* CPRequestsViewController.swift in Sources */,
+				C5A02AB9225B572F0032D4C2 /* CPEventsViewController.swift in Sources */,
+				C5A02AC1225DC2FD0032D4C2 /* CPPromotionCollectionViewCell.swift in Sources */,
+				C5A02AAF225B51390032D4C2 /* CPCommunityHomeViewController.swift in Sources */,
 				C5F0CF0C224CA24200252330 /* Truverus.xcdatamodeld in Sources */,
+				C5A02ABD225C5C330032D4C2 /* CPFeedbackSubViewController.swift in Sources */,
 				C504D7052244E75100DAB0A0 /* CPLogedOutMenuViewController.swift in Sources */,
 				C504D70B2248A0FA00DAB0A0 /* CPHomeScreenViewController.swift in Sources */,
 				C5F0CF13224CA4FF00252330 /* User+CoreDataClass.swift in Sources */,
@@ -589,13 +701,17 @@
 				C5F0CF29224E2EEB00252330 /* CPCollectionTabCollectionViewCell.swift in Sources */,
 				C510BD6D2249E19700A41F6B /* CPCommonLoginHeaderNavigationViewController.swift in Sources */,
 				C510BD612248E63B00A41F6B /* CPPendingListViewController.swift in Sources */,
+				C5A02AC3225DCEE10032D4C2 /* CPPromotionSubviewViewController.swift in Sources */,
+				C51AB2F3225762C800F37BDB /* CPRequestsCollectionViewCell.swift in Sources */,
 				C5F0CF09224C978A00252330 /* PercistanceService.swift in Sources */,
 				C5801162223287B500DC0092 /* CPAPIManager.swift in Sources */,
 				C5674CB52251E75200E7FEAF /* CPMyAccountViewController.swift in Sources */,
 				C510BD652248E73400A41F6B /* CPNoCollectionViewController.swift in Sources */,
+				C51AB2EC22572DD400F37BDB /* CPInboxCollectionViewCell.swift in Sources */,
 				C535C4DD223BBD9200F502AD /* CPParallaxTableView.swift in Sources */,
 				C510BD6A2248EC8300A41F6B /* CPSignInViewController.swift in Sources */,
 				C5F0CF18224CD48200252330 /* CPSocialSignInManager.swift in Sources */,
+				C5A02AB5225B55910032D4C2 /* CPFeedbackViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

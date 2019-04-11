@@ -1,14 +1,14 @@
 //
-//  CPRequestsViewController.swift
+//  CPEventsViewController.swift
 //  Truverus
 //
-//  Created by pasan vimukthi wijesuriya on 3/25/19.
+//  Created by pasan vimukthi wijesuriya on 4/8/19.
 //  Copyright © 2019 ClearPicture. All rights reserved.
 //
 
 import UIKit
 
-class CPRequestsViewController: UIViewController {
+class CPEventsViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

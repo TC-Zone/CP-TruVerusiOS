@@ -1,5 +1,5 @@
 //
-//  CPCollectionViewController.swift
+//  CPPendingListViewController.swift
 //  Truverus
 //
 //  Created by pasan vimukthi wijesuriya on 3/25/19.
@@ -8,39 +8,38 @@
 
 import UIKit
 
-class CPCollectionViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
-    
-    @IBOutlet weak var Collection: UICollectionView!
-    
-    let productNames = ["Adidas Jacket","Guccie shoe","Rolex watch","Puffer Jacket"]
-    let productImages = [#imageLiteral(resourceName: "jursey"),#imageLiteral(resourceName: "Running"),#imageLiteral(resourceName: "watch"),#imageLiteral(resourceName: "blackJersy")]
+class CPPendingListViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
 
+    @IBOutlet weak var PendingCollectionView: UICollectionView!
+    
+    let productNames = ["Adidas Jacket","Guccie shoe","Rolex watch"]
+    let productImages = [#imageLiteral(resourceName: "jursey"),#imageLiteral(resourceName: "Running"),#imageLiteral(resourceName: "watch")]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        Collection.dataSource = self
-        Collection.delegate = self
+        PendingCollectionView.dataSource = self
+        PendingCollectionView.delegate = self
         
-        let layout = self.Collection.collectionViewLayout as! UICollectionViewFlowLayout
+        let layout = self.PendingCollectionView.collectionViewLayout as! UICollectionViewFlowLayout
         layout.sectionInset = UIEdgeInsets(top: 5, left: 6, bottom: 0, right: 6)
         layout.minimumInteritemSpacing = 1
-        layout.itemSize = CGSize(width: (self.Collection.frame.size.width - 20) / 2, height: self.Collection.frame.size.height / 2)
+//        layout.itemSize = CGSize(width: (self.PendingCollectionView.frame.size.width - 20) / 2, height: self.PendingCollectionView.frame.size.height / 2)
 
         // Do any additional setup after loading the view.
     }
     
 
-    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return productNames.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = Collection.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! CPCollectionTabCollectionViewCell
+        let cell = PendingCollectionView.dequeueReusableCell(withReuseIdentifier: "PendingCell", for: indexPath) as! CPPendingCollectionViewCell
         
-        cell.collectionCellImage.image = productImages[indexPath.item]
-        cell.CollectionCellProductLable.text = productNames[indexPath.item]
-
+        cell.CellImage.image = productImages[indexPath.item]
+        cell.CellTitle.text = productNames[indexPath.item]
+        
         
         return cell
     }

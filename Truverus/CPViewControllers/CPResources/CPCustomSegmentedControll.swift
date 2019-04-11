@@ -88,7 +88,7 @@ class CPCustomSegmentedControll: UIControl {
         let sv = UIStackView(arrangedSubviews: buttons)
         sv.axis = .horizontal
         sv.alignment = .fill
-        sv.distribution = .fillProportionally
+        sv.distribution = .fillEqually
         addSubview(sv)
         sv.translatesAutoresizingMaskIntoConstraints = false
         sv.topAnchor.constraint(equalTo: self.topAnchor).isActive = true

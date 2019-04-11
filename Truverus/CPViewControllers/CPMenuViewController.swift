@@ -74,6 +74,10 @@ class CPMenuViewController: UITableViewController {
             back(storyboardName: "Inbox", classname: "CPInboxViewController", ClassIdentifierName: "CPInboxViewController")
 //            back(storyboardName: "NFC", classname: "CPNfcViewController", ClassIdentifierName: "CPNfcViewController")
             
+        } else if (indexPath.row == 5) { 
+            
+            back(storyboardName: "CPCommunity", classname: "CPCommunityHomeViewController", ClassIdentifierName: "CPCommunityHomeViewController")
+            
         } else if (indexPath.row == 8) {
             
             
@@ -189,8 +193,13 @@ class CPMenuViewController: UITableViewController {
             launch(sender: Acc)
             
             //navigationController = UINavigationController(rootViewController: Acc)
+          
+        } else if (classname == "CPCommunityHomeViewController") {
             
+            let storyboard : UIStoryboard = UIStoryboard(name: storyboardName, bundle: nil)
+            let Acc : CPCommunityHomeViewController = storyboard.instantiateViewController(withIdentifier: ClassIdentifierName) as! CPCommunityHomeViewController
             
+            launch(sender: Acc)
             
         }
         
