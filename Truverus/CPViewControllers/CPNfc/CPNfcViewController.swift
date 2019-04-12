@@ -20,7 +20,7 @@ class CPNfcViewController: UIViewController, NFCNDEFReaderSessionDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        viewModel = CPScanViewModel.instance
         // Do any additional setup after loading the view.
     }
     
