@@ -11,7 +11,7 @@ import UIKit
 
 public extension TagCellLayout {
 	
-	enum LayoutAlignment: Int {
+	public enum LayoutAlignment: Int {
 		
 		case left
 		case center

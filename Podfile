@@ -17,7 +17,7 @@ target 'Truverus' do
   pod 'GoogleSignIn'
   pod 'SnapKit', '~> 4.0.0'
   pod 'GoogleSignIn'
-  pod 'TaggerKit', :git => 'https://github.com/nekonora/TaggerKit.git'
+  pod 'TaggerKit', :git => 'https://github.com/nekonora/TaggerKit.git', :tag => '0.4.1'
 
   # Pods for Truverus
 
