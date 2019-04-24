@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="KAe-eF-ThH">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -82,9 +82,6 @@ to authenticate</string>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
                                 </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <action selector="scanPressed:" destination="2Pd-e0-w2m" eventType="touchUpInside" id="vvR-ov-q92"/>
-                                </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9sR-hL-OVP" customClass="CPTopNavigator" customModule="Truverus" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="20" width="375" height="70"/>
@@ -113,29 +110,8 @@ to authenticate</string>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="QM7-Iu-eHm"/>
                     </view>
-                    <navigationItem key="navigationItem" id="EJY-Hg-sjP"/>
-                    <connections>
-                        <outlet property="btnScan" destination="lcz-ck-cih" id="MYa-4v-rc6"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QDq-LG-HGl" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2538.4000000000001" y="-218.1409295352324"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="l1D-Mf-uas">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="KAe-eF-ThH" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="LqF-oX-Rbo">
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="2Pd-e0-w2m" kind="relationship" relationship="rootViewController" id="tWo-O7-gE9"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="WsB-NG-E1e" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1599.2" y="-218.1409295352324"/>
         </scene>

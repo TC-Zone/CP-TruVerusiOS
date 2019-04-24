@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		531A8E561A06505FE1B0FF7B /* Pods_Truverus.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2B8E0D6FA9FC11CE7D674AE /* Pods_Truverus.framework */; };
-		7C32C1302260044C00BF1FC8 /* CPScanViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C32C12F2260044B00BF1FC8 /* CPScanViewModel.swift */; };
 		C504D7052244E75100DAB0A0 /* CPLogedOutMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C504D7042244E75100DAB0A0 /* CPLogedOutMenuViewController.swift */; };
 		C504D7072248A01E00DAB0A0 /* CPProductScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C504D7062248A01E00DAB0A0 /* CPProductScreenViewController.swift */; };
 		C504D7092248A05B00DAB0A0 /* CPMyCollectionScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C504D7082248A05B00DAB0A0 /* CPMyCollectionScreenViewController.swift */; };
@@ -26,6 +25,12 @@
 		C51AB2F3225762C800F37BDB /* CPRequestsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C51AB2F2225762C800F37BDB /* CPRequestsCollectionViewCell.swift */; };
 		C535C4DB223A746600F502AD /* CPCustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C535C4DA223A746600F502AD /* CPCustomTableViewCell.swift */; };
 		C535C4DD223BBD9200F502AD /* CPParallaxTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C535C4DC223BBD9200F502AD /* CPParallaxTableView.swift */; };
+		C535F273225F1947000516C4 /* CPEventCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C535F272225F1947000516C4 /* CPEventCollectionViewCell.swift */; };
+		C535F275225F1D28000516C4 /* CPEventSubViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C535F274225F1D28000516C4 /* CPEventSubViewController.swift */; };
+		C535F279225F4037000516C4 /* CPTransferSubViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C535F278225F4037000516C4 /* CPTransferSubViewController.swift */; };
+		C535F27B225F5288000516C4 /* CPTransferCustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C535F27A225F5288000516C4 /* CPTransferCustomTableViewCell.swift */; };
+		C535F27D225FEC71000516C4 /* Transfer.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C535F27C225FEC71000516C4 /* Transfer.storyboard */; };
+		C535F280225FEDA9000516C4 /* CPTransferViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C535F27F225FEDA9000516C4 /* CPTransferViewController.swift */; };
 		C5674CB52251E75200E7FEAF /* CPMyAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5674CB42251E75200E7FEAF /* CPMyAccountViewController.swift */; };
 		C5674CC72252233900E7FEAF /* CPTopNavigator.xib in Resources */ = {isa = PBXBuildFile; fileRef = C5674CC62252233900E7FEAF /* CPTopNavigator.xib */; };
 		C5674CC92252234F00E7FEAF /* CPTopNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5674CC82252234F00E7FEAF /* CPTopNavigator.swift */; };
@@ -79,13 +84,11 @@
 		C5F0CF27224E07A100252330 /* CPUiViewTransitions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5F0CF26224E07A100252330 /* CPUiViewTransitions.swift */; };
 		C5F0CF29224E2EEB00252330 /* CPCollectionTabCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5F0CF28224E2EEB00252330 /* CPCollectionTabCollectionViewCell.swift */; };
 		C5F0CF2B2251D1A100252330 /* MyAccount.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C5F0CF2A2251D1A100252330 /* MyAccount.storyboard */; };
+		CED3B99C226EEB6C0043B028 /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CED3B99B226EEB6C0043B028 /* Settings.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		59F4E8F80B1B4C143FD030D6 /* Pods-Truverus.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Truverus.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Truverus/Pods-Truverus.debug.xcconfig"; sourceTree = "<group>"; };
-		7C32C12D225FFC6600BF1FC8 /* NFC.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = NFC.entitlements; sourceTree = "<group>"; };
-		7C32C12E225FFD0C00BF1FC8 /* Truverus.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Truverus.entitlements; sourceTree = "<group>"; };
-		7C32C12F2260044B00BF1FC8 /* CPScanViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CPScanViewModel.swift; sourceTree = "<group>"; };
 		925B2AEABBC47E60F1EFCC91 /* Pods-Truverus.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Truverus.release.xcconfig"; path = "Pods/Target Support Files/Pods-Truverus/Pods-Truverus.release.xcconfig"; sourceTree = "<group>"; };
 		B2B8E0D6FA9FC11CE7D674AE /* Pods_Truverus.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Truverus.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C504D7042244E75100DAB0A0 /* CPLogedOutMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CPLogedOutMenuViewController.swift; sourceTree = "<group>"; };
@@ -105,6 +108,12 @@
 		C51AB2F2225762C800F37BDB /* CPRequestsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CPRequestsCollectionViewCell.swift; sourceTree = "<group>"; };
 		C535C4DA223A746600F502AD /* CPCustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CPCustomTableViewCell.swift; sourceTree = "<group>"; };
 		C535C4DC223BBD9200F502AD /* CPParallaxTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CPParallaxTableView.swift; sourceTree = "<group>"; };
+		C535F272225F1947000516C4 /* CPEventCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CPEventCollectionViewCell.swift; sourceTree = "<group>"; };
+		C535F274225F1D28000516C4 /* CPEventSubViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CPEventSubViewController.swift; sourceTree = "<group>"; };
+		C535F278225F4037000516C4 /* CPTransferSubViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CPTransferSubViewController.swift; sourceTree = "<group>"; };
+		C535F27A225F5288000516C4 /* CPTransferCustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CPTransferCustomTableViewCell.swift; sourceTree = "<group>"; };
+		C535F27C225FEC71000516C4 /* Transfer.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Transfer.storyboard; sourceTree = "<group>"; };
+		C535F27F225FEDA9000516C4 /* CPTransferViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CPTransferViewController.swift; sourceTree = "<group>"; };
 		C5674CB42251E75200E7FEAF /* CPMyAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CPMyAccountViewController.swift; sourceTree = "<group>"; };
 		C5674CC62252233900E7FEAF /* CPTopNavigator.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CPTopNavigator.xib; sourceTree = "<group>"; };
 		C5674CC82252234F00E7FEAF /* CPTopNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CPTopNavigator.swift; sourceTree = "<group>"; };
@@ -178,6 +187,7 @@
 		C5F0CF26224E07A100252330 /* CPUiViewTransitions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CPUiViewTransitions.swift; sourceTree = "<group>"; };
 		C5F0CF28224E2EEB00252330 /* CPCollectionTabCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CPCollectionTabCollectionViewCell.swift; sourceTree = "<group>"; };
 		C5F0CF2A2251D1A100252330 /* MyAccount.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MyAccount.storyboard; sourceTree = "<group>"; };
+		CED3B99B226EEB6C0043B028 /* Settings.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -246,6 +256,7 @@
 			children = (
 				C510BD5E2248E62800A41F6B /* CPCollectionViewController.swift */,
 				C5F0CF28224E2EEB00252330 /* CPCollectionTabCollectionViewCell.swift */,
+				C535F277225F401A000516C4 /* ProductTransfer */,
 			);
 			path = Collection;
 			sourceTree = "<group>";
@@ -266,6 +277,23 @@
 				C51AB2F2225762C800F37BDB /* CPRequestsCollectionViewCell.swift */,
 			);
 			path = Requests;
+			sourceTree = "<group>";
+		};
+		C535F277225F401A000516C4 /* ProductTransfer */ = {
+			isa = PBXGroup;
+			children = (
+				C535F278225F4037000516C4 /* CPTransferSubViewController.swift */,
+				C535F27A225F5288000516C4 /* CPTransferCustomTableViewCell.swift */,
+			);
+			path = ProductTransfer;
+			sourceTree = "<group>";
+		};
+		C535F27E225FED7D000516C4 /* CPTransfer */ = {
+			isa = PBXGroup;
+			children = (
+				C535F27F225FEDA9000516C4 /* CPTransferViewController.swift */,
+			);
+			path = CPTransfer;
 			sourceTree = "<group>";
 		};
 		C5674CB32251E72700E7FEAF /* CPMyAccount */ = {
@@ -299,7 +327,6 @@
 		C580113D2232860F00DC0092 = {
 			isa = PBXGroup;
 			children = (
-				7C32C12D225FFC6600BF1FC8 /* NFC.entitlements */,
 				C5F0CF0A224CA24200252330 /* Truverus.xcdatamodeld */,
 				C58011482232860F00DC0092 /* Truverus */,
 				C58011472232860F00DC0092 /* Products */,
@@ -320,7 +347,6 @@
 		C58011482232860F00DC0092 /* Truverus */ = {
 			isa = PBXGroup;
 			children = (
-				7C32C12E225FFD0C00BF1FC8 /* Truverus.entitlements */,
 				C5E434E7223650C200A17F5C /* Fonts */,
 				C5801163223287DA00DC0092 /* CPViewControllers */,
 				C580115B2232865E00DC0092 /* Helper */,
@@ -334,6 +360,8 @@
 				C5F0CF20224DE30F00252330 /* NFC.storyboard */,
 				C5674CCC2252597700E7FEAF /* Inbox.storyboard */,
 				C5A02AAB225B4F140032D4C2 /* CPCommunity.storyboard */,
+				C535F27C225FEC71000516C4 /* Transfer.storyboard */,
+				CED3B99B226EEB6C0043B028 /* Settings.storyboard */,
 				C58011502232861200DC0092 /* Assets.xcassets */,
 				C58011522232861200DC0092 /* LaunchScreen.storyboard */,
 				C5F0CEFE224A38DA00252330 /* FBSDKCoreKit.framework */,
@@ -368,6 +396,7 @@
 		C5801163223287DA00DC0092 /* CPViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				C535F27E225FED7D000516C4 /* CPTransfer */,
 				C5A02AAD225B51170032D4C2 /* CPCommunity */,
 				C5674CCE225259CF00E7FEAF /* CPInbox */,
 				C5674CB7225216C000E7FEAF /* CPNavigation */,
@@ -422,6 +451,8 @@
 			isa = PBXGroup;
 			children = (
 				C5A02AB8225B572F0032D4C2 /* CPEventsViewController.swift */,
+				C535F272225F1947000516C4 /* CPEventCollectionViewCell.swift */,
+				C535F274225F1D28000516C4 /* CPEventSubViewController.swift */,
 			);
 			path = Events;
 			sourceTree = "<group>";
@@ -484,7 +515,6 @@
 			isa = PBXGroup;
 			children = (
 				C5F0CF22224DF55E00252330 /* CPNfcViewController.swift */,
-				7C32C12F2260044B00BF1FC8 /* CPScanViewModel.swift */,
 			);
 			path = CPNfc;
 			sourceTree = "<group>";
@@ -526,11 +556,6 @@
 					C58011452232860F00DC0092 = {
 						CreatedOnToolsVersion = 10.1;
 						LastSwiftMigration = 1020;
-						SystemCapabilities = {
-							com.apple.NearFieldCommunicationTagReading = {
-								enabled = 1;
-							};
-						};
 					};
 				};
 			};
@@ -559,6 +584,7 @@
 			files = (
 				C5E434F2223650C200A17F5C /* Trade Gothic LT Bold Oblique.ttf in Resources */,
 				C5E434FB223650C200A17F5C /* Trade Gothic LT Bold No. 2 Oblique.ttf in Resources */,
+				CED3B99C226EEB6C0043B028 /* Settings.storyboard in Resources */,
 				C5F0CF2B2251D1A100252330 /* MyAccount.storyboard in Resources */,
 				C510BD672248E80400A41F6B /* Login.storyboard in Resources */,
 				C5E434F5223650C200A17F5C /* Trade Gothic LT Bold.ttf in Resources */,
@@ -566,6 +592,7 @@
 				C58011542232861200DC0092 /* LaunchScreen.storyboard in Resources */,
 				C5A02AAC225B4F140032D4C2 /* CPCommunity.storyboard in Resources */,
 				C5674CC72252233900E7FEAF /* CPTopNavigator.xib in Resources */,
+				C535F27D225FEC71000516C4 /* Transfer.storyboard in Resources */,
 				C58011512232861200DC0092 /* Assets.xcassets in Resources */,
 				C580114F2232860F00DC0092 /* Main.storyboard in Resources */,
 				C5E434FA223650C200A17F5C /* Trade Gothic LT Oblique.ttf in Resources */,
@@ -589,17 +616,21 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
+			inputFileListPaths = (
+			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-Truverus/Pods-Truverus-resources.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-Truverus/Pods-Truverus-resources.sh",
 				"${PODS_ROOT}/GoogleSignIn/Resources/GoogleSignIn.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleSignIn.bundle",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Truverus/Pods-Truverus-resources.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Truverus/Pods-Truverus-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		9FB669A75494969841A5F410 /* [CP] Check Pods Manifest.lock */ = {
@@ -607,11 +638,15 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
+			inputFileListPaths = (
+			);
 			inputPaths = (
 				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
 				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
 			outputPaths = (
 				"$(DERIVED_FILE_DIR)/Pods-Truverus-checkManifestLockResult.txt",
 			);
@@ -625,8 +660,10 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
+			inputFileListPaths = (
+			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-Truverus/Pods-Truverus-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-Truverus/Pods-Truverus-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/AlamofireObjectMapper/AlamofireObjectMapper.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
@@ -640,6 +677,8 @@
 				"${BUILT_PRODUCTS_DIR}/XCDYouTubeKit/XCDYouTubeKit.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireObjectMapper.framework",
@@ -655,7 +694,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Truverus/Pods-Truverus-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Truverus/Pods-Truverus-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -686,6 +725,7 @@
 				C5A02AAA225B0B590032D4C2 /* CPRemovePopupViewController.swift in Sources */,
 				C5F0CEFB224A0B5C00252330 /* CPExtenssions.swift in Sources */,
 				C5674CD0225259E900E7FEAF /* CPInboxViewController.swift in Sources */,
+				C535F279225F4037000516C4 /* CPTransferSubViewController.swift in Sources */,
 				C510BD632248E64700A41F6B /* CPRequestsViewController.swift in Sources */,
 				C5A02AB9225B572F0032D4C2 /* CPEventsViewController.swift in Sources */,
 				C5A02AC1225DC2FD0032D4C2 /* CPPromotionCollectionViewCell.swift in Sources */,
@@ -696,14 +736,16 @@
 				C504D70B2248A0FA00DAB0A0 /* CPHomeScreenViewController.swift in Sources */,
 				C5F0CF13224CA4FF00252330 /* User+CoreDataClass.swift in Sources */,
 				C535C4DB223A746600F502AD /* CPCustomTableViewCell.swift in Sources */,
+				C535F280225FEDA9000516C4 /* CPTransferViewController.swift in Sources */,
 				C5F0CF27224E07A100252330 /* CPUiViewTransitions.swift in Sources */,
 				C580114A2232860F00DC0092 /* AppDelegate.swift in Sources */,
 				C5F0CF29224E2EEB00252330 /* CPCollectionTabCollectionViewCell.swift in Sources */,
 				C510BD6D2249E19700A41F6B /* CPCommonLoginHeaderNavigationViewController.swift in Sources */,
 				C510BD612248E63B00A41F6B /* CPPendingListViewController.swift in Sources */,
-				7C32C1302260044C00BF1FC8 /* CPScanViewModel.swift in Sources */,
 				C5A02AC3225DCEE10032D4C2 /* CPPromotionSubviewViewController.swift in Sources */,
 				C51AB2F3225762C800F37BDB /* CPRequestsCollectionViewCell.swift in Sources */,
+				C535F273225F1947000516C4 /* CPEventCollectionViewCell.swift in Sources */,
+				C535F27B225F5288000516C4 /* CPTransferCustomTableViewCell.swift in Sources */,
 				C5F0CF09224C978A00252330 /* PercistanceService.swift in Sources */,
 				C5801162223287B500DC0092 /* CPAPIManager.swift in Sources */,
 				C5674CB52251E75200E7FEAF /* CPMyAccountViewController.swift in Sources */,
@@ -712,6 +754,7 @@
 				C535C4DD223BBD9200F502AD /* CPParallaxTableView.swift in Sources */,
 				C510BD6A2248EC8300A41F6B /* CPSignInViewController.swift in Sources */,
 				C5F0CF18224CD48200252330 /* CPSocialSignInManager.swift in Sources */,
+				C535F275225F1D28000516C4 /* CPEventSubViewController.swift in Sources */,
 				C5A02AB5225B55910032D4C2 /* CPFeedbackViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -860,22 +903,20 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_ENTITLEMENTS = Truverus/Truverus.entitlements;
-				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = UQ9GR7XCJV;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 6Q5Z3UP42B;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Truverus",
 				);
 				INFOPLIST_FILE = Truverus/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.clearpicture.testapp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.clearpicture.Truverus;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "NFC DEV";
 				SWIFT_OBJC_BRIDGING_HEADER = "Truverus-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.2;
@@ -889,23 +930,20 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_ENTITLEMENTS = Truverus/Truverus.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Distribution";
-				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = UQ9GR7XCJV;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 6Q5Z3UP42B;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Truverus",
 				);
 				INFOPLIST_FILE = Truverus/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.clearpicture.testapp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.clearpicture.Truverus;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "NFC Adhoc";
 				SWIFT_OBJC_BRIDGING_HEADER = "Truverus-Bridging-Header.h";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";

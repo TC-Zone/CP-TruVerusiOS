@@ -79,6 +79,7 @@ class CPPromotionsViewController: UIViewController, UICollectionViewDelegate , U
             let vc  = self.children[0] as! CPPromotionSubviewViewController
             vc.indexpath = indexPath.row
             vc.viewWillAppear(true)
+            vc.setdata()
             
             animateTransition()
 

@@ -11,6 +11,7 @@ import UIKit
 class CPCollectionViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
     
     @IBOutlet weak var Collection: UICollectionView!
+    @IBOutlet weak var TransferSubViewContainer: UIView!
     
     let productNames = ["Adidas Jacket","Guccie shoe","Rolex watch","Puffer Jacket"]
     let productImages = [#imageLiteral(resourceName: "jursey"),#imageLiteral(resourceName: "Running"),#imageLiteral(resourceName: "watch"),#imageLiteral(resourceName: "blackJersy")]
@@ -47,6 +48,7 @@ class CPCollectionViewController: UIViewController, UICollectionViewDelegate, UI
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let cell = collectionView.cellForItem(at: indexPath)
+        
         cell?.contentView.layer.cornerRadius = 6.0
         cell?.contentView.layer.borderWidth = 1.0
         cell?.contentView.layer.borderColor = UIColor.clear.cgColor
@@ -59,6 +61,16 @@ class CPCollectionViewController: UIViewController, UICollectionViewDelegate, UI
         cell?.layer.masksToBounds = false
         cell?.layer.shadowPath = UIBezierPath(roundedRect: cell!.bounds, cornerRadius: (cell?.contentView.layer.cornerRadius)!).cgPath
         cell?.layer.backgroundColor = UIColor.white.cgColor
+        
+        
+        let vc  = self.children[0] as! CPTransferSubViewController
+        vc.index = indexPath.row
+        vc.viewWillAppear(true)
+        vc.setdata()
+       
+        
+        animateTransition()
+        
     }
     
     func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
@@ -78,6 +90,26 @@ class CPCollectionViewController: UIViewController, UICollectionViewDelegate, UI
         cell?.layer.masksToBounds = false
         cell?.layer.shadowPath = UIBezierPath(roundedRect: cell!.bounds, cornerRadius: (cell?.contentView.layer.cornerRadius)!).cgPath
         cell?.layer.backgroundColor = UIColor.white.cgColor
+    }
+    
+    
+    func animateTransition() {
+        
+        let transition = CATransition()
+        transition.type = CATransitionType.push
+        transition.subtype = CATransitionSubtype.fromRight
+        self.view.layer.add(transition, forKey: nil)
+        self.view.bringSubviewToFront(self.TransferSubViewContainer)
+        TransferSubViewContainer.alpha = 1
+        
+        
+    }
+    
+    func handleBack() {
+        
+        self.view.sendSubviewToBack(self.TransferSubViewContainer)
+        self.TransferSubViewContainer.alpha = 0
+        
     }
     
     /*

@@ -9,6 +9,7 @@
 import UIKit
 
 class CPProductScreenViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+    
     @IBOutlet weak var TableParralex: CPParallaxTableView!
     
     var descriptionText = String()

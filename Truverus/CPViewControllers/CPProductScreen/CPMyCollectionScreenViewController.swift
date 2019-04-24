@@ -31,12 +31,14 @@ class CPMyCollectionScreenViewController: UIViewController {
             PendingContainer.alpha = 0
             RequestsContainer.alpha = 0
             
+            
         } else if (x == "logedout") {
             print("seteeee already")
             nocollectioncontainer.alpha = 1
             collectionContainer.alpha = 0
             PendingContainer.alpha = 0
             RequestsContainer.alpha = 0
+            
             
         }
         
@@ -58,12 +60,14 @@ class CPMyCollectionScreenViewController: UIViewController {
                 PendingContainer.alpha = 0
                 RequestsContainer.alpha = 0
                 
+                
             } else if (x == "logedout") {
                  print("seteeee already")
                 nocollectioncontainer.alpha = 1
                 collectionContainer.alpha = 0
                 PendingContainer.alpha = 0
                 RequestsContainer.alpha = 0
+                
                 
             }
             
@@ -76,12 +80,14 @@ class CPMyCollectionScreenViewController: UIViewController {
                 collectionContainer.alpha = 0
                 RequestsContainer.alpha = 0
                 
+                
             } else if (x == "logedout") {
                 
                 nocollectioncontainer.alpha = 1
                 PendingContainer.alpha = 0
                 collectionContainer.alpha = 0
                 RequestsContainer.alpha = 0
+               
                 
             }
             
@@ -94,6 +100,7 @@ class CPMyCollectionScreenViewController: UIViewController {
                 PendingContainer.alpha = 0
                 nocollectioncontainer.alpha = 0
                 collectionContainer.alpha = 0
+               
                 
             } else if (x == "logedout") {
                 
@@ -101,6 +108,7 @@ class CPMyCollectionScreenViewController: UIViewController {
                 PendingContainer.alpha = 0
                 collectionContainer.alpha = 0
                 RequestsContainer.alpha = 0
+                
                 
             }
             
