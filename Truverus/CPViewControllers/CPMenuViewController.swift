@@ -78,6 +78,10 @@ class CPMenuViewController: UITableViewController {
             
             back(storyboardName: "CPCommunity", classname: "CPCommunityHomeViewController", ClassIdentifierName: "CPCommunityHomeViewController")
             
+        } else if (indexPath.row == 6) {
+            
+            back(storyboardName: "Settings", classname: "CPSettingsViewController", ClassIdentifierName: "CPSettingsViewController")
+            
         } else if (indexPath.row == 8) {
             
             
@@ -200,6 +204,13 @@ class CPMenuViewController: UITableViewController {
             let Acc : CPCommunityHomeViewController = storyboard.instantiateViewController(withIdentifier: ClassIdentifierName) as! CPCommunityHomeViewController
             
             launch(sender: Acc)
+            
+        } else if (classname == "CPSettingsViewController") {
+            
+            let storyboard : UIStoryboard = UIStoryboard(name: storyboardName, bundle: nil)
+            let setting : CPSettingsViewController = storyboard.instantiateViewController(withIdentifier: ClassIdentifierName) as! CPSettingsViewController
+            
+            launch(sender: setting)
             
         }
         

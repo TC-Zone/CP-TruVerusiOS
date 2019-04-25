@@ -84,6 +84,8 @@
 		C5F0CF27224E07A100252330 /* CPUiViewTransitions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5F0CF26224E07A100252330 /* CPUiViewTransitions.swift */; };
 		C5F0CF29224E2EEB00252330 /* CPCollectionTabCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5F0CF28224E2EEB00252330 /* CPCollectionTabCollectionViewCell.swift */; };
 		C5F0CF2B2251D1A100252330 /* MyAccount.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C5F0CF2A2251D1A100252330 /* MyAccount.storyboard */; };
+		CE0767FA2271B108006C1C09 /* CPSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0767F92271B108006C1C09 /* CPSettingsViewController.swift */; };
+		CE0767FD2271BBF4006C1C09 /* CPMapViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0767FC2271BBF4006C1C09 /* CPMapViewViewController.swift */; };
 		CED3B99C226EEB6C0043B028 /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CED3B99B226EEB6C0043B028 /* Settings.storyboard */; };
 /* End PBXBuildFile section */
 
@@ -187,6 +189,8 @@
 		C5F0CF26224E07A100252330 /* CPUiViewTransitions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CPUiViewTransitions.swift; sourceTree = "<group>"; };
 		C5F0CF28224E2EEB00252330 /* CPCollectionTabCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CPCollectionTabCollectionViewCell.swift; sourceTree = "<group>"; };
 		C5F0CF2A2251D1A100252330 /* MyAccount.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MyAccount.storyboard; sourceTree = "<group>"; };
+		CE0767F92271B108006C1C09 /* CPSettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CPSettingsViewController.swift; sourceTree = "<group>"; };
+		CE0767FC2271BBF4006C1C09 /* CPMapViewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CPMapViewViewController.swift; sourceTree = "<group>"; };
 		CED3B99B226EEB6C0043B028 /* Settings.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -396,6 +400,7 @@
 		C5801163223287DA00DC0092 /* CPViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				CE0767F52271B0B6006C1C09 /* CPSettings */,
 				C535F27E225FED7D000516C4 /* CPTransfer */,
 				C5A02AAD225B51170032D4C2 /* CPCommunity */,
 				C5674CCE225259CF00E7FEAF /* CPInbox */,
@@ -519,6 +524,23 @@
 			path = CPNfc;
 			sourceTree = "<group>";
 		};
+		CE0767F52271B0B6006C1C09 /* CPSettings */ = {
+			isa = PBXGroup;
+			children = (
+				CE0767FB2271BBDD006C1C09 /* Map */,
+				CE0767F92271B108006C1C09 /* CPSettingsViewController.swift */,
+			);
+			path = CPSettings;
+			sourceTree = "<group>";
+		};
+		CE0767FB2271BBDD006C1C09 /* Map */ = {
+			isa = PBXGroup;
+			children = (
+				CE0767FC2271BBF4006C1C09 /* CPMapViewViewController.swift */,
+			);
+			path = Map;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -620,12 +642,16 @@
 			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-Truverus/Pods-Truverus-resources.sh",
+				"${PODS_ROOT}/GoogleMaps/Maps/Frameworks/GoogleMaps.framework/Resources/GoogleMaps.bundle",
+				"${PODS_ROOT}/GooglePlaces/Frameworks/GooglePlaces.framework/Resources/GooglePlaces.bundle",
 				"${PODS_ROOT}/GoogleSignIn/Resources/GoogleSignIn.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputFileListPaths = (
 			);
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleMaps.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GooglePlaces.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleSignIn.bundle",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -717,6 +743,7 @@
 				C5E434FD2236626D00A17F5C /* CPSlideInTransition.swift in Sources */,
 				C51AB2F022575BF600F37BDB /* CPPendingCollectionViewCell.swift in Sources */,
 				C510BD5F2248E62800A41F6B /* CPCollectionViewController.swift in Sources */,
+				CE0767FD2271BBF4006C1C09 /* CPMapViewViewController.swift in Sources */,
 				C5F0CF14224CA4FF00252330 /* User+CoreDataProperties.swift in Sources */,
 				C5F0CF23224DF55E00252330 /* CPNfcViewController.swift in Sources */,
 				C5A02ABF225C75B90032D4C2 /* RatingController.swift in Sources */,
@@ -749,6 +776,7 @@
 				C5F0CF09224C978A00252330 /* PercistanceService.swift in Sources */,
 				C5801162223287B500DC0092 /* CPAPIManager.swift in Sources */,
 				C5674CB52251E75200E7FEAF /* CPMyAccountViewController.swift in Sources */,
+				CE0767FA2271B108006C1C09 /* CPSettingsViewController.swift in Sources */,
 				C510BD652248E73400A41F6B /* CPNoCollectionViewController.swift in Sources */,
 				C51AB2EC22572DD400F37BDB /* CPInboxCollectionViewCell.swift in Sources */,
 				C535C4DD223BBD9200F502AD /* CPParallaxTableView.swift in Sources */,

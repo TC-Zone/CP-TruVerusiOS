@@ -23,6 +23,7 @@ class CPHomeScreenViewController: UIViewController {
         ProductContainer.alpha = 1
         CollectionContainer.alpha = 0
         
+        
     }
   
     @IBAction func SelectionChanged(_ sender: CPCustomSegmentedControll) {
@@ -66,7 +67,12 @@ class CPHomeScreenViewController: UIViewController {
         
     }
     
-    
+    func handleBack() {
+       
+        self.segmentController.selectedSegmentIndex = 1
+        self.SelectionChanged(segmentController)
+        
+    }
     
     
 }

@@ -151,9 +151,18 @@ class CPTransferViewController: UIViewController, UITableViewDelegate, UITableVi
     
     @IBAction func BackButtonAction(_ sender: Any) {
         
+        let storyboard : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let vc : CPHomeScreenViewController = storyboard.instantiateViewController(withIdentifier: "CPHomeScreenViewController") as! CPHomeScreenViewController
+        
+        UIApplication.shared.keyWindow?.setRootViewController(vc, options: .init(direction: .toLeft, style: .easeIn))
+        vc.handleBack()
         
         
     }
+    
+ 
+        
+       
     
     @IBAction func TransferButton(_ sender: Any) {
         

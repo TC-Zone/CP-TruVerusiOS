@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Qet-kS-qbn">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Qet-kS-qbn">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -871,7 +871,7 @@
         <!--Product Screen View Controller-->
         <scene sceneID="rH8-9V-LaB">
             <objects>
-                <viewController id="Ia4-TP-J9a" customClass="CPProductScreenViewController" customModule="Truverus" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CPProductScreenViewControllerVC" id="Ia4-TP-J9a" customClass="CPProductScreenViewController" customModule="Truverus" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="vwg-Et-u3Y">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="567"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1594,6 +1594,7 @@
                             <constraint firstItem="oJH-ih-NdA" firstAttribute="top" secondItem="eza-r3-7Dg" secondAttribute="top" id="f6Q-CS-07w"/>
                             <constraint firstAttribute="bottom" secondItem="oJH-ih-NdA" secondAttribute="bottom" id="xHX-IT-xB7"/>
                         </constraints>
+                        <viewLayoutGuide key="safeArea" id="Uex-DV-9kI"/>
                     </view>
                     <connections>
                         <outlet property="Table" destination="oJH-ih-NdA" id="fzb-Zs-eDC"/>
@@ -1614,7 +1615,7 @@
         <image name="help-1" width="20" height="20"/>
         <image name="log out-1" width="20" height="19"/>
         <image name="login" width="13" height="16"/>
-        <image name="logo" width="1289" height="531"/>
+        <image name="logo" width="309.3599853515625" height="127.44000244140625"/>
         <image name="no collection" width="21" height="26"/>
         <image name="play Button" width="23" height="23"/>
         <image name="settings" width="20" height="20"/>

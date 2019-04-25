@@ -102,6 +102,11 @@ class CPCollectionViewController: UIViewController, UICollectionViewDelegate, UI
         self.view.bringSubviewToFront(self.TransferSubViewContainer)
         TransferSubViewContainer.alpha = 1
         
+//        let popOverVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "CPProductScreenViewControllerVC") as! CPProductScreenViewController
+//        popOverVC.modalPresentationStyle = .overCurrentContext
+//
+//        self.present(popOverVC, animated: false, completion: nil)
+        
         
     }
     

@@ -11,6 +11,8 @@ import GoogleSignIn
 import FBSDKCoreKit
 import FBSDKLoginKit
 import CoreData
+import GoogleMaps
+import GooglePlaces
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -21,6 +23,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        GMSServices.provideAPIKey("AIzaSyDvL7BFDeuhTJMjHZgRA4Bwfs05RCVubq8")
+        GMSPlacesClient.provideAPIKey("AIzaSyDvL7BFDeuhTJMjHZgRA4Bwfs05RCVubq8")
         GIDSignIn.sharedInstance().clientID = "231942660556-co68nr2169n4m64cdplse8qn733dloj3.apps.googleusercontent.com"
         GIDSignIn.sharedInstance().delegate = self as? GIDSignInDelegate
         GIDSignIn.sharedInstance()?.scopes = ["https://www.googleapis.com/auth/plus.login","https://www.googleapis.com/auth/plus.me"]
