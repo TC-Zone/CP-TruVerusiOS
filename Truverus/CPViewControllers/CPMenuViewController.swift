@@ -11,6 +11,7 @@ import GoogleSignIn
 import FBSDKLoginKit
 import Kingfisher
 import CoreData
+import UIKit.UIGestureRecognizerSubclass
 
 enum MenuType : Int {
     case logo
@@ -25,7 +26,7 @@ enum MenuType : Int {
     case logout
 }
 
-class CPMenuViewController: UITableViewController {
+class CPMenuViewController: UITableViewController, UIGestureRecognizerDelegate {
 
     @IBOutlet weak var Email: UILabel!
     @IBOutlet weak var UserName: UILabel!
@@ -33,6 +34,7 @@ class CPMenuViewController: UITableViewController {
     @IBOutlet weak var FirstCell: UITableViewCell!
     @IBOutlet weak var LastCell: UITableViewCell!
     
+    @IBOutlet var Table: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,9 +42,64 @@ class CPMenuViewController: UITableViewController {
         CreateProfilePic()
         FirstCell.selectionStyle = UITableViewCell.SelectionStyle.none
         LastCell.selectionStyle = UITableViewCell.SelectionStyle.none
+        
+        self.view.isUserInteractionEnabled = true
+        self.Table.isUserInteractionEnabled = true
+        
+        let rightSwipe = UISwipeGestureRecognizer(target: self, action: #selector(handleSwipe(sender:)))
+        let leftSwipe = UISwipeGestureRecognizer(target: self, action: #selector(handleSwipe(sender:)))
+        leftSwipe.direction = .left
+        
+        view.addGestureRecognizer(rightSwipe)
+        view.addGestureRecognizer(leftSwipe)
+        
+        
+        //self..addGestureRecognizer(tap)
+//        if let window = UIApplication.shared.keyWindow {
+//            
+//            let blackView = UIView()
+//            blackView.backgroundColor = UIColor(white: 0, alpha: 0.5)
+//            
+//            window.addSubview(blackView)
+//            blackView.frame = window.frame
+//            blackView.alpha = 0
+//            
+//            
+//            UIView.animate(withDuration: 0.5) {
+//                blackView.alpha = 1
+//            }
+//            
+//        }
+
+        
+        //view.addGestureRecognizer(tapp)
+        
     }
     
-
+ 
+    @objc func handleTap(sender: UITapGestureRecognizer? = nil)
+    {
+        print("hgvsbdchdbvjhdjvkjdfvn")
+    }
+    
+    @objc func handleSwipe (sender : UISwipeGestureRecognizer) {
+        
+        if sender.state == .ended {
+            
+            switch sender.direction{
+            case .right : print("swiped right")
+            
+            case .left : self.dismiss(animated: true, completion: nil)
+                print("swiped left")
+                
+            default:
+                break
+            }
+            
+        }
+        
+    }
+    
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         guard let menutype = MenuType(rawValue: indexPath.row) else { return }
@@ -127,6 +184,7 @@ class CPMenuViewController: UITableViewController {
         print("Dismissing : \(menutype)")
         
     }
+  
     
     func CreateProfilePic(){
         

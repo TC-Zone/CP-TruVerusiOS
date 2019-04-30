@@ -549,6 +549,7 @@
                         <outlet property="FirstCell" destination="XJZ-ga-434" id="Tlx-zo-SmG"/>
                         <outlet property="LastCell" destination="g69-hL-6d0" id="azu-SI-0tm"/>
                         <outlet property="ProfilePicImage" destination="3lf-Uv-WDc" id="He1-m5-xrQ"/>
+                        <outlet property="Table" destination="3Ys-7P-ypE" id="UsQ-6T-JTA"/>
                         <outlet property="UserName" destination="aXJ-zj-ZSf" id="TKg-4k-LmS"/>
                     </connections>
                 </tableViewController>
