@@ -7,14 +7,57 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		454A580AF15DF81C903B50A2 /* Pods_Truverus.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E56E34A7933A4FBFE8F88BB /* Pods_Truverus.framework */; };
+		CE4C3A8B227DB393004443A2 /* CPMenuView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE4C3A7E227DB393004443A2 /* CPMenuView.storyboard */; };
+		CE4C3A8C227DB393004443A2 /* CPShareAppTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE4C3A7F227DB393004443A2 /* CPShareAppTableViewCell.xib */; };
+		CE4C3A8D227DB393004443A2 /* CPShareAppTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4C3A80227DB393004443A2 /* CPShareAppTableViewCell.swift */; };
+		CE4C3A8E227DB393004443A2 /* CPMenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4C3A81227DB393004443A2 /* CPMenuTableViewCell.swift */; };
+		CE4C3A8F227DB393004443A2 /* CPMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4C3A82227DB393004443A2 /* CPMenuViewController.swift */; };
+		CE4C3A90227DB393004443A2 /* CPHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4C3A84227DB393004443A2 /* CPHomeViewController.swift */; };
+		CE4C3A91227DB393004443A2 /* CPHomeView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE4C3A85227DB393004443A2 /* CPHomeView.storyboard */; };
+		CE4C3A92227DB393004443A2 /* CPLogin.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE4C3A87227DB393004443A2 /* CPLogin.storyboard */; };
+		CE4C3A93227DB393004443A2 /* CPSignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4C3A88227DB393004443A2 /* CPSignUpViewController.swift */; };
+		CE4C3A94227DB393004443A2 /* CPLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4C3A89227DB393004443A2 /* CPLoginViewController.swift */; };
 		CE54A1822278012200C4BEE1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE54A1812278012200C4BEE1 /* AppDelegate.swift */; };
 		CE54A1842278012200C4BEE1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE54A1832278012200C4BEE1 /* ViewController.swift */; };
-		CE54A1872278012200C4BEE1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE54A1852278012200C4BEE1 /* Main.storyboard */; };
 		CE54A18A2278012200C4BEE1 /* Truverus.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CE54A1882278012200C4BEE1 /* Truverus.xcdatamodeld */; };
 		CE54A18C2278012300C4BEE1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE54A18B2278012300C4BEE1 /* Assets.xcassets */; };
 		CE54A18F2278012300C4BEE1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE54A18D2278012300C4BEE1 /* LaunchScreen.storyboard */; };
 		CE54A19A2278012300C4BEE1 /* TruverusTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE54A1992278012300C4BEE1 /* TruverusTests.swift */; };
 		CE54A1A52278012300C4BEE1 /* TruverusUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE54A1A42278012300C4BEE1 /* TruverusUITests.swift */; };
+		CE54A1CF22780BC700C4BEE1 /* Trade Gothic LT Bold Oblique.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CE54A1B422780BC700C4BEE1 /* Trade Gothic LT Bold Oblique.ttf */; };
+		CE54A1D022780BC700C4BEE1 /* Trade Gothic LT Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CE54A1B522780BC700C4BEE1 /* Trade Gothic LT Light.ttf */; };
+		CE54A1D122780BC700C4BEE1 /* AvenirNextLTPro-Cn.otf in Resources */ = {isa = PBXBuildFile; fileRef = CE54A1B622780BC700C4BEE1 /* AvenirNextLTPro-Cn.otf */; };
+		CE54A1D222780BC700C4BEE1 /* Trade Gothic LT Bold No. 2.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CE54A1B722780BC700C4BEE1 /* Trade Gothic LT Bold No. 2.ttf */; };
+		CE54A1D322780BC700C4BEE1 /* AvenirNextLTPro-DemiCnIt.otf in Resources */ = {isa = PBXBuildFile; fileRef = CE54A1B822780BC700C4BEE1 /* AvenirNextLTPro-DemiCnIt.otf */; };
+		CE54A1D422780BC700C4BEE1 /* AvenirNextLTPro-Demi.otf in Resources */ = {isa = PBXBuildFile; fileRef = CE54A1B922780BC700C4BEE1 /* AvenirNextLTPro-Demi.otf */; };
+		CE54A1D522780BC700C4BEE1 /* AvenirNextLTPro-CnIt.otf in Resources */ = {isa = PBXBuildFile; fileRef = CE54A1BA22780BC700C4BEE1 /* AvenirNextLTPro-CnIt.otf */; };
+		CE54A1D622780BC700C4BEE1 /* Trade Gothic LT Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CE54A1BB22780BC700C4BEE1 /* Trade Gothic LT Bold.ttf */; };
+		CE54A1D722780BC700C4BEE1 /* Trade Gothic LT.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CE54A1BC22780BC700C4BEE1 /* Trade Gothic LT.ttf */; };
+		CE54A1D822780BC700C4BEE1 /* AvenirNextLTPro-BoldCn.otf in Resources */ = {isa = PBXBuildFile; fileRef = CE54A1BD22780BC700C4BEE1 /* AvenirNextLTPro-BoldCn.otf */; };
+		CE54A1D922780BC700C4BEE1 /* AvenirNextLTPro-DemiCn.otf in Resources */ = {isa = PBXBuildFile; fileRef = CE54A1BE22780BC700C4BEE1 /* AvenirNextLTPro-DemiCn.otf */; };
+		CE54A1DA22780BC700C4BEE1 /* AvenirNextLTPro-BoldCnIt.otf in Resources */ = {isa = PBXBuildFile; fileRef = CE54A1BF22780BC700C4BEE1 /* AvenirNextLTPro-BoldCnIt.otf */; };
+		CE54A1DB22780BC700C4BEE1 /* Trade Gothic LT Extended.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CE54A1C022780BC700C4BEE1 /* Trade Gothic LT Extended.ttf */; };
+		CE54A1DC22780BC700C4BEE1 /* AvenirNextLTPro-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = CE54A1C122780BC700C4BEE1 /* AvenirNextLTPro-Bold.otf */; };
+		CE54A1DD22780BC700C4BEE1 /* AvenirNextLTPro-UltLtCn.otf in Resources */ = {isa = PBXBuildFile; fileRef = CE54A1C222780BC700C4BEE1 /* AvenirNextLTPro-UltLtCn.otf */; };
+		CE54A1DE22780BC700C4BEE1 /* Trade Gothic LT Bold Extended.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CE54A1C322780BC700C4BEE1 /* Trade Gothic LT Bold Extended.ttf */; };
+		CE54A1DF22780BC700C4BEE1 /* Trade Gothic LT Light Oblique.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CE54A1C422780BC700C4BEE1 /* Trade Gothic LT Light Oblique.ttf */; };
+		CE54A1E022780BC700C4BEE1 /* Trade Gothic LT Oblique.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CE54A1C522780BC700C4BEE1 /* Trade Gothic LT Oblique.ttf */; };
+		CE54A1E122780BC700C4BEE1 /* AvenirNextLTPro-UltLtCnIt.otf in Resources */ = {isa = PBXBuildFile; fileRef = CE54A1C622780BC700C4BEE1 /* AvenirNextLTPro-UltLtCnIt.otf */; };
+		CE54A1E222780BC700C4BEE1 /* AvenirNextLTPro-It.otf in Resources */ = {isa = PBXBuildFile; fileRef = CE54A1C722780BC700C4BEE1 /* AvenirNextLTPro-It.otf */; };
+		CE54A1E322780BC700C4BEE1 /* AvenirNextLTPro-MediumCnIt.otf in Resources */ = {isa = PBXBuildFile; fileRef = CE54A1C822780BC700C4BEE1 /* AvenirNextLTPro-MediumCnIt.otf */; };
+		CE54A1E422780BC700C4BEE1 /* AvenirNextLTPro-HeavyCn.otf in Resources */ = {isa = PBXBuildFile; fileRef = CE54A1C922780BC700C4BEE1 /* AvenirNextLTPro-HeavyCn.otf */; };
+		CE54A1E522780BC700C4BEE1 /* AvenirNextLTPro-MediumCn.otf in Resources */ = {isa = PBXBuildFile; fileRef = CE54A1CA22780BC700C4BEE1 /* AvenirNextLTPro-MediumCn.otf */; };
+		CE54A1E622780BC700C4BEE1 /* Trade Gothic LT Bold No. 2 Oblique.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CE54A1CB22780BC700C4BEE1 /* Trade Gothic LT Bold No. 2 Oblique.ttf */; };
+		CE54A1E722780BC700C4BEE1 /* AvenirNextLTPro-HeavyCnIt.otf in Resources */ = {isa = PBXBuildFile; fileRef = CE54A1CC22780BC700C4BEE1 /* AvenirNextLTPro-HeavyCnIt.otf */; };
+		CE54A1E822780BC700C4BEE1 /* AvenirNextLTPro-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = CE54A1CD22780BC700C4BEE1 /* AvenirNextLTPro-Regular.otf */; };
+		CE54A1E922780BC700C4BEE1 /* AvenirNextLTPro-DemiIt.otf in Resources */ = {isa = PBXBuildFile; fileRef = CE54A1CE22780BC700C4BEE1 /* AvenirNextLTPro-DemiIt.otf */; };
+		CE54A1F2227811AE00C4BEE1 /* CPCustomSegmentedControll.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE54A1F1227811AE00C4BEE1 /* CPCustomSegmentedControll.swift */; };
+		CE54A1F5227813EE00C4BEE1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE54A1F3227813EE00C4BEE1 /* Main.storyboard */; };
+		CE54A1FC22784E4300C4BEE1 /* CPCommon.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE54A1FB22784E4300C4BEE1 /* CPCommon.swift */; };
+		CE54A205227AB2C200C4BEE1 /* CPUiViewTransitions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE54A204227AB2C200C4BEE1 /* CPUiViewTransitions.swift */; };
+		CE54A207227AC45D00C4BEE1 /* CPSlideInTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE54A206227AC45D00C4BEE1 /* CPSlideInTransition.swift */; };
+		CE54A209227AEC3F00C4BEE1 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE54A208227AEC3F00C4BEE1 /* BaseViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,10 +78,21 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5E56E34A7933A4FBFE8F88BB /* Pods_Truverus.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Truverus.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		79270D05B946BDC3E1A965AE /* Pods-Truverus.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Truverus.debug.xcconfig"; path = "Target Support Files/Pods-Truverus/Pods-Truverus.debug.xcconfig"; sourceTree = "<group>"; };
+		CE4C3A7E227DB393004443A2 /* CPMenuView.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = CPMenuView.storyboard; sourceTree = "<group>"; };
+		CE4C3A7F227DB393004443A2 /* CPShareAppTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CPShareAppTableViewCell.xib; sourceTree = "<group>"; };
+		CE4C3A80227DB393004443A2 /* CPShareAppTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CPShareAppTableViewCell.swift; sourceTree = "<group>"; };
+		CE4C3A81227DB393004443A2 /* CPMenuTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CPMenuTableViewCell.swift; sourceTree = "<group>"; };
+		CE4C3A82227DB393004443A2 /* CPMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CPMenuViewController.swift; sourceTree = "<group>"; };
+		CE4C3A84227DB393004443A2 /* CPHomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CPHomeViewController.swift; sourceTree = "<group>"; };
+		CE4C3A85227DB393004443A2 /* CPHomeView.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = CPHomeView.storyboard; sourceTree = "<group>"; };
+		CE4C3A87227DB393004443A2 /* CPLogin.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = CPLogin.storyboard; sourceTree = "<group>"; };
+		CE4C3A88227DB393004443A2 /* CPSignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CPSignUpViewController.swift; sourceTree = "<group>"; };
+		CE4C3A89227DB393004443A2 /* CPLoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CPLoginViewController.swift; sourceTree = "<group>"; };
 		CE54A17E2278012200C4BEE1 /* Truverus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Truverus.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE54A1812278012200C4BEE1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CE54A1832278012200C4BEE1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		CE54A1862278012200C4BEE1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CE54A1892278012200C4BEE1 /* Truverus.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Truverus.xcdatamodel; sourceTree = "<group>"; };
 		CE54A18B2278012300C4BEE1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CE54A18E2278012300C4BEE1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -49,6 +103,40 @@
 		CE54A1A02278012300C4BEE1 /* TruverusUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TruverusUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE54A1A42278012300C4BEE1 /* TruverusUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TruverusUITests.swift; sourceTree = "<group>"; };
 		CE54A1A62278012300C4BEE1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CE54A1B422780BC700C4BEE1 /* Trade Gothic LT Bold Oblique.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Trade Gothic LT Bold Oblique.ttf"; sourceTree = "<group>"; };
+		CE54A1B522780BC700C4BEE1 /* Trade Gothic LT Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Trade Gothic LT Light.ttf"; sourceTree = "<group>"; };
+		CE54A1B622780BC700C4BEE1 /* AvenirNextLTPro-Cn.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "AvenirNextLTPro-Cn.otf"; sourceTree = "<group>"; };
+		CE54A1B722780BC700C4BEE1 /* Trade Gothic LT Bold No. 2.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Trade Gothic LT Bold No. 2.ttf"; sourceTree = "<group>"; };
+		CE54A1B822780BC700C4BEE1 /* AvenirNextLTPro-DemiCnIt.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "AvenirNextLTPro-DemiCnIt.otf"; sourceTree = "<group>"; };
+		CE54A1B922780BC700C4BEE1 /* AvenirNextLTPro-Demi.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "AvenirNextLTPro-Demi.otf"; sourceTree = "<group>"; };
+		CE54A1BA22780BC700C4BEE1 /* AvenirNextLTPro-CnIt.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "AvenirNextLTPro-CnIt.otf"; sourceTree = "<group>"; };
+		CE54A1BB22780BC700C4BEE1 /* Trade Gothic LT Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Trade Gothic LT Bold.ttf"; sourceTree = "<group>"; };
+		CE54A1BC22780BC700C4BEE1 /* Trade Gothic LT.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Trade Gothic LT.ttf"; sourceTree = "<group>"; };
+		CE54A1BD22780BC700C4BEE1 /* AvenirNextLTPro-BoldCn.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "AvenirNextLTPro-BoldCn.otf"; sourceTree = "<group>"; };
+		CE54A1BE22780BC700C4BEE1 /* AvenirNextLTPro-DemiCn.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "AvenirNextLTPro-DemiCn.otf"; sourceTree = "<group>"; };
+		CE54A1BF22780BC700C4BEE1 /* AvenirNextLTPro-BoldCnIt.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "AvenirNextLTPro-BoldCnIt.otf"; sourceTree = "<group>"; };
+		CE54A1C022780BC700C4BEE1 /* Trade Gothic LT Extended.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Trade Gothic LT Extended.ttf"; sourceTree = "<group>"; };
+		CE54A1C122780BC700C4BEE1 /* AvenirNextLTPro-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "AvenirNextLTPro-Bold.otf"; sourceTree = "<group>"; };
+		CE54A1C222780BC700C4BEE1 /* AvenirNextLTPro-UltLtCn.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "AvenirNextLTPro-UltLtCn.otf"; sourceTree = "<group>"; };
+		CE54A1C322780BC700C4BEE1 /* Trade Gothic LT Bold Extended.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Trade Gothic LT Bold Extended.ttf"; sourceTree = "<group>"; };
+		CE54A1C422780BC700C4BEE1 /* Trade Gothic LT Light Oblique.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Trade Gothic LT Light Oblique.ttf"; sourceTree = "<group>"; };
+		CE54A1C522780BC700C4BEE1 /* Trade Gothic LT Oblique.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Trade Gothic LT Oblique.ttf"; sourceTree = "<group>"; };
+		CE54A1C622780BC700C4BEE1 /* AvenirNextLTPro-UltLtCnIt.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "AvenirNextLTPro-UltLtCnIt.otf"; sourceTree = "<group>"; };
+		CE54A1C722780BC700C4BEE1 /* AvenirNextLTPro-It.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "AvenirNextLTPro-It.otf"; sourceTree = "<group>"; };
+		CE54A1C822780BC700C4BEE1 /* AvenirNextLTPro-MediumCnIt.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "AvenirNextLTPro-MediumCnIt.otf"; sourceTree = "<group>"; };
+		CE54A1C922780BC700C4BEE1 /* AvenirNextLTPro-HeavyCn.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "AvenirNextLTPro-HeavyCn.otf"; sourceTree = "<group>"; };
+		CE54A1CA22780BC700C4BEE1 /* AvenirNextLTPro-MediumCn.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "AvenirNextLTPro-MediumCn.otf"; sourceTree = "<group>"; };
+		CE54A1CB22780BC700C4BEE1 /* Trade Gothic LT Bold No. 2 Oblique.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Trade Gothic LT Bold No. 2 Oblique.ttf"; sourceTree = "<group>"; };
+		CE54A1CC22780BC700C4BEE1 /* AvenirNextLTPro-HeavyCnIt.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "AvenirNextLTPro-HeavyCnIt.otf"; sourceTree = "<group>"; };
+		CE54A1CD22780BC700C4BEE1 /* AvenirNextLTPro-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "AvenirNextLTPro-Regular.otf"; sourceTree = "<group>"; };
+		CE54A1CE22780BC700C4BEE1 /* AvenirNextLTPro-DemiIt.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "AvenirNextLTPro-DemiIt.otf"; sourceTree = "<group>"; };
+		CE54A1F1227811AE00C4BEE1 /* CPCustomSegmentedControll.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CPCustomSegmentedControll.swift; sourceTree = "<group>"; };
+		CE54A1F4227813EE00C4BEE1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		CE54A1FB22784E4300C4BEE1 /* CPCommon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CPCommon.swift; sourceTree = "<group>"; };
+		CE54A204227AB2C200C4BEE1 /* CPUiViewTransitions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CPUiViewTransitions.swift; sourceTree = "<group>"; };
+		CE54A206227AC45D00C4BEE1 /* CPSlideInTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CPSlideInTransition.swift; sourceTree = "<group>"; };
+		CE54A208227AEC3F00C4BEE1 /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		D53D24A0A870DEAE7A3BF2C6 /* Pods-Truverus.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Truverus.release.xcconfig"; path = "Target Support Files/Pods-Truverus/Pods-Truverus.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +144,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				454A580AF15DF81C903B50A2 /* Pods_Truverus.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -76,6 +165,64 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3685AA14C0FC03635E6C0AD1 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5E56E34A7933A4FBFE8F88BB /* Pods_Truverus.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		9B7D16E947C5C418FE1CA626 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				79270D05B946BDC3E1A965AE /* Pods-Truverus.debug.xcconfig */,
+				D53D24A0A870DEAE7A3BF2C6 /* Pods-Truverus.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		CE4C3A7B227DB393004443A2 /* CPViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				CE4C3A7D227DB393004443A2 /* CPMenuView */,
+				CE4C3A83227DB393004443A2 /* CPHomeView */,
+				CE4C3A86227DB393004443A2 /* CPLoginView */,
+			);
+			path = CPViewControllers;
+			sourceTree = "<group>";
+		};
+		CE4C3A7D227DB393004443A2 /* CPMenuView */ = {
+			isa = PBXGroup;
+			children = (
+				CE4C3A7E227DB393004443A2 /* CPMenuView.storyboard */,
+				CE4C3A7F227DB393004443A2 /* CPShareAppTableViewCell.xib */,
+				CE4C3A80227DB393004443A2 /* CPShareAppTableViewCell.swift */,
+				CE4C3A81227DB393004443A2 /* CPMenuTableViewCell.swift */,
+				CE4C3A82227DB393004443A2 /* CPMenuViewController.swift */,
+			);
+			path = CPMenuView;
+			sourceTree = "<group>";
+		};
+		CE4C3A83227DB393004443A2 /* CPHomeView */ = {
+			isa = PBXGroup;
+			children = (
+				CE4C3A84227DB393004443A2 /* CPHomeViewController.swift */,
+				CE4C3A85227DB393004443A2 /* CPHomeView.storyboard */,
+			);
+			path = CPHomeView;
+			sourceTree = "<group>";
+		};
+		CE4C3A86227DB393004443A2 /* CPLoginView */ = {
+			isa = PBXGroup;
+			children = (
+				CE4C3A87227DB393004443A2 /* CPLogin.storyboard */,
+				CE4C3A88227DB393004443A2 /* CPSignUpViewController.swift */,
+				CE4C3A89227DB393004443A2 /* CPLoginViewController.swift */,
+			);
+			path = CPLoginView;
+			sourceTree = "<group>";
+		};
 		CE54A1752278012200C4BEE1 = {
 			isa = PBXGroup;
 			children = (
@@ -83,6 +230,8 @@
 				CE54A1982278012300C4BEE1 /* TruverusTests */,
 				CE54A1A32278012300C4BEE1 /* TruverusUITests */,
 				CE54A17F2278012200C4BEE1 /* Products */,
+				9B7D16E947C5C418FE1CA626 /* Pods */,
+				3685AA14C0FC03635E6C0AD1 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -99,9 +248,12 @@
 		CE54A1802278012200C4BEE1 /* Truverus */ = {
 			isa = PBXGroup;
 			children = (
+				CE4C3A7B227DB393004443A2 /* CPViewControllers */,
+				CE54A1B322780BC700C4BEE1 /* Fonts */,
+				CE54A1F02278119400C4BEE1 /* CPResources */,
 				CE54A1812278012200C4BEE1 /* AppDelegate.swift */,
 				CE54A1832278012200C4BEE1 /* ViewController.swift */,
-				CE54A1852278012200C4BEE1 /* Main.storyboard */,
+				CE54A1F3227813EE00C4BEE1 /* Main.storyboard */,
 				CE54A18B2278012300C4BEE1 /* Assets.xcassets */,
 				CE54A18D2278012300C4BEE1 /* LaunchScreen.storyboard */,
 				CE54A1902278012300C4BEE1 /* Info.plist */,
@@ -128,6 +280,52 @@
 			path = TruverusUITests;
 			sourceTree = "<group>";
 		};
+		CE54A1B322780BC700C4BEE1 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				CE54A1B422780BC700C4BEE1 /* Trade Gothic LT Bold Oblique.ttf */,
+				CE54A1B522780BC700C4BEE1 /* Trade Gothic LT Light.ttf */,
+				CE54A1B622780BC700C4BEE1 /* AvenirNextLTPro-Cn.otf */,
+				CE54A1B722780BC700C4BEE1 /* Trade Gothic LT Bold No. 2.ttf */,
+				CE54A1B822780BC700C4BEE1 /* AvenirNextLTPro-DemiCnIt.otf */,
+				CE54A1B922780BC700C4BEE1 /* AvenirNextLTPro-Demi.otf */,
+				CE54A1BA22780BC700C4BEE1 /* AvenirNextLTPro-CnIt.otf */,
+				CE54A1BB22780BC700C4BEE1 /* Trade Gothic LT Bold.ttf */,
+				CE54A1BC22780BC700C4BEE1 /* Trade Gothic LT.ttf */,
+				CE54A1BD22780BC700C4BEE1 /* AvenirNextLTPro-BoldCn.otf */,
+				CE54A1BE22780BC700C4BEE1 /* AvenirNextLTPro-DemiCn.otf */,
+				CE54A1BF22780BC700C4BEE1 /* AvenirNextLTPro-BoldCnIt.otf */,
+				CE54A1C022780BC700C4BEE1 /* Trade Gothic LT Extended.ttf */,
+				CE54A1C122780BC700C4BEE1 /* AvenirNextLTPro-Bold.otf */,
+				CE54A1C222780BC700C4BEE1 /* AvenirNextLTPro-UltLtCn.otf */,
+				CE54A1C322780BC700C4BEE1 /* Trade Gothic LT Bold Extended.ttf */,
+				CE54A1C422780BC700C4BEE1 /* Trade Gothic LT Light Oblique.ttf */,
+				CE54A1C522780BC700C4BEE1 /* Trade Gothic LT Oblique.ttf */,
+				CE54A1C622780BC700C4BEE1 /* AvenirNextLTPro-UltLtCnIt.otf */,
+				CE54A1C722780BC700C4BEE1 /* AvenirNextLTPro-It.otf */,
+				CE54A1C822780BC700C4BEE1 /* AvenirNextLTPro-MediumCnIt.otf */,
+				CE54A1C922780BC700C4BEE1 /* AvenirNextLTPro-HeavyCn.otf */,
+				CE54A1CA22780BC700C4BEE1 /* AvenirNextLTPro-MediumCn.otf */,
+				CE54A1CB22780BC700C4BEE1 /* Trade Gothic LT Bold No. 2 Oblique.ttf */,
+				CE54A1CC22780BC700C4BEE1 /* AvenirNextLTPro-HeavyCnIt.otf */,
+				CE54A1CD22780BC700C4BEE1 /* AvenirNextLTPro-Regular.otf */,
+				CE54A1CE22780BC700C4BEE1 /* AvenirNextLTPro-DemiIt.otf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		CE54A1F02278119400C4BEE1 /* CPResources */ = {
+			isa = PBXGroup;
+			children = (
+				CE54A208227AEC3F00C4BEE1 /* BaseViewController.swift */,
+				CE54A1F1227811AE00C4BEE1 /* CPCustomSegmentedControll.swift */,
+				CE54A1FB22784E4300C4BEE1 /* CPCommon.swift */,
+				CE54A204227AB2C200C4BEE1 /* CPUiViewTransitions.swift */,
+				CE54A206227AC45D00C4BEE1 /* CPSlideInTransition.swift */,
+			);
+			path = CPResources;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -135,9 +333,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = CE54A1A92278012300C4BEE1 /* Build configuration list for PBXNativeTarget "Truverus" */;
 			buildPhases = (
+				E828718182C04DA0261577E9 /* [CP] Check Pods Manifest.lock */,
 				CE54A17A2278012200C4BEE1 /* Sources */,
 				CE54A17B2278012200C4BEE1 /* Frameworks */,
 				CE54A17C2278012200C4BEE1 /* Resources */,
+				CECD131D28862467D4875902 /* [CP] Embed Pods Frameworks */,
+				4211530341003D24B0FE18F1 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -190,6 +391,7 @@
 		CE54A1762278012200C4BEE1 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = CP;
 				LastSwiftUpdateCheck = 1010;
 				LastUpgradeCheck = 1010;
 				ORGANIZATIONNAME = ClearPicture;
@@ -232,9 +434,40 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE54A1DF22780BC700C4BEE1 /* Trade Gothic LT Light Oblique.ttf in Resources */,
+				CE54A1D822780BC700C4BEE1 /* AvenirNextLTPro-BoldCn.otf in Resources */,
+				CE54A1D122780BC700C4BEE1 /* AvenirNextLTPro-Cn.otf in Resources */,
+				CE54A1E022780BC700C4BEE1 /* Trade Gothic LT Oblique.ttf in Resources */,
+				CE54A1D422780BC700C4BEE1 /* AvenirNextLTPro-Demi.otf in Resources */,
+				CE54A1DE22780BC700C4BEE1 /* Trade Gothic LT Bold Extended.ttf in Resources */,
+				CE54A1D622780BC700C4BEE1 /* Trade Gothic LT Bold.ttf in Resources */,
+				CE54A1CF22780BC700C4BEE1 /* Trade Gothic LT Bold Oblique.ttf in Resources */,
+				CE4C3A8B227DB393004443A2 /* CPMenuView.storyboard in Resources */,
+				CE54A1D322780BC700C4BEE1 /* AvenirNextLTPro-DemiCnIt.otf in Resources */,
+				CE54A1E722780BC700C4BEE1 /* AvenirNextLTPro-HeavyCnIt.otf in Resources */,
+				CE54A1E822780BC700C4BEE1 /* AvenirNextLTPro-Regular.otf in Resources */,
+				CE54A1DA22780BC700C4BEE1 /* AvenirNextLTPro-BoldCnIt.otf in Resources */,
+				CE4C3A91227DB393004443A2 /* CPHomeView.storyboard in Resources */,
+				CE54A1E622780BC700C4BEE1 /* Trade Gothic LT Bold No. 2 Oblique.ttf in Resources */,
+				CE54A1DB22780BC700C4BEE1 /* Trade Gothic LT Extended.ttf in Resources */,
+				CE54A1E222780BC700C4BEE1 /* AvenirNextLTPro-It.otf in Resources */,
+				CE54A1D722780BC700C4BEE1 /* Trade Gothic LT.ttf in Resources */,
+				CE54A1E422780BC700C4BEE1 /* AvenirNextLTPro-HeavyCn.otf in Resources */,
+				CE54A1E922780BC700C4BEE1 /* AvenirNextLTPro-DemiIt.otf in Resources */,
+				CE54A1D922780BC700C4BEE1 /* AvenirNextLTPro-DemiCn.otf in Resources */,
+				CE54A1E322780BC700C4BEE1 /* AvenirNextLTPro-MediumCnIt.otf in Resources */,
+				CE54A1DD22780BC700C4BEE1 /* AvenirNextLTPro-UltLtCn.otf in Resources */,
+				CE4C3A8C227DB393004443A2 /* CPShareAppTableViewCell.xib in Resources */,
 				CE54A18F2278012300C4BEE1 /* LaunchScreen.storyboard in Resources */,
+				CE54A1E122780BC700C4BEE1 /* AvenirNextLTPro-UltLtCnIt.otf in Resources */,
+				CE54A1D522780BC700C4BEE1 /* AvenirNextLTPro-CnIt.otf in Resources */,
+				CE54A1D222780BC700C4BEE1 /* Trade Gothic LT Bold No. 2.ttf in Resources */,
+				CE54A1E522780BC700C4BEE1 /* AvenirNextLTPro-MediumCn.otf in Resources */,
 				CE54A18C2278012300C4BEE1 /* Assets.xcassets in Resources */,
-				CE54A1872278012200C4BEE1 /* Main.storyboard in Resources */,
+				CE54A1DC22780BC700C4BEE1 /* AvenirNextLTPro-Bold.otf in Resources */,
+				CE54A1F5227813EE00C4BEE1 /* Main.storyboard in Resources */,
+				CE54A1D022780BC700C4BEE1 /* Trade Gothic LT Light.ttf in Resources */,
+				CE4C3A92227DB393004443A2 /* CPLogin.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -254,14 +487,114 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		4211530341003D24B0FE18F1 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Truverus/Pods-Truverus-resources.sh",
+				"${PODS_ROOT}/GoogleSignIn/Resources/GoogleSignIn.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleSignIn.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Truverus/Pods-Truverus-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CECD131D28862467D4875902 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Truverus/Pods-Truverus-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/AlamofireObjectMapper/AlamofireObjectMapper.framework",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/IHProgressHUD/IHProgressHUD.framework",
+				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
+				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
+				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
+				"${BUILT_PRODUCTS_DIR}/TaggerKit/TaggerKit.framework",
+				"${BUILT_PRODUCTS_DIR}/XCDYouTubeKit/XCDYouTubeKit.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireObjectMapper.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IHProgressHUD.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TaggerKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/XCDYouTubeKit.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Truverus/Pods-Truverus-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E828718182C04DA0261577E9 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Truverus-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		CE54A17A2278012200C4BEE1 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE4C3A8F227DB393004443A2 /* CPMenuViewController.swift in Sources */,
 				CE54A1842278012200C4BEE1 /* ViewController.swift in Sources */,
 				CE54A1822278012200C4BEE1 /* AppDelegate.swift in Sources */,
+				CE4C3A90227DB393004443A2 /* CPHomeViewController.swift in Sources */,
+				CE54A209227AEC3F00C4BEE1 /* BaseViewController.swift in Sources */,
+				CE4C3A8E227DB393004443A2 /* CPMenuTableViewCell.swift in Sources */,
+				CE4C3A93227DB393004443A2 /* CPSignUpViewController.swift in Sources */,
+				CE54A205227AB2C200C4BEE1 /* CPUiViewTransitions.swift in Sources */,
+				CE54A1F2227811AE00C4BEE1 /* CPCustomSegmentedControll.swift in Sources */,
+				CE54A1FC22784E4300C4BEE1 /* CPCommon.swift in Sources */,
 				CE54A18A2278012200C4BEE1 /* Truverus.xcdatamodeld in Sources */,
+				CE4C3A8D227DB393004443A2 /* CPShareAppTableViewCell.swift in Sources */,
+				CE4C3A94227DB393004443A2 /* CPLoginViewController.swift in Sources */,
+				CE54A207227AC45D00C4BEE1 /* CPSlideInTransition.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -297,20 +630,20 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		CE54A1852278012200C4BEE1 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				CE54A1862278012200C4BEE1 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		CE54A18D2278012300C4BEE1 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				CE54A18E2278012300C4BEE1 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		CE54A1F3227813EE00C4BEE1 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CE54A1F4227813EE00C4BEE1 /* Base */,
+			);
+			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -434,6 +767,7 @@
 		};
 		CE54A1AA2278012300C4BEE1 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 79270D05B946BDC3E1A965AE /* Pods-Truverus.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -452,6 +786,7 @@
 		};
 		CE54A1AB2278012300C4BEE1 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D53D24A0A870DEAE7A3BF2C6 /* Pods-Truverus.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

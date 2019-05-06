@@ -1,0 +1,78 @@
+PODS:
+  - Alamofire (4.8.2)
+  - AlamofireObjectMapper (5.2.0):
+    - Alamofire (~> 4.7)
+    - ObjectMapper (~> 3.4)
+  - GoogleSignIn (4.4.0):
+    - "GoogleToolboxForMac/NSDictionary+URLArguments (~> 2.1)"
+    - "GoogleToolboxForMac/NSString+URLArguments (~> 2.1)"
+    - GTMSessionFetcher/Core (~> 1.1)
+  - GoogleToolboxForMac/DebugUtils (2.2.0):
+    - GoogleToolboxForMac/Defines (= 2.2.0)
+  - GoogleToolboxForMac/Defines (2.2.0)
+  - "GoogleToolboxForMac/NSDictionary+URLArguments (2.2.0)":
+    - GoogleToolboxForMac/DebugUtils (= 2.2.0)
+    - GoogleToolboxForMac/Defines (= 2.2.0)
+    - "GoogleToolboxForMac/NSString+URLArguments (= 2.2.0)"
+  - "GoogleToolboxForMac/NSString+URLArguments (2.2.0)"
+  - GTMSessionFetcher/Core (1.2.1)
+  - IHProgressHUD (0.1.4)
+  - Kingfisher (5.3.1)
+  - ObjectMapper (3.4.2)
+  - SnapKit (4.0.1)
+  - SwiftyJSON (4.2.0)
+  - TaggerKit (0.5.0)
+  - XCDYouTubeKit (2.7.3)
+
+DEPENDENCIES:
+  - Alamofire (~> 4.7)
+  - AlamofireObjectMapper
+  - GoogleSignIn
+  - IHProgressHUD (~> 0.1.4)
+  - Kingfisher
+  - ObjectMapper
+  - SnapKit (~> 4.0.0)
+  - SwiftyJSON (~> 4.2.0)
+  - TaggerKit (from `https://github.com/nekonora/TaggerKit.git`)
+  - XCDYouTubeKit (~> 2.7)
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - Alamofire
+    - AlamofireObjectMapper
+    - GoogleSignIn
+    - GoogleToolboxForMac
+    - GTMSessionFetcher
+    - IHProgressHUD
+    - Kingfisher
+    - ObjectMapper
+    - SnapKit
+    - SwiftyJSON
+    - XCDYouTubeKit
+
+EXTERNAL SOURCES:
+  TaggerKit:
+    :git: https://github.com/nekonora/TaggerKit.git
+
+CHECKOUT OPTIONS:
+  TaggerKit:
+    :commit: 01e1b720f00d2f8132ff6166de26c7721bd3ed07
+    :git: https://github.com/nekonora/TaggerKit.git
+
+SPEC CHECKSUMS:
+  Alamofire: ae5c501addb7afdbb13687d7f2f722c78734c2d3
+  AlamofireObjectMapper: 92b6ce2423a9d159e686f6a1d514a009bf903ddc
+  GoogleSignIn: 7ff245e1a7b26d379099d3243a562f5747e23d39
+  GoogleToolboxForMac: ff31605b7d66400dcec09bed5861689aebadda4d
+  GTMSessionFetcher: 32aeca0aa144acea523e1c8e053089dec2cb98ca
+  IHProgressHUD: a01846bfbb581c761c79747c67b08387c3bdfae3
+  Kingfisher: d9e7e0b209b59b8f9873aa2f37654e81a7beea51
+  ObjectMapper: 0d4402610f4e468903ae64629eec4784531e5c51
+  SnapKit: 0de968a9fec17499afa29683b05d0c775b6d1c29
+  SwiftyJSON: c4bcba26dd9ec7a027fc8eade48e2c911f229e96
+  TaggerKit: 3404402e7ac4c73aa96949e6f10c6e066ddf792a
+  XCDYouTubeKit: 3f4fd3eb3ed494a46a8f007b91315eed6dd6df1f
+
+PODFILE CHECKSUM: 1bd725f0bcbf8d8cfb021a496ac31a9aa3b6992e
+
+COCOAPODS: 1.6.1

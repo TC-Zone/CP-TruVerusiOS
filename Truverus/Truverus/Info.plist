@@ -2,6 +2,36 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>UIAppFonts</key>
+	<array>
+		<string>Trade Gothic LT Bold Oblique</string>
+		<string>Trade Gothic LT Light</string>
+		<string>Trade Gothic LT Bold No. 2</string>
+		<string>Trade Gothic LT Bold</string>
+		<string>Trade Gothic LT</string>
+		<string>Trade Gothic LT Extended</string>
+		<string>Trade Gothic LT Bold Extended</string>
+		<string>Trade Gothic LT Light Oblique</string>
+		<string>Trade Gothic LT Oblique</string>
+		<string>Trade Gothic LT Bold No. 2 Oblique</string>
+		<string>AvenirNextLTPro-Bold</string>
+		<string>AvenirNextLTPro-BoldCn</string>
+		<string>AvenirNextLTPro-BoldCnIt</string>
+		<string>AvenirNextLTPro-Cn</string>
+		<string>AvenirNextLTPro-CnIt</string>
+		<string>AvenirNextLTPro-Demi</string>
+		<string>AvenirNextLTPro-DemiCn</string>
+		<string>AvenirNextLTPro-DemiCnIt</string>
+		<string>AvenirNextLTPro-DemiIt</string>
+		<string>AvenirNextLTPro-HeavyCn</string>
+		<string>AvenirNextLTPro-HeavyCnIt</string>
+		<string>AvenirNextLTPro-It</string>
+		<string>AvenirNextLTPro-MediumCn</string>
+		<string>AvenirNextLTPro-MediumCnIt</string>
+		<string>AvenirNextLTPro-Regular</string>
+		<string>AvenirNextLTPro-UltLtCn</string>
+		<string>AvenirNextLTPro-UltLtCnIt</string>
+	</array>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleExecutable</key>
