@@ -15,13 +15,15 @@ class CPSignUpViewController: BaseViewController {
     @IBOutlet weak var EmailTextField: UITextField!
     @IBOutlet weak var PasswordTextField: UITextField!
     @IBOutlet weak var ReEnterPasswordTextField: UITextField!
+    @IBOutlet weak var ScrollView: UIScrollView!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        addSlideMenuButton()
+        //addSlideMenuButton()
         InitTextFields()
+        ScrollView.validateScrolling(view: ScrollView)
         // Do any additional setup after loading the view.
     }
     

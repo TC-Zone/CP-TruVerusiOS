@@ -7,6 +7,9 @@
 //
 
 import UIKit
+import GoogleSignIn
+import FBSDKLoginKit
+import FBSDKCoreKit
 
 protocol SlideMenuDelegate {
     func slideMenuItemSelectedAtIndex(_ index : Int32)
@@ -23,9 +26,13 @@ class CPMenuViewController: UIViewController, UITableViewDelegate, UITableViewDa
     @IBOutlet weak var btnCloseMenuOverlay: UIButton!
     var btnMenu : UIButton!
     var delegate : SlideMenuDelegate?
+    let appDelegate = UIApplication.shared.delegate as! AppDelegate
     
     let MenuItems = ["HOME","MY ACCOUNT","NFC SCAN","INBOX","COMMUNITY","SETTINGS","HELP","PRIVECY AND TERMS","LOG OUT"]
     let MenuItemIcons = [UIImage(named: "HomeMenuIcon"),UIImage(named: "AccountMenuIcon"),UIImage(named: "NFCMenuIcon"),UIImage(named: "InboxMenuIcon"),UIImage(named: "Feedback-1"),UIImage(named: "settings"),UIImage(named: "help-1"),UIImage(named: "data privacy"),UIImage(named: "log out-1")]
+    
+    let LoggedoutMenuItems = ["HOME","NFC SCAN","SETTINGS","HELP","PRIVECY AND TERMS"]
+    let LoggedoutMenuItemIcons = [UIImage(named: "HomeMenuIcon"),UIImage(named: "NFCMenuIcon"),UIImage(named: "settings"),UIImage(named: "help-1"),UIImage(named: "data privacy")]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,45 +40,116 @@ class CPMenuViewController: UIViewController, UITableViewDelegate, UITableViewDa
         MenuTable.dataSource = self
         MenuTable.delegate = self
         self.MenuTable.register(UINib(nibName: "CPShareAppTableViewCell", bundle: nil), forCellReuseIdentifier: "CPShareCell")
+        ValidateMenuHeaderType()
         
         
 
         // Do any additional setup after loading the view.
     }
     
+    
+    func ValidateMenuHeaderType() {
+        
+        let x = appDelegate.state
+        
+        if (x == "logedin") {
+            
+            LoginArrow.isHidden = true
+//            ProfilePicture.image = UIImage(named: "user icon")
+//            ProfileName.text = "Login"
+//            ProfileEmail.text = "Welcome to Truverus"
+            
+        } else if (x == "logedout") {
+            
+            LoginArrow.isHidden = false
+            ProfilePicture.image = UIImage(named: "user icon")
+            ProfileName.text = "Login"
+            ProfileEmail.text = "Welcome to Truverus"
+            
+        }
+        
+    }
+    
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        
+        let x = appDelegate.state
+        var count : Int = 0
+        
+        if (x == "logedin") {
+            
+            count = 10
+            
+        } else if (x == "logedout") {
+            
+            count = 6
+            
+        }
+        
+        return count
+        
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        if (indexPath.row == 9) {
-            let sharecell = tableView.dequeueReusableCell(withIdentifier: "CPShareCell") as? CPShareAppTableViewCell
+        let x = appDelegate.state
+        
+        
+        if let sharecell = tableView.dequeueReusableCell(withIdentifier: "CPShareCell") as? CPShareAppTableViewCell {
             
-            return sharecell!
+            if (x == "logedin") {
+                
+                if (indexPath.row == 9) {
+                    
+                    return sharecell
+                }
+                
+            } else if (x == "logedout") {
+                
+                if (indexPath.row == 5) {
+                    
+                    return sharecell
+                }
+                
+            }
             
         }
         
         if let cell = tableView.dequeueReusableCell(withIdentifier: "CPMenuCell") as? CPMenuTableViewCell {
             
-            if (indexPath.row == 5 || indexPath.row == 8){
-                cell.SeperatorView.isHidden = false
-                cell.MenuIcon.image = MenuItemIcons[indexPath.row]
-                cell.MenuTitle.text = MenuItems[indexPath.row]
+            ValidateMenuHeaderType()
+            if (x == "logedin") {
                 
-                return cell
+                if (indexPath.row == 5 || indexPath.row == 8){
+                    cell.SeperatorView.isHidden = false
+                    cell.MenuIcon.image = MenuItemIcons[indexPath.row]
+                    cell.MenuTitle.text = MenuItems[indexPath.row]
+                     
+                }  else {
+                    cell.SeperatorView.isHidden = true
+                    cell.MenuIcon.image = MenuItemIcons[indexPath.row]
+                    cell.MenuTitle.text = MenuItems[indexPath.row]
+                    
+                }
                 
-            }  else {
-                cell.SeperatorView.isHidden = true
-                cell.MenuIcon.image = MenuItemIcons[indexPath.row]
-                cell.MenuTitle.text = MenuItems[indexPath.row]
+            } else if (x == "logedout") {
                 
-                return cell
-                
+                if (indexPath.row == 2 || indexPath.row == 4){
+                    cell.SeperatorView.isHidden = false
+                    cell.MenuIcon.image = LoggedoutMenuItemIcons[indexPath.row]
+                    cell.MenuTitle.text = LoggedoutMenuItems[indexPath.row]
+                   
+                }  else {
+                    cell.SeperatorView.isHidden = true
+                    cell.MenuIcon.image = LoggedoutMenuItemIcons[indexPath.row]
+                    cell.MenuTitle.text = LoggedoutMenuItems[indexPath.row]
+                    
+                }
             }
             
             
-                
+            return cell
+            
           
         } else {
             
@@ -97,22 +175,71 @@ class CPMenuViewController: UIViewController, UITableViewDelegate, UITableViewDa
             let homeStoryBoard : UIStoryboard = UIStoryboard(name: "CPHomeView", bundle: nil)
             let vc = homeStoryBoard.instantiateViewController(withIdentifier: "CPHomeView") as! CPHomeViewController
             
-            self.navigationController?.pushViewController(vc, animated: true)
-//            let topViewController : UIViewController = self.navigationController!.topViewController!
-//            if (topViewController.classForCoder === CPHomeViewController.self) {
-//                foldbackMenu(btnCloseMenuOverlay)
-//            } else {
-//
-//                self.navigationController?.pushViewController(vc!, animated: true)
-//            }
+            let topViewController : UIViewController = self.navigationController!.topViewController!
+            
+            if (topViewController.classForCoder == CPHomeViewController.self) {
+                
+                foldbackMenu(btnCloseMenuOverlay)
+            } else {
+
+                self.navigationController?.pushViewController(vc, animated: true)
+            }
             
         }
-        if indexPath.row == 1{
-            let homeStoryBoard : UIStoryboard = UIStoryboard(name: "CPHomeView", bundle: nil)
-            let vc = homeStoryBoard.instantiateViewController(withIdentifier: "CPHomeView") as! CPHomeViewController
+        
+        let x = appDelegate.state
+        
+        if (x == "logedin") {
             
-            self.navigationController?.pushViewController(vc, animated: true)
+            if indexPath.row == 1{
+                let homeStoryBoard : UIStoryboard = UIStoryboard(name: "CPHomeView", bundle: nil)
+                let vc = homeStoryBoard.instantiateViewController(withIdentifier: "CPHomeView") as! CPHomeViewController
+                
+                self.navigationController?.pushViewController(vc, animated: true)
+            }
+            
+            if (indexPath.row == 8) {
+                
+                let alert = UIAlertController(title: "Message", message: "You are succesfully loggd out", preferredStyle: UIAlertController.Style.alert)
+                alert.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: nil))
+                
+                let alert2 = UIAlertController(title: "Message", message: "You are not loggd in", preferredStyle: UIAlertController.Style.alert)
+                alert2.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: nil))
+                
+                let homeStoryBoard : UIStoryboard = UIStoryboard(name: "CPHomeView", bundle: nil)
+                let vc = homeStoryBoard.instantiateViewController(withIdentifier: "CPHomeView") as! CPHomeViewController
+                
+                let appDelegate = UIApplication.shared.delegate as! AppDelegate
+                
+                if GIDSignIn.sharedInstance().hasAuthInKeychain(){
+                    print("User Has Already signed in")
+                    GIDSignIn.sharedInstance().disconnect()
+                    appDelegate.state = "logedout"
+                    self.navigationController?.pushViewController(vc, animated: true)
+                    
+                } else if FBSDKAccessToken.current() != nil{
+                    print("User Has Not signed in")
+                    let loginManager = FBSDKLoginManager()
+                    loginManager.logOut()
+                    appDelegate.state = "logedout"
+                    self.navigationController?.pushViewController(vc, animated: true)
+                    
+                } else {
+                    self.present(alert2, animated: true, completion: nil)
+                }
+                
+                
+                
+            }else {
+                
+                dismiss(animated: true)
+                
+            }
+            
         }
+        
+       
+        
     }
     
     

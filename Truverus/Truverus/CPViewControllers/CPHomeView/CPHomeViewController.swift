@@ -14,6 +14,8 @@ class CPHomeViewController: BaseViewController {
         super.viewDidLoad()
 
         addSlideMenuButton()
+        addSlideSearchButton()
+        //addSlideSearchButton()
         // Do any additional setup after loading the view.
     }
     

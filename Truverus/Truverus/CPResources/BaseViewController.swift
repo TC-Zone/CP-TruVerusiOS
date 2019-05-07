@@ -61,6 +61,25 @@ class BaseViewController: UIViewController, SlideMenuDelegate {
         let customBarItem = UIBarButtonItem(customView: btnShowMenu)
         self.navigationItem.leftBarButtonItem = customBarItem;
     }
+    
+    func addSlideSearchButton() {
+        
+        let btnMenuSearch = UIButton(type: UIButton.ButtonType.system)
+        btnMenuSearch.setImage(UIImage(named: "search"), for: .normal)
+        btnMenuSearch.frame = CGRect(x: 0, y: 0, width: 30, height: 30)
+        btnMenuSearch.addTarget(self, action: #selector(BaseViewController.onMenuSearchTapped(_:)), for: UIControl.Event.touchUpInside)
+        let customBarItem = UIBarButtonItem(customView: btnMenuSearch)
+        self.navigationItem.rightBarButtonItem = customBarItem;
+        
+    }
+    
+    
+    @objc func onMenuSearchTapped(_ sender : UIButton) {
+    
+        print("search tapped")
+    
+    }
+    
 
     func defaultMenuImage() -> UIImage {
         var defaultMenuImage = UIImage()
@@ -100,9 +119,9 @@ class BaseViewController: UIViewController, SlideMenuDelegate {
                 viewMenuBack.frame = frameMenu
                 viewMenuBack.layoutIfNeeded()
                 viewMenuBack.backgroundColor = UIColor.clear
-                }, completion: { (finished) -> Void in
-                    viewMenuBack.removeFromSuperview()
-                    
+            }, completion: { (finished) -> Void in
+                viewMenuBack.removeFromSuperview()
+                
             })
             
             return

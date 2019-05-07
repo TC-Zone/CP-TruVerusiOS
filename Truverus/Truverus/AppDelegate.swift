@@ -8,17 +8,108 @@
 
 import UIKit
 import CoreData
+import GoogleSignIn
+import FBSDKCoreKit
+import FBSDKLoginKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
+    var state : String = ""
+   // var userdata = [User]()
     var window: UIWindow?
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        GIDSignIn.sharedInstance().clientID = "231942660556-p7tmduue9lbaite5g5abfukivdd7onra.apps.googleusercontent.com"
+        GIDSignIn.sharedInstance().delegate = self as? GIDSignInDelegate
+        GIDSignIn.sharedInstance()?.scopes = ["https://www.googleapis.com/auth/plus.login","https://www.googleapis.com/auth/plus.me"]
+        
+        FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
+        
+        if GIDSignIn.sharedInstance().hasAuthInKeychain() {
+            
+            //userdata.removeAll()
+            print("User Has Already signed in using google")
+            state = "logedin"
+            
+//            let fetchRequest : NSFetchRequest<User> = User.fetchRequest()
+//
+//            do {
+//
+//                let userdata = try PercistanceService.context.fetch(fetchRequest)
+//                self.userdata = userdata
+//
+//            } catch {
+//
+//                print("Error occured while fetching core data")
+//
+//            }
+//
+//            print("user data ::: \(userdata)")
+//            let img = userdata.last
+//
+//            if (userdata.count != 0) {
+//
+//                StructProfile.ProfilePicture.ProfilePicURL = img!.profileimageurl!
+//                StructProfile.ProfilePicture.email = img!.email!
+//                StructProfile.ProfilePicture.name = img!.name!
+            
+//            }
+            
+        } else if FBSDKAccessToken.current() != nil {
+            
+            print("user is already logged in using facebook")
+            //fetchProfile()
+            state = "logedin"
+        }
+        else {
+            print("user is not logged in")
+            state = "logedout"
+        }
+        
+        
         return true
     }
+    
+    func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
+        
+        let googles =  GIDSignIn.sharedInstance().handle(url as URL?,
+                                                         sourceApplication: options[UIApplication.OpenURLOptionsKey.sourceApplication] as? String,
+                                                         annotation: options[UIApplication.OpenURLOptionsKey.annotation])
+        
+        let facebooks = FBSDKApplicationDelegate.sharedInstance().application(
+            app,
+            open: url as URL,
+            sourceApplication: options[UIApplication.OpenURLOptionsKey.sourceApplication] as? String,
+            annotation: options[UIApplication.OpenURLOptionsKey.annotation]
+        )
+        
+        
+        return googles || facebooks
+        
+    }
+    
+    private func application(application: UIApplication,
+                             openURL url: URL, sourceApplication: String?, annotation: Any?) -> Bool {
+        var _: [String: AnyObject] = [UIApplication.OpenURLOptionsKey.sourceApplication.rawValue: sourceApplication as AnyObject,
+                                      UIApplication.OpenURLOptionsKey.annotation.rawValue: annotation! as AnyObject]
+        let google = GIDSignIn.sharedInstance().handle(url as URL,
+                                                       sourceApplication: sourceApplication,
+                                                       annotation: annotation)
+        
+        let facebook = FBSDKApplicationDelegate.sharedInstance().application(
+            application,
+            open: url as URL,
+            sourceApplication: sourceApplication,
+            annotation: annotation)
+        
+        return google || facebook
+        
+    }
+    
 
     func applicationWillResignActive(_ application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
