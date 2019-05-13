@@ -34,10 +34,10 @@ class CPSocialSignInHelper {
             if let picture = userData["picture"] as? NSDictionary, let data = picture["data"] as? NSDictionary, let url = data["url"] as? String {
                 pictureUrl = url
                 print(pictureUrl)
-//                StructProfile.ProfilePicture.ProfilePicURL = pictureUrl
-//                StructProfile.ProfilePicture.email = email!
-//                StructProfile.ProfilePicture.name = firstName! + lastName!
-                // menu.CreateProfilePic()
+                StructProfile.ProfilePicture.ProfilePicURL = pictureUrl
+                StructProfile.ProfilePicture.email = email!
+                StructProfile.ProfilePicture.name = firstName! + lastName!
+                //menu.CreateProfilePic()
             }
         })
     }

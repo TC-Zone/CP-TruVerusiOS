@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "78F028A69F0790ACA5F2BF1E0A0BD5FD"
+               BlueprintIdentifier = "504713F3CC63EDB65807DB5A8B49AB64"
                BuildableName = "TaggerKit.framework"
                BlueprintName = "TaggerKit"
                ReferencedContainer = "container:Pods.xcodeproj">

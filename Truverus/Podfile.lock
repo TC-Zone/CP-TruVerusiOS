@@ -3,6 +3,13 @@ PODS:
   - AlamofireObjectMapper (5.2.0):
     - Alamofire (~> 4.7)
     - ObjectMapper (~> 3.4)
+  - GoogleMaps (3.1.0):
+    - GoogleMaps/Maps (= 3.1.0)
+  - GoogleMaps/Base (3.1.0)
+  - GoogleMaps/Maps (3.1.0):
+    - GoogleMaps/Base
+  - GooglePlaces (3.1.0):
+    - GoogleMaps/Base (= 3.1.0)
   - GoogleSignIn (4.4.0):
     - "GoogleToolboxForMac/NSDictionary+URLArguments (~> 2.1)"
     - "GoogleToolboxForMac/NSString+URLArguments (~> 2.1)"
@@ -27,6 +34,8 @@ PODS:
 DEPENDENCIES:
   - Alamofire (~> 4.7)
   - AlamofireObjectMapper
+  - GoogleMaps
+  - GooglePlaces
   - GoogleSignIn
   - IHProgressHUD (~> 0.1.4)
   - Kingfisher
@@ -40,6 +49,8 @@ SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - Alamofire
     - AlamofireObjectMapper
+    - GoogleMaps
+    - GooglePlaces
     - GoogleSignIn
     - GoogleToolboxForMac
     - GTMSessionFetcher
@@ -62,6 +73,8 @@ CHECKOUT OPTIONS:
 SPEC CHECKSUMS:
   Alamofire: ae5c501addb7afdbb13687d7f2f722c78734c2d3
   AlamofireObjectMapper: 92b6ce2423a9d159e686f6a1d514a009bf903ddc
+  GoogleMaps: 5c13302e6fe6bb6e686b267196586b91cd594225
+  GooglePlaces: e874db179f2675c4f3eeda0b686b540273a578b0
   GoogleSignIn: 7ff245e1a7b26d379099d3243a562f5747e23d39
   GoogleToolboxForMac: ff31605b7d66400dcec09bed5861689aebadda4d
   GTMSessionFetcher: 32aeca0aa144acea523e1c8e053089dec2cb98ca
@@ -73,6 +86,6 @@ SPEC CHECKSUMS:
   TaggerKit: 3404402e7ac4c73aa96949e6f10c6e066ddf792a
   XCDYouTubeKit: 3f4fd3eb3ed494a46a8f007b91315eed6dd6df1f
 
-PODFILE CHECKSUM: 1bd725f0bcbf8d8cfb021a496ac31a9aa3b6992e
+PODFILE CHECKSUM: 1f404241a141269315e75c27cc5e4417eb691d4b
 
 COCOAPODS: 1.6.1

@@ -10,24 +10,55 @@ import UIKit
 
 class CPHomeViewController: BaseViewController {
 
+    @IBOutlet weak var segmentController: CPCustomSegmentedControll!
+    @IBOutlet weak var ProductContainer: UIView!
+    @IBOutlet weak var CollectionContainer: UIView!
+    
+    let Transition = CPSlideInTransition()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         addSlideMenuButton()
         addSlideSearchButton()
-        //addSlideSearchButton()
-        // Do any additional setup after loading the view.
+        segmentController.isHidden = false
+        ProductContainer.alpha = 1
+        CollectionContainer.alpha = 0
+        
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @IBAction func SelectionChanged(_ sender: CPCustomSegmentedControll) {
+        switch sender.selectedSegmentIndex {
+        case 0:
+            print("default home screen")
+            ProductContainer.alpha = 1
+            CollectionContainer.alpha = 0
+        case 1:
+            print("My collection")
+            CollectionContainer.alpha = 1
+            ProductContainer.alpha = 0
+        default:
+            print("nothing in switch")
+        }
+        
     }
-    */
+ 
+    
+}
 
+
+
+
+extension CPHomeViewController : UIViewControllerTransitioningDelegate {
+    
+    func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        Transition.IsPresenting = true
+        return Transition
+    }
+    
+    func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        Transition.IsPresenting = false
+        return Transition
+    }
+    
 }

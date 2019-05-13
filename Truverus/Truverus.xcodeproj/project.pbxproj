@@ -62,6 +62,46 @@
 		CE74F9D52281525F0009ABCD /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE74F9D32281525D0009ABCD /* FBSDKLoginKit.framework */; };
 		CE74F9D62281525F0009ABCD /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE74F9D42281525F0009ABCD /* FBSDKCoreKit.framework */; };
 		CE74F9DA228196E80009ABCD /* credentials.plist in Resources */ = {isa = PBXBuildFile; fileRef = CE74F9D9228196E80009ABCD /* credentials.plist */; };
+		CEE911A52289311D0000F3EE /* CPCommunity.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEE911A42289311D0000F3EE /* CPCommunity.storyboard */; };
+		CEE911AA22893E3F0000F3EE /* CPCommunityHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE911A922893E3F0000F3EE /* CPCommunityHomeViewController.swift */; };
+		CEE911AC22893F1E0000F3EE /* CPFeedbackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE911AB22893F1E0000F3EE /* CPFeedbackViewController.swift */; };
+		CEE911AE22893F480000F3EE /* CPPromotionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE911AD22893F480000F3EE /* CPPromotionsViewController.swift */; };
+		CEE911B022893F6A0000F3EE /* CPEventsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE911AF22893F6A0000F3EE /* CPEventsViewController.swift */; };
+		CEE911B2228940850000F3EE /* CPFeedbackCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE911B1228940850000F3EE /* CPFeedbackCollectionViewCell.swift */; };
+		CEE911B42289409A0000F3EE /* CPPromotionCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE911B32289409A0000F3EE /* CPPromotionCollectionViewCell.swift */; };
+		CEE911B6228940AD0000F3EE /* CPEventCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE911B5228940AD0000F3EE /* CPEventCollectionViewCell.swift */; };
+		CEE911B8228943BF0000F3EE /* CPFeedbackSubViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE911B7228943BF0000F3EE /* CPFeedbackSubViewController.swift */; };
+		CEE911BA228943D20000F3EE /* CPPromotionSubviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE911B9228943D20000F3EE /* CPPromotionSubviewViewController.swift */; };
+		CEE911BC228943E70000F3EE /* CPEventSubViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE911BB228943E70000F3EE /* CPEventSubViewController.swift */; };
+		CEE911BE228944440000F3EE /* RatingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE911BD228944440000F3EE /* RatingController.swift */; };
+		CEE911C122894FA90000F3EE /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEE911C022894FA90000F3EE /* Settings.storyboard */; };
+		CEE911C32289552C0000F3EE /* CPSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE911C22289552C0000F3EE /* CPSettingsViewController.swift */; };
+		CEE911C5228955460000F3EE /* CPSettingsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE911C4228955460000F3EE /* CPSettingsTableViewCell.swift */; };
+		CEE911C822897E700000F3EE /* ManageLocation.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEE911C722897E700000F3EE /* ManageLocation.storyboard */; };
+		CEE911CA22898A390000F3EE /* CPMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE911C922898A390000F3EE /* CPMapViewController.swift */; };
+		CEF2370C2282A1A5006DB6AC /* CPParallaxTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF2370B2282A1A5006DB6AC /* CPParallaxTableView.swift */; };
+		CEF2370E2282A5E6006DB6AC /* CPProductScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF2370D2282A5E6006DB6AC /* CPProductScreenViewController.swift */; };
+		CEF237102282A60F006DB6AC /* CPCustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF2370F2282A60F006DB6AC /* CPCustomTableViewCell.swift */; };
+		CEF237132282CE70006DB6AC /* CPMyCollectionScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF237122282CE70006DB6AC /* CPMyCollectionScreenViewController.swift */; };
+		CEF237162282D6D8006DB6AC /* CPCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF237152282D6D8006DB6AC /* CPCollectionViewController.swift */; };
+		CEF237182282D76E006DB6AC /* CPCollectionTabCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF237172282D76E006DB6AC /* CPCollectionTabCollectionViewCell.swift */; };
+		CEF2371B2283F70E006DB6AC /* CPPendingListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF2371A2283F70E006DB6AC /* CPPendingListViewController.swift */; };
+		CEF2371D2283F72D006DB6AC /* CPPendingCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF2371C2283F72D006DB6AC /* CPPendingCollectionViewCell.swift */; };
+		CEF2372022841BF5006DB6AC /* CPRequestsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF2371F22841BF5006DB6AC /* CPRequestsViewController.swift */; };
+		CEF2372222841C21006DB6AC /* CPRequestsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF2372122841C21006DB6AC /* CPRequestsCollectionViewCell.swift */; };
+		CEF2372522842564006DB6AC /* CPTransferViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF2372422842564006DB6AC /* CPTransferViewController.swift */; };
+		CEF2372722842595006DB6AC /* Transfer.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEF2372622842595006DB6AC /* Transfer.storyboard */; };
+		CEF2372A228440A6006DB6AC /* MyAccount.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEF23729228440A6006DB6AC /* MyAccount.storyboard */; };
+		CEF2372C2284418D006DB6AC /* CPMyAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF2372B2284418D006DB6AC /* CPMyAccountViewController.swift */; };
+		CEF2372E22844423006DB6AC /* CPEditAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF2372D22844423006DB6AC /* CPEditAccountViewController.swift */; };
+		CEF23731228552C9006DB6AC /* PercistanceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF23730228552C9006DB6AC /* PercistanceService.swift */; };
+		CEF2374B228557C1006DB6AC /* CPUserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF2374A228557C1006DB6AC /* CPUserProfile.swift */; };
+		CEF2375222858DE4006DB6AC /* NFC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEF2375122858DE4006DB6AC /* NFC.storyboard */; };
+		CEF2375422858FF4006DB6AC /* CPNfcViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF2375322858FF4006DB6AC /* CPNfcViewController.swift */; };
+		CEF23757228597E9006DB6AC /* Inbox.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEF23756228597E9006DB6AC /* Inbox.storyboard */; };
+		CEF23759228598E4006DB6AC /* CPInboxViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF23758228598E4006DB6AC /* CPInboxViewController.swift */; };
+		CEF2375B228599AA006DB6AC /* CPRemovePopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF2375A228599AA006DB6AC /* CPRemovePopupViewController.swift */; };
+		CEF2375D22859A0C006DB6AC /* CPInboxCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF2375C22859A0C006DB6AC /* CPInboxCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -144,6 +184,46 @@
 		CE74F9D32281525D0009ABCD /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
 		CE74F9D42281525F0009ABCD /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
 		CE74F9D9228196E80009ABCD /* credentials.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = credentials.plist; sourceTree = "<group>"; };
+		CEE911A42289311D0000F3EE /* CPCommunity.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CPCommunity.storyboard; sourceTree = "<group>"; };
+		CEE911A922893E3F0000F3EE /* CPCommunityHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CPCommunityHomeViewController.swift; sourceTree = "<group>"; };
+		CEE911AB22893F1E0000F3EE /* CPFeedbackViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CPFeedbackViewController.swift; sourceTree = "<group>"; };
+		CEE911AD22893F480000F3EE /* CPPromotionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CPPromotionsViewController.swift; sourceTree = "<group>"; };
+		CEE911AF22893F6A0000F3EE /* CPEventsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CPEventsViewController.swift; sourceTree = "<group>"; };
+		CEE911B1228940850000F3EE /* CPFeedbackCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CPFeedbackCollectionViewCell.swift; sourceTree = "<group>"; };
+		CEE911B32289409A0000F3EE /* CPPromotionCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CPPromotionCollectionViewCell.swift; sourceTree = "<group>"; };
+		CEE911B5228940AD0000F3EE /* CPEventCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CPEventCollectionViewCell.swift; sourceTree = "<group>"; };
+		CEE911B7228943BF0000F3EE /* CPFeedbackSubViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CPFeedbackSubViewController.swift; sourceTree = "<group>"; };
+		CEE911B9228943D20000F3EE /* CPPromotionSubviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CPPromotionSubviewViewController.swift; sourceTree = "<group>"; };
+		CEE911BB228943E70000F3EE /* CPEventSubViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CPEventSubViewController.swift; sourceTree = "<group>"; };
+		CEE911BD228944440000F3EE /* RatingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingController.swift; sourceTree = "<group>"; };
+		CEE911C022894FA90000F3EE /* Settings.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
+		CEE911C22289552C0000F3EE /* CPSettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CPSettingsViewController.swift; sourceTree = "<group>"; };
+		CEE911C4228955460000F3EE /* CPSettingsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CPSettingsTableViewCell.swift; sourceTree = "<group>"; };
+		CEE911C722897E700000F3EE /* ManageLocation.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ManageLocation.storyboard; sourceTree = "<group>"; };
+		CEE911C922898A390000F3EE /* CPMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CPMapViewController.swift; sourceTree = "<group>"; };
+		CEF2370B2282A1A5006DB6AC /* CPParallaxTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CPParallaxTableView.swift; sourceTree = "<group>"; };
+		CEF2370D2282A5E6006DB6AC /* CPProductScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CPProductScreenViewController.swift; sourceTree = "<group>"; };
+		CEF2370F2282A60F006DB6AC /* CPCustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CPCustomTableViewCell.swift; sourceTree = "<group>"; };
+		CEF237122282CE70006DB6AC /* CPMyCollectionScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CPMyCollectionScreenViewController.swift; sourceTree = "<group>"; };
+		CEF237152282D6D8006DB6AC /* CPCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CPCollectionViewController.swift; sourceTree = "<group>"; };
+		CEF237172282D76E006DB6AC /* CPCollectionTabCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CPCollectionTabCollectionViewCell.swift; sourceTree = "<group>"; };
+		CEF2371A2283F70E006DB6AC /* CPPendingListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CPPendingListViewController.swift; sourceTree = "<group>"; };
+		CEF2371C2283F72D006DB6AC /* CPPendingCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CPPendingCollectionViewCell.swift; sourceTree = "<group>"; };
+		CEF2371F22841BF5006DB6AC /* CPRequestsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CPRequestsViewController.swift; sourceTree = "<group>"; };
+		CEF2372122841C21006DB6AC /* CPRequestsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CPRequestsCollectionViewCell.swift; sourceTree = "<group>"; };
+		CEF2372422842564006DB6AC /* CPTransferViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CPTransferViewController.swift; sourceTree = "<group>"; };
+		CEF2372622842595006DB6AC /* Transfer.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Transfer.storyboard; sourceTree = "<group>"; };
+		CEF23729228440A6006DB6AC /* MyAccount.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MyAccount.storyboard; sourceTree = "<group>"; };
+		CEF2372B2284418D006DB6AC /* CPMyAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CPMyAccountViewController.swift; sourceTree = "<group>"; };
+		CEF2372D22844423006DB6AC /* CPEditAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CPEditAccountViewController.swift; sourceTree = "<group>"; };
+		CEF23730228552C9006DB6AC /* PercistanceService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PercistanceService.swift; sourceTree = "<group>"; };
+		CEF2374A228557C1006DB6AC /* CPUserProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CPUserProfile.swift; sourceTree = "<group>"; };
+		CEF2375122858DE4006DB6AC /* NFC.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = NFC.storyboard; sourceTree = "<group>"; };
+		CEF2375322858FF4006DB6AC /* CPNfcViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CPNfcViewController.swift; sourceTree = "<group>"; };
+		CEF23756228597E9006DB6AC /* Inbox.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Inbox.storyboard; sourceTree = "<group>"; };
+		CEF23758228598E4006DB6AC /* CPInboxViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CPInboxViewController.swift; sourceTree = "<group>"; };
+		CEF2375A228599AA006DB6AC /* CPRemovePopupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CPRemovePopupViewController.swift; sourceTree = "<group>"; };
+		CEF2375C22859A0C006DB6AC /* CPInboxCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CPInboxCollectionViewCell.swift; sourceTree = "<group>"; };
 		D53D24A0A870DEAE7A3BF2C6 /* Pods-Truverus.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Truverus.release.xcconfig"; path = "Target Support Files/Pods-Truverus/Pods-Truverus.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -196,6 +276,7 @@
 			isa = PBXGroup;
 			children = (
 				CE15AA5922803E2100881C8E /* CPSocialSignInHelper.swift */,
+				CEF2374A228557C1006DB6AC /* CPUserProfile.swift */,
 			);
 			path = CPHelper;
 			sourceTree = "<group>";
@@ -203,6 +284,11 @@
 		CE4C3A7B227DB393004443A2 /* CPViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				CEE911BF22894EC90000F3EE /* CPSettings */,
+				CEE911A3228930D00000F3EE /* CPCommunity */,
+				CEF23755228597D1006DB6AC /* CPInbox */,
+				CEF2375022858DC6006DB6AC /* CPNfc */,
+				CEF237282284408D006DB6AC /* CPMyAccount */,
 				CE4C3A7D227DB393004443A2 /* CPMenuView */,
 				CE4C3A83227DB393004443A2 /* CPHomeView */,
 				CE4C3A86227DB393004443A2 /* CPLoginView */,
@@ -225,6 +311,8 @@
 		CE4C3A83227DB393004443A2 /* CPHomeView */ = {
 			isa = PBXGroup;
 			children = (
+				CEF237112282CD68006DB6AC /* CPMycollectionView */,
+				CEF2370A2282A169006DB6AC /* CPProductView */,
 				CE4C3A84227DB393004443A2 /* CPHomeViewController.swift */,
 				CE4C3A85227DB393004443A2 /* CPHomeView.storyboard */,
 			);
@@ -276,8 +364,8 @@
 				CE54A18B2278012300C4BEE1 /* Assets.xcassets */,
 				CE54A18D2278012300C4BEE1 /* LaunchScreen.storyboard */,
 				CE54A1902278012300C4BEE1 /* Info.plist */,
-				CE54A1882278012200C4BEE1 /* Truverus.xcdatamodeld */,
 				CE74F9D9228196E80009ABCD /* credentials.plist */,
+				CE54A1882278012200C4BEE1 /* Truverus.xcdatamodeld */,
 				CE74F9D42281525F0009ABCD /* FBSDKCoreKit.framework */,
 				CE74F9D32281525D0009ABCD /* FBSDKLoginKit.framework */,
 			);
@@ -339,13 +427,173 @@
 		CE54A1F02278119400C4BEE1 /* CPResources */ = {
 			isa = PBXGroup;
 			children = (
+				CEF2372F228552A3006DB6AC /* CoreData */,
 				CE15AA56228006B700881C8E /* BaseViewController.swift */,
 				CE54A1F1227811AE00C4BEE1 /* CPCustomSegmentedControll.swift */,
 				CE54A1FB22784E4300C4BEE1 /* CPCommon.swift */,
 				CE54A204227AB2C200C4BEE1 /* CPUiViewTransitions.swift */,
 				CE54A206227AC45D00C4BEE1 /* CPSlideInTransition.swift */,
+				CEF2370B2282A1A5006DB6AC /* CPParallaxTableView.swift */,
 			);
 			path = CPResources;
+			sourceTree = "<group>";
+		};
+		CEE911A3228930D00000F3EE /* CPCommunity */ = {
+			isa = PBXGroup;
+			children = (
+				CEE911A822893DF10000F3EE /* Feedback */,
+				CEE911A722893DE80000F3EE /* Promotion */,
+				CEE911A622893DE00000F3EE /* Event */,
+				CEE911A42289311D0000F3EE /* CPCommunity.storyboard */,
+				CEE911A922893E3F0000F3EE /* CPCommunityHomeViewController.swift */,
+			);
+			path = CPCommunity;
+			sourceTree = "<group>";
+		};
+		CEE911A622893DE00000F3EE /* Event */ = {
+			isa = PBXGroup;
+			children = (
+				CEE911AF22893F6A0000F3EE /* CPEventsViewController.swift */,
+				CEE911B5228940AD0000F3EE /* CPEventCollectionViewCell.swift */,
+				CEE911BB228943E70000F3EE /* CPEventSubViewController.swift */,
+			);
+			path = Event;
+			sourceTree = "<group>";
+		};
+		CEE911A722893DE80000F3EE /* Promotion */ = {
+			isa = PBXGroup;
+			children = (
+				CEE911AD22893F480000F3EE /* CPPromotionsViewController.swift */,
+				CEE911B32289409A0000F3EE /* CPPromotionCollectionViewCell.swift */,
+				CEE911B9228943D20000F3EE /* CPPromotionSubviewViewController.swift */,
+			);
+			path = Promotion;
+			sourceTree = "<group>";
+		};
+		CEE911A822893DF10000F3EE /* Feedback */ = {
+			isa = PBXGroup;
+			children = (
+				CEE911AB22893F1E0000F3EE /* CPFeedbackViewController.swift */,
+				CEE911B1228940850000F3EE /* CPFeedbackCollectionViewCell.swift */,
+				CEE911B7228943BF0000F3EE /* CPFeedbackSubViewController.swift */,
+				CEE911BD228944440000F3EE /* RatingController.swift */,
+			);
+			path = Feedback;
+			sourceTree = "<group>";
+		};
+		CEE911BF22894EC90000F3EE /* CPSettings */ = {
+			isa = PBXGroup;
+			children = (
+				CEE911C622897E350000F3EE /* Location */,
+				CEE911C022894FA90000F3EE /* Settings.storyboard */,
+				CEE911C22289552C0000F3EE /* CPSettingsViewController.swift */,
+				CEE911C4228955460000F3EE /* CPSettingsTableViewCell.swift */,
+			);
+			path = CPSettings;
+			sourceTree = "<group>";
+		};
+		CEE911C622897E350000F3EE /* Location */ = {
+			isa = PBXGroup;
+			children = (
+				CEE911C722897E700000F3EE /* ManageLocation.storyboard */,
+				CEE911C922898A390000F3EE /* CPMapViewController.swift */,
+			);
+			path = Location;
+			sourceTree = "<group>";
+		};
+		CEF2370A2282A169006DB6AC /* CPProductView */ = {
+			isa = PBXGroup;
+			children = (
+				CEF2370D2282A5E6006DB6AC /* CPProductScreenViewController.swift */,
+				CEF2370F2282A60F006DB6AC /* CPCustomTableViewCell.swift */,
+			);
+			path = CPProductView;
+			sourceTree = "<group>";
+		};
+		CEF237112282CD68006DB6AC /* CPMycollectionView */ = {
+			isa = PBXGroup;
+			children = (
+				CEF237122282CE70006DB6AC /* CPMyCollectionScreenViewController.swift */,
+				CEF2371E22841A2C006DB6AC /* Requests */,
+				CEF237142282D69A006DB6AC /* Collection */,
+				CEF237192283F6BE006DB6AC /* PendingList */,
+			);
+			path = CPMycollectionView;
+			sourceTree = "<group>";
+		};
+		CEF237142282D69A006DB6AC /* Collection */ = {
+			isa = PBXGroup;
+			children = (
+				CEF237152282D6D8006DB6AC /* CPCollectionViewController.swift */,
+				CEF237172282D76E006DB6AC /* CPCollectionTabCollectionViewCell.swift */,
+				CEF2372322842539006DB6AC /* Transfer */,
+			);
+			path = Collection;
+			sourceTree = "<group>";
+		};
+		CEF237192283F6BE006DB6AC /* PendingList */ = {
+			isa = PBXGroup;
+			children = (
+				CEF2371A2283F70E006DB6AC /* CPPendingListViewController.swift */,
+				CEF2371C2283F72D006DB6AC /* CPPendingCollectionViewCell.swift */,
+			);
+			path = PendingList;
+			sourceTree = "<group>";
+		};
+		CEF2371E22841A2C006DB6AC /* Requests */ = {
+			isa = PBXGroup;
+			children = (
+				CEF2371F22841BF5006DB6AC /* CPRequestsViewController.swift */,
+				CEF2372122841C21006DB6AC /* CPRequestsCollectionViewCell.swift */,
+			);
+			path = Requests;
+			sourceTree = "<group>";
+		};
+		CEF2372322842539006DB6AC /* Transfer */ = {
+			isa = PBXGroup;
+			children = (
+				CEF2372422842564006DB6AC /* CPTransferViewController.swift */,
+				CEF2372622842595006DB6AC /* Transfer.storyboard */,
+			);
+			path = Transfer;
+			sourceTree = "<group>";
+		};
+		CEF237282284408D006DB6AC /* CPMyAccount */ = {
+			isa = PBXGroup;
+			children = (
+				CEF23729228440A6006DB6AC /* MyAccount.storyboard */,
+				CEF2372B2284418D006DB6AC /* CPMyAccountViewController.swift */,
+				CEF2372D22844423006DB6AC /* CPEditAccountViewController.swift */,
+			);
+			path = CPMyAccount;
+			sourceTree = "<group>";
+		};
+		CEF2372F228552A3006DB6AC /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				CEF23730228552C9006DB6AC /* PercistanceService.swift */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
+		CEF2375022858DC6006DB6AC /* CPNfc */ = {
+			isa = PBXGroup;
+			children = (
+				CEF2375122858DE4006DB6AC /* NFC.storyboard */,
+				CEF2375322858FF4006DB6AC /* CPNfcViewController.swift */,
+			);
+			path = CPNfc;
+			sourceTree = "<group>";
+		};
+		CEF23755228597D1006DB6AC /* CPInbox */ = {
+			isa = PBXGroup;
+			children = (
+				CEF23756228597E9006DB6AC /* Inbox.storyboard */,
+				CEF23758228598E4006DB6AC /* CPInboxViewController.swift */,
+				CEF2375A228599AA006DB6AC /* CPRemovePopupViewController.swift */,
+				CEF2375C22859A0C006DB6AC /* CPInboxCollectionViewCell.swift */,
+			);
+			path = CPInbox;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -464,14 +712,17 @@
 				CE54A1DE22780BC700C4BEE1 /* Trade Gothic LT Bold Extended.ttf in Resources */,
 				CE54A1D622780BC700C4BEE1 /* Trade Gothic LT Bold.ttf in Resources */,
 				CE54A1CF22780BC700C4BEE1 /* Trade Gothic LT Bold Oblique.ttf in Resources */,
+				CEF23757228597E9006DB6AC /* Inbox.storyboard in Resources */,
 				CE4C3A8B227DB393004443A2 /* CPMenuView.storyboard in Resources */,
 				CE54A1D322780BC700C4BEE1 /* AvenirNextLTPro-DemiCnIt.otf in Resources */,
+				CEE911C122894FA90000F3EE /* Settings.storyboard in Resources */,
 				CE54A1E722780BC700C4BEE1 /* AvenirNextLTPro-HeavyCnIt.otf in Resources */,
 				CE54A1E822780BC700C4BEE1 /* AvenirNextLTPro-Regular.otf in Resources */,
 				CE74F9DA228196E80009ABCD /* credentials.plist in Resources */,
 				CE54A1DA22780BC700C4BEE1 /* AvenirNextLTPro-BoldCnIt.otf in Resources */,
 				CE4C3A91227DB393004443A2 /* CPHomeView.storyboard in Resources */,
 				CE54A1E622780BC700C4BEE1 /* Trade Gothic LT Bold No. 2 Oblique.ttf in Resources */,
+				CEF2375222858DE4006DB6AC /* NFC.storyboard in Resources */,
 				CE54A1DB22780BC700C4BEE1 /* Trade Gothic LT Extended.ttf in Resources */,
 				CE54A1E222780BC700C4BEE1 /* AvenirNextLTPro-It.otf in Resources */,
 				CE54A1D722780BC700C4BEE1 /* Trade Gothic LT.ttf in Resources */,
@@ -479,6 +730,7 @@
 				CE54A1E922780BC700C4BEE1 /* AvenirNextLTPro-DemiIt.otf in Resources */,
 				CE54A1D922780BC700C4BEE1 /* AvenirNextLTPro-DemiCn.otf in Resources */,
 				CE54A1E322780BC700C4BEE1 /* AvenirNextLTPro-MediumCnIt.otf in Resources */,
+				CEE911C822897E700000F3EE /* ManageLocation.storyboard in Resources */,
 				CE54A1DD22780BC700C4BEE1 /* AvenirNextLTPro-UltLtCn.otf in Resources */,
 				CE4C3A8C227DB393004443A2 /* CPShareAppTableViewCell.xib in Resources */,
 				CE54A18F2278012300C4BEE1 /* LaunchScreen.storyboard in Resources */,
@@ -487,8 +739,11 @@
 				CE54A1D222780BC700C4BEE1 /* Trade Gothic LT Bold No. 2.ttf in Resources */,
 				CE54A1E522780BC700C4BEE1 /* AvenirNextLTPro-MediumCn.otf in Resources */,
 				CE54A18C2278012300C4BEE1 /* Assets.xcassets in Resources */,
+				CEF2372A228440A6006DB6AC /* MyAccount.storyboard in Resources */,
+				CEF2372722842595006DB6AC /* Transfer.storyboard in Resources */,
 				CE54A1DC22780BC700C4BEE1 /* AvenirNextLTPro-Bold.otf in Resources */,
 				CE54A1F5227813EE00C4BEE1 /* Main.storyboard in Resources */,
+				CEE911A52289311D0000F3EE /* CPCommunity.storyboard in Resources */,
 				CE54A1D022780BC700C4BEE1 /* Trade Gothic LT Light.ttf in Resources */,
 				CE4C3A92227DB393004443A2 /* CPLogin.storyboard in Resources */,
 			);
@@ -520,12 +775,16 @@
 			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-Truverus/Pods-Truverus-resources.sh",
+				"${PODS_ROOT}/GoogleMaps/Maps/Frameworks/GoogleMaps.framework/Resources/GoogleMaps.bundle",
+				"${PODS_ROOT}/GooglePlaces/Frameworks/GooglePlaces.framework/Resources/GooglePlaces.bundle",
 				"${PODS_ROOT}/GoogleSignIn/Resources/GoogleSignIn.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputFileListPaths = (
 			);
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleMaps.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GooglePlaces.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleSignIn.bundle",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -604,21 +863,54 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CEF2375B228599AA006DB6AC /* CPRemovePopupViewController.swift in Sources */,
+				CEF2375422858FF4006DB6AC /* CPNfcViewController.swift in Sources */,
+				CEE911C32289552C0000F3EE /* CPSettingsViewController.swift in Sources */,
+				CEE911B6228940AD0000F3EE /* CPEventCollectionViewCell.swift in Sources */,
 				CE4C3A8F227DB393004443A2 /* CPMenuViewController.swift in Sources */,
+				CEF237182282D76E006DB6AC /* CPCollectionTabCollectionViewCell.swift in Sources */,
+				CEE911B022893F6A0000F3EE /* CPEventsViewController.swift in Sources */,
 				CE15AA5A22803E2100881C8E /* CPSocialSignInHelper.swift in Sources */,
+				CEF2372E22844423006DB6AC /* CPEditAccountViewController.swift in Sources */,
+				CEE911B42289409A0000F3EE /* CPPromotionCollectionViewCell.swift in Sources */,
+				CEE911C5228955460000F3EE /* CPSettingsTableViewCell.swift in Sources */,
 				CE54A1842278012200C4BEE1 /* ViewController.swift in Sources */,
+				CEF237132282CE70006DB6AC /* CPMyCollectionScreenViewController.swift in Sources */,
+				CEE911BE228944440000F3EE /* RatingController.swift in Sources */,
+				CEE911AC22893F1E0000F3EE /* CPFeedbackViewController.swift in Sources */,
 				CE54A1822278012200C4BEE1 /* AppDelegate.swift in Sources */,
+				CEF23759228598E4006DB6AC /* CPInboxViewController.swift in Sources */,
+				CEF2372522842564006DB6AC /* CPTransferViewController.swift in Sources */,
 				CE4C3A90227DB393004443A2 /* CPHomeViewController.swift in Sources */,
+				CEF2372022841BF5006DB6AC /* CPRequestsViewController.swift in Sources */,
+				CEF237162282D6D8006DB6AC /* CPCollectionViewController.swift in Sources */,
+				CEF2372222841C21006DB6AC /* CPRequestsCollectionViewCell.swift in Sources */,
 				CE4C3A8E227DB393004443A2 /* CPMenuTableViewCell.swift in Sources */,
 				CE15AA57228006B700881C8E /* BaseViewController.swift in Sources */,
+				CEF2370E2282A5E6006DB6AC /* CPProductScreenViewController.swift in Sources */,
 				CE4C3A93227DB393004443A2 /* CPSignUpViewController.swift in Sources */,
+				CEF237102282A60F006DB6AC /* CPCustomTableViewCell.swift in Sources */,
 				CE54A205227AB2C200C4BEE1 /* CPUiViewTransitions.swift in Sources */,
+				CEE911AA22893E3F0000F3EE /* CPCommunityHomeViewController.swift in Sources */,
 				CE54A1F2227811AE00C4BEE1 /* CPCustomSegmentedControll.swift in Sources */,
 				CE54A1FC22784E4300C4BEE1 /* CPCommon.swift in Sources */,
+				CEF2372C2284418D006DB6AC /* CPMyAccountViewController.swift in Sources */,
 				CE54A18A2278012200C4BEE1 /* Truverus.xcdatamodeld in Sources */,
 				CE4C3A8D227DB393004443A2 /* CPShareAppTableViewCell.swift in Sources */,
+				CEE911AE22893F480000F3EE /* CPPromotionsViewController.swift in Sources */,
+				CEE911BA228943D20000F3EE /* CPPromotionSubviewViewController.swift in Sources */,
+				CEE911CA22898A390000F3EE /* CPMapViewController.swift in Sources */,
+				CEF2371D2283F72D006DB6AC /* CPPendingCollectionViewCell.swift in Sources */,
 				CE4C3A94227DB393004443A2 /* CPLoginViewController.swift in Sources */,
+				CEF2371B2283F70E006DB6AC /* CPPendingListViewController.swift in Sources */,
+				CEF2374B228557C1006DB6AC /* CPUserProfile.swift in Sources */,
+				CEF2375D22859A0C006DB6AC /* CPInboxCollectionViewCell.swift in Sources */,
+				CEE911B2228940850000F3EE /* CPFeedbackCollectionViewCell.swift in Sources */,
 				CE54A207227AC45D00C4BEE1 /* CPSlideInTransition.swift in Sources */,
+				CEE911B8228943BF0000F3EE /* CPFeedbackSubViewController.swift in Sources */,
+				CEF23731228552C9006DB6AC /* PercistanceService.swift in Sources */,
+				CEF2370C2282A1A5006DB6AC /* CPParallaxTableView.swift in Sources */,
+				CEE911BC228943E70000F3EE /* CPEventSubViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

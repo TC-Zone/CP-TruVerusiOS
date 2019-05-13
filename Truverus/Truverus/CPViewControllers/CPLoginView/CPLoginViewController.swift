@@ -141,24 +141,24 @@ class CPLoginViewController: UIViewController, GIDSignInDelegate, GIDSignInUIDel
                 print (imageUrl!)
                 
                 
-                //StructProfile.ProfilePicture.ProfilePicURL = imageUrl!.absoluteString
+                StructProfile.ProfilePicture.ProfilePicURL = imageUrl!.absoluteString
                 
-                //PercistanceService.deleteAllRecords()
+                PercistanceService.deleteAllRecords()
                 
-                //let googlesignuser = User(context: PercistanceService.context)
+                let googlesignuser = User(context: PercistanceService.context)
                 
                 
-//                googlesignuser.profileimageurl = imageUrl!.absoluteString
-//                googlesignuser.name = fullName!
-//                googlesignuser.email = email!
-                //PercistanceService.saveContext()
+                googlesignuser.profilepictureurl = imageUrl!.absoluteString
+                googlesignuser.name = fullName!
+                googlesignuser.email = email!
+                PercistanceService.saveContext()
                 
             }
             
-//            StructProfile.ProfilePicture.email = email!
-//            StructProfile.ProfilePicture.name = fullName!
-//            StructGoogleProfile.GoogleProfileData.email = email!
-//            StructGoogleProfile.GoogleProfileData.name = fullName!
+            StructProfile.ProfilePicture.email = email!
+            StructProfile.ProfilePicture.name = fullName!
+            StructGoogleProfile.GoogleProfileData.email = email!
+            StructGoogleProfile.GoogleProfileData.name = fullName!
             
             back()
             

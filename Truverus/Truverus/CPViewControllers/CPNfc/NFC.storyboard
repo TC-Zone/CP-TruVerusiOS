@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Trade Gothic LT Bold No. 2.ttf">
+            <string>TradeGothicLT-BoldTwo</string>
+        </array>
+        <array key="Trade Gothic LT.ttf">
+            <string>TradeGothicLT</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--Nfc View Controller-->
+        <scene sceneID="ORK-d5-hAU">
+            <objects>
+                <viewController storyboardIdentifier="CPNFCView" id="44h-zi-98q" customClass="CPNfcViewController" customModule="Truverus" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="SrG-Ml-nUA">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UdI-nQ-PHY">
+                                <rect key="frame" x="0.0" y="20" width="375" height="58"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="NFC SCAN" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wk9-3F-3AR">
+                                        <rect key="frame" x="116" y="10.5" width="143" height="37"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="37" id="Fa9-SW-o7a"/>
+                                            <constraint firstAttribute="width" constant="143" id="YNs-np-b4o"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="TradeGothicLT-BoldTwo" family="TradeGothic LT" pointSize="30"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="Wk9-3F-3AR" firstAttribute="centerX" secondItem="UdI-nQ-PHY" secondAttribute="centerX" id="Syj-bX-O7B"/>
+                                    <constraint firstItem="Wk9-3F-3AR" firstAttribute="centerY" secondItem="UdI-nQ-PHY" secondAttribute="centerY" id="XTa-1s-MZe"/>
+                                    <constraint firstAttribute="height" constant="58" id="iJL-c5-Fdw"/>
+                                </constraints>
+                            </view>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uz7-Ua-9PD">
+                                <rect key="frame" x="0.0" y="78" width="375" height="589"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vdL-Q7-Mvs">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Caq-Ai-hrT">
+                                                <rect key="frame" x="31" y="68.5" width="313" height="49"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="49" id="ID9-Nn-VmQ"/>
+                                                    <constraint firstAttribute="width" constant="313" id="i6P-N8-liv"/>
+                                                </constraints>
+                                                <string key="text">Tap your phone to an embeded NFC chip 
+to authenticate</string>
+                                                <fontDescription key="fontDescription" name="TradeGothicLT" family="TradeGothic LT" pointSize="14"/>
+                                                <color key="textColor" name="TextAreaGray"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="nfcScan" translatesAutoresizingMaskIntoConstraints="NO" id="5nH-Vc-eW3">
+                                                <rect key="frame" x="75" y="177.5" width="225" height="225"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="225" id="avj-TV-fYA"/>
+                                                    <constraint firstAttribute="height" constant="225" id="hfg-Jd-k7E"/>
+                                                </constraints>
+                                            </imageView>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0mW-EA-qXC">
+                                                <rect key="frame" x="28" y="452.5" width="319" height="42"/>
+                                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="42" id="sAO-Sf-8Yz"/>
+                                                </constraints>
+                                                <state key="normal" title="Scan">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                        <integer key="value" value="20"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                                </userDefinedRuntimeAttributes>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstItem="5nH-Vc-eW3" firstAttribute="centerY" secondItem="vdL-Q7-Mvs" secondAttribute="centerY" multiplier="0.87" id="2pH-Pq-Ot7"/>
+                                            <constraint firstItem="0mW-EA-qXC" firstAttribute="width" secondItem="vdL-Q7-Mvs" secondAttribute="width" multiplier="0.85" id="HoE-If-5U4"/>
+                                            <constraint firstItem="5nH-Vc-eW3" firstAttribute="top" secondItem="Caq-Ai-hrT" secondAttribute="bottom" constant="60" id="fBy-I7-fAj"/>
+                                            <constraint firstItem="Caq-Ai-hrT" firstAttribute="centerX" secondItem="vdL-Q7-Mvs" secondAttribute="centerX" id="g87-32-Odr"/>
+                                            <constraint firstItem="0mW-EA-qXC" firstAttribute="centerX" secondItem="vdL-Q7-Mvs" secondAttribute="centerX" id="gUZ-hj-u5N"/>
+                                            <constraint firstItem="5nH-Vc-eW3" firstAttribute="centerX" secondItem="vdL-Q7-Mvs" secondAttribute="centerX" id="k1v-vr-qMy"/>
+                                            <constraint firstItem="0mW-EA-qXC" firstAttribute="top" secondItem="5nH-Vc-eW3" secondAttribute="bottom" constant="50" id="kr6-0N-Ob7"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="vdL-Q7-Mvs" firstAttribute="leading" secondItem="uz7-Ua-9PD" secondAttribute="leading" id="BbY-bu-lE7"/>
+                                    <constraint firstAttribute="bottom" secondItem="vdL-Q7-Mvs" secondAttribute="bottom" id="lNd-9j-zMQ"/>
+                                    <constraint firstItem="vdL-Q7-Mvs" firstAttribute="top" secondItem="uz7-Ua-9PD" secondAttribute="top" id="o0Y-rw-09f"/>
+                                    <constraint firstAttribute="trailing" secondItem="vdL-Q7-Mvs" secondAttribute="trailing" id="uii-Jm-9ob"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="UdI-nQ-PHY" firstAttribute="trailing" secondItem="mdX-At-KaN" secondAttribute="trailing" id="7LJ-0P-t2m"/>
+                            <constraint firstItem="uz7-Ua-9PD" firstAttribute="top" secondItem="UdI-nQ-PHY" secondAttribute="bottom" id="GQP-eB-ZIx"/>
+                            <constraint firstItem="UdI-nQ-PHY" firstAttribute="top" secondItem="mdX-At-KaN" secondAttribute="top" id="LOw-23-7zn"/>
+                            <constraint firstItem="uz7-Ua-9PD" firstAttribute="bottom" secondItem="mdX-At-KaN" secondAttribute="bottom" id="ME5-1U-3xH"/>
+                            <constraint firstItem="UdI-nQ-PHY" firstAttribute="leading" secondItem="mdX-At-KaN" secondAttribute="leading" id="TXk-Lz-bnR"/>
+                            <constraint firstItem="vdL-Q7-Mvs" firstAttribute="height" secondItem="SrG-Ml-nUA" secondAttribute="height" priority="250" id="Y8g-Z6-6cV"/>
+                            <constraint firstItem="uz7-Ua-9PD" firstAttribute="trailing" secondItem="mdX-At-KaN" secondAttribute="trailing" id="ehd-Rp-75U"/>
+                            <constraint firstItem="uz7-Ua-9PD" firstAttribute="leading" secondItem="mdX-At-KaN" secondAttribute="leading" id="mFO-AZ-sH5"/>
+                            <constraint firstItem="vdL-Q7-Mvs" firstAttribute="width" secondItem="SrG-Ml-nUA" secondAttribute="width" id="nb6-W0-GZc"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="mdX-At-KaN"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1oz-t9-iWG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="88.799999999999997" y="64.31784107946028"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="nfcScan" width="223" height="208"/>
+        <namedColor name="TextAreaGray">
+            <color red="0.42745098039215684" green="0.43137254901960786" blue="0.44313725490196076" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>
