@@ -8,7 +8,7 @@ target 'Truverus' do
   use_frameworks!
 
   pod 'Alamofire', '~> 4.7'
-  pod 'IHProgressHUD', '~> 0.1.4'
+  pod 'SVProgressHUD'
   pod 'Kingfisher'
   pod 'ObjectMapper'
   pod 'AlamofireObjectMapper'

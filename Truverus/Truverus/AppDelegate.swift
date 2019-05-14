@@ -18,6 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var state : String = ""
     var userdata = [User]()
+    var FBuserdata = [FaceBookUser]()
     var window: UIWindow?
 
 
@@ -64,8 +65,32 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             
         } else if FBSDKAccessToken.current() != nil {
             
-            print("user is already logged in using facebook")
-            CPSocialSignInHelper.fetchProfile()
+            let fetchRequest : NSFetchRequest<FaceBookUser> = FaceBookUser.fetchRequest()
+            
+            do {
+                
+                let FBuserdata = try PercistanceService.context.fetch(fetchRequest)
+                self.FBuserdata = FBuserdata
+                
+            } catch {
+                
+                print("Error occured while fetching core data")
+                
+            }
+            
+            print("user data ::: \(FBuserdata)")
+            let img = FBuserdata.last
+            
+            if (FBuserdata.count != 0) {
+                
+                StructProfile.ProfilePicture.ProfilePicURL = img!.profilePicture!
+                StructProfile.ProfilePicture.email = img!.email!
+                StructProfile.ProfilePicture.name = img!.name!
+                
+            }
+            
+//            print("user is already logged in using facebook")
+//            CPSocialSignInHelper.fetchProfile()
             state = "logedin"
         }
         else {

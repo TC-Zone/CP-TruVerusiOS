@@ -182,7 +182,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="37a-hr-NQN">
-                                <rect key="frame" x="0.0" y="392" width="375" height="200"/>
+                                <rect key="frame" x="0.0" y="412" width="375" height="200"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="inbox_promotion" translatesAutoresizingMaskIntoConstraints="NO" id="i5u-9W-UnV">
                                         <rect key="frame" x="168.5" y="26" width="38" height="38"/>
@@ -239,7 +239,7 @@
                         <constraints>
                             <constraint firstItem="37a-hr-NQN" firstAttribute="trailing" secondItem="Y9F-w3-QIi" secondAttribute="trailing" id="LS3-a2-cPD"/>
                             <constraint firstItem="37a-hr-NQN" firstAttribute="width" secondItem="vSk-F9-5Bw" secondAttribute="width" id="TD4-83-22b"/>
-                            <constraint firstItem="37a-hr-NQN" firstAttribute="bottom" secondItem="Y9F-w3-QIi" secondAttribute="bottom" constant="-75" id="gYE-dO-6pc"/>
+                            <constraint firstItem="37a-hr-NQN" firstAttribute="bottom" secondItem="Y9F-w3-QIi" secondAttribute="bottom" constant="-55" id="gYE-dO-6pc"/>
                             <constraint firstItem="37a-hr-NQN" firstAttribute="leading" secondItem="Y9F-w3-QIi" secondAttribute="leading" id="xvM-H7-LeX"/>
                             <constraint firstItem="37a-hr-NQN" firstAttribute="height" secondItem="vSk-F9-5Bw" secondAttribute="height" multiplier="0.3" id="zHG-FA-DcC"/>
                         </constraints>

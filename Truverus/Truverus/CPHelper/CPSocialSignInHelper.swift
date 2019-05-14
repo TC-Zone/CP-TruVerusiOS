@@ -37,6 +37,16 @@ class CPSocialSignInHelper {
                 StructProfile.ProfilePicture.ProfilePicURL = pictureUrl
                 StructProfile.ProfilePicture.email = email!
                 StructProfile.ProfilePicture.name = firstName! + lastName!
+                
+                PercistanceService.deleteAllRecords()
+                
+                let FBsignuser = FaceBookUser(context: PercistanceService.context)
+                
+                FBsignuser.profilePicture = pictureUrl
+                FBsignuser.name = firstName! + lastName!
+                FBsignuser.email = email!
+                PercistanceService.saveContext()
+                
                 //menu.CreateProfilePic()
             }
         })
