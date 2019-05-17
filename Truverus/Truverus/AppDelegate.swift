@@ -12,7 +12,9 @@ import GoogleSignIn
 import FBSDKCoreKit
 import FBSDKLoginKit
 import GoogleMaps
-
+protocol AppDelegateRefreshTokenProtocol {
+    func refreshAccessTokenOnBase(compeletion: @escaping(APIResult<Void>)->Void)
+}
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
@@ -28,6 +30,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         GMSServices.provideAPIKey("AIzaSyDvL7BFDeuhTJMjHZgRA4Bwfs05RCVubq8")
         
         GIDSignIn.sharedInstance().clientID = "231942660556-p7tmduue9lbaite5g5abfukivdd7onra.apps.googleusercontent.com"
+        
         GIDSignIn.sharedInstance().delegate = self as? GIDSignInDelegate
         GIDSignIn.sharedInstance()?.scopes = ["https://www.googleapis.com/auth/plus.login","https://www.googleapis.com/auth/plus.me"]
         

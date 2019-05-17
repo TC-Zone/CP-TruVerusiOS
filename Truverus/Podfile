@@ -20,6 +20,7 @@ target 'Truverus' do
   pod 'TaggerKit', :git => 'https://github.com/nekonora/TaggerKit.git'
   pod 'GoogleMaps'
   pod 'GooglePlaces'
+  pod 'ReachabilitySwift', '~> 4.2.1'
 
   # Pods for Truverus
 end

@@ -9,10 +9,13 @@
 import UIKit
 import GoogleSignIn
 import FBSDKLoginKit
+import ObjectMapper
+import SVProgressHUD
 
 class CPLoginViewController: UIViewController, GIDSignInDelegate, GIDSignInUIDelegate {
     
-    
+    var dataSourceArray = [googleUser]()
+    let defaults = UserDefaults.standard
 
     @IBOutlet weak var EmailTextField: UITextField!
     @IBOutlet weak var PasswordTextField: UITextField!
@@ -28,7 +31,15 @@ class CPLoginViewController: UIViewController, GIDSignInDelegate, GIDSignInUIDel
         InitTextFields()
         ScrollView.validateScrolling(view: ScrollView)
         CreateButton()
+        checkSavedTokensInDefaults()
         // Do any additional setup after loading the view.
+    }
+    
+    struct keys {
+        
+        static let accesstoken = "Access_Token"
+        static let refreshtoken = "Refresh_Token"
+        
     }
     
     func InitTextFields(){
@@ -100,6 +111,7 @@ class CPLoginViewController: UIViewController, GIDSignInDelegate, GIDSignInUIDel
         GIDSignIn.sharedInstance().signIn()
         
         
+        
     }
     
     @IBAction func SignInButtonAction(_ sender: Any) {
@@ -113,6 +125,8 @@ class CPLoginViewController: UIViewController, GIDSignInDelegate, GIDSignInUIDel
     
     
     func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
+        
+        
         if error != nil {
             print(error)
         }
@@ -160,18 +174,46 @@ class CPLoginViewController: UIViewController, GIDSignInDelegate, GIDSignInUIDel
             StructGoogleProfile.GoogleProfileData.email = email!
             StructGoogleProfile.GoogleProfileData.name = fullName!
             
+            getGoogleUser()
+            
             back()
             
         }
     }
     
+    func handleWebServiceData () {
+        
+        print("data :: \(dataSourceArray[0].access_token)")
+        
+        defaults.set(dataSourceArray[0].refresh_token, forKey: keys.accesstoken)
+        defaults.set(dataSourceArray[0].refresh_token, forKey: keys.refreshtoken)
+        
+    }
+    
+    func checkSavedTokensInDefaults() {
+        
+        let refreshtoken = defaults.value(forKey: keys.refreshtoken)
+        
+        
+        if refreshtoken != nil {
+            print("saved refresh token in defaults is :: \(refreshtoken)")
+        } else {
+            
+            print("no saved token yet")
+        }
+        
+    }
+    
    
     func back(){
+        
+        
         
         let storyboard : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
         let vc : ViewController = storyboard.instantiateViewController(withIdentifier: "MainView") as! ViewController
         
         self.navigationController?.pushViewController(vc, animated: true)
+        
 //        UIApplication.shared.keyWindow?.setRootViewController(vc, options: .init(direction: .toLeft, style: .easeIn))
         
     }
@@ -185,4 +227,59 @@ class CPLoginViewController: UIViewController, GIDSignInDelegate, GIDSignInUIDel
     }
     */
 
+}
+
+
+extension CPLoginViewController{
+    private func getGoogleUser(){
+        SVProgressHUD.show()
+        
+        let headers: [String: String] = [:]
+        
+        let url = NSString.init(format: "%@%@", UrlConstans.BASE_URL, UrlConstans.SOCIAL_USER_SIGN_IN) as String
+        
+        print("url is :: \(url)")
+        let parameters : [String :Any] = ["code" : idToken as Any, "authProvider" : "google"]
+        
+        if let url = URL(string: url) {
+            ApiManager.shared().makeRequestAlamofire(route: url, method: .post, autherized: true, parameter: parameters, header: headers){ (response) in
+                SVProgressHUD.dismiss()
+                switch response{
+                case let .success(data):
+                    self.serializeCheckUserStatusResponse(data: data)
+                    print("hereee")
+                    print(response)
+                case .failure(_):
+                    print("fail")
+                }
+            }
+        }
+    }
+    
+    func serializeCheckUserStatusResponse(data: Data) {
+        do{
+            let json = try JSONSerialization.jsonObject(with: data, options: [])
+            
+            print("data in response :: \(json)")
+            guard let loginResponse: googleUser = Mapper<googleUser>().map(JSONObject: json) else {
+                return
+            }
+            self.dataSourceArray = [loginResponse]
+            
+            print("data :: \(dataSourceArray[0].access_token)")
+            
+            print("data array \(dataSourceArray)")
+            
+            
+            print("access token :: \(loginResponse.access_token)")
+            print("refresh token :: \(loginResponse.refresh_token)")
+            
+            self.handleWebServiceData()
+            
+            //            customerID = loginResponse.subscriberBean?.subscriberId
+            //            self.rssSubscrib()
+        }catch {
+            print(error)
+        }
+    }
 }

@@ -25,6 +25,7 @@ PODS:
   - GTMSessionFetcher/Core (1.2.1)
   - Kingfisher (5.3.1)
   - ObjectMapper (3.4.2)
+  - ReachabilitySwift (4.2.1)
   - SnapKit (4.0.1)
   - SVProgressHUD (2.2.5)
   - SwiftyJSON (4.2.0)
@@ -39,6 +40,7 @@ DEPENDENCIES:
   - GoogleSignIn
   - Kingfisher
   - ObjectMapper
+  - ReachabilitySwift (~> 4.2.1)
   - SnapKit (~> 4.0.0)
   - SVProgressHUD
   - SwiftyJSON (~> 4.2.0)
@@ -56,6 +58,7 @@ SPEC REPOS:
     - GTMSessionFetcher
     - Kingfisher
     - ObjectMapper
+    - ReachabilitySwift
     - SnapKit
     - SVProgressHUD
     - SwiftyJSON
@@ -80,12 +83,13 @@ SPEC CHECKSUMS:
   GTMSessionFetcher: 32aeca0aa144acea523e1c8e053089dec2cb98ca
   Kingfisher: d9e7e0b209b59b8f9873aa2f37654e81a7beea51
   ObjectMapper: 0d4402610f4e468903ae64629eec4784531e5c51
+  ReachabilitySwift: 35720ffea59c1c76d15f885be77fd33e33985427
   SnapKit: 0de968a9fec17499afa29683b05d0c775b6d1c29
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
   SwiftyJSON: c4bcba26dd9ec7a027fc8eade48e2c911f229e96
   TaggerKit: 3404402e7ac4c73aa96949e6f10c6e066ddf792a
   XCDYouTubeKit: 3f4fd3eb3ed494a46a8f007b91315eed6dd6df1f
 
-PODFILE CHECKSUM: 069ecbfefabf60dd9ec025a07213fc52caac8ad1
+PODFILE CHECKSUM: 20f0e38d8f3dfded87f11d8a3a5dbe33b592ecdd
 
 COCOAPODS: 1.6.1

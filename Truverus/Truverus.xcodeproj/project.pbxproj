@@ -79,6 +79,14 @@
 		CEE911C5228955460000F3EE /* CPSettingsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE911C4228955460000F3EE /* CPSettingsTableViewCell.swift */; };
 		CEE911C822897E700000F3EE /* ManageLocation.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEE911C722897E700000F3EE /* ManageLocation.storyboard */; };
 		CEE911CA22898A390000F3EE /* CPMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE911C922898A390000F3EE /* CPMapViewController.swift */; };
+		CEE911CE228BE4E90000F3EE /* CPAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE911CD228BE4E90000F3EE /* CPAPIManager.swift */; };
+		CEE911D0228BE5CE0000F3EE /* CPConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE911CF228BE5CE0000F3EE /* CPConstants.swift */; };
+		CEE911D2228C0A630000F3EE /* CPScanViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE911D1228C0A630000F3EE /* CPScanViewModel.swift */; };
+		CEE911D4228C0AB20000F3EE /* CPHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE911D3228C0AB20000F3EE /* CPHelper.swift */; };
+		CEE91203228EA5730000F3EE /* ApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE91202228EA5730000F3EE /* ApiManager.swift */; };
+		CEE91205228EA58A0000F3EE /* ResponseError.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE91204228EA58A0000F3EE /* ResponseError.swift */; };
+		CEE91207228EA5990000F3EE /* UrlConstans.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE91206228EA5990000F3EE /* UrlConstans.swift */; };
+		CEE9120A228EA6F80000F3EE /* SocialUserLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE91209228EA6F80000F3EE /* SocialUserLogin.swift */; };
 		CEF2370C2282A1A5006DB6AC /* CPParallaxTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF2370B2282A1A5006DB6AC /* CPParallaxTableView.swift */; };
 		CEF2370E2282A5E6006DB6AC /* CPProductScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF2370D2282A5E6006DB6AC /* CPProductScreenViewController.swift */; };
 		CEF237102282A60F006DB6AC /* CPCustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF2370F2282A60F006DB6AC /* CPCustomTableViewCell.swift */; };
@@ -202,6 +210,14 @@
 		CEE911C722897E700000F3EE /* ManageLocation.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ManageLocation.storyboard; sourceTree = "<group>"; };
 		CEE911C922898A390000F3EE /* CPMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CPMapViewController.swift; sourceTree = "<group>"; };
 		CEE911CB228A98B10000F3EE /* Truverus.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Truverus.entitlements; sourceTree = "<group>"; };
+		CEE911CD228BE4E90000F3EE /* CPAPIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CPAPIManager.swift; sourceTree = "<group>"; };
+		CEE911CF228BE5CE0000F3EE /* CPConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CPConstants.swift; sourceTree = "<group>"; };
+		CEE911D1228C0A630000F3EE /* CPScanViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CPScanViewModel.swift; sourceTree = "<group>"; };
+		CEE911D3228C0AB20000F3EE /* CPHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CPHelper.swift; sourceTree = "<group>"; };
+		CEE91202228EA5730000F3EE /* ApiManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiManager.swift; sourceTree = "<group>"; };
+		CEE91204228EA58A0000F3EE /* ResponseError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseError.swift; sourceTree = "<group>"; };
+		CEE91206228EA5990000F3EE /* UrlConstans.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UrlConstans.swift; sourceTree = "<group>"; };
+		CEE91209228EA6F80000F3EE /* SocialUserLogin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialUserLogin.swift; sourceTree = "<group>"; };
 		CEF2370B2282A1A5006DB6AC /* CPParallaxTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CPParallaxTableView.swift; sourceTree = "<group>"; };
 		CEF2370D2282A5E6006DB6AC /* CPProductScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CPProductScreenViewController.swift; sourceTree = "<group>"; };
 		CEF2370F2282A60F006DB6AC /* CPCustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CPCustomTableViewCell.swift; sourceTree = "<group>"; };
@@ -278,6 +294,8 @@
 			children = (
 				CE15AA5922803E2100881C8E /* CPSocialSignInHelper.swift */,
 				CEF2374A228557C1006DB6AC /* CPUserProfile.swift */,
+				CEE911CF228BE5CE0000F3EE /* CPConstants.swift */,
+				CEE911D3228C0AB20000F3EE /* CPHelper.swift */,
 			);
 			path = CPHelper;
 			sourceTree = "<group>";
@@ -357,7 +375,9 @@
 			children = (
 				CEE911CB228A98B10000F3EE /* Truverus.entitlements */,
 				CE54A1F02278119400C4BEE1 /* CPResources */,
+				CEE911FF228EA52C0000F3EE /* CPNetworking */,
 				CE15AA5822803DDD00881C8E /* CPHelper */,
+				CEE911CC228BE4D20000F3EE /* Manager */,
 				CE54A1B322780BC700C4BEE1 /* Fonts */,
 				CE4C3A7B227DB393004443A2 /* CPViewControllers */,
 				CE54A1812278012200C4BEE1 /* AppDelegate.swift */,
@@ -503,6 +523,49 @@
 			path = Location;
 			sourceTree = "<group>";
 		};
+		CEE911CC228BE4D20000F3EE /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				CEE911CD228BE4E90000F3EE /* CPAPIManager.swift */,
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
+		CEE911FF228EA52C0000F3EE /* CPNetworking */ = {
+			isa = PBXGroup;
+			children = (
+				CEE91208228EA6E60000F3EE /* Models */,
+				CEE91201228EA54D0000F3EE /* Networkservices */,
+				CEE91200228EA5400000F3EE /* Management */,
+			);
+			path = CPNetworking;
+			sourceTree = "<group>";
+		};
+		CEE91200228EA5400000F3EE /* Management */ = {
+			isa = PBXGroup;
+			children = (
+				CEE91202228EA5730000F3EE /* ApiManager.swift */,
+			);
+			path = Management;
+			sourceTree = "<group>";
+		};
+		CEE91201228EA54D0000F3EE /* Networkservices */ = {
+			isa = PBXGroup;
+			children = (
+				CEE91204228EA58A0000F3EE /* ResponseError.swift */,
+				CEE91206228EA5990000F3EE /* UrlConstans.swift */,
+			);
+			path = Networkservices;
+			sourceTree = "<group>";
+		};
+		CEE91208228EA6E60000F3EE /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				CEE91209228EA6F80000F3EE /* SocialUserLogin.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		CEF2370A2282A169006DB6AC /* CPProductView */ = {
 			isa = PBXGroup;
 			children = (
@@ -583,6 +646,7 @@
 			children = (
 				CEF2375122858DE4006DB6AC /* NFC.storyboard */,
 				CEF2375322858FF4006DB6AC /* CPNfcViewController.swift */,
+				CEE911D1228C0A630000F3EE /* CPScanViewModel.swift */,
 			);
 			path = CPNfc;
 			sourceTree = "<group>";
@@ -814,6 +878,7 @@
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
 				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
+				"${BUILT_PRODUCTS_DIR}/ReachabilitySwift/Reachability.framework",
 				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
@@ -830,6 +895,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Reachability.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
@@ -873,12 +939,15 @@
 				CEF2375B228599AA006DB6AC /* CPRemovePopupViewController.swift in Sources */,
 				CEF2375422858FF4006DB6AC /* CPNfcViewController.swift in Sources */,
 				CEE911C32289552C0000F3EE /* CPSettingsViewController.swift in Sources */,
+				CEE91205228EA58A0000F3EE /* ResponseError.swift in Sources */,
 				CEE911B6228940AD0000F3EE /* CPEventCollectionViewCell.swift in Sources */,
 				CE4C3A8F227DB393004443A2 /* CPMenuViewController.swift in Sources */,
 				CEF237182282D76E006DB6AC /* CPCollectionTabCollectionViewCell.swift in Sources */,
 				CEE911B022893F6A0000F3EE /* CPEventsViewController.swift in Sources */,
 				CE15AA5A22803E2100881C8E /* CPSocialSignInHelper.swift in Sources */,
 				CEF2372E22844423006DB6AC /* CPEditAccountViewController.swift in Sources */,
+				CEE911D2228C0A630000F3EE /* CPScanViewModel.swift in Sources */,
+				CEE9120A228EA6F80000F3EE /* SocialUserLogin.swift in Sources */,
 				CEE911B42289409A0000F3EE /* CPPromotionCollectionViewCell.swift in Sources */,
 				CEE911C5228955460000F3EE /* CPSettingsTableViewCell.swift in Sources */,
 				CE54A1842278012200C4BEE1 /* ViewController.swift in Sources */,
@@ -890,6 +959,7 @@
 				CEF2372522842564006DB6AC /* CPTransferViewController.swift in Sources */,
 				CE4C3A90227DB393004443A2 /* CPHomeViewController.swift in Sources */,
 				CEF2372022841BF5006DB6AC /* CPRequestsViewController.swift in Sources */,
+				CEE911D0228BE5CE0000F3EE /* CPConstants.swift in Sources */,
 				CEF237162282D6D8006DB6AC /* CPCollectionViewController.swift in Sources */,
 				CEF2372222841C21006DB6AC /* CPRequestsCollectionViewCell.swift in Sources */,
 				CE4C3A8E227DB393004443A2 /* CPMenuTableViewCell.swift in Sources */,
@@ -902,13 +972,17 @@
 				CE54A1F2227811AE00C4BEE1 /* CPCustomSegmentedControll.swift in Sources */,
 				CE54A1FC22784E4300C4BEE1 /* CPCommon.swift in Sources */,
 				CEF2372C2284418D006DB6AC /* CPMyAccountViewController.swift in Sources */,
+				CEE911CE228BE4E90000F3EE /* CPAPIManager.swift in Sources */,
 				CE54A18A2278012200C4BEE1 /* Truverus.xcdatamodeld in Sources */,
+				CEE911D4228C0AB20000F3EE /* CPHelper.swift in Sources */,
 				CE4C3A8D227DB393004443A2 /* CPShareAppTableViewCell.swift in Sources */,
 				CEE911AE22893F480000F3EE /* CPPromotionsViewController.swift in Sources */,
 				CEE911BA228943D20000F3EE /* CPPromotionSubviewViewController.swift in Sources */,
 				CEE911CA22898A390000F3EE /* CPMapViewController.swift in Sources */,
 				CEF2371D2283F72D006DB6AC /* CPPendingCollectionViewCell.swift in Sources */,
+				CEE91207228EA5990000F3EE /* UrlConstans.swift in Sources */,
 				CE4C3A94227DB393004443A2 /* CPLoginViewController.swift in Sources */,
+				CEE91203228EA5730000F3EE /* ApiManager.swift in Sources */,
 				CEF2371B2283F70E006DB6AC /* CPPendingListViewController.swift in Sources */,
 				CEF2374B228557C1006DB6AC /* CPUserProfile.swift in Sources */,
 				CEF2375D22859A0C006DB6AC /* CPInboxCollectionViewCell.swift in Sources */,
