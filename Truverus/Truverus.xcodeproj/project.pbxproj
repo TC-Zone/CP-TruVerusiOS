@@ -87,6 +87,7 @@
 		CEE91205228EA58A0000F3EE /* ResponseError.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE91204228EA58A0000F3EE /* ResponseError.swift */; };
 		CEE91207228EA5990000F3EE /* UrlConstans.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE91206228EA5990000F3EE /* UrlConstans.swift */; };
 		CEE9120A228EA6F80000F3EE /* SocialUserLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE91209228EA6F80000F3EE /* SocialUserLogin.swift */; };
+		CEE9120C22928DFC0000F3EE /* CPTagDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE9120B22928DFC0000F3EE /* CPTagDataModel.swift */; };
 		CEF2370C2282A1A5006DB6AC /* CPParallaxTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF2370B2282A1A5006DB6AC /* CPParallaxTableView.swift */; };
 		CEF2370E2282A5E6006DB6AC /* CPProductScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF2370D2282A5E6006DB6AC /* CPProductScreenViewController.swift */; };
 		CEF237102282A60F006DB6AC /* CPCustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF2370F2282A60F006DB6AC /* CPCustomTableViewCell.swift */; };
@@ -218,6 +219,7 @@
 		CEE91204228EA58A0000F3EE /* ResponseError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseError.swift; sourceTree = "<group>"; };
 		CEE91206228EA5990000F3EE /* UrlConstans.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UrlConstans.swift; sourceTree = "<group>"; };
 		CEE91209228EA6F80000F3EE /* SocialUserLogin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialUserLogin.swift; sourceTree = "<group>"; };
+		CEE9120B22928DFC0000F3EE /* CPTagDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CPTagDataModel.swift; sourceTree = "<group>"; };
 		CEF2370B2282A1A5006DB6AC /* CPParallaxTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CPParallaxTableView.swift; sourceTree = "<group>"; };
 		CEF2370D2282A5E6006DB6AC /* CPProductScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CPProductScreenViewController.swift; sourceTree = "<group>"; };
 		CEF2370F2282A60F006DB6AC /* CPCustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CPCustomTableViewCell.swift; sourceTree = "<group>"; };
@@ -647,6 +649,7 @@
 				CEF2375122858DE4006DB6AC /* NFC.storyboard */,
 				CEF2375322858FF4006DB6AC /* CPNfcViewController.swift */,
 				CEE911D1228C0A630000F3EE /* CPScanViewModel.swift */,
+				CEE9120B22928DFC0000F3EE /* CPTagDataModel.swift */,
 			);
 			path = CPNfc;
 			sourceTree = "<group>";
@@ -943,6 +946,7 @@
 				CEE911B6228940AD0000F3EE /* CPEventCollectionViewCell.swift in Sources */,
 				CE4C3A8F227DB393004443A2 /* CPMenuViewController.swift in Sources */,
 				CEF237182282D76E006DB6AC /* CPCollectionTabCollectionViewCell.swift in Sources */,
+				CEE9120C22928DFC0000F3EE /* CPTagDataModel.swift in Sources */,
 				CEE911B022893F6A0000F3EE /* CPEventsViewController.swift in Sources */,
 				CE15AA5A22803E2100881C8E /* CPSocialSignInHelper.swift in Sources */,
 				CEF2372E22844423006DB6AC /* CPEditAccountViewController.swift in Sources */,

@@ -14,7 +14,7 @@ import SVProgressHUD
 
 class CPLoginViewController: UIViewController, GIDSignInDelegate, GIDSignInUIDelegate {
     
-    var dataSourceArray = [googleUser]()
+    var dataSourceArray = [googleUserResponse]()
     let defaults = UserDefaults.standard
 
     @IBOutlet weak var EmailTextField: UITextField!
@@ -183,10 +183,10 @@ class CPLoginViewController: UIViewController, GIDSignInDelegate, GIDSignInUIDel
     
     func handleWebServiceData () {
         
-        print("data :: \(dataSourceArray[0].access_token)")
+        print("data :: \(dataSourceArray[0].response?.access_token)")
         
-        defaults.set(dataSourceArray[0].refresh_token, forKey: keys.accesstoken)
-        defaults.set(dataSourceArray[0].refresh_token, forKey: keys.refreshtoken)
+        defaults.set(dataSourceArray[0].response?.refresh_token, forKey: keys.accesstoken)
+        defaults.set(dataSourceArray[0].response?.refresh_token, forKey: keys.refreshtoken)
         
     }
     
@@ -261,18 +261,19 @@ extension CPLoginViewController{
             let json = try JSONSerialization.jsonObject(with: data, options: [])
             
             print("data in response :: \(json)")
-            guard let loginResponse: googleUser = Mapper<googleUser>().map(JSONObject: json) else {
+            guard let loginResponse: googleUserResponse = Mapper<googleUserResponse>().map(JSONObject: json) else {
                 return
             }
             self.dataSourceArray = [loginResponse]
             
-            print("data :: \(dataSourceArray[0].access_token)")
+            print("data :: \(dataSourceArray[0].response)")
             
             print("data array \(dataSourceArray)")
             
+            print("access token :: \(loginResponse.response?.access_token)")
+            print("refresh token :: \(loginResponse.response?.refresh_token)")
             
-            print("access token :: \(loginResponse.access_token)")
-            print("refresh token :: \(loginResponse.refresh_token)")
+            print("status is :: \(loginResponse.status)")
             
             self.handleWebServiceData()
             

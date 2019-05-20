@@ -9,11 +9,16 @@
 import UIKit
 import CoreNFC
 import SVProgressHUD
+import ObjectMapper
 
 class CPNfcViewController: BaseViewController, NFCNDEFReaderSessionDelegate  {
 
     var viewModel: CPScanViewModel? = nil
     var session: NFCNDEFReaderSession?
+    
+    var dataSourceArray = [NFCTagData]()
+    
+    var tagValue : String!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -49,19 +54,16 @@ class CPNfcViewController: BaseViewController, NFCNDEFReaderSessionDelegate  {
             result += String.init(data: payload.payload.advanced(by: 3), encoding: .utf8)!
         }
         print("result :: \(result)")
-        result = "fe431407d3d843d0ac58a050372165f9360c37f00cb3b8e17783bcde72fff8c07f67d5747055b0854f25970793f7639b71694f5397a6f2c7f0042dc1fdaed403cf7e9b5c1a19"
+        
+        tagValue = result
+        
+        print("tag details result is :: \(tagValue)")
+        
+        
         
         CPHelper.showHud()
-        viewModel?.scanTag(result, completion: { (status, response) in
+        ValidateTag()
             CPHelper.hideHud()
-            if status{
-                self.goToGunineProductViewController(response!)
-            }else{
-                let alert = UIAlertController(title: "Sorry", message: "Your authentication code is invalid", preferredStyle: UIAlertController.Style.alert)
-                alert.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: nil))
-                self.present(alert, animated: true, completion: nil)
-            }
-        })
         
 //        DispatchQueue.main.async {
 //            CPHelper.showHud()
@@ -88,10 +90,10 @@ class CPNfcViewController: BaseViewController, NFCNDEFReaderSessionDelegate  {
         
         //IHProgressHUD.dismiss()
         
+    //_ response : [String : Any]
     
     
-    
-    func goToGunineProductViewController(_ response : [String : Any]) {
+    func goToGunineProductViewController() {
         let controller = UIStoryboard.init(name: "CPHomeView", bundle: nil).instantiateViewController(withIdentifier: "CPHomeView") as! CPHomeViewController
         //controller.scanResponse = response
         self.navigationController?.pushViewController(controller, animated: true)
@@ -107,4 +109,61 @@ class CPNfcViewController: BaseViewController, NFCNDEFReaderSessionDelegate  {
     }
     */
 
+}
+
+
+extension CPNfcViewController{
+    private func ValidateTag(){
+        SVProgressHUD.show()
+        
+        let headers: [String: String] = [:]
+        
+        let url = NSString.init(format: "%@%@", UrlConstans.BASE_URL, UrlConstans.AUTHENTICATE_PRODUCT + "authCode=\(tagValue ?? "")") as String
+        
+        print("url is :: \(url)")
+//        let parameters : [String : Any] = ["authCode=" : "89a9a3077550a1f6df9066a6091017a13e1a266e01e1b071093a4b75a84f338cf979056621a5d2a455c23ebeb2deb74b5cace5c9c6e10620a5741af3d67d5f1b2b752134e9c9"]
+        
+        let parameters : [String : Any] = [:]
+        
+        if let url = URL(string: url) {
+            ApiManager.shared().makeRequestAlamofire(route: url, method: .get, autherized: true, parameter: parameters, header: headers){ (response) in
+                SVProgressHUD.dismiss()
+                switch response{
+                case let .success(data):
+                    self.serializeTagDataResponse(data: data)
+                    print("hereee")
+                    print(response)
+                case .failure(_):
+                    print("fail")
+                }
+            }
+        }
+    }
+    
+    func serializeTagDataResponse(data: Data) {
+        do{
+            let json = try JSONSerialization.jsonObject(with: data, options: [])
+            
+            print("data in response :: \(json)")
+            guard let loginResponse: NFCTagData = Mapper<NFCTagData>().map(JSONObject: json) else {
+                return
+            }
+            self.dataSourceArray = [loginResponse]
+            
+            print("data :: \(dataSourceArray[0].content?.title)")
+            
+            print("data array \(dataSourceArray)")
+            
+            print("message :: \(loginResponse.content?.message)")
+            print("Product id :: \(loginResponse.content?.productId)")
+            
+            print("status is :: \(loginResponse.status)")
+            
+            goToGunineProductViewController()
+            //            customerID = loginResponse.subscriberBean?.subscriberId
+            //            self.rssSubscrib()
+        }catch {
+            print(error)
+        }
+    }
 }
