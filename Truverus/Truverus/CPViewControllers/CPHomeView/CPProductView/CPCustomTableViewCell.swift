@@ -23,6 +23,11 @@ class CPCustomTableViewCell: UITableViewCell {
     @IBOutlet weak var TransferButton: UIButton!
     @IBOutlet weak var BackButton: UIButton!
     
+    @IBOutlet weak var CommunityButton: UIButton!
+    
+    
+    var youtubeVedioID : String!
+    var Community : String!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -82,6 +87,8 @@ class CPCustomTableViewCell: UITableViewCell {
             DescriptionTextArea.isScrollEnabled = false
         }
         
+        ProductNameLabel.text = productName
+        
     }
     
     @objc func actionButtonTapped(sender: UIButton){
@@ -97,12 +104,26 @@ class CPCustomTableViewCell: UITableViewCell {
         
     }
     
+    @IBAction func CommunityButtonAction(_ sender: Any) {
+        
+        if productStruct.productObj.CommunityID != "" {
+            print("Community Id in cell is :: \(productStruct.productObj.CommunityID)")
+        }
+        
+    }
     
     @IBAction func WatchButtonAction(_ sender: Any) {
         
         print("button is clicked")
         
-        let youtubeId = "EKyirtVHsK0"
+        var youtubeId = ""
+        
+        if productStruct.productObj.youtubeId != "" {
+            print("youtube Id in cell is :: \(productStruct.productObj.youtubeId)")
+            youtubeId = productStruct.productObj.youtubeId
+        } else {
+            youtubeId = "EKyirtVHsK0"
+        }
         
         if let youtubeURL = URL(string: "youtube://\(youtubeId)"),
             UIApplication.shared.canOpenURL(youtubeURL) {

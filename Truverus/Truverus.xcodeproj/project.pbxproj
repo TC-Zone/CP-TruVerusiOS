@@ -81,13 +81,15 @@
 		CEE911CA22898A390000F3EE /* CPMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE911C922898A390000F3EE /* CPMapViewController.swift */; };
 		CEE911CE228BE4E90000F3EE /* CPAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE911CD228BE4E90000F3EE /* CPAPIManager.swift */; };
 		CEE911D0228BE5CE0000F3EE /* CPConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE911CF228BE5CE0000F3EE /* CPConstants.swift */; };
-		CEE911D2228C0A630000F3EE /* CPScanViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE911D1228C0A630000F3EE /* CPScanViewModel.swift */; };
 		CEE911D4228C0AB20000F3EE /* CPHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE911D3228C0AB20000F3EE /* CPHelper.swift */; };
 		CEE91203228EA5730000F3EE /* ApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE91202228EA5730000F3EE /* ApiManager.swift */; };
 		CEE91205228EA58A0000F3EE /* ResponseError.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE91204228EA58A0000F3EE /* ResponseError.swift */; };
 		CEE91207228EA5990000F3EE /* UrlConstans.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE91206228EA5990000F3EE /* UrlConstans.swift */; };
 		CEE9120A228EA6F80000F3EE /* SocialUserLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE91209228EA6F80000F3EE /* SocialUserLogin.swift */; };
 		CEE9120C22928DFC0000F3EE /* CPTagDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE9120B22928DFC0000F3EE /* CPTagDataModel.swift */; };
+		CEE912152293E3D60000F3EE /* CPProductDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE912142293E3D60000F3EE /* CPProductDataModel.swift */; };
+		CEE91217229415F30000F3EE /* CPPopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE91216229415F30000F3EE /* CPPopupViewController.swift */; };
+		CEE91219229461780000F3EE /* CPServiceProductData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE91218229461780000F3EE /* CPServiceProductData.swift */; };
 		CEF2370C2282A1A5006DB6AC /* CPParallaxTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF2370B2282A1A5006DB6AC /* CPParallaxTableView.swift */; };
 		CEF2370E2282A5E6006DB6AC /* CPProductScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF2370D2282A5E6006DB6AC /* CPProductScreenViewController.swift */; };
 		CEF237102282A60F006DB6AC /* CPCustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF2370F2282A60F006DB6AC /* CPCustomTableViewCell.swift */; };
@@ -213,13 +215,15 @@
 		CEE911CB228A98B10000F3EE /* Truverus.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Truverus.entitlements; sourceTree = "<group>"; };
 		CEE911CD228BE4E90000F3EE /* CPAPIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CPAPIManager.swift; sourceTree = "<group>"; };
 		CEE911CF228BE5CE0000F3EE /* CPConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CPConstants.swift; sourceTree = "<group>"; };
-		CEE911D1228C0A630000F3EE /* CPScanViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CPScanViewModel.swift; sourceTree = "<group>"; };
 		CEE911D3228C0AB20000F3EE /* CPHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CPHelper.swift; sourceTree = "<group>"; };
 		CEE91202228EA5730000F3EE /* ApiManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiManager.swift; sourceTree = "<group>"; };
 		CEE91204228EA58A0000F3EE /* ResponseError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseError.swift; sourceTree = "<group>"; };
 		CEE91206228EA5990000F3EE /* UrlConstans.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UrlConstans.swift; sourceTree = "<group>"; };
 		CEE91209228EA6F80000F3EE /* SocialUserLogin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialUserLogin.swift; sourceTree = "<group>"; };
 		CEE9120B22928DFC0000F3EE /* CPTagDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CPTagDataModel.swift; sourceTree = "<group>"; };
+		CEE912142293E3D60000F3EE /* CPProductDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CPProductDataModel.swift; sourceTree = "<group>"; };
+		CEE91216229415F30000F3EE /* CPPopupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CPPopupViewController.swift; sourceTree = "<group>"; };
+		CEE91218229461780000F3EE /* CPServiceProductData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CPServiceProductData.swift; sourceTree = "<group>"; };
 		CEF2370B2282A1A5006DB6AC /* CPParallaxTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CPParallaxTableView.swift; sourceTree = "<group>"; };
 		CEF2370D2282A5E6006DB6AC /* CPProductScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CPProductScreenViewController.swift; sourceTree = "<group>"; };
 		CEF2370F2282A60F006DB6AC /* CPCustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CPCustomTableViewCell.swift; sourceTree = "<group>"; };
@@ -568,11 +572,21 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		CEE9120D2292A7140000F3EE /* CPNFCPopUps */ = {
+			isa = PBXGroup;
+			children = (
+				CEE91216229415F30000F3EE /* CPPopupViewController.swift */,
+			);
+			path = CPNFCPopUps;
+			sourceTree = "<group>";
+		};
 		CEF2370A2282A169006DB6AC /* CPProductView */ = {
 			isa = PBXGroup;
 			children = (
 				CEF2370D2282A5E6006DB6AC /* CPProductScreenViewController.swift */,
 				CEF2370F2282A60F006DB6AC /* CPCustomTableViewCell.swift */,
+				CEE912142293E3D60000F3EE /* CPProductDataModel.swift */,
+				CEE91218229461780000F3EE /* CPServiceProductData.swift */,
 			);
 			path = CPProductView;
 			sourceTree = "<group>";
@@ -646,9 +660,9 @@
 		CEF2375022858DC6006DB6AC /* CPNfc */ = {
 			isa = PBXGroup;
 			children = (
+				CEE9120D2292A7140000F3EE /* CPNFCPopUps */,
 				CEF2375122858DE4006DB6AC /* NFC.storyboard */,
 				CEF2375322858FF4006DB6AC /* CPNfcViewController.swift */,
-				CEE911D1228C0A630000F3EE /* CPScanViewModel.swift */,
 				CEE9120B22928DFC0000F3EE /* CPTagDataModel.swift */,
 			);
 			path = CPNfc;
@@ -737,6 +751,7 @@
 				TargetAttributes = {
 					CE54A17D2278012200C4BEE1 = {
 						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1020;
 						SystemCapabilities = {
 							com.apple.NearFieldCommunicationTagReading = {
 								enabled = 1;
@@ -745,10 +760,12 @@
 					};
 					CE54A1942278012300C4BEE1 = {
 						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1020;
 						TestTargetID = CE54A17D2278012200C4BEE1;
 					};
 					CE54A19F2278012300C4BEE1 = {
 						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1020;
 						TestTargetID = CE54A17D2278012200C4BEE1;
 					};
 				};
@@ -876,7 +893,6 @@
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-Truverus/Pods-Truverus-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
-				"${BUILT_PRODUCTS_DIR}/AlamofireObjectMapper/AlamofireObjectMapper.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
@@ -893,7 +909,6 @@
 			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireObjectMapper.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
@@ -950,10 +965,10 @@
 				CEE911B022893F6A0000F3EE /* CPEventsViewController.swift in Sources */,
 				CE15AA5A22803E2100881C8E /* CPSocialSignInHelper.swift in Sources */,
 				CEF2372E22844423006DB6AC /* CPEditAccountViewController.swift in Sources */,
-				CEE911D2228C0A630000F3EE /* CPScanViewModel.swift in Sources */,
 				CEE9120A228EA6F80000F3EE /* SocialUserLogin.swift in Sources */,
 				CEE911B42289409A0000F3EE /* CPPromotionCollectionViewCell.swift in Sources */,
 				CEE911C5228955460000F3EE /* CPSettingsTableViewCell.swift in Sources */,
+				CEE912152293E3D60000F3EE /* CPProductDataModel.swift in Sources */,
 				CE54A1842278012200C4BEE1 /* ViewController.swift in Sources */,
 				CEF237132282CE70006DB6AC /* CPMyCollectionScreenViewController.swift in Sources */,
 				CEE911BE228944440000F3EE /* RatingController.swift in Sources */,
@@ -978,6 +993,7 @@
 				CEF2372C2284418D006DB6AC /* CPMyAccountViewController.swift in Sources */,
 				CEE911CE228BE4E90000F3EE /* CPAPIManager.swift in Sources */,
 				CE54A18A2278012200C4BEE1 /* Truverus.xcdatamodeld in Sources */,
+				CEE91217229415F30000F3EE /* CPPopupViewController.swift in Sources */,
 				CEE911D4228C0AB20000F3EE /* CPHelper.swift in Sources */,
 				CE4C3A8D227DB393004443A2 /* CPShareAppTableViewCell.swift in Sources */,
 				CEE911AE22893F480000F3EE /* CPPromotionsViewController.swift in Sources */,
@@ -996,6 +1012,7 @@
 				CEF23731228552C9006DB6AC /* PercistanceService.swift in Sources */,
 				CEF2370C2282A1A5006DB6AC /* CPParallaxTableView.swift in Sources */,
 				CEE911BC228943E70000F3EE /* CPEventSubViewController.swift in Sources */,
+				CEE91219229461780000F3EE /* CPServiceProductData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1180,7 +1197,7 @@
 					"$(PROJECT_DIR)/Truverus",
 				);
 				INFOPLIST_FILE = Truverus/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1188,7 +1205,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.teamclearpicture.Truverus;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = Truverus;
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -1199,7 +1216,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Truverus/Truverus.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = AS2ECMWCBD;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -1207,15 +1224,15 @@
 					"$(PROJECT_DIR)/Truverus",
 				);
 				INFOPLIST_FILE = Truverus/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.teamclearpicture.Truverus;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = Truverus;
-				SWIFT_VERSION = 4.2;
+				PROVISIONING_PROFILE_SPECIFIER = TruverusCPAdHocProfile;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -1235,7 +1252,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.clearpicture.TruverusTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Truverus.app/Truverus";
 			};
@@ -1256,7 +1273,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.clearpicture.TruverusTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Truverus.app/Truverus";
 			};
@@ -1276,7 +1293,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.clearpicture.TruverusUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = Truverus;
 			};
@@ -1296,7 +1313,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.clearpicture.TruverusUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = Truverus;
 			};

@@ -14,4 +14,6 @@ struct UrlConstans {
     
     static let SOCIAL_USER_SIGN_IN : String = "/user/api/social"
     static let AUTHENTICATE_PRODUCT : String = "/product/api/authenticate?"
+    static let PRODUCT_DETAILS_VIEW : String = "/product/api/products/"
+    static let PRODUCT_IMAGES_BY_ID : String = "/product/downloadFile/"
 }

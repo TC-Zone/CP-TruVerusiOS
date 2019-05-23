@@ -160,8 +160,28 @@
                                                         <action selector="WatchButtonAction:" destination="Fo6-QQ-rLe" eventType="touchUpInside" id="tOW-tB-vri"/>
                                                     </connections>
                                                 </button>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dzr-uS-Y5l">
+                                                    <rect key="frame" x="28" y="630" width="319" height="42"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="42" id="frz-fV-YgW"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="TradeGothicLT-BoldTwo" family="TradeGothic LT" pointSize="19"/>
+                                                    <state key="normal" title="Go to Community">
+                                                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </state>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                            <integer key="value" value="20"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                                    </userDefinedRuntimeAttributes>
+                                                    <connections>
+                                                        <action selector="CommunityButtonAction:" destination="Fo6-QQ-rLe" eventType="touchUpInside" id="W6J-cn-H7Y"/>
+                                                    </connections>
+                                                </button>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J53-Ne-JRf">
-                                                    <rect key="frame" x="37.5" y="684" width="300" height="42"/>
+                                                    <rect key="frame" x="28" y="684" width="319" height="42"/>
                                                     <color key="backgroundColor" name="TextGray"/>
                                                     <fontDescription key="fontDescription" name="TradeGothicLT-BoldTwo" family="TradeGothic LT" pointSize="19"/>
                                                     <state key="normal" title="Back">
@@ -175,7 +195,7 @@
                                                     </userDefinedRuntimeAttributes>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H8f-Ut-2bv">
-                                                    <rect key="frame" x="37.5" y="630" width="300" height="42"/>
+                                                    <rect key="frame" x="28" y="630" width="319" height="42"/>
                                                     <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="42" id="O6g-5k-KBA"/>
@@ -194,9 +214,10 @@
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="R3O-h5-MIj" firstAttribute="top" secondItem="pqt-YW-icY" secondAttribute="bottom" constant="55" id="5tu-9M-4C4"/>
+                                                <constraint firstItem="H8f-Ut-2bv" firstAttribute="width" secondItem="ewH-xw-abW" secondAttribute="width" multiplier="0.85" id="9Cw-EY-qDO"/>
                                                 <constraint firstItem="J53-Ne-JRf" firstAttribute="top" secondItem="H8f-Ut-2bv" secondAttribute="bottom" constant="12" id="ADr-ve-U2N"/>
+                                                <constraint firstItem="Dzr-uS-Y5l" firstAttribute="centerX" secondItem="ewH-xw-abW" secondAttribute="centerX" id="Ax6-vb-Hv5"/>
                                                 <constraint firstItem="pqt-YW-icY" firstAttribute="centerX" secondItem="ewH-xw-abW" secondAttribute="centerX" id="F31-F8-wsu"/>
-                                                <constraint firstItem="J53-Ne-JRf" firstAttribute="width" secondItem="H8f-Ut-2bv" secondAttribute="width" id="ImT-FU-0dr"/>
                                                 <constraint firstItem="H8f-Ut-2bv" firstAttribute="top" secondItem="aMl-kW-fbC" secondAttribute="bottom" constant="40" id="JZz-cd-7pE"/>
                                                 <constraint firstItem="R3O-h5-MIj" firstAttribute="width" secondItem="pqt-YW-icY" secondAttribute="width" id="K2s-ry-WqG"/>
                                                 <constraint firstItem="J53-Ne-JRf" firstAttribute="height" secondItem="H8f-Ut-2bv" secondAttribute="height" id="MHU-Do-iyZ"/>
@@ -209,13 +230,16 @@
                                                 <constraint firstItem="aMl-kW-fbC" firstAttribute="centerX" secondItem="ewH-xw-abW" secondAttribute="centerX" id="cRV-cQ-kfa"/>
                                                 <constraint firstAttribute="bottom" secondItem="OQR-nz-WN3" secondAttribute="bottom" constant="764" id="d8Q-Ze-Qgs"/>
                                                 <constraint firstItem="OQR-nz-WN3" firstAttribute="width" secondItem="ewH-xw-abW" secondAttribute="width" multiplier="0.8" id="fsG-r7-5JU"/>
+                                                <constraint firstItem="J53-Ne-JRf" firstAttribute="width" secondItem="ewH-xw-abW" secondAttribute="width" multiplier="0.85" id="g3a-4e-QAF"/>
+                                                <constraint firstItem="Dzr-uS-Y5l" firstAttribute="width" secondItem="ewH-xw-abW" secondAttribute="width" multiplier="0.85" id="i5m-ZJ-tkr"/>
                                                 <constraint firstItem="J53-Ne-JRf" firstAttribute="centerX" secondItem="ewH-xw-abW" secondAttribute="centerX" id="jTf-xR-NhP"/>
-                                                <constraint firstItem="H8f-Ut-2bv" firstAttribute="width" secondItem="R3O-h5-MIj" secondAttribute="width" id="vlf-qs-5Vt"/>
+                                                <constraint firstItem="Dzr-uS-Y5l" firstAttribute="top" secondItem="aMl-kW-fbC" secondAttribute="bottom" constant="40" id="qbW-VX-9ri"/>
                                                 <constraint firstItem="OQR-nz-WN3" firstAttribute="centerX" secondItem="ewH-xw-abW" secondAttribute="centerX" id="zqA-la-Gbg"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="BackButton" destination="J53-Ne-JRf" id="MLm-Mw-ERv"/>
+                                            <outlet property="CommunityButton" destination="Dzr-uS-Y5l" id="KAJ-20-5j8"/>
                                             <outlet property="Descheight" destination="udD-l0-GOP" id="7Gd-WX-ZnO"/>
                                             <outlet property="DescriptionTextArea" destination="R3O-h5-MIj" id="gWU-wa-831"/>
                                             <outlet property="PageControll" destination="OQR-nz-WN3" id="W8r-0K-9fz"/>

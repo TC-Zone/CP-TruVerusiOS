@@ -288,7 +288,7 @@ class CPMenuViewController: UIViewController, UITableViewDelegate, UITableViewDa
     @IBAction func btnCloseMenuOverlay(_ sender: Any) {
         
         
-        foldbackMenu(btnCloseMenuOverlay)
+        foldbackMenu(btnCloseMenuOverlay!)
         
         
     }
@@ -301,7 +301,7 @@ class CPMenuViewController: UIViewController, UITableViewDelegate, UITableViewDa
         
         if (topViewController.classForCoder === vc.classForCoder) {
             
-            foldbackMenu(btnCloseMenuOverlay)
+            foldbackMenu(btnCloseMenuOverlay!)
         } else {
             
             self.dismiss(animated: true, completion: nil)

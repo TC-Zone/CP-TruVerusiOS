@@ -35,6 +35,8 @@ class CPMapViewController: UIViewController, CLLocationManagerDelegate {
             case .authorizedAlways, .authorizedWhenInUse:
                 print("Access")
                 self.showCurrentLocation()
+            @unknown default:
+                print("fatal error")
             }
         } else {
             print("Location services are not enabled")

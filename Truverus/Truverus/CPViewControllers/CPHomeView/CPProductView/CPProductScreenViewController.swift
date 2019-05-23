@@ -7,11 +7,15 @@
 //
 
 import UIKit
+import Kingfisher
 
 class CPProductScreenViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
+    static let productInstance = CPProductScreenViewController()
     
     @IBOutlet weak var TableParralex: CPParallaxTableView!
+    
+    var productDataObject = [productData]()
     
     var descriptionText = String()
     var productname = String()
@@ -24,6 +28,10 @@ class CPProductScreenViewController: UIViewController, UITableViewDelegate, UITa
     var images = [#imageLiteral(resourceName: "jursey"),#imageLiteral(resourceName: "blackJersy"),#imageLiteral(resourceName: "watch"),#imageLiteral(resourceName: "Running")]
     
     var MaximageCount = 4
+    
+    var imageURLs = [String]()
+    
+    var callingFrom : String!
     
     var image1 = UIImageView()
     var image2 = UIImageView()
@@ -40,23 +48,38 @@ class CPProductScreenViewController: UIViewController, UITableViewDelegate, UITa
         
         manageContent()
         
+        NotificationCenter.default.addObserver(self, selector: #selector(setdataWithServices), name: NSNotification.Name(rawValue: "load"), object: nil)
+        
         // Do any additional setup after loading the view.
     }
     
     func setdata() {
         
-        print("flag :: \(currentviewFlag)")
         TableParralex.reloadData()
         
         SetUpTableView()
         
         SetupImageView()
+        
+        
         //validateImages ()
         
         //manageContent()
         
         
     }
+    
+    @objc func setdataWithServices() {
+        
+        TableParralex.reloadData()
+        
+        SetUpTableView()
+        
+        SetupImageView()
+        
+    }
+    
+    
     
     func SetUpTableView(){
         
@@ -81,11 +104,42 @@ class CPProductScreenViewController: UIViewController, UITableViewDelegate, UITa
         scroll.contentOffset.x = 0
         scroll.isPagingEnabled = true
         
-        for i in 0..<images.count {
+        
+        
+        //print("data in sourece arrrraaayyy :: \(productDataObject)")
+        
+        var countIndex : Int!
+        
+        if callingFrom == "collection" {
+            countIndex = 2
+        } else {
+            countIndex = 4
+        }
+        
+        for i in 0..<countIndex{
+            
+            var imgUrl : URL!
+            
+            print("struct image count :: \(productStruct.productObj.ImagesList)")
+            if productStruct.productObj.ImagesList.count != 0 {
+                print("in arrayyyyyy :: \(productStruct.productObj.ImagesList[i])")
+                imgUrl = URL(string: productStruct.productObj.ImagesList[i])!
+                
+            } else {
+                
+                imgUrl = nil
+            }
             
             if(i == 0){
                 
-                image1.image = images[i]
+                if callingFrom == "collection" {
+                    image1.image = images[i]
+                } else {
+                    if imgUrl != nil {
+                    image1.kf.setImage(with: imgUrl)
+                    }
+                }
+                
                 let xPosition = self.view.frame.width * CGFloat(i)
                 image1.contentMode = .scaleAspectFill
                 image1.frame = CGRect(x: xPosition, y: 0, width: self.view.frame.width, height: self.scroll.frame.height)
@@ -93,7 +147,14 @@ class CPProductScreenViewController: UIViewController, UITableViewDelegate, UITa
                 
             } else if (i == 1){
                 
-                image2.image = images[i]
+                if callingFrom == "collection" {
+                    image2.image = images[i]
+                } else {
+                    if imgUrl != nil {
+                        image2.kf.setImage(with: imgUrl)
+                    }
+                }
+                
                 let xPosition = self.view.frame.width * CGFloat(i)
                 image2.contentMode = .scaleAspectFill
                 image2.frame = CGRect(x: xPosition, y: 0, width: self.view.frame.width, height: self.scroll.frame.height)
@@ -101,7 +162,14 @@ class CPProductScreenViewController: UIViewController, UITableViewDelegate, UITa
                 
             } else if (i == 2){
                 
-                image3.image = images[i]
+                if callingFrom == "collection" {
+                    image3.image = images[i]
+                } else {
+                    if imgUrl != nil {
+                        image3.kf.setImage(with: imgUrl)
+                    }
+                }
+                
                 let xPosition = self.view.frame.width * CGFloat(i)
                 image3.contentMode = .scaleAspectFill
                 image3.frame = CGRect(x: xPosition, y: 0, width: self.view.frame.width, height: self.scroll.frame.height)
@@ -109,7 +177,14 @@ class CPProductScreenViewController: UIViewController, UITableViewDelegate, UITa
                 
             } else if (i == 3){
                 
-                image4.image = images[i]
+                if callingFrom == "collection" {
+                    image4.image = images[i]
+                } else {
+                    if imgUrl != nil {
+                        image4.kf.setImage(with: imgUrl)
+                    }
+                }
+                
                 let xPosition = self.view.frame.width * CGFloat(i)
                 image4.contentMode = .scaleAspectFill
                 image4.frame = CGRect(x: xPosition, y: 0, width: self.view.frame.width, height: self.scroll.frame.height)
@@ -223,8 +298,14 @@ class CPProductScreenViewController: UIViewController, UITableViewDelegate, UITa
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell = tableView.dequeueReusableCell(withIdentifier: "CPProductCell") as? CPCustomTableViewCell {
             
-            cell.SetText(description: descriptionText, productName: productname)
-            if (images.count < 2){
+            
+            if callingFrom == "collection" {
+                cell.SetText(description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.", productName: productname)
+            } else {
+                cell.SetText(description: productStruct.productObj.ProductDescription, productName: productStruct.productObj.productTitle)
+            }
+            
+            if (productStruct.productObj.ImagesList.count < 2){
                 cell.PageControll.numberOfPages = 0
                 
             } else if (images.count > 4){
@@ -235,7 +316,12 @@ class CPProductScreenViewController: UIViewController, UITableViewDelegate, UITa
             
             if (currentviewFlag == 1){
                 
-                cell.ProductNameLabel.text = productname
+                if callingFrom == "collection" {
+                    cell.ProductNameLabel.text = productname
+                } else {
+                    cell.ProductNameLabel.text = productStruct.productObj.productTitle
+                }
+                
                 cell.TransferButton.isHidden = false
                 cell.BackButton.isHidden = false
                 cell.BackButton.addTarget(self, action: #selector(self.back(_:)), for: .touchUpInside)

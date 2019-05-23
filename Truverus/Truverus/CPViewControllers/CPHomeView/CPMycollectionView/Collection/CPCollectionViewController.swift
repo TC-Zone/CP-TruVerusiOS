@@ -80,7 +80,7 @@ class CPCollectionViewController: UIViewController, UICollectionViewDelegate, UI
     func addOrRemoveTransferView (sender : String, index : Int) {
         
         let news = self.storyboard?.instantiateViewController(withIdentifier: "CPProductScreenVC") as! CPProductScreenViewController
-        news.view.frame = Collection.bounds
+        news.view.frame = self.view.bounds
         news.currentviewFlag = 1
         
         news.image1.image = nil
@@ -105,6 +105,7 @@ class CPCollectionViewController: UIViewController, UICollectionViewDelegate, UI
                 news.productname = titles[3]
             }
             
+            news.callingFrom = "collection"
             news.setdata()
             self.Collection.isHidden = true
             

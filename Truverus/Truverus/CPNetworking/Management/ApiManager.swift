@@ -56,7 +56,7 @@ class ApiManager {
     
     func makeRequestAlamofire(route:URL, method:HTTPMethod, autherized:Bool, parameter:Parameters,header:[String:String], callback: @escaping (APIResult<Data>) -> Void){
         
-        var headers = header
+        let headers = header
         
         guard isReachableConnection() else{
             callback(.failure(noInternetConnectionResponse))
@@ -104,8 +104,7 @@ class ApiManager {
     //Get request Only --------------->
     func makeGetRequestAlamofire(route:URL, method:HTTPMethod, autherized:Bool, header:[String:String], callback: @escaping (APIResult<Data>) -> Void){
         
-        var headers = header
-        
+        let headers = header
         
         guard isReachableConnection() else{
             callback(.failure(noInternetConnectionResponse))

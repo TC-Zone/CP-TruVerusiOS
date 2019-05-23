@@ -13,7 +13,9 @@ import ObjectMapper
 
 class CPNfcViewController: BaseViewController, NFCNDEFReaderSessionDelegate  {
 
-    var viewModel: CPScanViewModel? = nil
+    @IBOutlet weak var PopupContainer: UIView!
+    
+    
     var session: NFCNDEFReaderSession?
     
     var dataSourceArray = [NFCTagData]()
@@ -22,13 +24,13 @@ class CPNfcViewController: BaseViewController, NFCNDEFReaderSessionDelegate  {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        PopupContainer.alpha = 0
         addSlideMenuButton()
         
-        viewModel = CPScanViewModel.instance
-
-        // Do any additional setup after loading the view.
+ 
     }
+    
+ 
     
 
     @IBAction func ScanButtonAction(_ sender: Any) {
@@ -38,6 +40,41 @@ class CPNfcViewController: BaseViewController, NFCNDEFReaderSessionDelegate  {
         
     }
     
+    func popIn(yourView : UIView){
+        
+        
+        yourView.transform = CGAffineTransform(scaleX: 0.01, y: 0.01)
+        UIView.animateKeyframes(withDuration: 0.2, delay: 0.0, options: UIView.KeyframeAnimationOptions.calculationModeDiscrete, animations: {
+            
+            yourView.alpha = 1
+            self.view.bringSubviewToFront(self.PopupContainer)
+            yourView.transform = .identity
+        }, completion: nil)
+        
+        
+    }
+    
+    func handleBack() {
+        
+        self.view.sendSubviewToBack(self.PopupContainer)
+        
+    }
+    
+    func popOut(yourView: UIView) {
+        yourView.transform = .identity
+        UIView.animateKeyframes(withDuration: 0.2, delay: 0.0, options: UIView.KeyframeAnimationOptions.calculationModeDiscrete, animations: {
+            yourView.transform = CGAffineTransform(scaleX: 0.01, y: 0.01)
+        }, completion:{(_ finish : Bool) in
+            yourView.alpha = 0
+            self.view.sendSubviewToBack(self.PopupContainer)
+        }
+        )
+    }
+    
+    func dismissPopUpView() {
+        popOut(yourView: PopupContainer)
+    }
+    
     func readerSession(_ session: NFCNDEFReaderSession, didInvalidateWithError error: Error) {
         print("The session was invalidated: \(error.localizedDescription)")
     }
@@ -45,11 +82,8 @@ class CPNfcViewController: BaseViewController, NFCNDEFReaderSessionDelegate  {
     func readerSession(_ session: NFCNDEFReaderSession, didDetectNDEFs messages: [NFCNDEFMessage]) {
         // Parse the card's information
         
-        DispatchQueue.main.async {
-            CPHelper.showHud()
-        }
-        
         var result = ""
+        
         for payload in messages[0].records {
             result += String.init(data: payload.payload.advanced(by: 3), encoding: .utf8)!
         }
@@ -57,57 +91,11 @@ class CPNfcViewController: BaseViewController, NFCNDEFReaderSessionDelegate  {
         
         tagValue = result
         
-        print("tag details result is :: \(tagValue)")
-        
-        
-        
-        CPHelper.showHud()
         ValidateTag()
-            CPHelper.hideHud()
-        
-//        DispatchQueue.main.async {
-//            CPHelper.showHud()
-//        }
-//
-//        var result = ""
-//        for payload in messages[0].records {
-//            result += String.init(data: payload.payload.advanced(by: 3), encoding: .utf8)! // 1
-//        }
-//
-//
-//        DispatchQueue.main.async {
-//            //self.messageLabel.text = result
-//            print("result is :: \(result)")
-//            if result != "" {
-//                let controller = UIStoryboard.init(name: "CPHomeView", bundle: nil).instantiateViewController(withIdentifier: "CPHomeView") as! CPHomeViewController
-//                //controller.scanResponse = response
-//                self.navigationController?.pushViewController(controller, animated: true)
-//            }
-//
-//        }
-        
-    }
-        
-        //IHProgressHUD.dismiss()
-        
-    //_ response : [String : Any]
-    
-    
-    func goToGunineProductViewController() {
-        let controller = UIStoryboard.init(name: "CPHomeView", bundle: nil).instantiateViewController(withIdentifier: "CPHomeView") as! CPHomeViewController
-        //controller.scanResponse = response
-        self.navigationController?.pushViewController(controller, animated: true)
-    }
-    
-    /*
-    // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        
     }
-    */
+
 
 }
 
@@ -150,20 +138,38 @@ extension CPNfcViewController{
             }
             self.dataSourceArray = [loginResponse]
             
-            print("data :: \(dataSourceArray[0].content?.title)")
+            let message = loginResponse.content?.message
             
-            print("data array \(dataSourceArray)")
+            let vc  = self.children[0] as! CPPopupViewController
             
-            print("message :: \(loginResponse.content?.message)")
-            print("Product id :: \(loginResponse.content?.productId)")
+            if message == "You Product is Genuine." {
+                
+                popIn(yourView: PopupContainer)
+                
+                vc.showAlert(alertType: .success)
+                vc.nfcArray = dataSourceArray
+                
+                
+                
+            } else if message == "You authentication code is invalid." {
+                
+                popIn(yourView: PopupContainer)
+                vc.showAlert(alertType: .failure)
+                
+                
+            } else {
+                
+                popIn(yourView: PopupContainer)
+                vc.showAlert(alertType: .wrong)
+                
+                
+            }
             
-            print("status is :: \(loginResponse.status)")
-            
-            goToGunineProductViewController()
-            //            customerID = loginResponse.subscriberBean?.subscriberId
-            //            self.rssSubscrib()
         }catch {
             print(error)
         }
     }
+    
 }
+
+

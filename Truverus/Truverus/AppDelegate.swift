@@ -101,7 +101,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             state = "logedout"
         }
         
-        UIApplication.shared.statusBarStyle = .lightContent
+        //UIApplication.shared.statusBarStyle = .lightContent
         
         UINavigationBar.appearance().clipsToBounds = true
         

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0930"
+   LastUpgradeVersion = "1020"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "5527F45F876492AE14F6D86F6B0C9CDA"
+               BlueprintIdentifier = "487364C43742697392D5CB67C4ADD0D9"
                BuildableName = "TaggerKit.bundle"
                BlueprintName = "TaggerKit-TaggerKit"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -45,7 +45,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "5527F45F876492AE14F6D86F6B0C9CDA"
+            BlueprintIdentifier = "487364C43742697392D5CB67C4ADD0D9"
             BuildableName = "TaggerKit.bundle"
             BlueprintName = "TaggerKit-TaggerKit"
             ReferencedContainer = "container:Pods.xcodeproj">

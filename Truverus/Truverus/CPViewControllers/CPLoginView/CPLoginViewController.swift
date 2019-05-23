@@ -128,7 +128,7 @@ class CPLoginViewController: UIViewController, GIDSignInDelegate, GIDSignInUIDel
         
         
         if error != nil {
-            print(error)
+            print(error as Any)
         }
         else {
             
@@ -183,8 +183,6 @@ class CPLoginViewController: UIViewController, GIDSignInDelegate, GIDSignInUIDel
     
     func handleWebServiceData () {
         
-        print("data :: \(dataSourceArray[0].response?.access_token)")
-        
         defaults.set(dataSourceArray[0].response?.refresh_token, forKey: keys.accesstoken)
         defaults.set(dataSourceArray[0].response?.refresh_token, forKey: keys.refreshtoken)
         
@@ -196,7 +194,8 @@ class CPLoginViewController: UIViewController, GIDSignInDelegate, GIDSignInUIDel
         
         
         if refreshtoken != nil {
-            print("saved refresh token in defaults is :: \(refreshtoken)")
+            print("saved refresh token in defaults is :: \(String(describing: refreshtoken) )")
+            print("access  token in defaults is :: \(String(describing: defaults.value(forKey: keys.accesstoken)))")
         } else {
             
             print("no saved token yet")
@@ -265,15 +264,6 @@ extension CPLoginViewController{
                 return
             }
             self.dataSourceArray = [loginResponse]
-            
-            print("data :: \(dataSourceArray[0].response)")
-            
-            print("data array \(dataSourceArray)")
-            
-            print("access token :: \(loginResponse.response?.access_token)")
-            print("refresh token :: \(loginResponse.response?.refresh_token)")
-            
-            print("status is :: \(loginResponse.status)")
             
             self.handleWebServiceData()
             
