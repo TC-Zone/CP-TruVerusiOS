@@ -42,12 +42,34 @@ class CPPromotionSubviewViewController: UIViewController {
         
         print("indexpath is :: \(indexpath)")
         
-        promoTitle.text = titles[indexpath]
-        Image.image = promosubimages[indexpath]
-        Description.text = promosubDescriptions[indexpath]
-        StartDate.text = StartDates[indexpath]
-        EndDate.text = EndDates[indexpath]
-        Percentage.text = percentages[indexpath]
+        if promotionBase.promoarraybase[0].content!.count != 0 {
+            
+            let imageID = promotionBase.promoarraybase[0].content![indexpath].id
+            let imageurl = NSString.init(format: "%@%@", UrlConstans.BASE_URL, UrlConstans.PROMOTION_IMAGE_BY_ID + "\(imageID ?? "")") as String
+            let imgUrl = URL(string: imageurl)
+            
+            if imgUrl != nil {
+                
+                Image.kf.setImage(with: imgUrl)
+                
+            } else {
+                
+                Image.image = UIImage(named: "noimage")
+                
+            }
+            
+            promoTitle.text = promotionBase.promoarraybase[0].content![indexpath].name
+            Description.text = promotionBase.promoarraybase[0].content![indexpath].description
+            StartDate.text = promotionBase.promoarraybase[0].content![indexpath].startDate
+            EndDate.text = promotionBase.promoarraybase[0].content![indexpath].endDate
+            Percentage.text = "\(promotionBase.promoarraybase[0].content![indexpath].percentage ?? "")%"
+            
+        } else {
+            
+            print("No promotions Recieved")
+            
+        }
+        
         
     }
     

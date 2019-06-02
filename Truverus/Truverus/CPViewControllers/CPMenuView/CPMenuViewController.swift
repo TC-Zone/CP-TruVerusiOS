@@ -29,6 +29,8 @@ class CPMenuViewController: UIViewController, UITableViewDelegate, UITableViewDa
     var delegate : SlideMenuDelegate?
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
     
+    let defaults = UserDefaults.standard
+    
     let MenuItems = ["HOME","MY ACCOUNT","NFC SCAN","INBOX","COMMUNITY","SETTINGS","HELP","PRIVECY AND TERMS","LOG OUT"]
     let MenuItemIcons = [UIImage(named: "HomeMenuIcon"),UIImage(named: "AccountMenuIcon"),UIImage(named: "NFCMenuIcon"),UIImage(named: "InboxMenuIcon"),UIImage(named: "Feedback-1"),UIImage(named: "settings"),UIImage(named: "help-1"),UIImage(named: "data privacy"),UIImage(named: "log out-1")]
     
@@ -45,9 +47,20 @@ class CPMenuViewController: UIViewController, UITableViewDelegate, UITableViewDa
         CreateProfilePic()
         
         let tap = UITapGestureRecognizer(target: self, action: #selector(self.handleTap(sender:)))
+        let tap2 = UITapGestureRecognizer(target: self, action: #selector(self.handleTap(sender:)))
         //tap.delegate = self // This is not required
         LoginArrow.isUserInteractionEnabled = true
         LoginArrow.addGestureRecognizer(tap)
+        
+        let x = appDelegate.state
+        
+        if (x == "logedout") {
+            
+            ProfileName.isUserInteractionEnabled = true
+            ProfileName.addGestureRecognizer(tap2)
+            
+        }
+        
         
         // Do any additional setup after loading the view.
     }
@@ -59,8 +72,8 @@ class CPMenuViewController: UIViewController, UITableViewDelegate, UITableViewDa
         
         let homeStoryBoard : UIStoryboard = UIStoryboard(name: "CPLogin", bundle: nil)
         let vc = homeStoryBoard.instantiateViewController(withIdentifier: "CPLoginView") as! CPLoginViewController
-        self.dismiss(animated: true, completion: nil)
-        self.navigationController?.pushViewController(vc, animated: true)
+
+        validateMenuOption(vc: vc)
     }
     
     func ValidateMenuHeaderType() {
@@ -70,9 +83,6 @@ class CPMenuViewController: UIViewController, UITableViewDelegate, UITableViewDa
         if (x == "logedin") {
             
             LoginArrow.isHidden = true
-//            ProfilePicture.image = UIImage(named: "user icon")
-//            ProfileName.text = "Login"
-//            ProfileEmail.text = "Welcome to Truverus"
             
         } else if (x == "logedout") {
             
@@ -221,10 +231,30 @@ class CPMenuViewController: UIViewController, UITableViewDelegate, UITableViewDa
             }
             
             if indexPath.row == 4 {
+
+                let alert = UIAlertController(title: "Sorry!", message: "This menu option is temporarily disabled due to development purposes", preferredStyle: UIAlertController.Style.alert)
+                alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { action in
+                    switch action.style{
+                    case .default:
+                        print("default")
+                        
+                    case .cancel:
+                        print("cancel")
+                        
+                    case .destructive:
+                        print("destructive")
+                        
+                    @unknown default:
+                        fatalError()
+                    }}))
                 
-                let homeStoryBoard : UIStoryboard = UIStoryboard(name: "CPCommunity", bundle: nil)
-                let vc = homeStoryBoard.instantiateViewController(withIdentifier: "CPCommunityHomeViewController") as! CPCommunityHomeViewController
-                validateMenuOption(vc: vc)
+                DispatchQueue.main.async {
+                    self.present(alert, animated: true, completion: nil)
+                }
+                
+//                let homeStoryBoard : UIStoryboard = UIStoryboard(name: "CPCommunity", bundle: nil)
+//                let vc = homeStoryBoard.instantiateViewController(withIdentifier: "CPCommunityHomeViewController") as! CPCommunityHomeViewController
+//                validateMenuOption(vc: vc)
                 
             }
             
@@ -253,6 +283,7 @@ class CPMenuViewController: UIViewController, UITableViewDelegate, UITableViewDa
                     print("User Has Already signed in")
                     GIDSignIn.sharedInstance().disconnect()
                     appDelegate.state = "logedout"
+                    defaults.set(nil, forKey: keys.accesstoken)
                     self.navigationController?.pushViewController(vc, animated: true)
                     
                 } else if FBSDKAccessToken.current() != nil{
@@ -260,6 +291,7 @@ class CPMenuViewController: UIViewController, UITableViewDelegate, UITableViewDa
                     let loginManager = FBSDKLoginManager()
                     loginManager.logOut()
                     appDelegate.state = "logedout"
+                    defaults.set(nil, forKey: keys.accesstoken)
                     self.navigationController?.pushViewController(vc, animated: true)
                     
                 } else {
@@ -272,6 +304,20 @@ class CPMenuViewController: UIViewController, UITableViewDelegate, UITableViewDa
                 
                 dismiss(animated: true)
                 
+            }
+            
+        } else if (x == "logedout") {
+            
+            
+            if indexPath.row == 1{
+                let homeStoryBoard : UIStoryboard = UIStoryboard(name: "NFC", bundle: nil)
+                let vc = homeStoryBoard.instantiateViewController(withIdentifier: "CPNFCView") as! CPNfcViewController
+                validateMenuOption(vc: vc)
+            }
+            if indexPath.row == 2{
+                let homeStoryBoard : UIStoryboard = UIStoryboard(name: "Settings", bundle: nil)
+                let vc = homeStoryBoard.instantiateViewController(withIdentifier: "CPSettingsViewController") as! CPSettingsViewController
+                validateMenuOption(vc: vc)
             }
             
         }

@@ -12,7 +12,7 @@ import FBSDKLoginKit
 import ObjectMapper
 import SVProgressHUD
 
-class CPLoginViewController: UIViewController, GIDSignInDelegate, GIDSignInUIDelegate {
+class CPLoginViewController: UIViewController, UITextFieldDelegate, GIDSignInDelegate, GIDSignInUIDelegate {
     
     var dataSourceArray = [googleUserResponse]()
     let defaults = UserDefaults.standard
@@ -31,16 +31,11 @@ class CPLoginViewController: UIViewController, GIDSignInDelegate, GIDSignInUIDel
         InitTextFields()
         ScrollView.validateScrolling(view: ScrollView)
         CreateButton()
+        settextDelegates()
         checkSavedTokensInDefaults()
         // Do any additional setup after loading the view.
     }
-    
-    struct keys {
-        
-        static let accesstoken = "Access_Token"
-        static let refreshtoken = "Refresh_Token"
-        
-    }
+  
     
     func InitTextFields(){
         
@@ -183,7 +178,7 @@ class CPLoginViewController: UIViewController, GIDSignInDelegate, GIDSignInUIDel
     
     func handleWebServiceData () {
         
-        defaults.set(dataSourceArray[0].response?.refresh_token, forKey: keys.accesstoken)
+        defaults.set(dataSourceArray[0].response?.access_token, forKey: keys.accesstoken)
         defaults.set(dataSourceArray[0].response?.refresh_token, forKey: keys.refreshtoken)
         
     }
@@ -201,6 +196,21 @@ class CPLoginViewController: UIViewController, GIDSignInDelegate, GIDSignInUIDel
             print("no saved token yet")
         }
         
+    }
+    
+    func settextDelegates() {
+        
+        EmailTextField.delegate = self
+        PasswordTextField.delegate = self
+    }
+    
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        
+        EmailTextField.resignFirstResponder()
+        PasswordTextField.resignFirstResponder()
+        
+        return true
     }
     
    

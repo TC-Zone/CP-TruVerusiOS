@@ -10,6 +10,16 @@ import UIKit
 
 class BaseViewController: UIViewController, SlideMenuDelegate {
     
+    //let btnMenuSearch = UIButton(type: UIButton.ButtonType.system)
+    
+    let btnMenuSearch: UIButton = {
+        let b = UIButton(type: UIButton.ButtonType.system)
+        b.setImage(UIImage(named: "search"), for: .normal)
+        b.frame = CGRect(x: 0, y: 0, width: 30, height: 30)
+        b.addTarget(self, action: #selector(BaseViewController.onMenuSearchTapped(_:)), for: UIControl.Event.touchUpInside)
+        return b
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -64,13 +74,21 @@ class BaseViewController: UIViewController, SlideMenuDelegate {
     
     func addSlideSearchButton() {
         
-        let btnMenuSearch = UIButton(type: UIButton.ButtonType.system)
-        btnMenuSearch.setImage(UIImage(named: "search"), for: .normal)
-        btnMenuSearch.frame = CGRect(x: 0, y: 0, width: 30, height: 30)
-        btnMenuSearch.addTarget(self, action: #selector(BaseViewController.onMenuSearchTapped(_:)), for: UIControl.Event.touchUpInside)
         let customBarItem = UIBarButtonItem(customView: btnMenuSearch)
         self.navigationItem.rightBarButtonItem = customBarItem;
         
+    }
+    
+    func RemoveSlideInSearchButton() {
+        UIView.animate(withDuration: 0.2) {
+            self.navigationItem.rightBarButtonItem?.customView?.alpha = 0
+        }
+    }
+    
+    func ShowSlideInSearchButton() {
+        UIView.animate(withDuration: 0.3) {
+            self.navigationItem.rightBarButtonItem?.customView?.alpha = 1
+        }
     }
     
     

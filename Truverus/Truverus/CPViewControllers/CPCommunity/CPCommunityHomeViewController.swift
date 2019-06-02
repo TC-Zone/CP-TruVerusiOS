@@ -16,6 +16,9 @@ class CPCommunityHomeViewController: BaseViewController {
     @IBOutlet weak var FeedbackContainer: UIView!
     @IBOutlet weak var PromotionsContainer: UIView!
     
+    var EventsObject = [EventsData]()
+    var PromoObject = [PromotionsData]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -25,6 +28,9 @@ class CPCommunityHomeViewController: BaseViewController {
         FeedbackContainer.alpha = 1
         PromotionsContainer.alpha = 0
         EventsContainer.alpha = 0
+        
+        print("recieved promo id :: \(PromoObject[0].content![0].id)")
+        print("recieved event id :: \(EventsObject[0].content![0].id)")
         // Do any additional setup after loading the view.
     }
     

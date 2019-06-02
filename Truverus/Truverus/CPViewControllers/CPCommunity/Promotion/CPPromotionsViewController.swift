@@ -7,22 +7,16 @@
 //
 
 import UIKit
+import Kingfisher
 
 class CPPromotionsViewController: UIViewController, UICollectionViewDelegate , UICollectionViewDataSource {
     
     @IBOutlet weak var PromotionCollectionView: UICollectionView!
     
-    let titles = ["NIKE AIR MAX 270","NIKE WOMEN'S REVERSABLE"]
-    let images = [#imageLiteral(resourceName: "nikeshoe"),#imageLiteral(resourceName: "blackjer")]
     
-    let StartDates = ["02-Feb-2019","18-Feb-2019"]
-    let EndDates = ["11-Feb-2019","26-Feb-2019"]
-    let percentages = ["25%","50%"]
     @IBOutlet weak var PromotionsSubViewContainer: UIView!
     
-    
-    let promosubimages = [#imageLiteral(resourceName: "PromoShoe"),#imageLiteral(resourceName: "nike jacket")]
-    let promosubDescriptions = ["Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse eu arcu in ligula ultrices placerat. Sed blandit diam vitae pretium vulputate. Nulla vel dignissim velit. Mauris quis arcu rutrum, bibendum ante eget, vehicula ante. Vivamus erat sapien.", "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse eu arcu in ligula ultrices placerat. Sed blandit diam vitae pretium vulputate. Nulla vel dignissim velit. Mauris quis arcu rutrum, bibendum ante eget, vehicula ante. Vivamus erat sapien."]
+  
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,19 +34,42 @@ class CPPromotionsViewController: UIViewController, UICollectionViewDelegate , U
     
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return titles.count
+        if promotionBase.promoarraybase[0].content!.count != 0 {
+            return promotionBase.promoarraybase[0].content!.count
+        } else {
+            return 0
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = PromotionCollectionView.dequeueReusableCell(withReuseIdentifier: "PromotionCell", for: indexPath) as! CPPromotionCollectionViewCell
         
+        if promotionBase.promoarraybase[0].content!.count != 0 {
         
+        let imageID = promotionBase.promoarraybase[0].content![indexPath.item].id
+        let imageurl = NSString.init(format: "%@%@", UrlConstans.BASE_URL, UrlConstans.PROMOTION_IMAGE_BY_ID + "\(imageID ?? "")") as String
+        let imgUrl = URL(string: imageurl)
         
-        cell.Image.image = images[indexPath.item]
-        cell.ProductTitle.text = titles[indexPath.item]
-        cell.StartDate.text = StartDates[indexPath.item]
-        cell.EndDate.text = EndDates[indexPath.item]
-        cell.Percentage.text = percentages[indexPath.item]
+        if imgUrl != nil {
+            
+            cell.Image.kf.setImage(with: imgUrl)
+            
+        } else {
+           
+            cell.Image.image = UIImage(named: "noimage")
+            
+        }
+        
+        cell.ProductTitle.text = promotionBase.promoarraybase[0].content![indexPath.item].name
+        cell.StartDate.text = promotionBase.promoarraybase[0].content![indexPath.item].startDate
+        cell.EndDate.text = promotionBase.promoarraybase[0].content![indexPath.item].endDate
+        cell.Percentage.text = promotionBase.promoarraybase[0].content![indexPath.item].percentage! + "%"
+            
+        } else {
+            
+            print("No promotions Recieved")
+            
+        }
         
         cell.layer.shadowColor = UIColor.lightGray.cgColor
         cell.layer.shadowOffset = CGSize(width: 0, height: 2.0)
@@ -69,12 +86,6 @@ class CPPromotionsViewController: UIViewController, UICollectionViewDelegate , U
         
         
         if collectionView == PromotionCollectionView {
-            
-            let prtitle = titles[indexPath.item]
-            let start = StartDates[indexPath.item]
-            let end = EndDates[indexPath.item]
-            
-            print("selected promotion data :: title : \(prtitle) start : \(start) end : \(end)")
             
             let vc  = self.children[0] as! CPPromotionSubviewViewController
             vc.indexpath = indexPath.row

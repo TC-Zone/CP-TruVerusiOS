@@ -31,11 +31,7 @@ class CPCustomTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        
-//        TransferButton.isHidden = true
-//        BackButton.isHidden = true
-        
-        // Initialization code
+  
     }
     
     
@@ -121,18 +117,30 @@ class CPCustomTableViewCell: UITableViewCell {
         if productStruct.productObj.youtubeId != "" {
             print("youtube Id in cell is :: \(productStruct.productObj.youtubeId)")
             youtubeId = productStruct.productObj.youtubeId
+            
+            if let youtubeURL = URL(string: "youtube://\(youtubeId)"),
+                UIApplication.shared.canOpenURL(youtubeURL) {
+                // redirect to app
+                UIApplication.shared.open(youtubeURL, options: [:], completionHandler: nil)
+            } else if let youtubeURL = URL(string: "https://www.youtube.com/watch?v=\(youtubeId)") {
+                // redirect through safari
+                UIApplication.shared.open(youtubeURL, options: [:], completionHandler: nil)
+            }
+            
         } else {
             youtubeId = "EKyirtVHsK0"
+            let alertController = UIAlertController(title: "Sorry!", message: "Vedio is not available for this product", preferredStyle: .actionSheet)
+            let okAction = UIAlertAction(title: "OK", style: UIAlertAction.Style.default) {
+                UIAlertAction in
+                NSLog("OK Pressed")
+            }
+            
+            alertController.addAction(okAction)
+            self.window?.rootViewController?.present(alertController, animated: true, completion: nil)
+            
         }
         
-        if let youtubeURL = URL(string: "youtube://\(youtubeId)"),
-            UIApplication.shared.canOpenURL(youtubeURL) {
-            // redirect to app
-            UIApplication.shared.open(youtubeURL, options: [:], completionHandler: nil)
-        } else if let youtubeURL = URL(string: "https://www.youtube.com/watch?v=\(youtubeId)") {
-            // redirect through safari
-            UIApplication.shared.open(youtubeURL, options: [:], completionHandler: nil)
-        }
+       
         
         
     }

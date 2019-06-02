@@ -23,6 +23,7 @@ enum APIResult<T>{
 
 class ApiManager {
     
+    let defaults = UserDefaults.standard
     var reachability = Reachability()
     var isReachable: Bool { return reachability?.connection != .none ? true : false }
     
@@ -75,21 +76,22 @@ class ApiManager {
                         if let statusCode = response.response?.statusCode{
                             print("status code check \(statusCode)")
                             if statusCode == 401 {
-                                self.refreshAccessToken(){ (results) in
-                                    print("Process")
-                                    switch results{
-                                    case .success(_):
-                                        print("results success check")
-                                        self.makeRequestAlamofire(route: route, method: method, autherized: autherized, parameter: parameter, header: header){ (apiResult) in
-                                            switch apiResult{
-                                            case let .success(data): callback(.success((data)))
-                                            case let .failure(error): callback(.failure(error))
-                                            }
-                                        }
-                                    case let .failure(error):
-                                        callback(.failure(error))
-                                    }
-                                }
+                                callback(.failure(ResponseError.init(error: error.localizedDescription, errorType: .error, statusCode: response.response!.statusCode)))
+//                                self.refreshAccessToken(){ (results) in
+//                                    print("Process")
+//                                    switch results{
+//                                    case .success(_):
+//                                        print("results success check")
+//                                        self.makeRequestAlamofire(route: route, method: method, autherized: autherized, parameter: parameter, header: header){ (apiResult) in
+//                                            switch apiResult{
+//                                            case let .success(data): callback(.success((data)))
+//                                            case let .failure(error): callback(.failure(error))
+//                                            }
+//                                        }
+//                                    case let .failure(error):
+//                                        callback(.failure(error))
+//                                    }
+//                                }
                             }else{
                                 callback(.failure(ResponseError.init(error: error.localizedDescription, errorType: .error, statusCode: response.response!.statusCode)))
                             }
@@ -150,6 +152,62 @@ class ApiManager {
     
     //
     
+    
+    func RetrieveNewAccessToken(callback: @escaping (APIResult<Data>) -> Void) {
+        
+        
+        let username = "CPAP"
+        let password = "Cp43&$^fdgd*+!!@#Agdo4Ged"
+        let loginString = String(format: "%@:%@", username, password)
+        let loginData = loginString.data(using: String.Encoding.utf8)! as NSData
+        let base64EncodedString = loginData.base64EncodedString()
+        let url = NSString.init(format: "%@%@", UrlConstans.BASE_URL, UrlConstans.REFRESH_TOKEN_RENEWAL) as String
+        
+        print("url is :: \(url)")
+        
+        let headers = [
+            "Content-Type":  "application/x-www-form-urlencoded",
+            "Authorization": "Basic \(base64EncodedString)"
+        ]
+        
+        let parameters: Parameters = [
+            "refresh_token" : defaults.value(forKey: "Refresh_Token") as! String,
+            "grant_type": "refresh_token"
+        ]
+        
+        
+        if let url = URL(string: url) {
+            Alamofire.request(url,method:.post,parameters:parameters, encoding: URLEncoding.default ,headers:headers).debugLog().responseData { response in
+                switch response.result {
+                case .success(let val):
+                    callback(.success((val)))
+                    print("succeeeded with :: \(val)")
+                    debugPrint(val)
+                    print(response.response?.allHeaderFields)
+                case .failure(let error):
+                    ///Commented Codes Deleted
+                    
+                    if(response.response != nil) {
+                        if let statusCode = response.response?.statusCode{
+                            print("status code check \(statusCode)")
+                            if statusCode == 401 {
+                                
+                                print("failed with 401 :: \(error)")
+                                callback(.failure(ResponseError.init(error: error.localizedDescription, errorType: .error, statusCode: response.response!.statusCode)))
+                                
+                            }else{
+                                 callback(.failure(ResponseError.init(error: error.localizedDescription, errorType: .error, statusCode: response.response!.statusCode)))
+                            }
+                        }
+                    }else{
+                        callback(.failure(ResponseError.init(error: error.localizedDescription, errorType: .error, statusCode:0)))
+                    }
+                }
+            }
+        }
+        
+    }
+    
     private func refreshAccessToken(compeletion: @escaping(APIResult<Void>)->Void){
         self.appDelegateRefreshTokenProtocol?.refreshAccessTokenOnBase(){ (response) in
             switch response{
@@ -159,6 +217,8 @@ class ApiManager {
                 compeletion(.failure(ResponseError(error: "Token Error")))
             }
         }
+        
+        
     }
     
     func initReachibility() {
@@ -190,5 +250,18 @@ class ApiManager {
         } catch {
             print("Reachabilty: ", "Unable to start notifier")
         }
+    }
+}
+
+
+
+extension Request {
+    public func debugLog() -> Self {
+        #if DEBUG
+        debugPrint("=======================================")
+        debugPrint(self)
+        debugPrint("=======================================")
+        #endif
+        return self
     }
 }

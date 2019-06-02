@@ -17,6 +17,7 @@ class CPEventCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var EndTime: UILabel!
     @IBOutlet weak var Day: UILabel!
     @IBOutlet weak var Month: UILabel!
+    @IBOutlet weak var Year: UILabel!
     
     
     

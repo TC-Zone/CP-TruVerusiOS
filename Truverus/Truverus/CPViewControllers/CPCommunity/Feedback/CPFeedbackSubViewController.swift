@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CPFeedbackSubViewController: UIViewController {
+class CPFeedbackSubViewController: UIViewController, UITextFieldDelegate , UITextViewDelegate{
 
     @IBOutlet weak var NameText: UITextField!
     @IBOutlet weak var AgeText: UITextField!
@@ -22,6 +22,7 @@ class CPFeedbackSubViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         InitTextFields()
+        settextDelegates()
         
         // Do any additional setup after loading the view.
     }
@@ -29,6 +30,23 @@ class CPFeedbackSubViewController: UIViewController {
     @IBAction func SubmitAction(_ sender: Any) {
         
         print("Ratings :: \(RatingStackView.starRating)")
+        let alert = UIAlertController(title: "Sorry!", message: "This option is temporarily disabled due to development purposes", preferredStyle: UIAlertController.Style.alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { action in
+            switch action.style{
+            case .default:
+                print("default")
+                
+            case .cancel:
+                print("cancel")
+                
+            case .destructive:
+                print("destructive")
+                
+            @unknown default:
+                fatalError()
+            }}))
+        
+            self.present(alert, animated: true, completion: nil)
         
     }
     
@@ -85,6 +103,31 @@ class CPFeedbackSubViewController: UIViewController {
         
         TextField.textContainerInset = UIEdgeInsets(top: 10, left: 5, bottom: 10, right: 5)
         
+    }
+    
+    func settextDelegates() {
+        
+        NameText.delegate = self
+        AgeText.delegate = self
+        DescriptionTextArea.delegate = self
+    }
+    
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        
+        NameText.resignFirstResponder()
+        AgeText.resignFirstResponder()
+        DescriptionTextArea.resignFirstResponder()
+        
+        return true
+    }
+    
+    func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
+        if text == "\n" {
+            textView.resignFirstResponder()
+            return false
+        }
+        return true
     }
     
     /*

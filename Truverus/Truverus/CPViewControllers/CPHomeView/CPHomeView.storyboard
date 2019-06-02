@@ -105,6 +105,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="617"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NiO-VV-mgp">
+                                <rect key="frame" x="0.0" y="20" width="375" height="597"/>
+                                <connections>
+                                    <segue destination="0Tz-rC-jIF" kind="embed" id="Lnv-es-hix"/>
+                                </connections>
+                            </containerView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Uhf-6C-KTd" customClass="CPParallaxTableView" customModule="Truverus" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="617"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -253,8 +259,12 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="moD-jP-out" firstAttribute="bottom" secondItem="NiO-VV-mgp" secondAttribute="bottom" id="7LE-lV-pMX"/>
                             <constraint firstItem="Uhf-6C-KTd" firstAttribute="leading" secondItem="c6J-5w-bxJ" secondAttribute="leading" id="AwR-Xm-d99"/>
                             <constraint firstItem="Uhf-6C-KTd" firstAttribute="height" secondItem="c6J-5w-bxJ" secondAttribute="height" id="L65-SD-XYe"/>
+                            <constraint firstItem="NiO-VV-mgp" firstAttribute="top" secondItem="moD-jP-out" secondAttribute="top" id="RfT-Kx-63P"/>
+                            <constraint firstItem="moD-jP-out" firstAttribute="trailing" secondItem="NiO-VV-mgp" secondAttribute="trailing" id="RmR-aH-Twm"/>
+                            <constraint firstItem="NiO-VV-mgp" firstAttribute="leading" secondItem="moD-jP-out" secondAttribute="leading" id="ThQ-1U-sRl"/>
                             <constraint firstAttribute="bottom" secondItem="Uhf-6C-KTd" secondAttribute="bottom" id="g3F-0Y-LYZ"/>
                             <constraint firstItem="Uhf-6C-KTd" firstAttribute="width" secondItem="c6J-5w-bxJ" secondAttribute="width" id="n6i-ld-MBw"/>
                             <constraint firstAttribute="trailing" secondItem="Uhf-6C-KTd" secondAttribute="trailing" id="qyZ-Mk-eob"/>
@@ -263,6 +273,7 @@
                         <viewLayoutGuide key="safeArea" id="moD-jP-out"/>
                     </view>
                     <connections>
+                        <outlet property="NoDataViewContainer" destination="NiO-VV-mgp" id="S0a-DX-BSV"/>
                         <outlet property="TableParralex" destination="Uhf-6C-KTd" id="VaY-pK-WYQ"/>
                     </connections>
                 </viewController>
@@ -361,10 +372,10 @@
             </objects>
             <point key="canvasLocation" x="3690" y="860"/>
         </scene>
-        <!--View Controller-->
+        <!--No Collection View Controller-->
         <scene sceneID="bdE-9p-H00">
             <objects>
-                <viewController id="wAj-EJ-F99" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="nocollection" id="wAj-EJ-F99" customClass="CPNoCollectionViewController" customModule="Truverus" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="N0C-gN-4p0">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="587"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -396,6 +407,9 @@
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="SignInButton:" destination="wAj-EJ-F99" eventType="touchUpInside" id="tbD-vS-KAy"/>
+                                </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="no collection" translatesAutoresizingMaskIntoConstraints="NO" id="rEb-El-cxl">
                                 <rect key="frame" x="177.5" y="249" width="20" height="25"/>
@@ -721,6 +735,68 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Nt4-Rb-4ID" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2197.5999999999999" y="1643.9280359820091"/>
+        </scene>
+        <!--No Product View Controller-->
+        <scene sceneID="qrQ-8q-8eJ">
+            <objects>
+                <viewController storyboardIdentifier="noproduct" id="0Tz-rC-jIF" customClass="CPNoProductViewController" customModule="Truverus" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5gw-1m-3d5">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="597"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="no collection" translatesAutoresizingMaskIntoConstraints="NO" id="m6y-0c-qpl">
+                                <rect key="frame" x="177.5" y="235.5" width="20" height="25"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="25" id="cfa-G7-KUi"/>
+                                    <constraint firstAttribute="width" constant="20" id="e0g-yW-DWt"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ehI-dK-dPP">
+                                <rect key="frame" x="47" y="302" width="281" height="42"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="42" id="qcm-ba-qRU"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="TradeGothicLT-BoldTwo" family="TradeGothic LT" pointSize="19"/>
+                                <state key="normal" title="Scan NFC">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="20"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="nfcButton:" destination="0Tz-rC-jIF" eventType="touchUpInside" id="oOb-3V-OHN"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You have no collection yet" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E33-0i-xRI">
+                                <rect key="frame" x="96.5" y="183.5" width="182" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="182" id="B2N-0B-UwL"/>
+                                    <constraint firstAttribute="height" constant="20" id="Vdr-A1-ItN"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="TradeGothicLT-BoldTwo" family="TradeGothic LT" pointSize="16"/>
+                                <color key="textColor" name="TextAreaGray"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="m6y-0c-qpl" firstAttribute="centerY" secondItem="5gw-1m-3d5" secondAttribute="centerY" multiplier="0.83" id="F08-aN-er1"/>
+                            <constraint firstItem="ehI-dK-dPP" firstAttribute="width" secondItem="5gw-1m-3d5" secondAttribute="width" multiplier="0.75" id="Fse-Cs-bmX"/>
+                            <constraint firstItem="ehI-dK-dPP" firstAttribute="top" secondItem="m6y-0c-qpl" secondAttribute="bottom" constant="41.5" id="Htl-ck-A3Y"/>
+                            <constraint firstItem="m6y-0c-qpl" firstAttribute="top" secondItem="E33-0i-xRI" secondAttribute="bottom" constant="32" id="J13-bB-9ef"/>
+                            <constraint firstItem="ehI-dK-dPP" firstAttribute="centerX" secondItem="5gw-1m-3d5" secondAttribute="centerX" id="htC-zg-ibE"/>
+                            <constraint firstItem="m6y-0c-qpl" firstAttribute="centerX" secondItem="5gw-1m-3d5" secondAttribute="centerX" id="vBi-LW-svw"/>
+                            <constraint firstItem="E33-0i-xRI" firstAttribute="centerX" secondItem="5gw-1m-3d5" secondAttribute="centerX" id="zZG-Wk-dJW"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LEy-XE-VSb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2298" y="860"/>
         </scene>
     </scenes>
     <resources>

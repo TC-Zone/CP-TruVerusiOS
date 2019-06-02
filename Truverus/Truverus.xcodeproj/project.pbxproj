@@ -10,6 +10,9 @@
 		454A580AF15DF81C903B50A2 /* Pods_Truverus.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E56E34A7933A4FBFE8F88BB /* Pods_Truverus.framework */; };
 		CE15AA57228006B700881C8E /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE15AA56228006B700881C8E /* BaseViewController.swift */; };
 		CE15AA5A22803E2100881C8E /* CPSocialSignInHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE15AA5922803E2100881C8E /* CPSocialSignInHelper.swift */; };
+		CE3124342297AD6100D4049A /* CoreNFC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE3124332297AD6100D4049A /* CoreNFC.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		CE3124362297C1B100D4049A /* CPNoProductViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3124352297C1B100D4049A /* CPNoProductViewController.swift */; };
+		CE3124382297CE2600D4049A /* CPNoCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3124372297CE2600D4049A /* CPNoCollectionViewController.swift */; };
 		CE4C3A8B227DB393004443A2 /* CPMenuView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE4C3A7E227DB393004443A2 /* CPMenuView.storyboard */; };
 		CE4C3A8C227DB393004443A2 /* CPShareAppTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE4C3A7F227DB393004443A2 /* CPShareAppTableViewCell.xib */; };
 		CE4C3A8D227DB393004443A2 /* CPShareAppTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4C3A80227DB393004443A2 /* CPShareAppTableViewCell.swift */; };
@@ -62,6 +65,13 @@
 		CE74F9D52281525F0009ABCD /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE74F9D32281525D0009ABCD /* FBSDKLoginKit.framework */; };
 		CE74F9D62281525F0009ABCD /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE74F9D42281525F0009ABCD /* FBSDKCoreKit.framework */; };
 		CE74F9DA228196E80009ABCD /* credentials.plist in Resources */ = {isa = PBXBuildFile; fileRef = CE74F9D9228196E80009ABCD /* credentials.plist */; };
+		CEA9EC1C229CF6AB00F5396A /* CPCommunityMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA9EC1B229CF6AB00F5396A /* CPCommunityMainViewController.swift */; };
+		CEA9EC1F229CFF4F00F5396A /* CPCommunityDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA9EC1E229CFF4F00F5396A /* CPCommunityDataModel.swift */; };
+		CEA9EC21229D472C00F5396A /* RefreshTokenDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA9EC20229D472C00F5396A /* RefreshTokenDataModel.swift */; };
+		CEA9EC23229FACFB00F5396A /* CPEventsDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA9EC22229FACFB00F5396A /* CPEventsDataModel.swift */; };
+		CEA9EC25229FCAF300F5396A /* CPPromotionsDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA9EC24229FCAF300F5396A /* CPPromotionsDataModel.swift */; };
+		CEA9EC28229FCF9200F5396A /* CPCommunityFlowBaseDataFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA9EC27229FCF9200F5396A /* CPCommunityFlowBaseDataFlow.swift */; };
+		CEA9EC2A22A0440E00F5396A /* CPFeedbackDataModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA9EC2922A0440E00F5396A /* CPFeedbackDataModels.swift */; };
 		CEE911A52289311D0000F3EE /* CPCommunity.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEE911A42289311D0000F3EE /* CPCommunity.storyboard */; };
 		CEE911AA22893E3F0000F3EE /* CPCommunityHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE911A922893E3F0000F3EE /* CPCommunityHomeViewController.swift */; };
 		CEE911AC22893F1E0000F3EE /* CPFeedbackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE911AB22893F1E0000F3EE /* CPFeedbackViewController.swift */; };
@@ -79,9 +89,6 @@
 		CEE911C5228955460000F3EE /* CPSettingsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE911C4228955460000F3EE /* CPSettingsTableViewCell.swift */; };
 		CEE911C822897E700000F3EE /* ManageLocation.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEE911C722897E700000F3EE /* ManageLocation.storyboard */; };
 		CEE911CA22898A390000F3EE /* CPMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE911C922898A390000F3EE /* CPMapViewController.swift */; };
-		CEE911CE228BE4E90000F3EE /* CPAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE911CD228BE4E90000F3EE /* CPAPIManager.swift */; };
-		CEE911D0228BE5CE0000F3EE /* CPConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE911CF228BE5CE0000F3EE /* CPConstants.swift */; };
-		CEE911D4228C0AB20000F3EE /* CPHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE911D3228C0AB20000F3EE /* CPHelper.swift */; };
 		CEE91203228EA5730000F3EE /* ApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE91202228EA5730000F3EE /* ApiManager.swift */; };
 		CEE91205228EA58A0000F3EE /* ResponseError.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE91204228EA58A0000F3EE /* ResponseError.swift */; };
 		CEE91207228EA5990000F3EE /* UrlConstans.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE91206228EA5990000F3EE /* UrlConstans.swift */; };
@@ -137,6 +144,9 @@
 		79270D05B946BDC3E1A965AE /* Pods-Truverus.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Truverus.debug.xcconfig"; path = "Target Support Files/Pods-Truverus/Pods-Truverus.debug.xcconfig"; sourceTree = "<group>"; };
 		CE15AA56228006B700881C8E /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		CE15AA5922803E2100881C8E /* CPSocialSignInHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CPSocialSignInHelper.swift; sourceTree = "<group>"; };
+		CE3124332297AD6100D4049A /* CoreNFC.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreNFC.framework; path = System/Library/Frameworks/CoreNFC.framework; sourceTree = SDKROOT; };
+		CE3124352297C1B100D4049A /* CPNoProductViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CPNoProductViewController.swift; sourceTree = "<group>"; };
+		CE3124372297CE2600D4049A /* CPNoCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CPNoCollectionViewController.swift; sourceTree = "<group>"; };
 		CE4C3A7E227DB393004443A2 /* CPMenuView.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = CPMenuView.storyboard; sourceTree = "<group>"; };
 		CE4C3A7F227DB393004443A2 /* CPShareAppTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CPShareAppTableViewCell.xib; sourceTree = "<group>"; };
 		CE4C3A80227DB393004443A2 /* CPShareAppTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CPShareAppTableViewCell.swift; sourceTree = "<group>"; };
@@ -195,6 +205,13 @@
 		CE74F9D32281525D0009ABCD /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
 		CE74F9D42281525F0009ABCD /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
 		CE74F9D9228196E80009ABCD /* credentials.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = credentials.plist; sourceTree = "<group>"; };
+		CEA9EC1B229CF6AB00F5396A /* CPCommunityMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CPCommunityMainViewController.swift; sourceTree = "<group>"; };
+		CEA9EC1E229CFF4F00F5396A /* CPCommunityDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CPCommunityDataModel.swift; sourceTree = "<group>"; };
+		CEA9EC20229D472C00F5396A /* RefreshTokenDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefreshTokenDataModel.swift; sourceTree = "<group>"; };
+		CEA9EC22229FACFB00F5396A /* CPEventsDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CPEventsDataModel.swift; sourceTree = "<group>"; };
+		CEA9EC24229FCAF300F5396A /* CPPromotionsDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CPPromotionsDataModel.swift; sourceTree = "<group>"; };
+		CEA9EC27229FCF9200F5396A /* CPCommunityFlowBaseDataFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CPCommunityFlowBaseDataFlow.swift; sourceTree = "<group>"; };
+		CEA9EC2922A0440E00F5396A /* CPFeedbackDataModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CPFeedbackDataModels.swift; sourceTree = "<group>"; };
 		CEE911A42289311D0000F3EE /* CPCommunity.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CPCommunity.storyboard; sourceTree = "<group>"; };
 		CEE911A922893E3F0000F3EE /* CPCommunityHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CPCommunityHomeViewController.swift; sourceTree = "<group>"; };
 		CEE911AB22893F1E0000F3EE /* CPFeedbackViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CPFeedbackViewController.swift; sourceTree = "<group>"; };
@@ -213,9 +230,6 @@
 		CEE911C722897E700000F3EE /* ManageLocation.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ManageLocation.storyboard; sourceTree = "<group>"; };
 		CEE911C922898A390000F3EE /* CPMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CPMapViewController.swift; sourceTree = "<group>"; };
 		CEE911CB228A98B10000F3EE /* Truverus.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Truverus.entitlements; sourceTree = "<group>"; };
-		CEE911CD228BE4E90000F3EE /* CPAPIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CPAPIManager.swift; sourceTree = "<group>"; };
-		CEE911CF228BE5CE0000F3EE /* CPConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CPConstants.swift; sourceTree = "<group>"; };
-		CEE911D3228C0AB20000F3EE /* CPHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CPHelper.swift; sourceTree = "<group>"; };
 		CEE91202228EA5730000F3EE /* ApiManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiManager.swift; sourceTree = "<group>"; };
 		CEE91204228EA58A0000F3EE /* ResponseError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseError.swift; sourceTree = "<group>"; };
 		CEE91206228EA5990000F3EE /* UrlConstans.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UrlConstans.swift; sourceTree = "<group>"; };
@@ -255,6 +269,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE3124342297AD6100D4049A /* CoreNFC.framework in Frameworks */,
 				CE74F9D52281525F0009ABCD /* FBSDKLoginKit.framework in Frameworks */,
 				CE74F9D62281525F0009ABCD /* FBSDKCoreKit.framework in Frameworks */,
 				454A580AF15DF81C903B50A2 /* Pods_Truverus.framework in Frameworks */,
@@ -281,6 +296,7 @@
 		3685AA14C0FC03635E6C0AD1 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				CE3124332297AD6100D4049A /* CoreNFC.framework */,
 				5E56E34A7933A4FBFE8F88BB /* Pods_Truverus.framework */,
 			);
 			name = Frameworks;
@@ -300,8 +316,6 @@
 			children = (
 				CE15AA5922803E2100881C8E /* CPSocialSignInHelper.swift */,
 				CEF2374A228557C1006DB6AC /* CPUserProfile.swift */,
-				CEE911CF228BE5CE0000F3EE /* CPConstants.swift */,
-				CEE911D3228C0AB20000F3EE /* CPHelper.swift */,
 			);
 			path = CPHelper;
 			sourceTree = "<group>";
@@ -383,7 +397,6 @@
 				CE54A1F02278119400C4BEE1 /* CPResources */,
 				CEE911FF228EA52C0000F3EE /* CPNetworking */,
 				CE15AA5822803DDD00881C8E /* CPHelper */,
-				CEE911CC228BE4D20000F3EE /* Manager */,
 				CE54A1B322780BC700C4BEE1 /* Fonts */,
 				CE4C3A7B227DB393004443A2 /* CPViewControllers */,
 				CE54A1812278012200C4BEE1 /* AppDelegate.swift */,
@@ -466,9 +479,39 @@
 			path = CPResources;
 			sourceTree = "<group>";
 		};
+		CEA9EC1A229CF68E00F5396A /* CommunityMain */ = {
+			isa = PBXGroup;
+			children = (
+				CEA9EC1B229CF6AB00F5396A /* CPCommunityMainViewController.swift */,
+			);
+			path = CommunityMain;
+			sourceTree = "<group>";
+		};
+		CEA9EC1D229CFF2F00F5396A /* CommunityDataModel */ = {
+			isa = PBXGroup;
+			children = (
+				CEA9EC1E229CFF4F00F5396A /* CPCommunityDataModel.swift */,
+				CEA9EC22229FACFB00F5396A /* CPEventsDataModel.swift */,
+				CEA9EC24229FCAF300F5396A /* CPPromotionsDataModel.swift */,
+				CEA9EC2922A0440E00F5396A /* CPFeedbackDataModels.swift */,
+			);
+			path = CommunityDataModel;
+			sourceTree = "<group>";
+		};
+		CEA9EC26229FCF6900F5396A /* DataFlowBaseStruct */ = {
+			isa = PBXGroup;
+			children = (
+				CEA9EC27229FCF9200F5396A /* CPCommunityFlowBaseDataFlow.swift */,
+			);
+			path = DataFlowBaseStruct;
+			sourceTree = "<group>";
+		};
 		CEE911A3228930D00000F3EE /* CPCommunity */ = {
 			isa = PBXGroup;
 			children = (
+				CEA9EC26229FCF6900F5396A /* DataFlowBaseStruct */,
+				CEA9EC1D229CFF2F00F5396A /* CommunityDataModel */,
+				CEA9EC1A229CF68E00F5396A /* CommunityMain */,
 				CEE911A822893DF10000F3EE /* Feedback */,
 				CEE911A722893DE80000F3EE /* Promotion */,
 				CEE911A622893DE00000F3EE /* Event */,
@@ -529,14 +572,6 @@
 			path = Location;
 			sourceTree = "<group>";
 		};
-		CEE911CC228BE4D20000F3EE /* Manager */ = {
-			isa = PBXGroup;
-			children = (
-				CEE911CD228BE4E90000F3EE /* CPAPIManager.swift */,
-			);
-			path = Manager;
-			sourceTree = "<group>";
-		};
 		CEE911FF228EA52C0000F3EE /* CPNetworking */ = {
 			isa = PBXGroup;
 			children = (
@@ -568,6 +603,7 @@
 			isa = PBXGroup;
 			children = (
 				CEE91209228EA6F80000F3EE /* SocialUserLogin.swift */,
+				CEA9EC20229D472C00F5396A /* RefreshTokenDataModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -587,6 +623,7 @@
 				CEF2370F2282A60F006DB6AC /* CPCustomTableViewCell.swift */,
 				CEE912142293E3D60000F3EE /* CPProductDataModel.swift */,
 				CEE91218229461780000F3EE /* CPServiceProductData.swift */,
+				CE3124352297C1B100D4049A /* CPNoProductViewController.swift */,
 			);
 			path = CPProductView;
 			sourceTree = "<group>";
@@ -595,6 +632,7 @@
 			isa = PBXGroup;
 			children = (
 				CEF237122282CE70006DB6AC /* CPMyCollectionScreenViewController.swift */,
+				CE3124372297CE2600D4049A /* CPNoCollectionViewController.swift */,
 				CEF2371E22841A2C006DB6AC /* Requests */,
 				CEF237142282D69A006DB6AC /* Collection */,
 				CEF237192283F6BE006DB6AC /* PendingList */,
@@ -957,6 +995,7 @@
 				CEF2375B228599AA006DB6AC /* CPRemovePopupViewController.swift in Sources */,
 				CEF2375422858FF4006DB6AC /* CPNfcViewController.swift in Sources */,
 				CEE911C32289552C0000F3EE /* CPSettingsViewController.swift in Sources */,
+				CEA9EC25229FCAF300F5396A /* CPPromotionsDataModel.swift in Sources */,
 				CEE91205228EA58A0000F3EE /* ResponseError.swift in Sources */,
 				CEE911B6228940AD0000F3EE /* CPEventCollectionViewCell.swift in Sources */,
 				CE4C3A8F227DB393004443A2 /* CPMenuViewController.swift in Sources */,
@@ -970,15 +1009,17 @@
 				CEE911C5228955460000F3EE /* CPSettingsTableViewCell.swift in Sources */,
 				CEE912152293E3D60000F3EE /* CPProductDataModel.swift in Sources */,
 				CE54A1842278012200C4BEE1 /* ViewController.swift in Sources */,
+				CEA9EC21229D472C00F5396A /* RefreshTokenDataModel.swift in Sources */,
 				CEF237132282CE70006DB6AC /* CPMyCollectionScreenViewController.swift in Sources */,
 				CEE911BE228944440000F3EE /* RatingController.swift in Sources */,
 				CEE911AC22893F1E0000F3EE /* CPFeedbackViewController.swift in Sources */,
+				CE3124382297CE2600D4049A /* CPNoCollectionViewController.swift in Sources */,
 				CE54A1822278012200C4BEE1 /* AppDelegate.swift in Sources */,
+				CEA9EC2A22A0440E00F5396A /* CPFeedbackDataModels.swift in Sources */,
 				CEF23759228598E4006DB6AC /* CPInboxViewController.swift in Sources */,
 				CEF2372522842564006DB6AC /* CPTransferViewController.swift in Sources */,
 				CE4C3A90227DB393004443A2 /* CPHomeViewController.swift in Sources */,
 				CEF2372022841BF5006DB6AC /* CPRequestsViewController.swift in Sources */,
-				CEE911D0228BE5CE0000F3EE /* CPConstants.swift in Sources */,
 				CEF237162282D6D8006DB6AC /* CPCollectionViewController.swift in Sources */,
 				CEF2372222841C21006DB6AC /* CPRequestsCollectionViewCell.swift in Sources */,
 				CE4C3A8E227DB393004443A2 /* CPMenuTableViewCell.swift in Sources */,
@@ -991,12 +1032,11 @@
 				CE54A1F2227811AE00C4BEE1 /* CPCustomSegmentedControll.swift in Sources */,
 				CE54A1FC22784E4300C4BEE1 /* CPCommon.swift in Sources */,
 				CEF2372C2284418D006DB6AC /* CPMyAccountViewController.swift in Sources */,
-				CEE911CE228BE4E90000F3EE /* CPAPIManager.swift in Sources */,
 				CE54A18A2278012200C4BEE1 /* Truverus.xcdatamodeld in Sources */,
 				CEE91217229415F30000F3EE /* CPPopupViewController.swift in Sources */,
-				CEE911D4228C0AB20000F3EE /* CPHelper.swift in Sources */,
 				CE4C3A8D227DB393004443A2 /* CPShareAppTableViewCell.swift in Sources */,
 				CEE911AE22893F480000F3EE /* CPPromotionsViewController.swift in Sources */,
+				CEA9EC28229FCF9200F5396A /* CPCommunityFlowBaseDataFlow.swift in Sources */,
 				CEE911BA228943D20000F3EE /* CPPromotionSubviewViewController.swift in Sources */,
 				CEE911CA22898A390000F3EE /* CPMapViewController.swift in Sources */,
 				CEF2371D2283F72D006DB6AC /* CPPendingCollectionViewCell.swift in Sources */,
@@ -1005,13 +1045,17 @@
 				CEE91203228EA5730000F3EE /* ApiManager.swift in Sources */,
 				CEF2371B2283F70E006DB6AC /* CPPendingListViewController.swift in Sources */,
 				CEF2374B228557C1006DB6AC /* CPUserProfile.swift in Sources */,
+				CEA9EC1C229CF6AB00F5396A /* CPCommunityMainViewController.swift in Sources */,
 				CEF2375D22859A0C006DB6AC /* CPInboxCollectionViewCell.swift in Sources */,
 				CEE911B2228940850000F3EE /* CPFeedbackCollectionViewCell.swift in Sources */,
 				CE54A207227AC45D00C4BEE1 /* CPSlideInTransition.swift in Sources */,
 				CEE911B8228943BF0000F3EE /* CPFeedbackSubViewController.swift in Sources */,
 				CEF23731228552C9006DB6AC /* PercistanceService.swift in Sources */,
+				CEA9EC23229FACFB00F5396A /* CPEventsDataModel.swift in Sources */,
 				CEF2370C2282A1A5006DB6AC /* CPParallaxTableView.swift in Sources */,
+				CEA9EC1F229CFF4F00F5396A /* CPCommunityDataModel.swift in Sources */,
 				CEE911BC228943E70000F3EE /* CPEventSubViewController.swift in Sources */,
+				CE3124362297C1B100D4049A /* CPNoProductViewController.swift in Sources */,
 				CEE91219229461780000F3EE /* CPServiceProductData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

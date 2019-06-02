@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CPSignUpViewController: BaseViewController {
+class CPSignUpViewController: BaseViewController, UITextFieldDelegate{
 
     @IBOutlet weak var FirstNameTextField: UITextField!
     @IBOutlet weak var LastNameTextField: UITextField!
@@ -23,6 +23,7 @@ class CPSignUpViewController: BaseViewController {
 
         //addSlideMenuButton()
         InitTextFields()
+        settextDelegates()
         ScrollView.validateScrolling(view: ScrollView)
         // Do any additional setup after loading the view.
     }
@@ -36,6 +37,27 @@ class CPSignUpViewController: BaseViewController {
         common.CreateTextFields(TextField: PasswordTextField, img: UIImage(named: "passwordtextfield")!)
         common.CreateTextFields(TextField: ReEnterPasswordTextField, img: UIImage(named: "passwordtextfield")!)
         
+    }
+    
+    func settextDelegates() {
+        
+        EmailTextField.delegate = self
+        PasswordTextField.delegate = self
+        FirstNameTextField.delegate = self
+        LastNameTextField.delegate = self
+        ReEnterPasswordTextField.delegate = self
+    }
+    
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        
+        EmailTextField.resignFirstResponder()
+        PasswordTextField.resignFirstResponder()
+        FirstNameTextField.resignFirstResponder()
+        LastNameTextField.resignFirstResponder()
+        ReEnterPasswordTextField.resignFirstResponder()
+        
+        return true
     }
     
     @IBAction func CreateAccountButtonAction(_ sender: Any) {

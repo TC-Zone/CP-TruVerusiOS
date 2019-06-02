@@ -21,11 +21,23 @@ class CPHomeViewController: BaseViewController {
         
         addSlideMenuButton()
         addSlideSearchButton()
+        validateSelectedIndex()
         segmentController.isHidden = false
         ProductContainer.alpha = 1
         CollectionContainer.alpha = 0
         
     }
+    
+    func validateSelectedIndex() {
+        
+        if segmentController.selectedSegmentIndex == 0 {
+            RemoveSlideInSearchButton()
+        } else {
+            ShowSlideInSearchButton()
+        }
+        
+    }
+    
     
     @IBAction func SelectionChanged(_ sender: CPCustomSegmentedControll) {
         switch sender.selectedSegmentIndex {
@@ -33,10 +45,12 @@ class CPHomeViewController: BaseViewController {
             print("default home screen")
             ProductContainer.alpha = 1
             CollectionContainer.alpha = 0
+            RemoveSlideInSearchButton()
         case 1:
             print("My collection")
             CollectionContainer.alpha = 1
             ProductContainer.alpha = 0
+            ShowSlideInSearchButton()
         default:
             print("nothing in switch")
         }

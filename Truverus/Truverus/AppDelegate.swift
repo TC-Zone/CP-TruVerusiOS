@@ -9,6 +9,7 @@
 import UIKit
 import CoreData
 import GoogleSignIn
+import CoreNFC
 import FBSDKCoreKit
 import FBSDKLoginKit
 import GoogleMaps
@@ -26,6 +27,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        NFCAvailability()
         
         GMSServices.provideAPIKey("AIzaSyDvL7BFDeuhTJMjHZgRA4Bwfs05RCVubq8")
         
@@ -101,7 +104,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             state = "logedout"
         }
         
-        //UIApplication.shared.statusBarStyle = .lightContent
+        UIApplication.shared.statusBarStyle = .lightContent
         
         UINavigationBar.appearance().clipsToBounds = true
         
@@ -146,6 +149,32 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             annotation: annotation)
         
         return google || facebook
+        
+    }
+    
+    func NFCAvailability(){
+        
+        var isNFCAvailable: Bool {
+            if NSClassFromString("NFCNDEFReaderSession") == nil { return false }
+            return NFCNDEFReaderSession.readingAvailable
+        }
+        
+        if isNFCAvailable == false {
+            
+            let alert = UIAlertController(title: "Warning !", message: "Your phone doesn't have NFC capabilities.. you wont be able to use authentication services", preferredStyle: .alert)
+            
+            let actionYes = UIAlertAction(title: "Okay", style: .default, handler: { action in
+                print("action yes handler")
+            })
+            
+            
+            alert.addAction(actionYes)
+            
+            DispatchQueue.main.async {
+                self.window?.rootViewController?.present(alert, animated: true, completion: nil)
+            }
+            
+        }
         
     }
     

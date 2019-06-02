@@ -84,3 +84,11 @@ extension UIViewController {
         view.endEditing(true)
     }
 }
+
+
+struct keys {
+    
+    static let accesstoken = "Access_Token"
+    static let refreshtoken = "Refresh_Token"
+    
+}

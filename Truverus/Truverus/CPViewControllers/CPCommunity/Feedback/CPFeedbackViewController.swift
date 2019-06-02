@@ -7,6 +7,10 @@
 //
 
 import UIKit
+import Alamofire
+import ObjectMapper
+import Kingfisher
+import SVProgressHUD
 
 class CPFeedbackViewController: UIViewController, UICollectionViewDelegate , UICollectionViewDataSource{
     
@@ -19,6 +23,7 @@ class CPFeedbackViewController: UIViewController, UICollectionViewDelegate , UIC
     let Brandimages = [#imageLiteral(resourceName: "nike logo"),#imageLiteral(resourceName: "adidas logo")]
     let communities = ["NIKE COMMUNITY","ADDIDAS COMMUNITY"]
     
+    let defaults = UserDefaults.standard
     
     
     override func viewDidLoad() {
@@ -39,19 +44,39 @@ class CPFeedbackViewController: UIViewController, UICollectionViewDelegate , UIC
     
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return communities.count
+        if feedbacksbase.feedbackarraybase[0].content!.count != 0 {
+            return feedbacksbase.feedbackarraybase[0].content!.count
+        } else {
+            return 0
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = FeedbackCollectionView.dequeueReusableCell(withReuseIdentifier: "feedbackCell", for: indexPath) as! CPFeedbackCollectionViewCell
         
+        if communityBase.communityArrayBase[0].content?.id != nil || feedbacksbase.feedbackarraybase[0].content![indexPath.row].name != nil {
         
-        
-        cell.BrandImage.image = Brandimages[indexPath.item]
-        cell.ProductImage.image = images[indexPath.item]
-        cell.FeedbackTitle.text = communities[indexPath.item]
-        cell.Description.text = descriptions[indexPath.item]
-        
+            let imageID = communityBase.communityArrayBase[0].content?.client?.id
+            let imageurl = NSString.init(format: "%@%@", UrlConstans.BASE_URL, UrlConstans.CLIENT_IMAGE_BY_ID + "\(imageID ?? "")") as String
+            let imgUrl = URL(string: imageurl)
+            
+            if imgUrl != nil {
+                
+                cell.BrandImage.kf.setImage(with: imgUrl)
+                
+            } else {
+                
+                cell.BrandImage.image = UIImage(named: "noimage")
+                
+            }
+            
+        //cell.ProductImage.image = images[indexPath.item]
+        cell.FeedbackTitle.text = communityBase.communityArrayBase[0].content?.name
+        cell.Description.text = feedbacksbase.feedbackarraybase[0].content![indexPath.row].name
+            
+        } else {
+            print("no data found for feedback \(indexPath.row)")
+        }
         cell.BrandImage.layer.borderWidth = 2.0
         cell.BrandImage.layer.masksToBounds = false
         cell.BrandImage.layer.borderColor = UIColor(named: "TextAreaGray")?.cgColor
@@ -121,3 +146,5 @@ class CPFeedbackViewController: UIViewController, UICollectionViewDelegate , UIC
      */
 
 }
+
+

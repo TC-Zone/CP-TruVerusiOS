@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 class CPEventSubViewController: UIViewController {
 
@@ -17,6 +18,9 @@ class CPEventSubViewController: UIViewController {
     @IBOutlet weak var EventDescription: UILabel!
     @IBOutlet weak var EventStartTime: UILabel!
     @IBOutlet weak var EventEndTime: UILabel!
+    
+    var starttime : String!
+    var endTime : String!
     
     
     let titles = ["NIKE SPECIAL EVENT","ADIDAS SPECIAL EVENT"]
@@ -40,15 +44,37 @@ class CPEventSubViewController: UIViewController {
     
     func setdata() {
         
-        print("indexpath is :: \(indexpath)")
+        if eventBase.eventarraybase[0].content!.count != 0 {
         
-        Image.image = brandimages[indexpath]
-        EventTitle.text = titles[indexpath]
-        EventAddress.text = addresses[indexpath]
-        EventDate.text = dates[indexpath]
-        EventDescription.text = promosubDescriptions[indexpath]
-        EventStartTime.text = StartTimes[indexpath]
-        EventEndTime.text = EndDTimes[indexpath]
+        print("indexpath is :: \(indexpath)")
+        let imageID = eventBase.eventarraybase[0].content![indexpath].id
+        let imageurl = NSString.init(format: "%@%@", UrlConstans.BASE_URL, UrlConstans.EVENT_IMAGE_BY_ID + "\(imageID ?? "")") as String
+        let imgUrl = URL(string: imageurl)
+        
+        if imgUrl != nil {
+            
+            Image.kf.setImage(with: imgUrl)
+            
+            
+        } else {
+            
+            Image.image = UIImage(named: "noimage")
+            
+            }
+            
+            let start =  eventBase.eventarraybase[0].content![indexpath].startDateTime!
+            let startDate = start.prefix(10)
+        EventTitle.text = eventBase.eventarraybase[0].content![indexpath].name!
+        EventAddress.text = "--"
+        EventDate.text = String(startDate)
+        EventDescription.text = eventBase.eventarraybase[0].content![indexpath].description!
+        EventStartTime.text = starttime
+        EventEndTime.text = endTime
+            
+            
+        }else {
+                print("no data found on event")
+        }
         
     }
     

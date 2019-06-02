@@ -454,7 +454,7 @@ Jeans, Latest Trends, Vintage</string>
                                                 <color key="textColor" name="TextAreaGray"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="John Doe" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tr3-Yb-oV3">
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tr3-Yb-oV3">
                                                 <rect key="frame" x="47" y="45" width="281" height="42"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="42" id="ZTG-cZ-tj8"/>
@@ -480,7 +480,7 @@ Jeans, Latest Trends, Vintage</string>
                                                 <color key="textColor" name="TextAreaGray"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="John Doe" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GNa-5c-YK6">
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GNa-5c-YK6">
                                                 <rect key="frame" x="47" y="137" width="281" height="42"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="42" id="UXA-1y-BX0"/>
@@ -506,7 +506,7 @@ Jeans, Latest Trends, Vintage</string>
                                                 <color key="textColor" name="TextAreaGray"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="John Doe" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WXg-nR-R6V">
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WXg-nR-R6V">
                                                 <rect key="frame" x="47" y="229" width="281" height="42"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="42" id="ErE-sX-zPm"/>
@@ -532,7 +532,7 @@ Jeans, Latest Trends, Vintage</string>
                                                 <color key="textColor" name="TextAreaGray"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="John Doe" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="x8W-7w-thF">
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="x8W-7w-thF">
                                                 <rect key="frame" x="47" y="321" width="131" height="42"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="42" id="NVu-3j-J1W"/>
@@ -558,7 +558,7 @@ Jeans, Latest Trends, Vintage</string>
                                                 <color key="textColor" name="TextAreaGray"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="John Doe" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QqT-Lh-mog">
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QqT-Lh-mog">
                                                 <rect key="frame" x="197" y="321" width="131" height="42"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="42" id="040-eJ-MOS"/>
@@ -584,7 +584,7 @@ Jeans, Latest Trends, Vintage</string>
                                                 <color key="textColor" name="TextAreaGray"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="John Doe" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nVr-g7-rvx">
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nVr-g7-rvx">
                                                 <rect key="frame" x="47" y="413" width="281" height="42"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="42" id="6PQ-oj-DmV"/>
@@ -610,7 +610,7 @@ Jeans, Latest Trends, Vintage</string>
                                                 <color key="textColor" name="TextAreaGray"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="John Doe" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Clk-Qz-mrB">
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Clk-Qz-mrB">
                                                 <rect key="frame" x="47" y="505" width="281" height="42"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="42" id="16x-ZJ-U7F"/>
@@ -636,7 +636,7 @@ Jeans, Latest Trends, Vintage</string>
                                                 <color key="textColor" name="TextAreaGray"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="John Doe" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="3W1-KM-ihI" customClass="TKTextField" customModule="TaggerKit">
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="3W1-KM-ihI" customClass="TKTextField" customModule="TaggerKit">
                                                 <rect key="frame" x="47" y="597" width="281" height="42"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="42" id="YBw-Gq-Y0B"/>
@@ -699,7 +699,7 @@ Jeans, Latest Trends, Vintage</string>
                                                 <color key="textColor" name="TextAreaGray"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="John Doe" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="Vgr-b5-x8N" customClass="TKTextField" customModule="TaggerKit">
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="Vgr-b5-x8N" customClass="TKTextField" customModule="TaggerKit">
                                                 <rect key="frame" x="47" y="840" width="281" height="42"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="42" id="2Dh-1E-bDt"/>

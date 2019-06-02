@@ -165,14 +165,31 @@ extension CPPopupViewController {
             var tempImgArray = [String]()
             print("image 01 :: \(imageObjects![0].id ?? "default")")
             
-            for i in 0...3{
+            if imageObjects!.count > 4 {
                 
-                //print("image \(i) id :: \(imageObjects![i].id)")
-                let imageID = imageObjects![i].id
-                let imageurl = NSString.init(format: "%@%@", UrlConstans.BASE_URL, UrlConstans.PRODUCT_IMAGES_BY_ID + "\(imageID ?? "")") as String
-                tempImgArray.append(imageurl)
+                for i in 0...3{
+                    
+                    //print("image \(i) id :: \(imageObjects![i].id)")
+                    let imageID = imageObjects![i].id
+                    let imageurl = NSString.init(format: "%@%@", UrlConstans.BASE_URL, UrlConstans.PRODUCT_IMAGES_BY_ID + "\(imageID ?? "")") as String
+                    tempImgArray.append(imageurl)
+                    
+                }
+                
+            } else {
+                 print("image cont :: \(Int(imageObjects!.count))")
+               
+                for index in (0...Int(imageObjects!.count) - 1) {
+                    print("image \(index) id :: \(imageObjects![index].id ?? "")")
+                    let imageID = imageObjects![index].id
+                    let imageurl = NSString.init(format: "%@%@", UrlConstans.BASE_URL, UrlConstans.PRODUCT_IMAGES_BY_ID + "\(imageID ?? "")") as String
+                    tempImgArray.append(imageurl)
+                }
+                
                 
             }
+            
+           
             
             print("image url list new :: \(tempImgArray)")
             
@@ -185,13 +202,6 @@ extension CPPopupViewController {
             let story = UIStoryboard.init(name: "CPHomeView", bundle: nil)
             let vc = story.instantiateViewController(withIdentifier: "CPHomeView") as! CPHomeViewController
         
-            //let productInst = CPProductScreenViewController.productInstance
-            //productInst.productDataObject = productDatasourceArray
-            //productInst.imageURLs = tempImageUrlsList
-            //productInst.setdataWithServices(dataimg: productDatasourceArray)
-            //productInst.makeImageUrlArray()
-            
-            
             self.navigationController?.pushViewController(vc, animated: true)
             
             NotificationCenter.default.post(name: NSNotification.Name(rawValue: "load"), object: nil)

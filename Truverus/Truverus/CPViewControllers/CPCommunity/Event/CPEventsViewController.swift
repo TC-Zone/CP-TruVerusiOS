@@ -13,14 +13,7 @@ class CPEventsViewController: UIViewController, UICollectionViewDelegate , UICol
     @IBOutlet weak var EventCollectionView: UICollectionView!
     @IBOutlet weak var EventSubViewContainer: UIView!
     
-    
-    let titles = ["NIKE SPECIAL EVENT","ADIDAS SPECIAL EVENT"]
-    let StartTimes = ["9.00 AM","10.30 AM"]
-    let EndDTimes = ["5.00 PM","11.00 PM"]
-    let months = ["Feb","Mar"]
-    let days = ["02nd","11th"]
-    let brandimages = [#imageLiteral(resourceName: "nike logo large"),#imageLiteral(resourceName: "addidas photo")]
-    let promosubDescriptions = ["Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse eu arcu in ligula ultrices placerat. Sed blandit diam vitae pretium vulputate. Nulla vel dignissim velit. Mauris quis arcu rutrum, bibendum ante eget, vehicula ante. Vivamus erat sapien.", "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse eu arcu in ligula ultrices placerat. Sed blandit diam vitae pretium vulputate. Nulla vel dignissim velit. Mauris quis arcu rutrum, bibendum ante eget, vehicula ante. Vivamus erat sapien."]
+ 
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,20 +31,75 @@ class CPEventsViewController: UIViewController, UICollectionViewDelegate , UICol
     
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return titles.count
+        if promotionBase.promoarraybase[0].content!.count != 0 {
+            return eventBase.eventarraybase[0].content!.count
+        } else {
+            return 0
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = EventCollectionView.dequeueReusableCell(withReuseIdentifier: "EventCell", for: indexPath) as! CPEventCollectionViewCell
         
-        
-        
-        cell.Image.image = brandimages[indexPath.item]
-        cell.EventTitle.text = titles[indexPath.item]
-        cell.StartTime.text = StartTimes[indexPath.item]
-        cell.EndTime.text = EndDTimes[indexPath.item]
-        cell.Day.text = days[indexPath.item]
-        cell.Month.text = months[indexPath.item]
+        if eventBase.eventarraybase[0].content!.count != 0 {
+            
+            let imageID = eventBase.eventarraybase[0].content![indexPath.item].id
+            let imageurl = NSString.init(format: "%@%@", UrlConstans.BASE_URL, UrlConstans.EVENT_IMAGE_BY_ID + "\(imageID ?? "")") as String
+            let imgUrl = URL(string: imageurl)
+            
+            if imgUrl != nil {
+                
+                cell.Image.kf.setImage(with: imgUrl)
+                
+            } else {
+                
+                cell.Image.image = UIImage(named: "noimage")
+                
+            }
+            cell.EventTitle.text = eventBase.eventarraybase[0].content![indexPath.item].name
+            
+            let start =  eventBase.eventarraybase[0].content![indexPath.item].startDateTime!
+            let startTime = start.suffix(5)
+            print("time :: \(startTime)")
+            
+            let end =  eventBase.eventarraybase[0].content![indexPath.item].endDateTime!
+            let endTime = end.suffix(5)
+            print("end time :: \(endTime)")
+            let firstChar = Array(start)[5]
+            let second = Array(start)[6]
+            let month = "\(firstChar)\(second)"
+            print("month is :: \(month)")
+            
+            let dayfirstChar = Array(start)[8]
+            let daysecond = Array(start)[9]
+            var day = "\(dayfirstChar)\(daysecond)"
+            if Int(day) == 01 {
+                day = "\(day)st"
+            } else if Int(day) == 02 {
+                day = "\(day)nd"
+            } else if Int(day) == 03 {
+                day = "\(day)rd"
+            } else {
+                day = "\(day)th"
+            }
+            print("month is :: \(day)")
+            
+            let year = start.prefix(4)
+            
+            let monthName = DateFormatter().monthSymbols![Int(month)! - 1]
+            print("month name :: \(monthName)")
+            cell.StartTime.text = String(startTime)
+            cell.EndTime.text = String(endTime)
+            cell.Day.text = day
+            cell.Month.text = monthName
+            cell.Year.text = String(year)
+            
+            
+        } else {
+            
+            print("No events recieved")
+            
+        }
         
         cell.layer.shadowColor = UIColor.lightGray.cgColor
         cell.layer.shadowOffset = CGSize(width: 0, height: 2.0)
@@ -63,20 +111,23 @@ class CPEventsViewController: UIViewController, UICollectionViewDelegate , UICol
         
         return cell
     }
+
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
         
         if collectionView == EventCollectionView {
             
-            let prtitle = titles[indexPath.item]
-            let start = StartTimes[indexPath.item]
-            let end = EndDTimes[indexPath.item]
-            
-            print("selected promotion data :: title : \(prtitle) start : \(start) end : \(end)")
+            let start =  eventBase.eventarraybase[0].content![indexPath.item].startDateTime!
+            let startTime = start.suffix(5)
+            let end =  eventBase.eventarraybase[0].content![indexPath.item].endDateTime!
+            let endTime = end.suffix(5)
+            print("end time :: \(endTime)")
             
             let vc  = self.children[0] as! CPEventSubViewController
             vc.indexpath = indexPath.row
+            vc.starttime = String(startTime)
+            vc.endTime = String(endTime)
             vc.viewWillAppear(true)
             vc.setdata()
             
