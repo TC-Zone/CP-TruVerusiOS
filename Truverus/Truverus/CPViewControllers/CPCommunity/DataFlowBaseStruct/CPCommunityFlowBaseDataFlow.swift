@@ -24,3 +24,7 @@ struct feedbacksbase {
     static var feedbackarraybase = [FeedbacksData]()
     static var community : String!
 }
+
+struct surveyModule {
+    static var Syrvey = [SurvayBase]()
+}

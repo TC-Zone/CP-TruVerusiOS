@@ -29,8 +29,8 @@ class CPCommunityHomeViewController: BaseViewController {
         PromotionsContainer.alpha = 0
         EventsContainer.alpha = 0
         
-        print("recieved promo id :: \(PromoObject[0].content![0].id)")
-        print("recieved event id :: \(EventsObject[0].content![0].id)")
+//        print("recieved promo id :: \(PromoObject[0].content![0].id)")
+//        print("recieved event id :: \(EventsObject[0].content![0].id)")
         // Do any additional setup after loading the view.
     }
     

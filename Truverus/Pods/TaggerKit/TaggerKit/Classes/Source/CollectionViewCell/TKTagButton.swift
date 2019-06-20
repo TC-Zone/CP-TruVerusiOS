@@ -1,4 +1,3 @@
-
 //
 //  TKTagButton.swift
 //  TaggerKit
@@ -12,25 +11,25 @@ import UIKit
 
 
 public enum actionType {
-    case addTag
-    case removeTag
-    case noAction
+	case addTag
+	case removeTag
+	case noAction
 }
 
 
 class TKTagButton: UIButton {
-    
-    
-    // MARK: - Properties
-    
-    
-    // MARK: - Lifecycle methods
-    
-    
-    // MARK: - Setup methods
-    private func setup() {
-        alpha = 0.5
-    }
-    
-    
+
+	
+	// MARK: - Properties
+
+	
+	// MARK: - Lifecycle methods
+	
+	
+	// MARK: - Setup methods
+	private func setup() {
+		alpha = 0.5
+	}
+	
+
 }

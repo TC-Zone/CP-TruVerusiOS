@@ -31,11 +31,18 @@ class CPEventsViewController: UIViewController, UICollectionViewDelegate , UICol
     
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        if promotionBase.promoarraybase[0].content!.count != 0 {
-            return eventBase.eventarraybase[0].content!.count
+        if promotionBase.promoarraybase.isEmpty == false {
+            if promotionBase.promoarraybase[0].content!.count != 0 {
+                return eventBase.eventarraybase[0].content!.count
+            } else {
+                return 0
+            }
+            
         } else {
             return 0
         }
+        
+        
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {

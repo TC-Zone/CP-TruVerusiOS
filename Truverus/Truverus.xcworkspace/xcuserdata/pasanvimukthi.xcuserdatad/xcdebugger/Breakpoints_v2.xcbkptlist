@@ -1,0 +1,359 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   type = "0"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Truverus/CPViewControllers/CPLoginView/CPSignUpViewController.swift"
+            timestampString = "582465270.7844"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "401"
+            endingLineNumber = "401"
+            landmarkName = "serializeRegisteredUserResponse(data:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Truverus/CPViewControllers/CPHomeView/CPProductView/CPCustomTableViewCell.swift"
+            timestampString = "582543814.097779"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "266"
+            endingLineNumber = "266"
+            landmarkName = "serializePurchaseResponse(data:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Truverus/CPNetworking/Management/ApiManager.swift"
+            timestampString = "582494246.2866859"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "79"
+            endingLineNumber = "79"
+            landmarkName = "makeRequestAlamofire(route:method:autherized:parameter:header:callback:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Truverus/CPNetworking/Management/ApiManager.swift"
+            timestampString = "582494246.2870179"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "80"
+            endingLineNumber = "80"
+            landmarkName = "makeRequestAlamofire(route:method:autherized:parameter:header:callback:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Truverus/CPViewControllers/CPHomeView/CPProductView/CPCustomTableViewCell.swift"
+            timestampString = "582543814.0979199"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "210"
+            endingLineNumber = "210"
+            landmarkName = "PurchaseProduct()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Truverus/CPViewControllers/CPHomeView/CPProductView/CPCustomTableViewCell.swift"
+            timestampString = "582543814.097976"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "217"
+            endingLineNumber = "217"
+            landmarkName = "PurchaseProduct()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Truverus/CPViewControllers/CPHomeView/CPProductView/CPCustomTableViewCell.swift"
+            timestampString = "582543814.098025"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "227"
+            endingLineNumber = "227"
+            landmarkName = "PurchaseProduct()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Truverus.CPCustomTableViewCell.(PurchaseProduct in _1CFC9DF0882A7F536D907FE8D10FCEF9)() -&gt; ()"
+                  moduleName = "Truverus"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/pasanvimukthi/Documents/ios%20git/CP-TruVerusiOS/Truverus/Truverus/CPViewControllers/CPHomeView/CPProductView/CPCustomTableViewCell.swift"
+                  timestampString = "582470930.5086761"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "224"
+                  endingLineNumber = "224"
+                  offsetFromSymbolStart = "3948">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Truverus.APIResult&lt;Foundation.Data&gt;) -&gt; () in Truverus.CPCustomTableViewCell.(PurchaseProduct in _1CFC9DF0882A7F536D907FE8D10FCEF9)() -&gt; ()"
+                  moduleName = "Truverus"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/pasanvimukthi/Documents/ios%20git/CP-TruVerusiOS/Truverus/Truverus/CPViewControllers/CPHomeView/CPProductView/CPCustomTableViewCell.swift"
+                  timestampString = "582470930.510309"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "225"
+                  endingLineNumber = "225"
+                  offsetFromSymbolStart = "300">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Truverus/CPViewControllers/CPHomeView/CPProductView/CPCustomTableViewCell.swift"
+            timestampString = "582543814.098073"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "230"
+            endingLineNumber = "230"
+            landmarkName = "PurchaseProduct()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Truverus.APIResult&lt;Foundation.Data&gt;) -&gt; () in Truverus.CPCustomTableViewCell.(PurchaseProduct in _1CFC9DF0882A7F536D907FE8D10FCEF9)() -&gt; ()"
+                  moduleName = "Truverus"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/pasanvimukthi/Documents/ios%20git/CP-TruVerusiOS/Truverus/Truverus/CPViewControllers/CPHomeView/CPProductView/CPCustomTableViewCell.swift"
+                  timestampString = "582470930.514325"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "227"
+                  endingLineNumber = "227"
+                  offsetFromSymbolStart = "340">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Truverus.APIResult&lt;Foundation.Data&gt;) -&gt; () in Truverus.CPCustomTableViewCell.(PurchaseProduct in _1CFC9DF0882A7F536D907FE8D10FCEF9)() -&gt; ()"
+                  moduleName = "Truverus"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/pasanvimukthi/Documents/ios%20git/CP-TruVerusiOS/Truverus/Truverus/CPViewControllers/CPHomeView/CPProductView/CPCustomTableViewCell.swift"
+                  timestampString = "582470930.515841"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "227"
+                  endingLineNumber = "227"
+                  offsetFromSymbolStart = "348">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Truverus/CPViewControllers/CPHomeView/CPProductView/CPCustomTableViewCell.swift"
+            timestampString = "582543814.098119"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "234"
+            endingLineNumber = "234"
+            landmarkName = "PurchaseProduct()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Truverus/CPViewControllers/CPNfc/CPNFCPopUps/CPPopupViewController.swift"
+            timestampString = "582553364.527272"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "123"
+            endingLineNumber = "123"
+            landmarkName = "getProductdata()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Truverus/CPViewControllers/CPNfc/CPNFCPopUps/CPPopupViewController.swift"
+            timestampString = "582553364.5273401"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "135"
+            endingLineNumber = "135"
+            landmarkName = "getProductdata()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Truverus.CPPopupViewController.(getProductdata in _5E44B94F29DBD34269BD4EFFEFCBB343)() -&gt; ()"
+                  moduleName = "Truverus"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/pasanvimukthi/Documents/ios%20git/CP-TruVerusiOS/Truverus/Truverus/CPViewControllers/CPNfc/CPNFCPopUps/CPPopupViewController.swift"
+                  timestampString = "582470452.740137"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "135"
+                  endingLineNumber = "135"
+                  offsetFromSymbolStart = "1892">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Truverus.APIResult&lt;Foundation.Data&gt;) -&gt; () in Truverus.CPPopupViewController.(getProductdata in _5E44B94F29DBD34269BD4EFFEFCBB343)() -&gt; ()"
+                  moduleName = "Truverus"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/pasanvimukthi/Documents/ios%20git/CP-TruVerusiOS/Truverus/Truverus/CPViewControllers/CPNfc/CPNFCPopUps/CPPopupViewController.swift"
+                  timestampString = "582470452.7416461"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "136"
+                  endingLineNumber = "136"
+                  offsetFromSymbolStart = "164">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Truverus/CPViewControllers/CPNfc/CPNFCPopUps/CPPopupViewController.swift"
+            timestampString = "582553364.527391"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "138"
+            endingLineNumber = "138"
+            landmarkName = "getProductdata()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Truverus.APIResult&lt;Foundation.Data&gt;) -&gt; () in Truverus.CPPopupViewController.(getProductdata in _5E44B94F29DBD34269BD4EFFEFCBB343)() -&gt; ()"
+                  moduleName = "Truverus"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/pasanvimukthi/Documents/ios%20git/CP-TruVerusiOS/Truverus/Truverus/CPViewControllers/CPNfc/CPNFCPopUps/CPPopupViewController.swift"
+                  timestampString = "582470452.745288"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "138"
+                  endingLineNumber = "138"
+                  offsetFromSymbolStart = "204">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Truverus.APIResult&lt;Foundation.Data&gt;) -&gt; () in Truverus.CPPopupViewController.(getProductdata in _5E44B94F29DBD34269BD4EFFEFCBB343)() -&gt; ()"
+                  moduleName = "Truverus"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/pasanvimukthi/Documents/ios%20git/CP-TruVerusiOS/Truverus/Truverus/CPViewControllers/CPNfc/CPNFCPopUps/CPPopupViewController.swift"
+                  timestampString = "582470452.746745"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "138"
+                  endingLineNumber = "138"
+                  offsetFromSymbolStart = "212">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Truverus/CPViewControllers/CPHomeView/CPProductView/CPCustomTableViewCell.swift"
+            timestampString = "582543814.098213"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "201"
+            endingLineNumber = "201"
+            landmarkName = "PurchaseProduct()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Truverus/CPViewControllers/CPHomeView/CPProductView/CPCustomTableViewCell.swift"
+            timestampString = "582543814.098262"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "228"
+            endingLineNumber = "228"
+            landmarkName = "PurchaseProduct()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>

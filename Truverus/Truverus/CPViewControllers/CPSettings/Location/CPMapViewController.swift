@@ -15,11 +15,42 @@ class CPMapViewController: UIViewController, CLLocationManagerDelegate {
     
     @IBOutlet weak var Map: GMSMapView!
     @IBOutlet weak var Address: UILabel!
+    var currentlocation:CLLocation!
     
     var locationManager = CLLocationManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+       
+        preparelocationSetup()
+       
+        
+        
+    }
+    
+    
+    
+    func authorizelocationstates(){
+        if CLLocationManager.authorizationStatus() == .authorizedWhenInUse {
+            currentlocation = locationManager.location
+            print(currentlocation)
+        }
+        else{
+            // Note : This function is overlap permission
+            //  locationManager.requestWhenInUseAuthorization()
+            //  authorizelocationstates()
+        }
+    }
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        locationManager = manager
+        // Only called when variable have location data
+        showCurrentLocation()
+        authorizelocationstates()
+    }
+    
+    func preparelocationSetup() {
+        
+        print("here got hitted")
         
         locationManager.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
@@ -43,12 +74,14 @@ class CPMapViewController: UIViewController, CLLocationManagerDelegate {
             openSettingApp(message: "Please enable the location services to get your current location")
         }
         
-       
-        
-        
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        NotificationCenter.default.removeObserver(self)
+    }
     
+
+
     //open location settings for app
     func openSettingApp(message: String) {
         let alertController = UIAlertController (title: "Truverus", message:message , preferredStyle: .alert)

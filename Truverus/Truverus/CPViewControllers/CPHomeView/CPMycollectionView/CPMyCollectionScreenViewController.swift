@@ -117,6 +117,16 @@ class CPMyCollectionScreenViewController: UIViewController {
         }
     }
     
+    
+    func handleback() {
+    
+        nocollectioncontainer.alpha = 1
+        collectionContainer.alpha = 0
+        PendingContainer.alpha = 0
+        RequestsContainer.alpha = 0
+    }
+    
+    
     /*
      // MARK: - Navigation
      

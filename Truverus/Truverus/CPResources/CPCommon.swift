@@ -31,6 +31,18 @@ class CPcommon {
         
     }
     
+    func createTextFieldBorder(TextField : UITextField){
+        TextField.layer.borderColor = UIColor(named: "ShadedLightBlue")?.cgColor
+        TextField.layer.borderWidth = 1.0
+        TextField.layer.cornerRadius = 23
+    }
+    
+    func createverificationTextFieldBorder(TextField : UITextField){
+        TextField.layer.borderColor = UIColor(named: "ShadedLightBlue")?.cgColor
+        TextField.layer.borderWidth = 1.0
+        TextField.layer.cornerRadius = 5
+    }
+    
 }
 
 extension UIScrollView  {
@@ -90,5 +102,31 @@ struct keys {
     
     static let accesstoken = "Access_Token"
     static let refreshtoken = "Refresh_Token"
+    static let RegisteredUserID = "userID"
     
+}
+
+
+extension UIViewController {
+    func HideKeyboardWhenTappedAround() {
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(UIViewController.dismissKeyboard))
+        tap.cancelsTouchesInView = false
+        view.addGestureRecognizer(tap)
+    }
+    
+    @objc func dismissKeyboard() {
+        view.endEditing(true)
+    }
+}
+
+extension UIView {
+    func HideKeyboardWhenTappedAround() {
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(UIViewController.dismissKeyboard))
+        tap.cancelsTouchesInView = false
+        self.addGestureRecognizer(tap)
+    }
+    
+    @objc func dismissKeyboard() {
+        self.endEditing(true)
+    }
 }

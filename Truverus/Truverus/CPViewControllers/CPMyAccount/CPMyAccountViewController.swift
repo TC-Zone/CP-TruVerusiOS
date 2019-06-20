@@ -10,6 +10,7 @@ import UIKit
 import GoogleSignIn
 import FBSDKLoginKit
 import CoreData
+import FlagPhoneNumber
 
 class CPMyAccountViewController: BaseViewController {
     
@@ -21,7 +22,7 @@ class CPMyAccountViewController: BaseViewController {
     @IBOutlet weak var GenderText: UILabel!
     @IBOutlet weak var BirthdayText: UILabel!
     @IBOutlet weak var AddressText: UILabel!
-    @IBOutlet weak var ContactText: UILabel!
+    @IBOutlet weak var ContactText: FPNTextField!
     @IBOutlet weak var JobTitleText: UILabel!
     @IBOutlet weak var FashionInterestsText: UILabel!
     @IBOutlet weak var FavouritSportsText: UILabel!
@@ -29,6 +30,8 @@ class CPMyAccountViewController: BaseViewController {
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
     
     var userdata = [User]()
+    var registeruser = [RegisteredUserData]()
+    var defaults = UserDefaults.standard
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -95,6 +98,44 @@ class CPMyAccountViewController: BaseViewController {
             ProfilePicture.kf.setImage(with: url)
             ProfileName.text = StructProfile.ProfilePicture.name
             ProfileEmail.text = StructProfile.ProfilePicture.email
+            
+        } else if defaults.value(forKey: keys.RegisteredUserID) != nil {
+            
+            let fetchRequest : NSFetchRequest<RegisteredUserData> = RegisteredUserData.fetchRequest()
+            
+            do {
+                
+                let Registereduserdata = try PercistanceService.context.fetch(fetchRequest)
+                self.registeruser = Registereduserdata
+                
+            } catch {
+                
+                print("Error occured while fetching core data")
+                
+            }
+            
+            let img = registeruser.last
+            
+            if (registeruser.count != 0) {
+                
+                if img?.picture != nil {
+                    ProfilePicture.image = UIImage(named: "user icon")
+                } else {
+                    ProfilePicture.image = UIImage(named: "newusericon")
+                }
+                if img?.email != nil {
+                    ProfileEmail.text = img!.email!
+                } else {
+                    ProfileEmail.text = "-"
+                }
+                if img?.firstname != nil {
+                    ProfileName.text = img!.firstname!
+                } else {
+                    ProfileName.text = ""
+                }
+                
+            }
+            
         }
         else {
             print("user is not logged in")

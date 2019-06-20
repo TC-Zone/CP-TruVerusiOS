@@ -1,5 +1,8 @@
 PODS:
   - Alamofire (4.8.2)
+  - FlagPhoneNumber (0.7.6):
+    - FlagPhoneNumber/libPhoneNumberiOS (= 0.7.6)
+  - FlagPhoneNumber/libPhoneNumberiOS (0.7.6)
   - GoogleMaps (3.1.0):
     - GoogleMaps/Maps (= 3.1.0)
   - GoogleMaps/Base (3.1.0)
@@ -11,26 +14,27 @@ PODS:
     - "GoogleToolboxForMac/NSDictionary+URLArguments (~> 2.1)"
     - "GoogleToolboxForMac/NSString+URLArguments (~> 2.1)"
     - GTMSessionFetcher/Core (~> 1.1)
-  - GoogleToolboxForMac/DebugUtils (2.2.0):
-    - GoogleToolboxForMac/Defines (= 2.2.0)
-  - GoogleToolboxForMac/Defines (2.2.0)
-  - "GoogleToolboxForMac/NSDictionary+URLArguments (2.2.0)":
-    - GoogleToolboxForMac/DebugUtils (= 2.2.0)
-    - GoogleToolboxForMac/Defines (= 2.2.0)
-    - "GoogleToolboxForMac/NSString+URLArguments (= 2.2.0)"
-  - "GoogleToolboxForMac/NSString+URLArguments (2.2.0)"
-  - GTMSessionFetcher/Core (1.2.1)
-  - Kingfisher (5.3.1)
+  - GoogleToolboxForMac/DebugUtils (2.2.1):
+    - GoogleToolboxForMac/Defines (= 2.2.1)
+  - GoogleToolboxForMac/Defines (2.2.1)
+  - "GoogleToolboxForMac/NSDictionary+URLArguments (2.2.1)":
+    - GoogleToolboxForMac/DebugUtils (= 2.2.1)
+    - GoogleToolboxForMac/Defines (= 2.2.1)
+    - "GoogleToolboxForMac/NSString+URLArguments (= 2.2.1)"
+  - "GoogleToolboxForMac/NSString+URLArguments (2.2.1)"
+  - GTMSessionFetcher/Core (1.2.2)
+  - Kingfisher (5.5.0)
   - ObjectMapper (3.4.2)
   - ReachabilitySwift (4.2.1)
   - SnapKit (4.0.1)
   - SVProgressHUD (2.2.5)
   - SwiftyJSON (4.2.0)
   - TaggerKit (0.5.0)
-  - XCDYouTubeKit (2.7.3)
+  - XCDYouTubeKit (2.7.5)
 
 DEPENDENCIES:
   - Alamofire (~> 4.7)
+  - FlagPhoneNumber
   - GoogleMaps
   - GooglePlaces
   - GoogleSignIn
@@ -46,6 +50,7 @@ DEPENDENCIES:
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - Alamofire
+    - FlagPhoneNumber
     - GoogleMaps
     - GooglePlaces
     - GoogleSignIn
@@ -65,25 +70,26 @@ EXTERNAL SOURCES:
 
 CHECKOUT OPTIONS:
   TaggerKit:
-    :commit: 01e1b720f00d2f8132ff6166de26c7721bd3ed07
+    :commit: d61ddc8a82c043f038b9858421f49a9bcf7b613e
     :git: https://github.com/nekonora/TaggerKit.git
 
 SPEC CHECKSUMS:
   Alamofire: ae5c501addb7afdbb13687d7f2f722c78734c2d3
+  FlagPhoneNumber: ee8d015e7e92b776a3598e6a36718196e0d0dcf5
   GoogleMaps: 5c13302e6fe6bb6e686b267196586b91cd594225
   GooglePlaces: e874db179f2675c4f3eeda0b686b540273a578b0
   GoogleSignIn: 7ff245e1a7b26d379099d3243a562f5747e23d39
-  GoogleToolboxForMac: ff31605b7d66400dcec09bed5861689aebadda4d
-  GTMSessionFetcher: 32aeca0aa144acea523e1c8e053089dec2cb98ca
-  Kingfisher: d9e7e0b209b59b8f9873aa2f37654e81a7beea51
+  GoogleToolboxForMac: b3553629623a3b1bff17f555e736cd5a6d95ad55
+  GTMSessionFetcher: 61bb0f61a4cb560030f1222021178008a5727a23
+  Kingfisher: 6fe5e67a90fd335e49b0f5c075ff55ac5ebedd94
   ObjectMapper: 0d4402610f4e468903ae64629eec4784531e5c51
   ReachabilitySwift: 35720ffea59c1c76d15f885be77fd33e33985427
   SnapKit: 0de968a9fec17499afa29683b05d0c775b6d1c29
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
   SwiftyJSON: c4bcba26dd9ec7a027fc8eade48e2c911f229e96
   TaggerKit: 3404402e7ac4c73aa96949e6f10c6e066ddf792a
-  XCDYouTubeKit: 3f4fd3eb3ed494a46a8f007b91315eed6dd6df1f
+  XCDYouTubeKit: 2458e1c823167ff1da2f326e4a40bc701ca86593
 
-PODFILE CHECKSUM: caf5de840ad20a46062fd800a2d20c54c4f0e814
+PODFILE CHECKSUM: 8d86f8eb183067d85d83b077faa474fa5b051d55
 
-COCOAPODS: 1.6.1
+COCOAPODS: 1.5.3

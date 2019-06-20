@@ -28,7 +28,6 @@ class CPEditAccountViewController: UIViewController , UIPickerViewDelegate , UIP
     @IBOutlet weak var FashionTagsCollection: UICollectionView!
     @IBOutlet weak var FashionSearchView: UIView!
     @IBOutlet weak var FashionInterestsTextField: TKTextField!
-    @IBOutlet weak var EmployementStatusTextField: UITextField!
     @IBOutlet weak var AddressTextField: UITextField!
     @IBOutlet weak var BirthdayTextField: UITextField!
     @IBOutlet weak var GenderTextField: UITextField!
@@ -80,7 +79,6 @@ class CPEditAccountViewController: UIViewController , UIPickerViewDelegate , UIP
     
     func settextDelegates() {
         
-        EmployementStatusTextField.delegate = self
         AddressTextField.delegate = self
         BirthdayTextField.delegate = self
         GenderTextField.delegate = self
@@ -121,7 +119,6 @@ class CPEditAccountViewController: UIViewController , UIPickerViewDelegate , UIP
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         
-        EmployementStatusTextField.resignFirstResponder()
         AddressTextField.resignFirstResponder()
         BirthdayTextField.resignFirstResponder()
         GenderTextField.resignFirstResponder()
@@ -255,7 +252,6 @@ class CPEditAccountViewController: UIViewController , UIPickerViewDelegate , UIP
         createGenderAndBirthdayText(sender: GenderTextField, img: UIImage(named: "drop")!)
         createGenderAndBirthdayText(sender: BirthdayTextField, img: UIImage(named: "calender")!)
         CreateTextFields(TextField: AddressTextField)
-        CreateTextFields(TextField: EmployementStatusTextField)
         //CreateTextFields(TextField: FashionInterestsTextField)
         createTagViewsTextfields(sender: FashionInterestsTextField)
         createTagViewsTextfields(sender: FavoriteSportTextField)

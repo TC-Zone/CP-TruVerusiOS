@@ -19,14 +19,7 @@ class CPPromotionSubviewViewController: UIViewController {
     @IBOutlet weak var EndDate: UILabel!
     
     var indexpath = Int()
-    
-    let titles = ["NIKE AIR MAX 270","NIKE WOMEN'S REVERSABLE"]
-    
-    let StartDates = ["02-Feb-2019","18-Feb-2019"]
-    let EndDates = ["11-Feb-2019","26-Feb-2019"]
-    let percentages = ["25%","50%"]
-    let promosubimages = [#imageLiteral(resourceName: "PromoShoe"),#imageLiteral(resourceName: "nike jacket")]
-    let promosubDescriptions = ["Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse eu arcu in ligula ultrices placerat. Sed blandit diam vitae pretium vulputate. Nulla vel dignissim velit. Mauris quis arcu rutrum, bibendum ante eget, vehicula ante. Vivamus erat sapien.", "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse eu arcu in ligula ultrices placerat. Sed blandit diam vitae pretium vulputate. Nulla vel dignissim velit. Mauris quis arcu rutrum, bibendum ante eget, vehicula ante. Vivamus erat sapien."]
+
     
     
     override func viewDidLoad() {
@@ -42,33 +35,43 @@ class CPPromotionSubviewViewController: UIViewController {
         
         print("indexpath is :: \(indexpath)")
         
-        if promotionBase.promoarraybase[0].content!.count != 0 {
+        if promotionBase.promoarraybase.isEmpty == false {
             
-            let imageID = promotionBase.promoarraybase[0].content![indexpath].id
-            let imageurl = NSString.init(format: "%@%@", UrlConstans.BASE_URL, UrlConstans.PROMOTION_IMAGE_BY_ID + "\(imageID ?? "")") as String
-            let imgUrl = URL(string: imageurl)
-            
-            if imgUrl != nil {
+            if promotionBase.promoarraybase[0].content!.count != 0 {
                 
-                Image.kf.setImage(with: imgUrl)
+                let imageID = promotionBase.promoarraybase[0].content![indexpath].id
+                let imageurl = NSString.init(format: "%@%@", UrlConstans.BASE_URL, UrlConstans.PROMOTION_IMAGE_BY_ID + "\(imageID ?? "")") as String
+                let imgUrl = URL(string: imageurl)
+                
+                if imgUrl != nil {
+                    
+                    Image.kf.setImage(with: imgUrl)
+                    
+                } else {
+                    
+                    Image.image = UIImage(named: "noimage")
+                    
+                }
+                
+                promoTitle.text = promotionBase.promoarraybase[0].content![indexpath].name
+                Description.text = promotionBase.promoarraybase[0].content![indexpath].description
+                StartDate.text = promotionBase.promoarraybase[0].content![indexpath].startDate
+                EndDate.text = promotionBase.promoarraybase[0].content![indexpath].endDate
+                Percentage.text = "\(promotionBase.promoarraybase[0].content![indexpath].percentage ?? "")%"
                 
             } else {
                 
-                Image.image = UIImage(named: "noimage")
+                print("No promotions Recieved")
                 
             }
-            
-            promoTitle.text = promotionBase.promoarraybase[0].content![indexpath].name
-            Description.text = promotionBase.promoarraybase[0].content![indexpath].description
-            StartDate.text = promotionBase.promoarraybase[0].content![indexpath].startDate
-            EndDate.text = promotionBase.promoarraybase[0].content![indexpath].endDate
-            Percentage.text = "\(promotionBase.promoarraybase[0].content![indexpath].percentage ?? "")%"
             
         } else {
             
             print("No promotions Recieved")
             
         }
+        
+        
         
         
     }
@@ -85,6 +88,7 @@ class CPPromotionSubviewViewController: UIViewController {
         }
         
     }
+    
     /*
      // MARK: - Navigation
      

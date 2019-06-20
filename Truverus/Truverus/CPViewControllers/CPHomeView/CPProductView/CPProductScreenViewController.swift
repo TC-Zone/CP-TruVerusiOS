@@ -19,6 +19,7 @@ class CPProductScreenViewController: UIViewController, UITableViewDelegate, UITa
     
     @IBOutlet weak var TableParralex: CPParallaxTableView!
     @IBOutlet weak var NoDataViewContainer: UIView!
+    @IBOutlet weak var PurchaseButton: UIButton!
     
     var productDataObject = [productData]()
     
@@ -32,6 +33,7 @@ class CPProductScreenViewController: UIViewController, UITableViewDelegate, UITa
   
     var descriptionText = String()
     var productname = String()
+    var ProductDescription = String()
     var originalHeight: CGFloat!
     
     var currentviewFlag : Int!
@@ -51,13 +53,15 @@ class CPProductScreenViewController: UIViewController, UITableViewDelegate, UITa
     var image3 = UIImageView()
     var image4 = UIImageView()
     
+    var communitiesArray : [String?] = []
+    
+    
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         validateView()
-        
         NotificationCenter.default.addObserver(self, selector: #selector(setdataWithServices), name: NSNotification.Name(rawValue: "load"), object: nil)
         
         // Do any additional setup after loading the view.
@@ -80,6 +84,12 @@ class CPProductScreenViewController: UIViewController, UITableViewDelegate, UITa
             SetUpTableView()
             
             SetupImageView()
+            
+            TableParralex.reloadData()
+            
+            
+            //here will check pruduct is purchased
+            
             
         }
         
@@ -115,56 +125,87 @@ class CPProductScreenViewController: UIViewController, UITableViewDelegate, UITa
     
     @objc func goToCommunity() {
         
-        let communityID  = productStruct.productObj.CommunityID
+        let appdelegate = UIApplication.shared.delegate as! AppDelegate
+        let x = appdelegate.state
         
-        if communityID != "" {
+        if x == "logedin" {
             
+            let communityID  = productStruct.productObj.CommunityID
             
-            let token = defaults.value(forKey: keys.accesstoken)
-            if token == nil {
-            // Create the alert controller
-            let alertController = UIAlertController(title: "Sorry!", message: "You are not loggedIn to view community", preferredStyle: .alert)
-            
-            // Create the actions
-            let okAction = UIAlertAction(title: "Login", style: UIAlertAction.Style.default) {
-                UIAlertAction in
-                NSLog("OK Pressed")
-                let homeStoryBoard : UIStoryboard = UIStoryboard(name: "CPLogin", bundle: nil)
-                let vc = homeStoryBoard.instantiateViewController(withIdentifier: "CPLoginView") as! CPLoginViewController
-                self.dismiss(animated: true, completion: nil)
-                self.navigationController?.pushViewController(vc, animated: true)
-            }
-            let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertAction.Style.cancel) {
-                UIAlertAction in
-                NSLog("Cancel Pressed")
-            }
-            
-            // Add the actions
-            alertController.addAction(okAction)
-            alertController.addAction(cancelAction)
-            
-            // Present the controller
-            self.present(alertController, animated: true, completion: nil)
+            if communityID != "" {
+                
+                
+                let token = defaults.value(forKey: keys.accesstoken)
+                if token == nil {
+                    // Create the alert controller
+                    let alertController = UIAlertController(title: "Sorry!", message: "You are not loggedIn to view community", preferredStyle: .alert)
+                    
+                    // Create the actions
+                    let okAction = UIAlertAction(title: "Login", style: UIAlertAction.Style.default) {
+                        UIAlertAction in
+                        NSLog("OK Pressed")
+                        let homeStoryBoard : UIStoryboard = UIStoryboard(name: "CPLogin", bundle: nil)
+                        let vc = homeStoryBoard.instantiateViewController(withIdentifier: "CPLoginView") as! CPLoginViewController
+                        self.dismiss(animated: true, completion: nil)
+                        self.navigationController?.pushViewController(vc, animated: true)
+                    }
+                    let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertAction.Style.cancel) {
+                        UIAlertAction in
+                        NSLog("Cancel Pressed")
+                    }
+                    
+                    // Add the actions
+                    alertController.addAction(okAction)
+                    alertController.addAction(cancelAction)
+                    
+                    // Present the controller
+                    self.present(alertController, animated: true, completion: nil)
+                } else {
+                    
+                    if  StructProductRelatedData.purchaseAvailability == true {
+                        
+                        getCommunityData()
+                        
+                    } else {
+                        
+                        let alert = UIAlertController(title: "Sorry!", message: "You are not eligible to view product community. purchase the item", preferredStyle: UIAlertController.Style.alert)
+                        alert.addAction(UIAlertAction(title: "Okay", style: UIAlertAction.Style.default, handler: nil))
+                        self.present(alert, animated: true, completion: nil)
+                        
+                    }
+                    
+                    
+                    //
+                    
+                }
+                
             } else {
                 
-                getCommunityData()
-//
-               
+                
+                SVProgressHUD.dismiss()
+                
+                let alert = UIAlertController(title: "Sorry!", message: "No Community found for this product", preferredStyle: UIAlertController.Style.alert)
+                alert.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: nil))
+                self.present(alert, animated: true, completion: nil)
+                
             }
             
-        } else {
+        } else if x == "logedout" {
             
-            let alert = UIAlertController(title: "Sorry!", message: "No Community found for this product", preferredStyle: UIAlertController.Style.alert)
+            SVProgressHUD.dismiss()
+            
+            let alert = UIAlertController(title: "Sorry!", message: "You are not logged in", preferredStyle: UIAlertController.Style.alert)
             alert.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: nil))
             self.present(alert, animated: true, completion: nil)
             
+            
         }
-        
-        
+     
         
     }
     
  
+    
     func SetUpTableView(){
         
         TableParralex.constructParallaxHeader()
@@ -192,7 +233,7 @@ class CPProductScreenViewController: UIViewController, UITableViewDelegate, UITa
         var countIndex : Int!
         
         if callingFrom == "collection" {
-            countIndex = 2
+            countIndex = Int(productStructforcommunity.productcollectionObj.ImagesList.count)
         } else {
             countIndex = Int(productStruct.productObj.ImagesList.count)
         }
@@ -214,7 +255,18 @@ class CPProductScreenViewController: UIViewController, UITableViewDelegate, UITa
             if(i == 0){
                 
                 if callingFrom == "collection" {
-                    image1.image = images[i]
+                    
+                    print("struct image count :: \(productStructforcommunity.productcollectionObj.ImagesList)")
+                    if productStructforcommunity.productcollectionObj.ImagesList.count != 0 {
+                        print("in arrayyyyyy :: \(productStructforcommunity.productcollectionObj.ImagesList[i])")
+                        imgUrl = URL(string: productStructforcommunity.productcollectionObj.ImagesList[i])!
+                        
+                    } else {
+                        
+                        imgUrl = nil
+                    }
+                    
+                    image1.kf.setImage(with: imgUrl)
                 } else {
                     if imgUrl != nil {
                     image1.kf.setImage(with: imgUrl)
@@ -381,10 +433,12 @@ class CPProductScreenViewController: UIViewController, UITableViewDelegate, UITa
             
             
             if callingFrom == "collection" {
-                cell.SetText(description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.", productName: productname)
+                cell.SetText(description: ProductDescription, productName: productname)
             } else {
                 cell.SetText(description: productStruct.productObj.ProductDescription, productName: productStruct.productObj.productTitle)
             }
+            
+            ValidatePurchaseData()
             
             if (productStruct.productObj.ImagesList.count < 2){
                 cell.PageControll.numberOfPages = 0
@@ -395,6 +449,7 @@ class CPProductScreenViewController: UIViewController, UITableViewDelegate, UITa
                 cell.PageControll.numberOfPages = productStruct.productObj.ImagesList.count
             }
             
+            
             if (currentviewFlag == 1){
                 
                 if callingFrom == "collection" {
@@ -403,6 +458,7 @@ class CPProductScreenViewController: UIViewController, UITableViewDelegate, UITa
                     cell.ProductNameLabel.text = productStruct.productObj.productTitle
                 }
                 
+                cell.PurchaseButton.isHidden = true
                 cell.TransferButton.isHidden = false
                 cell.BackButton.isHidden = false
                 cell.BackButton.addTarget(self, action: #selector(self.back(_:)), for: .touchUpInside)
@@ -473,46 +529,60 @@ extension CPProductScreenViewController {
         
         if tokenResult == true {
             
-            print("current access token is :: \(token)")
-            
-            let headers: [String: String] = ["Authorization": "Bearer "+(token as! String)]
-            
-            print("community recieved :: \(community)")
-            
-            let url = NSString.init(format: "%@%@", UrlConstans.BASE_URL, UrlConstans.COMMUNITY_DATA_VIEW + "\(community ?? "")") as String
-            
-            print("url is :: \(url)")
-            //        let parameters : [String : Any] = ["authCode=" : "89a9a3077550a1f6df9066a6091017a13e1a266e01e1b071093a4b75a84f338cf979056621a5d2a455c23ebeb2deb74b5cace5c9c6e10620a5741af3d67d5f1b2b752134e9c9"]
-            
-            let parameters : [String : Any] = [:]
-            
-            if let url = URL(string: url) {
-                ApiManager.shared().makeRequestAlamofire(route: url, method: .get, autherized: false, parameter: parameters, header: headers){ (response) in
-                    SVProgressHUD.dismiss()
-                    switch response{
-                    case let .success(data):
-                        self.serializeCommunityDataResponse(data: data)
-                        print("hereee")
-                        print(response)
-                    case .failure(let error):
-                        print("\(error.errorCode)")
-                        print("\(error.description)")
-                        print("error status code :: \(error.statusCode)")
-                        if error.statusCode == 401 { // MARK -: Means access token is expired
-                            ApiManager.shared().RetrieveNewAccessToken(callback: { (response) in
-                                switch response {
-                                case let .success(data):
-                                    self.serializeNewAccessToken(data: data)
-                                    self.getCommunityData()
-                                    print(response)
-                                case .failure(let error):
-                                    print("error in retrieving new access token :: \(error)")
-                                }
-                            })
+            if community != nil && community != "" {
+                
+                
+                print("current access token is :: \(token)")
+                
+                let headers: [String: String] = ["Authorization": "Bearer "+(token as! String)]
+                
+                print("community recieved :: \(community)")
+                
+                let url = NSString.init(format: "%@%@", UrlConstans.BASE_URL, UrlConstans.COMMUNITY_DATA_VIEW + "\(community ?? "")") as String
+                
+                print("url is :: \(url)")
+                //        let parameters : [String : Any] = ["authCode=" : "89a9a3077550a1f6df9066a6091017a13e1a266e01e1b071093a4b75a84f338cf979056621a5d2a455c23ebeb2deb74b5cace5c9c6e10620a5741af3d67d5f1b2b752134e9c9"]
+                
+                let parameters : [String : Any] = [:]
+                
+                if let url = URL(string: url) {
+                    ApiManager.shared().makeRequestAlamofire(route: url, method: .get, autherized: false, parameter: parameters, header: headers){ (response) in
+                        SVProgressHUD.dismiss()
+                        switch response{
+                        case let .success(data):
+                            self.serializeCommunityDataResponse(data: data)
+                            print("hereee")
+                            print(response)
+                        case .failure(let error):
+                            print("\(error.errorCode)")
+                            print("\(error.description)")
+                            print("error status code :: \(error.statusCode)")
+                            if error.statusCode == 401 { // MARK -: Means access token is expired
+                                ApiManager.shared().RetrieveNewAccessToken(callback: { (response) in
+                                    switch response {
+                                    case let .success(data):
+                                        self.serializeNewAccessToken(data: data)
+                                        self.getCommunityData()
+                                        print(response)
+                                    case .failure(let error):
+                                        print("error in retrieving new access token :: \(error)")
+                                    }
+                                })
+                            }
                         }
                     }
+                } else {
+                    
+                    print("community id was nil")
+                    
                 }
+                
+            } else {
+                
+                
+                
             }
+            
         }
         
     }
@@ -813,6 +883,106 @@ extension CPProductScreenViewController {
             self.FeedbackArray = [feedbacksResponse]
             feedbacksbase.feedbackarraybase = self.FeedbackArray
             feedbacksbase.community = community
+            
+            
+        }catch {
+            print(error)
+        }
+    }
+ 
+    
+    private func ValidatePurchaseData(){
+        SVProgressHUD.show()
+        
+        let headers: [String: String] = [:]
+        
+        let userid = defaults.value(forKey: keys.RegisteredUserID)
+        
+        
+        if userid != nil {
+            
+            //Correct line for nfc reding
+            let url = NSString.init(format: "%@%@", UrlConstans.BASE_URL, UrlConstans.GET_PURCHASED_ITEMS + "\(userid ?? "")") as String
+            
+            //        let url = NSString.init(format: "%@%@", UrlConstans.BASE_URL, UrlConstans.AUTHENTICATE_PRODUCT + "authCode=c5aac93022011753ce3b696ae6ee393d424c62407349ff0c3192eed54b2e053320e503475df6ae034712e1e0c961c51873e47de8c4876c85100bf87707e5efa5d04ef60af435" ) as String
+            
+            print("url is :: \(url)")
+            //        let parameters : [String : Any] = ["authCode=" : "89a9a3077550a1f6df9066a6091017a13e1a266e01e1b071093a4b75a84f338cf979056621a5d2a455c23ebeb2deb74b5cace5c9c6e10620a5741af3d67d5f1b2b752134e9c9"]
+            
+            let parameters : [String : Any] = [:]
+            
+            if let url = URL(string: url) {
+                ApiManager.shared().makeRequestAlamofire(route: url, method: .get, autherized: true, parameter: parameters, header: headers){ (response) in
+                    SVProgressHUD.dismiss()
+                    switch response{
+                    case let .success(data):
+                        self.serializePurchaseDataResponse(data: data)
+                        print("hereee")
+                        print(response)
+                    case .failure(_):
+                        print("fail")
+                    }
+                }
+            }
+            
+        } else {
+           
+            SVProgressHUD.dismiss()
+            
+        }
+        
+    }
+    
+    func serializePurchaseDataResponse(data: Data) {
+        do{
+            let json = try JSONSerialization.jsonObject(with: data, options: [])
+            
+            print("data in response :: \(json)")
+            guard let purchaseResponse: availablePurchasesBase = Mapper<availablePurchasesBase>().map(JSONObject: json) else {
+                return
+            }
+            
+            print("product purchase availability :: \(purchaseResponse.status ?? "")")
+            if purchaseResponse.status == "OK" && purchaseResponse.statusCode == 200 {
+                
+                let communitycount = purchaseResponse.content?.count
+                communitiesArray.removeAll()
+                if communitycount ?? 0 > 0 && communitycount != nil {
+                    
+                    for i in 0...(communitycount! - 1) {
+                        
+                        communitiesArray.append("\(purchaseResponse.content?[i].productDetail?.product?.communityId ?? "")")
+                        
+                    }
+                    
+                    print("communities array is :: \(communitiesArray)")
+                    
+                    if communitiesArray.contains("\(productStruct.productObj.CommunityID)") {
+                        
+                        StructProductRelatedData.purchaseAvailability = true
+                        
+                    } else {
+                        
+                        StructProductRelatedData.purchaseAvailability = false
+                        
+                    }
+                    
+                    
+                    
+                } else {
+                    
+                     StructProductRelatedData.purchaseAvailability = false
+                    
+                }
+                
+               
+                
+            } else {
+                
+                
+                StructProductRelatedData.purchaseAvailability = false
+                
+            }
             
             
         }catch {

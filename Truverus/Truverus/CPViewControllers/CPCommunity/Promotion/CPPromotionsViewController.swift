@@ -34,11 +34,18 @@ class CPPromotionsViewController: UIViewController, UICollectionViewDelegate , U
     
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        if promotionBase.promoarraybase[0].content!.count != 0 {
-            return promotionBase.promoarraybase[0].content!.count
+        
+        if promotionBase.promoarraybase.isEmpty == false {
+            if promotionBase.promoarraybase[0].content!.count != 0 {
+                return promotionBase.promoarraybase[0].content!.count
+            } else {
+                return 0
+            }
+            
         } else {
             return 0
         }
+        
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -64,6 +71,7 @@ class CPPromotionsViewController: UIViewController, UICollectionViewDelegate , U
         cell.StartDate.text = promotionBase.promoarraybase[0].content![indexPath.item].startDate
         cell.EndDate.text = promotionBase.promoarraybase[0].content![indexPath.item].endDate
         cell.Percentage.text = promotionBase.promoarraybase[0].content![indexPath.item].percentage! + "%"
+        
             
         } else {
             

@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Trade Gothic LT Bold No. 2.ttf">
+            <string>TradeGothicLT-BoldTwo</string>
+        </array>
+        <array key="Trade Gothic LT.ttf">
+            <string>TradeGothicLT</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CPSurveyTextTypeCell" rowHeight="311" id="KGk-i7-Jjw" customClass="CPSurveyTextTypeQuestionTableViewCell" customModule="Truverus" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="311"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="375" height="310.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Uhy-Ws-RTs">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="310.5"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vhh-sX-TmL">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="310.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="sbdjsbd" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Ea-lp-BX6">
+                                        <rect key="frame" x="128" y="40" width="119" height="21"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="21" id="3rl-ka-0yx"/>
+                                            <constraint firstAttribute="width" constant="119" id="gaq-E3-qzH"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="gdhvh" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="20" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wpu-dO-CJw">
+                                        <rect key="frame" x="22.5" y="99" width="330" height="17"/>
+                                        <fontDescription key="fontDescription" name="TradeGothicLT-BoldTwo" family="TradeGothic LT" pointSize="14"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="oNC-aj-s5D">
+                                        <rect key="frame" x="22.5" y="160" width="330" height="124"/>
+                                        <color key="backgroundColor" white="0.66666666666666663" alpha="0.31868043664383561" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="124" id="NCq-gm-uSb"/>
+                                        </constraints>
+                                        <color key="textColor" name="TextGray"/>
+                                        <fontDescription key="fontDescription" name="TradeGothicLT" family="TradeGothic LT" pointSize="15"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="4Ea-lp-BX6" firstAttribute="centerX" secondItem="vhh-sX-TmL" secondAttribute="centerX" id="95c-uG-wtb"/>
+                                    <constraint firstItem="4Ea-lp-BX6" firstAttribute="top" secondItem="vhh-sX-TmL" secondAttribute="top" constant="40" id="IVi-aq-r8R"/>
+                                    <constraint firstItem="oNC-aj-s5D" firstAttribute="top" secondItem="wpu-dO-CJw" secondAttribute="bottom" constant="44" id="Tpo-kN-I9k"/>
+                                    <constraint firstItem="wpu-dO-CJw" firstAttribute="centerX" secondItem="vhh-sX-TmL" secondAttribute="centerX" id="d65-K3-tq5"/>
+                                    <constraint firstAttribute="bottom" secondItem="oNC-aj-s5D" secondAttribute="bottom" constant="26.5" id="lRt-xo-Rsi"/>
+                                    <constraint firstItem="wpu-dO-CJw" firstAttribute="top" secondItem="4Ea-lp-BX6" secondAttribute="bottom" constant="38" id="u2q-Aq-WFF"/>
+                                    <constraint firstItem="oNC-aj-s5D" firstAttribute="centerX" secondItem="vhh-sX-TmL" secondAttribute="centerX" id="vYF-Tr-HR2"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="vhh-sX-TmL" secondAttribute="trailing" id="Tj6-Qq-5be"/>
+                            <constraint firstItem="vhh-sX-TmL" firstAttribute="top" secondItem="Uhy-Ws-RTs" secondAttribute="top" id="thy-RS-Ooh"/>
+                            <constraint firstItem="vhh-sX-TmL" firstAttribute="leading" secondItem="Uhy-Ws-RTs" secondAttribute="leading" id="vhZ-mp-A4V"/>
+                            <constraint firstAttribute="bottom" secondItem="vhh-sX-TmL" secondAttribute="bottom" id="wqP-Rj-qdy"/>
+                        </constraints>
+                    </scrollView>
+                </subviews>
+                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                <constraints>
+                    <constraint firstItem="Uhy-Ws-RTs" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="8OK-j8-TMe"/>
+                    <constraint firstItem="Uhy-Ws-RTs" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="Fva-Pb-wRx"/>
+                    <constraint firstItem="wpu-dO-CJw" firstAttribute="height" secondItem="H2p-sc-9uM" secondAttribute="height" multiplier="0.4" priority="250" id="GOl-gh-BLl"/>
+                    <constraint firstItem="vhh-sX-TmL" firstAttribute="height" secondItem="H2p-sc-9uM" secondAttribute="height" priority="250" id="T40-mc-t4B"/>
+                    <constraint firstAttribute="trailing" secondItem="Uhy-Ws-RTs" secondAttribute="trailing" id="hF6-Ro-QkT"/>
+                    <constraint firstItem="oNC-aj-s5D" firstAttribute="height" secondItem="H2p-sc-9uM" secondAttribute="height" multiplier="0.4" priority="250" id="pkx-Vl-LAE"/>
+                    <constraint firstItem="wpu-dO-CJw" firstAttribute="width" secondItem="H2p-sc-9uM" secondAttribute="width" multiplier="0.88" id="vce-sU-zKr"/>
+                    <constraint firstItem="oNC-aj-s5D" firstAttribute="width" secondItem="H2p-sc-9uM" secondAttribute="width" multiplier="0.88" id="wOc-zA-CSP"/>
+                    <constraint firstItem="vhh-sX-TmL" firstAttribute="width" secondItem="H2p-sc-9uM" secondAttribute="width" id="wcC-cC-b4d"/>
+                    <constraint firstAttribute="bottom" secondItem="Uhy-Ws-RTs" secondAttribute="bottom" id="zMc-yV-V6w"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="AnswerText" destination="oNC-aj-s5D" id="8GS-cS-qCx"/>
+                <outlet property="Question" destination="wpu-dO-CJw" id="7km-Bb-qs2"/>
+                <outlet property="QuestionNumber" destination="4Ea-lp-BX6" id="8lW-6q-TuJ"/>
+            </connections>
+            <point key="canvasLocation" x="177.536231884058" y="143.63839285714286"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <namedColor name="TextGray">
+            <color red="0.30196078431372547" green="0.30196078431372547" blue="0.30196078431372547" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

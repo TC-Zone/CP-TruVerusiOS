@@ -44,11 +44,18 @@ class CPFeedbackViewController: UIViewController, UICollectionViewDelegate , UIC
     
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        if feedbacksbase.feedbackarraybase[0].content!.count != 0 {
-            return feedbacksbase.feedbackarraybase[0].content!.count
+        if feedbacksbase.feedbackarraybase.isEmpty == false {
+            
+            if feedbacksbase.feedbackarraybase[0].content!.count != 0 {
+                return feedbacksbase.feedbackarraybase[0].content!.count
+            } else {
+                return 0
+            }
+            
         } else {
             return 0
         }
+        
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {

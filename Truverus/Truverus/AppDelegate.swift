@@ -13,6 +13,9 @@ import CoreNFC
 import FBSDKCoreKit
 import FBSDKLoginKit
 import GoogleMaps
+import Alamofire
+import ObjectMapper
+import SVProgressHUD
 protocol AppDelegateRefreshTokenProtocol {
     func refreshAccessTokenOnBase(compeletion: @escaping(APIResult<Void>)->Void)
 }
@@ -22,11 +25,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var state : String = ""
     var userdata = [User]()
     var FBuserdata = [FaceBookUser]()
+    var RegUserData = [RegisteredUserData]()
     var window: UIWindow?
 
+    let defaults = UserDefaults.standard
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        if defaults.value(forKey: "Refresh_Token") != nil {
+            
+            validateRefreshAccessToken()
+            
+        }
+        
         
         NFCAvailability()
         
@@ -43,7 +55,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             
             //userdata.removeAll()
             print("User Has Already signed in using google")
-            state = "logedin"
+            state = "logedin" 
             
             let fetchRequest : NSFetchRequest<User> = User.fetchRequest()
 
@@ -98,6 +110,45 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //            print("user is already logged in using facebook")
 //            CPSocialSignInHelper.fetchProfile()
             state = "logedin"
+        } else if defaults.value(forKey: keys.RegisteredUserID) !=  nil {
+            
+            
+            let fetchRequest : NSFetchRequest<RegisteredUserData> = RegisteredUserData.fetchRequest()
+            
+            do {
+                
+                let Registereduserdata = try PercistanceService.context.fetch(fetchRequest)
+                self.RegUserData = Registereduserdata
+                
+            } catch {
+                
+                print("Error occured while fetching core data")
+                
+            }
+            
+            print("user data ::: \(FBuserdata)")
+            let img = RegUserData.last
+            
+            if (RegUserData.count != 0) {
+                
+                if img?.picture != nil {
+                    StructProfile.ProfilePicture.ProfilePicURL = img!.picture!
+                }
+                if img?.email != nil {
+                    StructProfile.ProfilePicture.email = img!.email!
+                } else {
+                    StructProfile.ProfilePicture.email = "-"
+                }
+                if img?.firstname != nil {
+                    StructProfile.ProfilePicture.name = img!.firstname!
+                } else {
+                   StructProfile.ProfilePicture.name = "-"
+                }
+                
+            }
+            
+            state = "logedin"
+            
         }
         else {
             print("user is not logged in")
@@ -204,7 +255,51 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         PercistanceService.saveContext()
     }
 
+    func validateRefreshAccessToken() {
+        
+        ApiManager.shared().RetrieveNewAccessToken(callback: { (response) in
+            switch response {
+            case let .success(data):
+                self.serializeNewAccessToken(data: data)
+                print(response)
+            case .failure(let error):
+                
+                    GIDSignIn.sharedInstance().disconnect()
+                    self.state = "logedout"
+                    self.defaults.set(nil, forKey: keys.accesstoken)
+                    
+                    let loginManager = FBSDKLoginManager()
+                    loginManager.logOut()
+                    self.state = "logedout"
+                    self.defaults.set(nil, forKey: keys.accesstoken)
+                   
+                
+                print("error in retrieving new access token user has been force logged out :: \(error)")
+            }
+        })
+        
+    }
     
-
+    func serializeNewAccessToken(data: Data) {
+        do{
+            print("data is :: \(data.description)")
+            let json = try JSONSerialization.jsonObject(with: data, options: [])
+            
+            print("data in response :: \(json)")
+            guard let newTokenResponse: RefreshAccessTokenData = Mapper<RefreshAccessTokenData>().map(JSONObject: json) else {
+                return
+            }
+            print("new Access token is :: \(newTokenResponse.access_token)")
+            defaults.set(newTokenResponse.access_token, forKey: "Access_Token")
+            print("new refresh token is :: \(newTokenResponse.refresh_token)")
+            defaults.set(newTokenResponse.refresh_token, forKey: "Refresh_Token")
+            print("User defaults updated!!")
+            
+        }catch {
+            print(error)
+        }
+        
+    }
+    
 }
 

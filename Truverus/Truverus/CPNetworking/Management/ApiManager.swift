@@ -65,7 +65,7 @@ class ApiManager {
         }
         
         Alamofire.request(route,method: method,parameters:parameter, encoding: JSONEncoding.default,headers:headers ).validate(statusCode: 200..<300)
-            .validate(contentType: ["application/json"]).responseData { response in
+            .validate(contentType: ["application/json"]).debugLog().responseData { response in
                 switch response.result {
                 case .success(let val):
                     callback(.success((val)))
@@ -75,6 +75,7 @@ class ApiManager {
                     if(response.response != nil) {
                         if let statusCode = response.response?.statusCode{
                             print("status code check \(statusCode)")
+                            
                             if statusCode == 401 {
                                 callback(.failure(ResponseError.init(error: error.localizedDescription, errorType: .error, statusCode: response.response!.statusCode)))
 //                                self.refreshAccessToken(){ (results) in
@@ -197,6 +198,115 @@ class ApiManager {
                                 
                             }else{
                                  callback(.failure(ResponseError.init(error: error.localizedDescription, errorType: .error, statusCode: response.response!.statusCode)))
+                            }
+                        }
+                    }else{
+                        callback(.failure(ResponseError.init(error: error.localizedDescription, errorType: .error, statusCode:0)))
+                    }
+                }
+            }
+        }
+        
+    }
+    
+    
+    
+    func RegisterNewUser(name : String, email : String, password : String, mobileNumber : String, callback: @escaping (APIResult<Data>) -> Void) {
+        
+        let url = NSString.init(format: "%@%@", UrlConstans.BASE_URL, UrlConstans.USER_REGISTRATION) as String
+        
+        print("url is :: \(url)")
+        
+        let headers :[String:String] = ["Content-Type":  "application/json"]
+        
+        let parameters: Parameters = [
+            "accountName": name,
+            "email": email,
+            "password": password,
+            "mobileUser": ["mobileNumber": mobileNumber]
+        ]
+        
+        print("parameters are :: \(parameters)")
+        
+        
+        if let url = URL(string: url) {
+            Alamofire.request(url,method:.post,parameters:parameters, encoding: JSONEncoding.default ,headers:headers).debugLog().responseData { response in
+                switch response.result {
+                case .success(let val):
+                    callback(.success((val)))
+                    print("succeeeded with :: \(val)")
+                    debugPrint(val)
+                    print(response.response?.allHeaderFields)
+                case .failure(let error):
+                    ///Commented Codes Deleted
+                    
+                    if(response.response != nil) {
+                        if let statusCode = response.response?.statusCode{
+                            print("status code check \(statusCode)")
+                            if statusCode == 401 {
+                                
+                                print("failed with 401 :: \(error)")
+                                callback(.failure(ResponseError.init(error: error.localizedDescription, errorType: .error, statusCode: response.response!.statusCode)))
+                                
+                            }else{
+                                callback(.failure(ResponseError.init(error: error.localizedDescription, errorType: .error, statusCode: response.response!.statusCode)))
+                            }
+                        }
+                    }else{
+                        callback(.failure(ResponseError.init(error: error.localizedDescription, errorType: .error, statusCode:0)))
+                    }
+                }
+            }
+        }
+        
+    }
+    
+    
+    func logInUser(usernameinput : String , passwordinput : String , callback: @escaping (APIResult<Data>) -> Void) {
+        
+        
+        let username = "CPAP"
+        let password = "Cp43&$^fdgd*+!!@#Agdo4Ged"
+        let loginString = String(format: "%@:%@", username, password)
+        let loginData = loginString.data(using: String.Encoding.utf8)! as NSData
+        let base64EncodedString = loginData.base64EncodedString()
+        let url = NSString.init(format: "%@%@", UrlConstans.BASE_URL, UrlConstans.USER_LOGIN) as String
+        
+        print("url is :: \(url)")
+        
+        let headers = [
+            "Content-Type":  "application/x-www-form-urlencoded",
+            "Authorization": "Basic \(base64EncodedString)"
+        ]
+        
+        let parameters: Parameters = [
+            "username": usernameinput,
+            "password": passwordinput,
+            "grant_type": "password"
+        ]
+        
+        
+        if let url = URL(string: url) {
+            Alamofire.request(url,method:.post,parameters:parameters, encoding: URLEncoding.default ,headers:headers).debugLog().responseData { response in
+                switch response.result {
+                case .success(let val):
+                    callback(.success((val)))
+                    print("succeeeded with :: \(val)")
+                    debugPrint(val)
+                    print(response.response?.allHeaderFields)
+                case .failure(let error):
+                    ///Commented Codes Deleted
+                    
+                    if(response.response != nil) {
+                        if let statusCode = response.response?.statusCode{
+                            print("status code check \(statusCode)")
+                            if statusCode == 401 {
+                                
+                                print("failed with 401 :: \(error)")
+                                callback(.failure(ResponseError.init(error: error.localizedDescription, errorType: .error, statusCode: response.response!.statusCode)))
+                                
+                            }else{
+                                callback(.failure(ResponseError.init(error: error.localizedDescription, errorType: .error, statusCode: response.response!.statusCode)))
                             }
                         }
                     }else{

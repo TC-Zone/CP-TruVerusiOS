@@ -26,13 +26,15 @@ class CPPopupViewController: UIViewController {
     
     var productDatasourceArray = [productData]()
     var imageIDArray = [String]()
+    
+    let defaults = UserDefaults.standard
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         initPopUpView()
         
-        
+        getPurchasedProducts()
         
         // Do any additional setup after loading the view.
     }
@@ -189,8 +191,6 @@ extension CPPopupViewController {
                 
             }
             
-           
-            
             print("image url list new :: \(tempImgArray)")
             
             productStruct.productObj.productTitle = (productResponse.content?.name)!
@@ -198,6 +198,7 @@ extension CPPopupViewController {
             productStruct.productObj.youtubeId = (productResponse.content?.videoUrl)!
             productStruct.productObj.ImagesList = (tempImgArray)
             productStruct.productObj.CommunityID = (productResponse.content?.communityId)!
+            
             
             let story = UIStoryboard.init(name: "CPHomeView", bundle: nil)
             let vc = story.instantiateViewController(withIdentifier: "CPHomeView") as! CPHomeViewController
@@ -211,5 +212,67 @@ extension CPPopupViewController {
             print(error)
         }
     }
+    
+    private func getPurchasedProducts(){
+        SVProgressHUD.show()
+        
+        let headers: [String: String] = [:]
+        let userId = defaults.value(forKey: keys.RegisteredUserID)
+        
+        
+        if userId != nil {
+            
+            let url = NSString.init(format: "%@%@", UrlConstans.BASE_URL, UrlConstans.PURCHASED_PRODUCTS_BY_USER_ID + "\(userId ?? "")") as String
+            
+            print("url is :: \(url)")
+            
+            let parameters : [String : Any] = [:]
+            
+            if let url = URL(string: url) {
+                ApiManager.shared().makeRequestAlamofire(route: url, method: .get, autherized: true, parameter: parameters, header: headers){ (response) in
+                    SVProgressHUD.dismiss()
+                    switch response{
+                    case let .success(data):
+                        self.serializeproResponse(data: data)
+                        print("hereee")
+                        print(response)
+                    case .failure(let error):
+                        print("fail errorr :::::: \(error.errorCode)")
+                    }
+                }
+            }
+            
+        } else {
+            
+            SVProgressHUD.dismiss()
+            
+        }
+        
+        
+    }
+    
+    func serializeproResponse(data: Data) {
+        do{
+            let json = try JSONSerialization.jsonObject(with: data, options: [])
+            
+            print("data in response :: \(json)")
+            guard let proCollectionResponse: ProductCollectionBase = Mapper<ProductCollectionBase>().map(JSONObject: json) else {
+                return
+            }
+            
+            print("bsjhxbjsbcsjbdb :: \(proCollectionResponse.status)")
+            
+            productCollectionBucket.productListBucket = [proCollectionResponse]
+            //productsList = [proCollectionResponse]
+            
+            
+            
+            
+            
+        }catch {
+            print(error)
+        }
+    }
+   
     
 }

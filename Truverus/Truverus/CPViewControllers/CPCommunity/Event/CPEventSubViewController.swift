@@ -44,37 +44,45 @@ class CPEventSubViewController: UIViewController {
     
     func setdata() {
         
-        if eventBase.eventarraybase[0].content!.count != 0 {
-        
-        print("indexpath is :: \(indexpath)")
-        let imageID = eventBase.eventarraybase[0].content![indexpath].id
-        let imageurl = NSString.init(format: "%@%@", UrlConstans.BASE_URL, UrlConstans.EVENT_IMAGE_BY_ID + "\(imageID ?? "")") as String
-        let imgUrl = URL(string: imageurl)
-        
-        if imgUrl != nil {
+        if eventBase.eventarraybase.isEmpty == false {
             
-            Image.kf.setImage(with: imgUrl)
-            
-            
-        } else {
-            
-            Image.image = UIImage(named: "noimage")
-            
+            if eventBase.eventarraybase[0].content!.count != 0 {
+                
+                print("indexpath is :: \(indexpath)")
+                let imageID = eventBase.eventarraybase[0].content![indexpath].id
+                let imageurl = NSString.init(format: "%@%@", UrlConstans.BASE_URL, UrlConstans.EVENT_IMAGE_BY_ID + "\(imageID ?? "")") as String
+                let imgUrl = URL(string: imageurl)
+                
+                if imgUrl != nil {
+                    
+                    Image.kf.setImage(with: imgUrl)
+                    
+                    
+                } else {
+                    
+                    Image.image = UIImage(named: "noimage")
+                    
+                }
+                
+                let start =  eventBase.eventarraybase[0].content![indexpath].startDateTime!
+                let startDate = start.prefix(10)
+                EventTitle.text = eventBase.eventarraybase[0].content![indexpath].name!
+                EventAddress.text = "--"
+                EventDate.text = String(startDate)
+                EventDescription.text = eventBase.eventarraybase[0].content![indexpath].description!
+                EventStartTime.text = starttime
+                EventEndTime.text = endTime
+                
+                
+            }else {
+                print("no data found on event")
             }
             
-            let start =  eventBase.eventarraybase[0].content![indexpath].startDateTime!
-            let startDate = start.prefix(10)
-        EventTitle.text = eventBase.eventarraybase[0].content![indexpath].name!
-        EventAddress.text = "--"
-        EventDate.text = String(startDate)
-        EventDescription.text = eventBase.eventarraybase[0].content![indexpath].description!
-        EventStartTime.text = starttime
-        EventEndTime.text = endTime
-            
-            
-        }else {
-                print("no data found on event")
+        } else {
+            print("no data found on event")
         }
+        
+        
         
     }
     

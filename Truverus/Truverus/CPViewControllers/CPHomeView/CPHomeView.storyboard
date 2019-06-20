@@ -111,15 +111,15 @@
                                     <segue destination="0Tz-rC-jIF" kind="embed" id="Lnv-es-hix"/>
                                 </connections>
                             </containerView>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Uhf-6C-KTd" customClass="CPParallaxTableView" customModule="Truverus" customModuleProvider="target">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Uhf-6C-KTd" customClass="CPParallaxTableView" customModule="Truverus" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="617"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CPProductCell" rowHeight="766" id="Fo6-QQ-rLe" customClass="CPCustomTableViewCell" customModule="Truverus" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="766"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CPProductCell" rowHeight="805" id="Fo6-QQ-rLe" customClass="CPCustomTableViewCell" customModule="Truverus" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="805"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Fo6-QQ-rLe" id="ewH-xw-abW">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="766"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="805"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="OQR-nz-WN3">
@@ -166,9 +166,29 @@
                                                         <action selector="WatchButtonAction:" destination="Fo6-QQ-rLe" eventType="touchUpInside" id="tOW-tB-vri"/>
                                                     </connections>
                                                 </button>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dzr-uS-Y5l">
-                                                    <rect key="frame" x="28" y="630" width="319" height="42"/>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cRa-0p-TMx">
+                                                    <rect key="frame" x="28" y="632" width="319" height="42"/>
                                                     <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="42" id="cOd-B7-Tm1"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="TradeGothicLT-BoldTwo" family="TradeGothic LT" pointSize="19"/>
+                                                    <state key="normal" title="Purchase product">
+                                                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </state>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                            <integer key="value" value="20"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                                    </userDefinedRuntimeAttributes>
+                                                    <connections>
+                                                        <action selector="PurchaseButtonAction:" destination="Fo6-QQ-rLe" eventType="touchUpInside" id="0Ls-cD-8x5"/>
+                                                    </connections>
+                                                </button>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dzr-uS-Y5l">
+                                                    <rect key="frame" x="28" y="686" width="319" height="42"/>
+                                                    <color key="backgroundColor" red="0.16993012666531351" green="0.15710605919503332" blue="0.204895660961945" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="42" id="frz-fV-YgW"/>
                                                     </constraints>
@@ -187,7 +207,7 @@
                                                     </connections>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J53-Ne-JRf">
-                                                    <rect key="frame" x="28" y="684" width="319" height="42"/>
+                                                    <rect key="frame" x="28" y="740" width="319" height="42"/>
                                                     <color key="backgroundColor" name="TextGray"/>
                                                     <fontDescription key="fontDescription" name="TradeGothicLT-BoldTwo" family="TradeGothic LT" pointSize="19"/>
                                                     <state key="normal" title="Back">
@@ -201,7 +221,7 @@
                                                     </userDefinedRuntimeAttributes>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H8f-Ut-2bv">
-                                                    <rect key="frame" x="28" y="630" width="319" height="42"/>
+                                                    <rect key="frame" x="28" y="686" width="319" height="42"/>
                                                     <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="42" id="O6g-5k-KBA"/>
@@ -220,26 +240,29 @@
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="R3O-h5-MIj" firstAttribute="top" secondItem="pqt-YW-icY" secondAttribute="bottom" constant="55" id="5tu-9M-4C4"/>
+                                                <constraint firstItem="cRa-0p-TMx" firstAttribute="width" secondItem="ewH-xw-abW" secondAttribute="width" multiplier="0.85" id="7Qx-II-efW"/>
                                                 <constraint firstItem="H8f-Ut-2bv" firstAttribute="width" secondItem="ewH-xw-abW" secondAttribute="width" multiplier="0.85" id="9Cw-EY-qDO"/>
                                                 <constraint firstItem="J53-Ne-JRf" firstAttribute="top" secondItem="H8f-Ut-2bv" secondAttribute="bottom" constant="12" id="ADr-ve-U2N"/>
                                                 <constraint firstItem="Dzr-uS-Y5l" firstAttribute="centerX" secondItem="ewH-xw-abW" secondAttribute="centerX" id="Ax6-vb-Hv5"/>
+                                                <constraint firstItem="Dzr-uS-Y5l" firstAttribute="top" secondItem="cRa-0p-TMx" secondAttribute="bottom" constant="12" id="CvA-6Q-UFg"/>
                                                 <constraint firstItem="pqt-YW-icY" firstAttribute="centerX" secondItem="ewH-xw-abW" secondAttribute="centerX" id="F31-F8-wsu"/>
-                                                <constraint firstItem="H8f-Ut-2bv" firstAttribute="top" secondItem="aMl-kW-fbC" secondAttribute="bottom" constant="40" id="JZz-cd-7pE"/>
                                                 <constraint firstItem="R3O-h5-MIj" firstAttribute="width" secondItem="pqt-YW-icY" secondAttribute="width" id="K2s-ry-WqG"/>
                                                 <constraint firstItem="J53-Ne-JRf" firstAttribute="height" secondItem="H8f-Ut-2bv" secondAttribute="height" id="MHU-Do-iyZ"/>
                                                 <constraint firstItem="pqt-YW-icY" firstAttribute="top" secondItem="OQR-nz-WN3" secondAttribute="bottom" constant="5" id="Qxi-kD-01t"/>
                                                 <constraint firstItem="pqt-YW-icY" firstAttribute="width" secondItem="ewH-xw-abW" secondAttribute="width" multiplier="0.8" id="RL5-Sp-fAy"/>
                                                 <constraint firstItem="OQR-nz-WN3" firstAttribute="top" secondItem="ewH-xw-abW" secondAttribute="top" constant="15" id="S9l-eY-cO3"/>
                                                 <constraint firstItem="aMl-kW-fbC" firstAttribute="bottom" secondItem="R3O-h5-MIj" secondAttribute="bottom" constant="65" id="Y6l-b7-8Vb"/>
+                                                <constraint firstItem="cRa-0p-TMx" firstAttribute="top" secondItem="aMl-kW-fbC" secondAttribute="bottom" constant="42" id="YZF-eW-Uvf"/>
                                                 <constraint firstItem="R3O-h5-MIj" firstAttribute="centerX" secondItem="ewH-xw-abW" secondAttribute="centerX" id="avz-Ef-L8d"/>
                                                 <constraint firstItem="H8f-Ut-2bv" firstAttribute="centerX" secondItem="ewH-xw-abW" secondAttribute="centerX" id="cA7-GL-HmN"/>
                                                 <constraint firstItem="aMl-kW-fbC" firstAttribute="centerX" secondItem="ewH-xw-abW" secondAttribute="centerX" id="cRV-cQ-kfa"/>
+                                                <constraint firstItem="H8f-Ut-2bv" firstAttribute="top" secondItem="cRa-0p-TMx" secondAttribute="bottom" constant="12" id="d8E-tn-lSm"/>
                                                 <constraint firstAttribute="bottom" secondItem="OQR-nz-WN3" secondAttribute="bottom" constant="764" id="d8Q-Ze-Qgs"/>
                                                 <constraint firstItem="OQR-nz-WN3" firstAttribute="width" secondItem="ewH-xw-abW" secondAttribute="width" multiplier="0.8" id="fsG-r7-5JU"/>
                                                 <constraint firstItem="J53-Ne-JRf" firstAttribute="width" secondItem="ewH-xw-abW" secondAttribute="width" multiplier="0.85" id="g3a-4e-QAF"/>
                                                 <constraint firstItem="Dzr-uS-Y5l" firstAttribute="width" secondItem="ewH-xw-abW" secondAttribute="width" multiplier="0.85" id="i5m-ZJ-tkr"/>
                                                 <constraint firstItem="J53-Ne-JRf" firstAttribute="centerX" secondItem="ewH-xw-abW" secondAttribute="centerX" id="jTf-xR-NhP"/>
-                                                <constraint firstItem="Dzr-uS-Y5l" firstAttribute="top" secondItem="aMl-kW-fbC" secondAttribute="bottom" constant="40" id="qbW-VX-9ri"/>
+                                                <constraint firstItem="cRa-0p-TMx" firstAttribute="centerX" secondItem="ewH-xw-abW" secondAttribute="centerX" id="rdf-nC-EYY"/>
                                                 <constraint firstItem="OQR-nz-WN3" firstAttribute="centerX" secondItem="ewH-xw-abW" secondAttribute="centerX" id="zqA-la-Gbg"/>
                                             </constraints>
                                         </tableViewCellContentView>
@@ -250,6 +273,7 @@
                                             <outlet property="DescriptionTextArea" destination="R3O-h5-MIj" id="gWU-wa-831"/>
                                             <outlet property="PageControll" destination="OQR-nz-WN3" id="W8r-0K-9fz"/>
                                             <outlet property="ProductNameLabel" destination="pqt-YW-icY" id="rEu-mx-zRU"/>
+                                            <outlet property="PurchaseButton" destination="cRa-0p-TMx" id="5tc-Ah-grm"/>
                                             <outlet property="TransferButton" destination="H8f-Ut-2bv" id="IYm-n4-r3n"/>
                                             <outlet property="WatchHereButton" destination="aMl-kW-fbC" id="Qgy-OW-SYu"/>
                                         </connections>
@@ -284,7 +308,7 @@
         <!--My Collection Screen View Controller-->
         <scene sceneID="HKJ-Ob-oXH">
             <objects>
-                <viewController id="z2y-S3-DVC" customClass="CPMyCollectionScreenViewController" customModule="Truverus" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MainMyCollection" id="z2y-S3-DVC" customClass="CPMyCollectionScreenViewController" customModule="Truverus" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="1m8-fZ-kEJ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="617"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -792,6 +816,7 @@
                             <constraint firstItem="m6y-0c-qpl" firstAttribute="centerX" secondItem="5gw-1m-3d5" secondAttribute="centerX" id="vBi-LW-svw"/>
                             <constraint firstItem="E33-0i-xRI" firstAttribute="centerX" secondItem="5gw-1m-3d5" secondAttribute="centerX" id="zZG-Wk-dJW"/>
                         </constraints>
+                        <viewLayoutGuide key="safeArea" id="y8b-KX-1b3"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LEy-XE-VSb" userLabel="First Responder" sceneMemberID="firstResponder"/>

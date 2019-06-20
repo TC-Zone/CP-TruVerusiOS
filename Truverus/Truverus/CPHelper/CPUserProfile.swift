@@ -32,3 +32,31 @@ class StructGoogleProfile {
     }
     
 }
+
+struct  StructProductRelatedData {
+    static var ProductTagCode = String()
+    static var purchaseAvailability = Bool()
+}
+
+struct productCollectionBucket {
+    
+    static var productListBucket = [ProductCollectionBase]()
+    static var communityList = [String]()
+    static var communityNamelist = [String]()
+    static var imageidlist = [String]()
+    static var communityIDList = [String]()
+    static var comData = [[String : String]]()
+    static var featureCom = [comListFeatures]()
+    
+}
+
+
+class comListFeatures {
+    var comID = String()
+    var ComName = String()
+    
+    init(comID:String, ComName:String){
+        self.comID = comID
+        self.ComName = ComName
+    }
+}

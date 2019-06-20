@@ -20,6 +20,7 @@ target 'Truverus' do
   pod 'GoogleMaps'
   pod 'GooglePlaces'
   pod 'ReachabilitySwift', '~> 4.2.1'
+  pod 'FlagPhoneNumber'
 
   # Pods for Truverus
 end

@@ -8,6 +8,46 @@
 
 /* Begin PBXBuildFile section */
 		454A580AF15DF81C903B50A2 /* Pods_Truverus.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E56E34A7933A4FBFE8F88BB /* Pods_Truverus.framework */; };
+		C52D6FD622A8EEE100FFC562 /* CPDropdownTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C52D6FD422A8EEE100FFC562 /* CPDropdownTableViewCell.swift */; };
+		C52D6FD722A8EEE100FFC562 /* CPDropdownTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C52D6FD522A8EEE100FFC562 /* CPDropdownTableViewCell.xib */; };
+		C52D6FDB22A9000400FFC562 /* CPImagepickerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C52D6FD922A9000400FFC562 /* CPImagepickerTableViewCell.swift */; };
+		C52D6FDC22A9000400FFC562 /* CPImagepickerTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C52D6FDA22A9000400FFC562 /* CPImagepickerTableViewCell.xib */; };
+		C52D6FE022A9132100FFC562 /* CPRatingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C52D6FDE22A9132100FFC562 /* CPRatingTableViewCell.swift */; };
+		C52D6FE122A9132100FFC562 /* CPRatingTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C52D6FDF22A9132100FFC562 /* CPRatingTableViewCell.xib */; };
+		C52D6FE522A914D700FFC562 /* CPCommentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C52D6FE322A914D700FFC562 /* CPCommentTableViewCell.swift */; };
+		C52D6FE622A914D700FFC562 /* CPCommentTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C52D6FE422A914D700FFC562 /* CPCommentTableViewCell.xib */; };
+		C52D6FEA22A9186300FFC562 /* CPCheckboxTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C52D6FE822A9186300FFC562 /* CPCheckboxTableViewCell.swift */; };
+		C52D6FEB22A9186300FFC562 /* CPCheckboxTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C52D6FE922A9186300FFC562 /* CPCheckboxTableViewCell.xib */; };
+		C52D6FEF22A9234E00FFC562 /* CPNoSurveyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C52D6FED22A9234E00FFC562 /* CPNoSurveyTableViewCell.swift */; };
+		C52D6FF022A9234E00FFC562 /* CPNoSurveyTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C52D6FEE22A9234E00FFC562 /* CPNoSurveyTableViewCell.xib */; };
+		C536B86B22B3AD6F009C3005 /* CPRadioCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C536B86922B3AD6F009C3005 /* CPRadioCellTableViewCell.swift */; };
+		C536B86C22B3AD6F009C3005 /* CPRadioCellTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C536B86A22B3AD6F009C3005 /* CPRadioCellTableViewCell.xib */; };
+		C544E66022A98D19002D9ECF /* CPVerifyEmailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C544E65F22A98D19002D9ECF /* CPVerifyEmailViewController.swift */; };
+		C556C54922AE616A003F31ED /* CPUserDataPackageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C556C54822AE616A003F31ED /* CPUserDataPackageModel.swift */; };
+		C562E67D22B5247300FCDDA8 /* CPSurvayQuestionImagesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C562E67B22B5247300FCDDA8 /* CPSurvayQuestionImagesCollectionViewCell.swift */; };
+		C562E67E22B5247300FCDDA8 /* CPSurvayQuestionImagesCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C562E67C22B5247300FCDDA8 /* CPSurvayQuestionImagesCollectionViewCell.xib */; };
+		C5655F1A22A8D43F002A143E /* CPRadiogroupTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5655F1822A8D43F002A143E /* CPRadiogroupTableViewCell.swift */; };
+		C5655F1B22A8D43F002A143E /* CPRadiogroupTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C5655F1922A8D43F002A143E /* CPRadiogroupTableViewCell.xib */; };
+		C567DF0922B26C4500178963 /* CPCheckBoxeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C567DF0722B26C4500178963 /* CPCheckBoxeTableViewCell.swift */; };
+		C567DF0A22B26C4500178963 /* CPCheckBoxeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C567DF0822B26C4500178963 /* CPCheckBoxeTableViewCell.xib */; };
+		C573B43822A82A2900C3EBBE /* CPSurveyTextTypeQuestionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C573B43622A82A2900C3EBBE /* CPSurveyTextTypeQuestionTableViewCell.swift */; };
+		C573B43922A82A2900C3EBBE /* CPSurveyTextTypeQuestionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C573B43722A82A2900C3EBBE /* CPSurveyTextTypeQuestionTableViewCell.xib */; };
+		C573B43E22A82DA900C3EBBE /* CPSurveyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C573B43D22A82DA900C3EBBE /* CPSurveyTableViewCell.swift */; };
+		C578292322ACD6070037E898 /* CPVerifyemailDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C578292222ACD6070037E898 /* CPVerifyemailDataModel.swift */; };
+		C578292522ACE95C0037E898 /* ValidationDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C578292422ACE95C0037E898 /* ValidationDataModel.swift */; };
+		C578292722AD8B4A0037E898 /* UserLoginDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C578292622AD8B4A0037E898 /* UserLoginDataModel.swift */; };
+		C588891122B120B800C24F38 /* CPSurveyCompleatedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C588890F22B120B800C24F38 /* CPSurveyCompleatedTableViewCell.swift */; };
+		C588891222B120B800C24F38 /* CPSurveyCompleatedTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C588891022B120B800C24F38 /* CPSurveyCompleatedTableViewCell.xib */; };
+		C592F0CA22AA36020046C885 /* RegisterUserDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C592F0C922AA36020046C885 /* RegisterUserDataModel.swift */; };
+		C59850FD22B7653600CE3AB6 /* CPAvailablePurchasedItemsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C59850FC22B7653600CE3AB6 /* CPAvailablePurchasedItemsResponse.swift */; };
+		C59850FF22B7A0AC00CE3AB6 /* CPPurchaseProductDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C59850FE22B7A0AC00CE3AB6 /* CPPurchaseProductDataModel.swift */; };
+		C598510122B7D9C300CE3AB6 /* CPUpdateCommunityDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C598510022B7D9C300CE3AB6 /* CPUpdateCommunityDataModel.swift */; };
+		C598510322B8055300CE3AB6 /* CPMyCollectionProductDataBaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C598510222B8055200CE3AB6 /* CPMyCollectionProductDataBaseModel.swift */; };
+		C5A536D922AFAA920044B7E4 /* CPSurvayByFeedbackDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5A536D822AFAA920044B7E4 /* CPSurvayByFeedbackDataModel.swift */; };
+		C5A536DB22AFB4910044B7E4 /* CPSurvayDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5A536DA22AFB4910044B7E4 /* CPSurvayDataModel.swift */; };
+		C5A536DD22AFC6A80044B7E4 /* CPSurveyBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5A536DC22AFC6A80044B7E4 /* CPSurveyBase.swift */; };
+		C5E2A1AB22B8F52D00FB7477 /* CPAllCommunityViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5E2A1AA22B8F52D00FB7477 /* CPAllCommunityViewViewController.swift */; };
+		C5E2A1AD22B8F57400FB7477 /* CPAllCommunityCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5E2A1AC22B8F57400FB7477 /* CPAllCommunityCollectionViewCell.swift */; };
 		CE15AA57228006B700881C8E /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE15AA56228006B700881C8E /* BaseViewController.swift */; };
 		CE15AA5A22803E2100881C8E /* CPSocialSignInHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE15AA5922803E2100881C8E /* CPSocialSignInHelper.swift */; };
 		CE3124342297AD6100D4049A /* CoreNFC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE3124332297AD6100D4049A /* CoreNFC.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
@@ -141,7 +181,47 @@
 
 /* Begin PBXFileReference section */
 		5E56E34A7933A4FBFE8F88BB /* Pods_Truverus.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Truverus.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		79270D05B946BDC3E1A965AE /* Pods-Truverus.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Truverus.debug.xcconfig"; path = "Target Support Files/Pods-Truverus/Pods-Truverus.debug.xcconfig"; sourceTree = "<group>"; };
+		A91101BB2D5F90C4EA4DE7D8 /* Pods-Truverus.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Truverus.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Truverus/Pods-Truverus.debug.xcconfig"; sourceTree = "<group>"; };
+		C52D6FD422A8EEE100FFC562 /* CPDropdownTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CPDropdownTableViewCell.swift; sourceTree = "<group>"; };
+		C52D6FD522A8EEE100FFC562 /* CPDropdownTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CPDropdownTableViewCell.xib; sourceTree = "<group>"; };
+		C52D6FD922A9000400FFC562 /* CPImagepickerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CPImagepickerTableViewCell.swift; sourceTree = "<group>"; };
+		C52D6FDA22A9000400FFC562 /* CPImagepickerTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CPImagepickerTableViewCell.xib; sourceTree = "<group>"; };
+		C52D6FDE22A9132100FFC562 /* CPRatingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CPRatingTableViewCell.swift; sourceTree = "<group>"; };
+		C52D6FDF22A9132100FFC562 /* CPRatingTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CPRatingTableViewCell.xib; sourceTree = "<group>"; };
+		C52D6FE322A914D700FFC562 /* CPCommentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CPCommentTableViewCell.swift; sourceTree = "<group>"; };
+		C52D6FE422A914D700FFC562 /* CPCommentTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CPCommentTableViewCell.xib; sourceTree = "<group>"; };
+		C52D6FE822A9186300FFC562 /* CPCheckboxTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CPCheckboxTableViewCell.swift; sourceTree = "<group>"; };
+		C52D6FE922A9186300FFC562 /* CPCheckboxTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CPCheckboxTableViewCell.xib; sourceTree = "<group>"; };
+		C52D6FED22A9234E00FFC562 /* CPNoSurveyTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CPNoSurveyTableViewCell.swift; sourceTree = "<group>"; };
+		C52D6FEE22A9234E00FFC562 /* CPNoSurveyTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CPNoSurveyTableViewCell.xib; sourceTree = "<group>"; };
+		C536B86922B3AD6F009C3005 /* CPRadioCellTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CPRadioCellTableViewCell.swift; sourceTree = "<group>"; };
+		C536B86A22B3AD6F009C3005 /* CPRadioCellTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CPRadioCellTableViewCell.xib; sourceTree = "<group>"; };
+		C544E65F22A98D19002D9ECF /* CPVerifyEmailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CPVerifyEmailViewController.swift; sourceTree = "<group>"; };
+		C556C54822AE616A003F31ED /* CPUserDataPackageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CPUserDataPackageModel.swift; sourceTree = "<group>"; };
+		C562E67B22B5247300FCDDA8 /* CPSurvayQuestionImagesCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CPSurvayQuestionImagesCollectionViewCell.swift; sourceTree = "<group>"; };
+		C562E67C22B5247300FCDDA8 /* CPSurvayQuestionImagesCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CPSurvayQuestionImagesCollectionViewCell.xib; sourceTree = "<group>"; };
+		C5655F1822A8D43F002A143E /* CPRadiogroupTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CPRadiogroupTableViewCell.swift; sourceTree = "<group>"; };
+		C5655F1922A8D43F002A143E /* CPRadiogroupTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CPRadiogroupTableViewCell.xib; sourceTree = "<group>"; };
+		C567DF0722B26C4500178963 /* CPCheckBoxeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CPCheckBoxeTableViewCell.swift; sourceTree = "<group>"; };
+		C567DF0822B26C4500178963 /* CPCheckBoxeTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CPCheckBoxeTableViewCell.xib; sourceTree = "<group>"; };
+		C573B43622A82A2900C3EBBE /* CPSurveyTextTypeQuestionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CPSurveyTextTypeQuestionTableViewCell.swift; sourceTree = "<group>"; };
+		C573B43722A82A2900C3EBBE /* CPSurveyTextTypeQuestionTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CPSurveyTextTypeQuestionTableViewCell.xib; sourceTree = "<group>"; };
+		C573B43D22A82DA900C3EBBE /* CPSurveyTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CPSurveyTableViewCell.swift; sourceTree = "<group>"; };
+		C578292222ACD6070037E898 /* CPVerifyemailDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CPVerifyemailDataModel.swift; sourceTree = "<group>"; };
+		C578292422ACE95C0037E898 /* ValidationDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationDataModel.swift; sourceTree = "<group>"; };
+		C578292622AD8B4A0037E898 /* UserLoginDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserLoginDataModel.swift; sourceTree = "<group>"; };
+		C588890F22B120B800C24F38 /* CPSurveyCompleatedTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CPSurveyCompleatedTableViewCell.swift; sourceTree = "<group>"; };
+		C588891022B120B800C24F38 /* CPSurveyCompleatedTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CPSurveyCompleatedTableViewCell.xib; sourceTree = "<group>"; };
+		C592F0C922AA36020046C885 /* RegisterUserDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterUserDataModel.swift; sourceTree = "<group>"; };
+		C59850FC22B7653600CE3AB6 /* CPAvailablePurchasedItemsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CPAvailablePurchasedItemsResponse.swift; sourceTree = "<group>"; };
+		C59850FE22B7A0AC00CE3AB6 /* CPPurchaseProductDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CPPurchaseProductDataModel.swift; sourceTree = "<group>"; };
+		C598510022B7D9C300CE3AB6 /* CPUpdateCommunityDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CPUpdateCommunityDataModel.swift; sourceTree = "<group>"; };
+		C598510222B8055200CE3AB6 /* CPMyCollectionProductDataBaseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CPMyCollectionProductDataBaseModel.swift; sourceTree = "<group>"; };
+		C5A536D822AFAA920044B7E4 /* CPSurvayByFeedbackDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CPSurvayByFeedbackDataModel.swift; sourceTree = "<group>"; };
+		C5A536DA22AFB4910044B7E4 /* CPSurvayDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CPSurvayDataModel.swift; sourceTree = "<group>"; };
+		C5A536DC22AFC6A80044B7E4 /* CPSurveyBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CPSurveyBase.swift; sourceTree = "<group>"; };
+		C5E2A1AA22B8F52D00FB7477 /* CPAllCommunityViewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CPAllCommunityViewViewController.swift; sourceTree = "<group>"; };
+		C5E2A1AC22B8F57400FB7477 /* CPAllCommunityCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CPAllCommunityCollectionViewCell.swift; sourceTree = "<group>"; };
 		CE15AA56228006B700881C8E /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		CE15AA5922803E2100881C8E /* CPSocialSignInHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CPSocialSignInHelper.swift; sourceTree = "<group>"; };
 		CE3124332297AD6100D4049A /* CoreNFC.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreNFC.framework; path = System/Library/Frameworks/CoreNFC.framework; sourceTree = SDKROOT; };
@@ -261,7 +341,7 @@
 		CEF23758228598E4006DB6AC /* CPInboxViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CPInboxViewController.swift; sourceTree = "<group>"; };
 		CEF2375A228599AA006DB6AC /* CPRemovePopupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CPRemovePopupViewController.swift; sourceTree = "<group>"; };
 		CEF2375C22859A0C006DB6AC /* CPInboxCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CPInboxCollectionViewCell.swift; sourceTree = "<group>"; };
-		D53D24A0A870DEAE7A3BF2C6 /* Pods-Truverus.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Truverus.release.xcconfig"; path = "Target Support Files/Pods-Truverus/Pods-Truverus.release.xcconfig"; sourceTree = "<group>"; };
+		EA6DCE520343781ADE70A883 /* Pods-Truverus.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Truverus.release.xcconfig"; path = "Pods/Target Support Files/Pods-Truverus/Pods-Truverus.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -293,6 +373,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		119E1FBAC4E9C16F97CAE5D6 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				A91101BB2D5F90C4EA4DE7D8 /* Pods-Truverus.debug.xcconfig */,
+				EA6DCE520343781ADE70A883 /* Pods-Truverus.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		3685AA14C0FC03635E6C0AD1 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -302,13 +391,127 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		9B7D16E947C5C418FE1CA626 /* Pods */ = {
+		C52D6FD322A8EEBC00FFC562 /* dropdownQuestionsCell */ = {
 			isa = PBXGroup;
 			children = (
-				79270D05B946BDC3E1A965AE /* Pods-Truverus.debug.xcconfig */,
-				D53D24A0A870DEAE7A3BF2C6 /* Pods-Truverus.release.xcconfig */,
+				C52D6FD422A8EEE100FFC562 /* CPDropdownTableViewCell.swift */,
+				C52D6FD522A8EEE100FFC562 /* CPDropdownTableViewCell.xib */,
 			);
-			path = Pods;
+			path = dropdownQuestionsCell;
+			sourceTree = "<group>";
+		};
+		C52D6FD822A8FFE900FFC562 /* imagepickerQuestionsCell */ = {
+			isa = PBXGroup;
+			children = (
+				C52D6FD922A9000400FFC562 /* CPImagepickerTableViewCell.swift */,
+				C52D6FDA22A9000400FFC562 /* CPImagepickerTableViewCell.xib */,
+				C562E67B22B5247300FCDDA8 /* CPSurvayQuestionImagesCollectionViewCell.swift */,
+				C562E67C22B5247300FCDDA8 /* CPSurvayQuestionImagesCollectionViewCell.xib */,
+			);
+			path = imagepickerQuestionsCell;
+			sourceTree = "<group>";
+		};
+		C52D6FDD22A9130300FFC562 /* ratingQuestionCell */ = {
+			isa = PBXGroup;
+			children = (
+				C52D6FDE22A9132100FFC562 /* CPRatingTableViewCell.swift */,
+				C52D6FDF22A9132100FFC562 /* CPRatingTableViewCell.xib */,
+			);
+			path = ratingQuestionCell;
+			sourceTree = "<group>";
+		};
+		C52D6FE222A914B900FFC562 /* commentQuestionCell */ = {
+			isa = PBXGroup;
+			children = (
+				C52D6FE322A914D700FFC562 /* CPCommentTableViewCell.swift */,
+				C52D6FE422A914D700FFC562 /* CPCommentTableViewCell.xib */,
+			);
+			path = commentQuestionCell;
+			sourceTree = "<group>";
+		};
+		C52D6FE722A9183B00FFC562 /* checkboxQuestionsCell */ = {
+			isa = PBXGroup;
+			children = (
+				C52D6FE822A9186300FFC562 /* CPCheckboxTableViewCell.swift */,
+				C52D6FE922A9186300FFC562 /* CPCheckboxTableViewCell.xib */,
+				C567DF0722B26C4500178963 /* CPCheckBoxeTableViewCell.swift */,
+				C567DF0822B26C4500178963 /* CPCheckBoxeTableViewCell.xib */,
+			);
+			path = checkboxQuestionsCell;
+			sourceTree = "<group>";
+		};
+		C52D6FEC22A9232F00FFC562 /* NosurveyAvailableCell */ = {
+			isa = PBXGroup;
+			children = (
+				C52D6FED22A9234E00FFC562 /* CPNoSurveyTableViewCell.swift */,
+				C52D6FEE22A9234E00FFC562 /* CPNoSurveyTableViewCell.xib */,
+			);
+			path = NosurveyAvailableCell;
+			sourceTree = "<group>";
+		};
+		C5655F1722A8D407002A143E /* radiogroupQuestionsCell */ = {
+			isa = PBXGroup;
+			children = (
+				C5655F1822A8D43F002A143E /* CPRadiogroupTableViewCell.swift */,
+				C5655F1922A8D43F002A143E /* CPRadiogroupTableViewCell.xib */,
+				C536B86922B3AD6F009C3005 /* CPRadioCellTableViewCell.swift */,
+				C536B86A22B3AD6F009C3005 /* CPRadioCellTableViewCell.xib */,
+			);
+			path = radiogroupQuestionsCell;
+			sourceTree = "<group>";
+		};
+		C573B43522A8276500C3EBBE /* Survey */ = {
+			isa = PBXGroup;
+			children = (
+				C573B43D22A82DA900C3EBBE /* CPSurveyTableViewCell.swift */,
+				C52D6FEC22A9232F00FFC562 /* NosurveyAvailableCell */,
+				C588890E22B1208A00C24F38 /* CompleatedCell */,
+				C52D6FE722A9183B00FFC562 /* checkboxQuestionsCell */,
+				C52D6FE222A914B900FFC562 /* commentQuestionCell */,
+				C52D6FDD22A9130300FFC562 /* ratingQuestionCell */,
+				C52D6FD822A8FFE900FFC562 /* imagepickerQuestionsCell */,
+				C52D6FD322A8EEBC00FFC562 /* dropdownQuestionsCell */,
+				C5655F1722A8D407002A143E /* radiogroupQuestionsCell */,
+				C573B43C22A82D8600C3EBBE /* TextTypeQuestionsCell */,
+			);
+			path = Survey;
+			sourceTree = "<group>";
+		};
+		C573B43C22A82D8600C3EBBE /* TextTypeQuestionsCell */ = {
+			isa = PBXGroup;
+			children = (
+				C573B43622A82A2900C3EBBE /* CPSurveyTextTypeQuestionTableViewCell.swift */,
+				C573B43722A82A2900C3EBBE /* CPSurveyTextTypeQuestionTableViewCell.xib */,
+			);
+			path = TextTypeQuestionsCell;
+			sourceTree = "<group>";
+		};
+		C588890E22B1208A00C24F38 /* CompleatedCell */ = {
+			isa = PBXGroup;
+			children = (
+				C588890F22B120B800C24F38 /* CPSurveyCompleatedTableViewCell.swift */,
+				C588891022B120B800C24F38 /* CPSurveyCompleatedTableViewCell.xib */,
+			);
+			path = CompleatedCell;
+			sourceTree = "<group>";
+		};
+		C59850FB22B7651200CE3AB6 /* DataModels */ = {
+			isa = PBXGroup;
+			children = (
+				C59850FC22B7653600CE3AB6 /* CPAvailablePurchasedItemsResponse.swift */,
+				C59850FE22B7A0AC00CE3AB6 /* CPPurchaseProductDataModel.swift */,
+				C598510022B7D9C300CE3AB6 /* CPUpdateCommunityDataModel.swift */,
+			);
+			path = DataModels;
+			sourceTree = "<group>";
+		};
+		C5E2A1A922B8F50500FB7477 /* AllCommunityView */ = {
+			isa = PBXGroup;
+			children = (
+				C5E2A1AA22B8F52D00FB7477 /* CPAllCommunityViewViewController.swift */,
+				C5E2A1AC22B8F57400FB7477 /* CPAllCommunityCollectionViewCell.swift */,
+			);
+			path = AllCommunityView;
 			sourceTree = "<group>";
 		};
 		CE15AA5822803DDD00881C8E /* CPHelper */ = {
@@ -364,6 +567,12 @@
 				CE4C3A87227DB393004443A2 /* CPLogin.storyboard */,
 				CE4C3A88227DB393004443A2 /* CPSignUpViewController.swift */,
 				CE4C3A89227DB393004443A2 /* CPLoginViewController.swift */,
+				C544E65F22A98D19002D9ECF /* CPVerifyEmailViewController.swift */,
+				C592F0C922AA36020046C885 /* RegisterUserDataModel.swift */,
+				C578292222ACD6070037E898 /* CPVerifyemailDataModel.swift */,
+				C578292422ACE95C0037E898 /* ValidationDataModel.swift */,
+				C578292622AD8B4A0037E898 /* UserLoginDataModel.swift */,
+				C556C54822AE616A003F31ED /* CPUserDataPackageModel.swift */,
 			);
 			path = CPLoginView;
 			sourceTree = "<group>";
@@ -375,8 +584,8 @@
 				CE54A1982278012300C4BEE1 /* TruverusTests */,
 				CE54A1A32278012300C4BEE1 /* TruverusUITests */,
 				CE54A17F2278012200C4BEE1 /* Products */,
-				9B7D16E947C5C418FE1CA626 /* Pods */,
 				3685AA14C0FC03635E6C0AD1 /* Frameworks */,
+				119E1FBAC4E9C16F97CAE5D6 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -494,6 +703,9 @@
 				CEA9EC22229FACFB00F5396A /* CPEventsDataModel.swift */,
 				CEA9EC24229FCAF300F5396A /* CPPromotionsDataModel.swift */,
 				CEA9EC2922A0440E00F5396A /* CPFeedbackDataModels.swift */,
+				C5A536D822AFAA920044B7E4 /* CPSurvayByFeedbackDataModel.swift */,
+				C5A536DA22AFB4910044B7E4 /* CPSurvayDataModel.swift */,
+				C5A536DC22AFC6A80044B7E4 /* CPSurveyBase.swift */,
 			);
 			path = CommunityDataModel;
 			sourceTree = "<group>";
@@ -509,6 +721,7 @@
 		CEE911A3228930D00000F3EE /* CPCommunity */ = {
 			isa = PBXGroup;
 			children = (
+				C5E2A1A922B8F50500FB7477 /* AllCommunityView */,
 				CEA9EC26229FCF6900F5396A /* DataFlowBaseStruct */,
 				CEA9EC1D229CFF2F00F5396A /* CommunityDataModel */,
 				CEA9EC1A229CF68E00F5396A /* CommunityMain */,
@@ -544,6 +757,7 @@
 		CEE911A822893DF10000F3EE /* Feedback */ = {
 			isa = PBXGroup;
 			children = (
+				C573B43522A8276500C3EBBE /* Survey */,
 				CEE911AB22893F1E0000F3EE /* CPFeedbackViewController.swift */,
 				CEE911B1228940850000F3EE /* CPFeedbackCollectionViewCell.swift */,
 				CEE911B7228943BF0000F3EE /* CPFeedbackSubViewController.swift */,
@@ -619,6 +833,7 @@
 		CEF2370A2282A169006DB6AC /* CPProductView */ = {
 			isa = PBXGroup;
 			children = (
+				C59850FB22B7651200CE3AB6 /* DataModels */,
 				CEF2370D2282A5E6006DB6AC /* CPProductScreenViewController.swift */,
 				CEF2370F2282A60F006DB6AC /* CPCustomTableViewCell.swift */,
 				CEE912142293E3D60000F3EE /* CPProductDataModel.swift */,
@@ -645,6 +860,7 @@
 			children = (
 				CEF237152282D6D8006DB6AC /* CPCollectionViewController.swift */,
 				CEF237172282D76E006DB6AC /* CPCollectionTabCollectionViewCell.swift */,
+				C598510222B8055200CE3AB6 /* CPMyCollectionProductDataBaseModel.swift */,
 				CEF2372322842539006DB6AC /* Transfer */,
 			);
 			path = Collection;
@@ -728,8 +944,8 @@
 				CE54A17A2278012200C4BEE1 /* Sources */,
 				CE54A17B2278012200C4BEE1 /* Frameworks */,
 				CE54A17C2278012200C4BEE1 /* Resources */,
-				CECD131D28862467D4875902 /* [CP] Embed Pods Frameworks */,
-				4211530341003D24B0FE18F1 /* [CP] Copy Pods Resources */,
+				99C00E2F08FD6ABCBE5CA2E9 /* [CP] Embed Pods Frameworks */,
+				5C34D7BACBFE5EF70ADD2F78 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -834,29 +1050,39 @@
 			buildActionMask = 2147483647;
 			files = (
 				CE54A1DF22780BC700C4BEE1 /* Trade Gothic LT Light Oblique.ttf in Resources */,
+				C588891222B120B800C24F38 /* CPSurveyCompleatedTableViewCell.xib in Resources */,
 				CE54A1D822780BC700C4BEE1 /* AvenirNextLTPro-BoldCn.otf in Resources */,
+				C573B43922A82A2900C3EBBE /* CPSurveyTextTypeQuestionTableViewCell.xib in Resources */,
 				CE54A1D122780BC700C4BEE1 /* AvenirNextLTPro-Cn.otf in Resources */,
+				C562E67E22B5247300FCDDA8 /* CPSurvayQuestionImagesCollectionViewCell.xib in Resources */,
 				CE54A1E022780BC700C4BEE1 /* Trade Gothic LT Oblique.ttf in Resources */,
+				C52D6FEB22A9186300FFC562 /* CPCheckboxTableViewCell.xib in Resources */,
 				CE54A1D422780BC700C4BEE1 /* AvenirNextLTPro-Demi.otf in Resources */,
 				CE54A1DE22780BC700C4BEE1 /* Trade Gothic LT Bold Extended.ttf in Resources */,
 				CE54A1D622780BC700C4BEE1 /* Trade Gothic LT Bold.ttf in Resources */,
+				C52D6FF022A9234E00FFC562 /* CPNoSurveyTableViewCell.xib in Resources */,
 				CE54A1CF22780BC700C4BEE1 /* Trade Gothic LT Bold Oblique.ttf in Resources */,
 				CEF23757228597E9006DB6AC /* Inbox.storyboard in Resources */,
+				C536B86C22B3AD6F009C3005 /* CPRadioCellTableViewCell.xib in Resources */,
 				CE4C3A8B227DB393004443A2 /* CPMenuView.storyboard in Resources */,
 				CE54A1D322780BC700C4BEE1 /* AvenirNextLTPro-DemiCnIt.otf in Resources */,
+				C5655F1B22A8D43F002A143E /* CPRadiogroupTableViewCell.xib in Resources */,
 				CEE911C122894FA90000F3EE /* Settings.storyboard in Resources */,
 				CE54A1E722780BC700C4BEE1 /* AvenirNextLTPro-HeavyCnIt.otf in Resources */,
 				CE54A1E822780BC700C4BEE1 /* AvenirNextLTPro-Regular.otf in Resources */,
+				C567DF0A22B26C4500178963 /* CPCheckBoxeTableViewCell.xib in Resources */,
 				CE74F9DA228196E80009ABCD /* credentials.plist in Resources */,
 				CE54A1DA22780BC700C4BEE1 /* AvenirNextLTPro-BoldCnIt.otf in Resources */,
 				CE4C3A91227DB393004443A2 /* CPHomeView.storyboard in Resources */,
 				CE54A1E622780BC700C4BEE1 /* Trade Gothic LT Bold No. 2 Oblique.ttf in Resources */,
 				CEF2375222858DE4006DB6AC /* NFC.storyboard in Resources */,
 				CE54A1DB22780BC700C4BEE1 /* Trade Gothic LT Extended.ttf in Resources */,
+				C52D6FDC22A9000400FFC562 /* CPImagepickerTableViewCell.xib in Resources */,
 				CE54A1E222780BC700C4BEE1 /* AvenirNextLTPro-It.otf in Resources */,
 				CE54A1D722780BC700C4BEE1 /* Trade Gothic LT.ttf in Resources */,
 				CE54A1E422780BC700C4BEE1 /* AvenirNextLTPro-HeavyCn.otf in Resources */,
 				CE54A1E922780BC700C4BEE1 /* AvenirNextLTPro-DemiIt.otf in Resources */,
+				C52D6FD722A8EEE100FFC562 /* CPDropdownTableViewCell.xib in Resources */,
 				CE54A1D922780BC700C4BEE1 /* AvenirNextLTPro-DemiCn.otf in Resources */,
 				CE54A1E322780BC700C4BEE1 /* AvenirNextLTPro-MediumCnIt.otf in Resources */,
 				CEE911C822897E700000F3EE /* ManageLocation.storyboard in Resources */,
@@ -865,6 +1091,7 @@
 				CE54A18F2278012300C4BEE1 /* LaunchScreen.storyboard in Resources */,
 				CE54A1E122780BC700C4BEE1 /* AvenirNextLTPro-UltLtCnIt.otf in Resources */,
 				CE54A1D522780BC700C4BEE1 /* AvenirNextLTPro-CnIt.otf in Resources */,
+				C52D6FE622A914D700FFC562 /* CPCommentTableViewCell.xib in Resources */,
 				CE54A1D222780BC700C4BEE1 /* Trade Gothic LT Bold No. 2.ttf in Resources */,
 				CE54A1E522780BC700C4BEE1 /* AvenirNextLTPro-MediumCn.otf in Resources */,
 				CE54A18C2278012300C4BEE1 /* Assets.xcassets in Resources */,
@@ -875,6 +1102,7 @@
 				CEE911A52289311D0000F3EE /* CPCommunity.storyboard in Resources */,
 				CE54A1D022780BC700C4BEE1 /* Trade Gothic LT Light.ttf in Resources */,
 				CE4C3A92227DB393004443A2 /* CPLogin.storyboard in Resources */,
+				C52D6FE122A9132100FFC562 /* CPRatingTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -895,7 +1123,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		4211530341003D24B0FE18F1 /* [CP] Copy Pods Resources */ = {
+		5C34D7BACBFE5EF70ADD2F78 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -903,7 +1131,7 @@
 			inputFileListPaths = (
 			);
 			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Truverus/Pods-Truverus-resources.sh",
+				"${SRCROOT}/Pods/Target Support Files/Pods-Truverus/Pods-Truverus-resources.sh",
 				"${PODS_ROOT}/GoogleMaps/Maps/Frameworks/GoogleMaps.framework/Resources/GoogleMaps.bundle",
 				"${PODS_ROOT}/GooglePlaces/Frameworks/GooglePlaces.framework/Resources/GooglePlaces.bundle",
 				"${PODS_ROOT}/GoogleSignIn/Resources/GoogleSignIn.bundle",
@@ -918,10 +1146,10 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Truverus/Pods-Truverus-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Truverus/Pods-Truverus-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		CECD131D28862467D4875902 /* [CP] Embed Pods Frameworks */ = {
+		99C00E2F08FD6ABCBE5CA2E9 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -929,8 +1157,9 @@
 			inputFileListPaths = (
 			);
 			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Truverus/Pods-Truverus-frameworks.sh",
+				"${SRCROOT}/Pods/Target Support Files/Pods-Truverus/Pods-Truverus-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/FlagPhoneNumber/FlagPhoneNumber.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
@@ -947,6 +1176,7 @@
 			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FlagPhoneNumber.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
@@ -960,7 +1190,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Truverus/Pods-Truverus-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Truverus/Pods-Truverus-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		E828718182C04DA0261577E9 /* [CP] Check Pods Manifest.lock */ = {
@@ -992,36 +1222,53 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C556C54922AE616A003F31ED /* CPUserDataPackageModel.swift in Sources */,
 				CEF2375B228599AA006DB6AC /* CPRemovePopupViewController.swift in Sources */,
 				CEF2375422858FF4006DB6AC /* CPNfcViewController.swift in Sources */,
 				CEE911C32289552C0000F3EE /* CPSettingsViewController.swift in Sources */,
 				CEA9EC25229FCAF300F5396A /* CPPromotionsDataModel.swift in Sources */,
 				CEE91205228EA58A0000F3EE /* ResponseError.swift in Sources */,
+				C52D6FEA22A9186300FFC562 /* CPCheckboxTableViewCell.swift in Sources */,
 				CEE911B6228940AD0000F3EE /* CPEventCollectionViewCell.swift in Sources */,
 				CE4C3A8F227DB393004443A2 /* CPMenuViewController.swift in Sources */,
+				C5A536DD22AFC6A80044B7E4 /* CPSurveyBase.swift in Sources */,
 				CEF237182282D76E006DB6AC /* CPCollectionTabCollectionViewCell.swift in Sources */,
 				CEE9120C22928DFC0000F3EE /* CPTagDataModel.swift in Sources */,
 				CEE911B022893F6A0000F3EE /* CPEventsViewController.swift in Sources */,
+				C578292722AD8B4A0037E898 /* UserLoginDataModel.swift in Sources */,
+				C588891122B120B800C24F38 /* CPSurveyCompleatedTableViewCell.swift in Sources */,
 				CE15AA5A22803E2100881C8E /* CPSocialSignInHelper.swift in Sources */,
+				C5E2A1AD22B8F57400FB7477 /* CPAllCommunityCollectionViewCell.swift in Sources */,
+				C536B86B22B3AD6F009C3005 /* CPRadioCellTableViewCell.swift in Sources */,
+				C544E66022A98D19002D9ECF /* CPVerifyEmailViewController.swift in Sources */,
+				C592F0CA22AA36020046C885 /* RegisterUserDataModel.swift in Sources */,
 				CEF2372E22844423006DB6AC /* CPEditAccountViewController.swift in Sources */,
+				C5655F1A22A8D43F002A143E /* CPRadiogroupTableViewCell.swift in Sources */,
 				CEE9120A228EA6F80000F3EE /* SocialUserLogin.swift in Sources */,
 				CEE911B42289409A0000F3EE /* CPPromotionCollectionViewCell.swift in Sources */,
 				CEE911C5228955460000F3EE /* CPSettingsTableViewCell.swift in Sources */,
 				CEE912152293E3D60000F3EE /* CPProductDataModel.swift in Sources */,
 				CE54A1842278012200C4BEE1 /* ViewController.swift in Sources */,
+				C598510322B8055300CE3AB6 /* CPMyCollectionProductDataBaseModel.swift in Sources */,
 				CEA9EC21229D472C00F5396A /* RefreshTokenDataModel.swift in Sources */,
+				C5A536DB22AFB4910044B7E4 /* CPSurvayDataModel.swift in Sources */,
 				CEF237132282CE70006DB6AC /* CPMyCollectionScreenViewController.swift in Sources */,
+				C52D6FD622A8EEE100FFC562 /* CPDropdownTableViewCell.swift in Sources */,
+				C562E67D22B5247300FCDDA8 /* CPSurvayQuestionImagesCollectionViewCell.swift in Sources */,
 				CEE911BE228944440000F3EE /* RatingController.swift in Sources */,
 				CEE911AC22893F1E0000F3EE /* CPFeedbackViewController.swift in Sources */,
+				C59850FF22B7A0AC00CE3AB6 /* CPPurchaseProductDataModel.swift in Sources */,
 				CE3124382297CE2600D4049A /* CPNoCollectionViewController.swift in Sources */,
 				CE54A1822278012200C4BEE1 /* AppDelegate.swift in Sources */,
 				CEA9EC2A22A0440E00F5396A /* CPFeedbackDataModels.swift in Sources */,
 				CEF23759228598E4006DB6AC /* CPInboxViewController.swift in Sources */,
+				C598510122B7D9C300CE3AB6 /* CPUpdateCommunityDataModel.swift in Sources */,
 				CEF2372522842564006DB6AC /* CPTransferViewController.swift in Sources */,
 				CE4C3A90227DB393004443A2 /* CPHomeViewController.swift in Sources */,
 				CEF2372022841BF5006DB6AC /* CPRequestsViewController.swift in Sources */,
 				CEF237162282D6D8006DB6AC /* CPCollectionViewController.swift in Sources */,
 				CEF2372222841C21006DB6AC /* CPRequestsCollectionViewCell.swift in Sources */,
+				C52D6FE022A9132100FFC562 /* CPRatingTableViewCell.swift in Sources */,
 				CE4C3A8E227DB393004443A2 /* CPMenuTableViewCell.swift in Sources */,
 				CE15AA57228006B700881C8E /* BaseViewController.swift in Sources */,
 				CEF2370E2282A5E6006DB6AC /* CPProductScreenViewController.swift in Sources */,
@@ -1033,25 +1280,36 @@
 				CE54A1FC22784E4300C4BEE1 /* CPCommon.swift in Sources */,
 				CEF2372C2284418D006DB6AC /* CPMyAccountViewController.swift in Sources */,
 				CE54A18A2278012200C4BEE1 /* Truverus.xcdatamodeld in Sources */,
+				C59850FD22B7653600CE3AB6 /* CPAvailablePurchasedItemsResponse.swift in Sources */,
 				CEE91217229415F30000F3EE /* CPPopupViewController.swift in Sources */,
+				C52D6FDB22A9000400FFC562 /* CPImagepickerTableViewCell.swift in Sources */,
 				CE4C3A8D227DB393004443A2 /* CPShareAppTableViewCell.swift in Sources */,
 				CEE911AE22893F480000F3EE /* CPPromotionsViewController.swift in Sources */,
 				CEA9EC28229FCF9200F5396A /* CPCommunityFlowBaseDataFlow.swift in Sources */,
 				CEE911BA228943D20000F3EE /* CPPromotionSubviewViewController.swift in Sources */,
+				C52D6FEF22A9234E00FFC562 /* CPNoSurveyTableViewCell.swift in Sources */,
 				CEE911CA22898A390000F3EE /* CPMapViewController.swift in Sources */,
 				CEF2371D2283F72D006DB6AC /* CPPendingCollectionViewCell.swift in Sources */,
 				CEE91207228EA5990000F3EE /* UrlConstans.swift in Sources */,
 				CE4C3A94227DB393004443A2 /* CPLoginViewController.swift in Sources */,
 				CEE91203228EA5730000F3EE /* ApiManager.swift in Sources */,
+				C573B43822A82A2900C3EBBE /* CPSurveyTextTypeQuestionTableViewCell.swift in Sources */,
 				CEF2371B2283F70E006DB6AC /* CPPendingListViewController.swift in Sources */,
+				C567DF0922B26C4500178963 /* CPCheckBoxeTableViewCell.swift in Sources */,
 				CEF2374B228557C1006DB6AC /* CPUserProfile.swift in Sources */,
 				CEA9EC1C229CF6AB00F5396A /* CPCommunityMainViewController.swift in Sources */,
+				C5A536D922AFAA920044B7E4 /* CPSurvayByFeedbackDataModel.swift in Sources */,
 				CEF2375D22859A0C006DB6AC /* CPInboxCollectionViewCell.swift in Sources */,
 				CEE911B2228940850000F3EE /* CPFeedbackCollectionViewCell.swift in Sources */,
+				C573B43E22A82DA900C3EBBE /* CPSurveyTableViewCell.swift in Sources */,
+				C578292522ACE95C0037E898 /* ValidationDataModel.swift in Sources */,
+				C5E2A1AB22B8F52D00FB7477 /* CPAllCommunityViewViewController.swift in Sources */,
 				CE54A207227AC45D00C4BEE1 /* CPSlideInTransition.swift in Sources */,
 				CEE911B8228943BF0000F3EE /* CPFeedbackSubViewController.swift in Sources */,
+				C52D6FE522A914D700FFC562 /* CPCommentTableViewCell.swift in Sources */,
 				CEF23731228552C9006DB6AC /* PercistanceService.swift in Sources */,
 				CEA9EC23229FACFB00F5396A /* CPEventsDataModel.swift in Sources */,
+				C578292322ACD6070037E898 /* CPVerifyemailDataModel.swift in Sources */,
 				CEF2370C2282A1A5006DB6AC /* CPParallaxTableView.swift in Sources */,
 				CEA9EC1F229CFF4F00F5396A /* CPCommunityDataModel.swift in Sources */,
 				CEE911BC228943E70000F3EE /* CPEventSubViewController.swift in Sources */,
@@ -1229,7 +1487,7 @@
 		};
 		CE54A1AA2278012300C4BEE1 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 79270D05B946BDC3E1A965AE /* Pods-Truverus.debug.xcconfig */;
+			baseConfigurationReference = A91101BB2D5F90C4EA4DE7D8 /* Pods-Truverus.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Truverus/Truverus.entitlements;
@@ -1256,7 +1514,7 @@
 		};
 		CE54A1AB2278012300C4BEE1 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D53D24A0A870DEAE7A3BF2C6 /* Pods-Truverus.release.xcconfig */;
+			baseConfigurationReference = EA6DCE520343781ADE70A883 /* Pods-Truverus.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Truverus/Truverus.entitlements;
@@ -1275,7 +1533,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.teamclearpicture.Truverus;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = TruverusCPAdHocProfile;
+				PROVISIONING_PROFILE_SPECIFIER = TruverusAdhoc;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Trade Gothic LT Bold No. 2.ttf">
+            <string>TradeGothicLT-BoldTwo</string>
+        </array>
+        <array key="Trade Gothic LT.ttf">
+            <string>TradeGothicLT</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="commentCell" rowHeight="353" id="KGk-i7-Jjw" customClass="CPCommentTableViewCell" customModule="Truverus" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="353"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="352.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bjn-gl-E4q">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="352.5"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bvq-Eo-aZC">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="353"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Question 02" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hmE-oL-q0m">
+                                        <rect key="frame" x="97" y="40" width="126" height="21"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="126" id="Igv-bQ-1dT"/>
+                                            <constraint firstAttribute="height" constant="21" id="r3o-l0-7tu"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SwM-jC-3Bj">
+                                        <rect key="frame" x="19" y="91" width="282" height="17"/>
+                                        <fontDescription key="fontDescription" name="TradeGothicLT-BoldTwo" family="TradeGothic LT" pointSize="14"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="evcevcevev" translatesAutoresizingMaskIntoConstraints="NO" id="aeb-iH-SXW">
+                                        <rect key="frame" x="19" y="138" width="282" height="177"/>
+                                        <color key="backgroundColor" white="0.66666666666666663" alpha="0.22632170376712329" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="177" id="1W3-eM-cM2"/>
+                                        </constraints>
+                                        <color key="textColor" name="TextGray"/>
+                                        <fontDescription key="fontDescription" name="TradeGothicLT" family="TradeGothic LT" pointSize="13"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="aeb-iH-SXW" firstAttribute="top" secondItem="SwM-jC-3Bj" secondAttribute="bottom" constant="30" id="Poj-X7-AnU"/>
+                                    <constraint firstItem="SwM-jC-3Bj" firstAttribute="centerX" secondItem="bvq-Eo-aZC" secondAttribute="centerX" id="Qmm-i7-zRP"/>
+                                    <constraint firstItem="hmE-oL-q0m" firstAttribute="top" secondItem="bvq-Eo-aZC" secondAttribute="top" constant="40" id="fc9-2p-q38"/>
+                                    <constraint firstItem="SwM-jC-3Bj" firstAttribute="top" secondItem="hmE-oL-q0m" secondAttribute="bottom" constant="30" id="gjW-Bp-kYy"/>
+                                    <constraint firstAttribute="bottom" secondItem="aeb-iH-SXW" secondAttribute="bottom" constant="38" id="sIF-5a-xMu"/>
+                                    <constraint firstItem="aeb-iH-SXW" firstAttribute="centerX" secondItem="bvq-Eo-aZC" secondAttribute="centerX" id="xM6-BL-SW5"/>
+                                    <constraint firstItem="hmE-oL-q0m" firstAttribute="centerX" secondItem="bvq-Eo-aZC" secondAttribute="centerX" id="zWJ-V2-bBO"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="bvq-Eo-aZC" firstAttribute="top" secondItem="bjn-gl-E4q" secondAttribute="top" id="IWF-0P-YNj"/>
+                            <constraint firstAttribute="trailing" secondItem="bvq-Eo-aZC" secondAttribute="trailing" id="V1v-EO-rkE"/>
+                            <constraint firstItem="bvq-Eo-aZC" firstAttribute="leading" secondItem="bjn-gl-E4q" secondAttribute="leading" id="bmL-yq-Vt0"/>
+                            <constraint firstAttribute="bottom" secondItem="bvq-Eo-aZC" secondAttribute="bottom" id="l0c-yE-ilt"/>
+                        </constraints>
+                    </scrollView>
+                </subviews>
+                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                <constraints>
+                    <constraint firstItem="bjn-gl-E4q" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="96v-sG-0K3"/>
+                    <constraint firstItem="aeb-iH-SXW" firstAttribute="width" secondItem="H2p-sc-9uM" secondAttribute="width" multiplier="0.88" id="bEf-9G-ewE"/>
+                    <constraint firstAttribute="bottom" secondItem="bjn-gl-E4q" secondAttribute="bottom" id="cpP-Rk-lsx"/>
+                    <constraint firstItem="bvq-Eo-aZC" firstAttribute="height" secondItem="H2p-sc-9uM" secondAttribute="height" priority="250" id="d6r-t1-iq7"/>
+                    <constraint firstAttribute="trailing" secondItem="bjn-gl-E4q" secondAttribute="trailing" id="eY1-Ek-YC0"/>
+                    <constraint firstItem="bjn-gl-E4q" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="fbJ-Hm-snW"/>
+                    <constraint firstItem="SwM-jC-3Bj" firstAttribute="width" secondItem="H2p-sc-9uM" secondAttribute="width" multiplier="0.88" id="mM7-49-xLL"/>
+                    <constraint firstItem="bvq-Eo-aZC" firstAttribute="width" secondItem="H2p-sc-9uM" secondAttribute="width" id="u0P-ec-B16"/>
+                    <constraint firstItem="SwM-jC-3Bj" firstAttribute="height" secondItem="H2p-sc-9uM" secondAttribute="height" multiplier="0.4" priority="250" id="wbQ-iY-ryf"/>
+                    <constraint firstItem="aeb-iH-SXW" firstAttribute="height" secondItem="H2p-sc-9uM" secondAttribute="height" multiplier="0.5" priority="250" id="xQd-Iz-Zf6"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="AnswerText" destination="aeb-iH-SXW" id="ulS-fc-hDO"/>
+                <outlet property="Question" destination="SwM-jC-3Bj" id="BNc-ZN-emh"/>
+                <outlet property="QuestionNumber" destination="hmE-oL-q0m" id="ch2-xB-DUJ"/>
+            </connections>
+            <point key="canvasLocation" x="131.8840579710145" y="88.727678571428569"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <namedColor name="TextGray">
+            <color red="0.30196078431372547" green="0.30196078431372547" blue="0.30196078431372547" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>
