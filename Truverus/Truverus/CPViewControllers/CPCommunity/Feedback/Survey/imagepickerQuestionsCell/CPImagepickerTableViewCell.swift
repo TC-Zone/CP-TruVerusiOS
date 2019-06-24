@@ -21,6 +21,7 @@ class CPImagepickerTableViewCell: UITableViewCell, UICollectionViewDelegate, UIC
     
     var qcodee : String!
     var qnumber : String!
+    var multiselect : Bool!
     
     var selectedAnswerImages = [ImageAnswers]()
     
@@ -94,77 +95,133 @@ class CPImagepickerTableViewCell: UITableViewCell, UICollectionViewDelegate, UIC
         
         let cell = collectionView.cellForItem(at: indexPath) as! CPSurvayQuestionImagesCollectionViewCell
         
-        
-        if cell.contentView.layer.cornerRadius == CGFloat(0.0) {
+        if multiselect == true {
             
-            selectedAnswerImages.append(ImageAnswers(number: "\(indexPath.row)", answer: "\(imagelist[indexPath.row])", qcode: qcodee, imageName: "\(imagenamelist[indexPath.row])"))
-            
-            
-            cell.contentView.layer.cornerRadius = 6.0
-            cell.contentView.layer.borderWidth = 0.5
-            cell.contentView.layer.borderColor = UIColor.clear.cgColor
-            cell.contentView.layer.masksToBounds = true
-            
-            cell.layer.shadowColor = UIColor.lightGray.cgColor
-            cell.layer.shadowOffset = CGSize(width: 0, height: 2.0)
-            cell.layer.shadowRadius = 6.0
-            cell.layer.shadowOpacity = 1.0
-            cell.layer.masksToBounds = false
-            cell.layer.shadowPath = UIBezierPath(roundedRect: cell.bounds, cornerRadius: (cell.contentView.layer.cornerRadius)).cgPath
-            cell.layer.backgroundColor = UIColor.clear.cgColor
-            
-            
+            if cell.contentView.layer.cornerRadius == CGFloat(0.0) {
+                
+                selectedAnswerImages.append(ImageAnswers(number: "\(indexPath.row)", answer: "\(imagelist[indexPath.row])", qcode: qcodee, imageName: "\(imagenamelist[indexPath.row])"))
+                
+                
+                cell.contentView.layer.cornerRadius = 6.0
+                cell.contentView.layer.borderWidth = 0.5
+                cell.contentView.layer.borderColor = UIColor.clear.cgColor
+                cell.contentView.layer.masksToBounds = true
+                
+                cell.layer.shadowColor = UIColor.lightGray.cgColor
+                cell.layer.shadowOffset = CGSize(width: 0, height: 2.0)
+                cell.layer.shadowRadius = 6.0
+                cell.layer.shadowOpacity = 1.0
+                cell.layer.masksToBounds = false
+                cell.layer.shadowPath = UIBezierPath(roundedRect: cell.bounds, cornerRadius: (cell.contentView.layer.cornerRadius)).cgPath
+                cell.layer.backgroundColor = UIColor.clear.cgColor
+                
+                
+                
+            } else {
+                
+                if selectedAnswerImages.isEmpty == false {
+                    
+                    let gotindex = selectedAnswerImages.firstIndex(where: { $0.number == "\(indexPath.row)" })!
+                    
+                    
+                    
+                    if gotindex >= 0 {
+                        print("got data for index \(indexPath.row) :: \(selectedAnswerImages[gotindex])")
+                        let results = selectedAnswerImages.filter {  $0.number == "\(indexPath.row)" }
+                        print("occurences :: \(results.count)")
+                        
+                        
+                        selectedAnswerImages.removeAll { (Answers) -> Bool in
+                            Answers.number == "\(indexPath.row)"
+                        }
+                        
+                        
+                    } else {
+                        
+                        selectedAnswerImages.removeAll()
+                        print("nil was there")
+                    }
+                }
+                
+                cell.contentView.layer.cornerRadius = 0.0
+                cell.contentView.layer.borderWidth = 1.5
+                cell.contentView.layer.borderColor = UIColor.clear.cgColor
+                cell.contentView.layer.masksToBounds = true
+                
+                cell.layer.shadowColor = UIColor.clear.cgColor
+                cell.layer.shadowOffset = CGSize(width: 0, height: 2.0)
+                cell.layer.shadowRadius = 0.0
+                cell.layer.shadowOpacity = 0.0
+                cell.layer.masksToBounds = false
+                cell.layer.shadowPath = UIBezierPath(roundedRect: cell.bounds, cornerRadius: (cell.contentView.layer.cornerRadius)).cgPath
+                cell.layer.backgroundColor = UIColor.clear.cgColor
+                
+            }
             
         } else {
             
-            if selectedAnswerImages.isEmpty == false {
+            if cell.contentView.layer.cornerRadius == CGFloat(0.0) {
                 
-                let gotindex = selectedAnswerImages.firstIndex(where: { $0.number == "\(indexPath.row)" })!
+                selectedAnswerImages.append(ImageAnswers(number: "\(indexPath.row)", answer: "\(imagelist[indexPath.row])", qcode: qcodee, imageName: "\(imagenamelist[indexPath.row])"))
                 
+                selectedAnswerImages.removeAll { (Answers) -> Bool in
+                    Answers.number != "\(indexPath.row)" && Answers.qcode == qcodee
+                }
                 
-                
-                if gotindex >= 0 {
-                    print("got data for index \(indexPath.row) :: \(selectedAnswerImages[gotindex])")
-                    let results = selectedAnswerImages.filter {  $0.number == "\(indexPath.row)" }
-                    print("occurences :: \(results.count)")
+                for i in 0...((selectedAnswerImages.count) - 1) {
                     
+                    print("current available answer :: \(selectedAnswerImages[i].number) && \(selectedAnswerImages[i].answer)")
                     
-                    selectedAnswerImages.removeAll { (Answers) -> Bool in
-                        Answers.number == "\(indexPath.row)"
+                }
+                
+                cell.contentView.layer.cornerRadius = 6.0
+                cell.contentView.layer.borderWidth = 0.5
+                cell.contentView.layer.borderColor = UIColor.clear.cgColor
+                cell.contentView.layer.masksToBounds = true
+                
+                cell.layer.shadowColor = UIColor.lightGray.cgColor
+                cell.layer.shadowOffset = CGSize(width: 0, height: 2.0)
+                cell.layer.shadowRadius = 6.0
+                cell.layer.shadowOpacity = 1.0
+                cell.layer.masksToBounds = false
+                cell.layer.shadowPath = UIBezierPath(roundedRect: cell.bounds, cornerRadius: (cell.contentView.layer.cornerRadius)).cgPath
+                cell.layer.backgroundColor = UIColor.clear.cgColor
+                
+                for cell in collectionView.visibleCells {
+                    guard let visibleCell = cell as? CPSurvayQuestionImagesCollectionViewCell else { return }
+                    let path = collectionView.indexPath(for: visibleCell)
+                    if path?.row == indexPath.row {
+                        
+                    } else {
+                        visibleCell.contentView.layer.cornerRadius = 0.0
+                        visibleCell.contentView.layer.borderWidth = 1.5
+                        visibleCell.contentView.layer.borderColor = UIColor.clear.cgColor
+                        visibleCell.contentView.layer.masksToBounds = true
+                        
+                        visibleCell.layer.shadowColor = UIColor.clear.cgColor
+                        visibleCell.layer.shadowOffset = CGSize(width: 0, height: 2.0)
+                        visibleCell.layer.shadowRadius = 0.0
+                        visibleCell.layer.shadowOpacity = 0.0
+                        visibleCell.layer.masksToBounds = false
+                        visibleCell.layer.shadowPath = UIBezierPath(roundedRect: visibleCell.bounds, cornerRadius: (visibleCell.contentView.layer.cornerRadius)).cgPath
+                        visibleCell.layer.backgroundColor = UIColor.clear.cgColor
                     }
                     
-                    
-                } else {
-                    
-                    selectedAnswerImages.removeAll()
-                    print("nil was there")
                 }
+                
+                
+                
+            } else {
+                
             }
             
-            cell.contentView.layer.cornerRadius = 0.0
-            cell.contentView.layer.borderWidth = 1.5
-            cell.contentView.layer.borderColor = UIColor.clear.cgColor
-            cell.contentView.layer.masksToBounds = true
-            
-            cell.layer.shadowColor = UIColor.clear.cgColor
-            cell.layer.shadowOffset = CGSize(width: 0, height: 2.0)
-            cell.layer.shadowRadius = 0.0
-            cell.layer.shadowOpacity = 0.0
-            cell.layer.masksToBounds = false
-            cell.layer.shadowPath = UIBezierPath(roundedRect: cell.bounds, cornerRadius: (cell.contentView.layer.cornerRadius)).cgPath
-            cell.layer.backgroundColor = UIColor.clear.cgColor
+            print("mult")
             
         }
         
+    }
         
         
-//            selectedAnswerImages.append(ImageAnswers(number: "\(indexPath.row)", answer: "\(imagelist[indexPath.row])", qcode: qcodee, imageName: "\(imagenamelist[indexPath.row])"))
-//
-//
-//
-//
-//
-        }
         
 //                    visibleCell.contentView.layer.cornerRadius = 6.0
 //                    visibleCell.contentView.layer.borderWidth = 1.0

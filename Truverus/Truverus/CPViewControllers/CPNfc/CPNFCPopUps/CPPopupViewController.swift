@@ -198,7 +198,9 @@ extension CPPopupViewController {
             productStruct.productObj.youtubeId = (productResponse.content?.videoUrl)!
             productStruct.productObj.ImagesList = (tempImgArray)
             productStruct.productObj.CommunityID = (productResponse.content?.communityId)!
+            productStruct.productObj.productID = (productResponse.content?.id)!
             
+            print("pro is now is \((productResponse.content?.id)!)")
             
             let story = UIStoryboard.init(name: "CPHomeView", bundle: nil)
             let vc = story.instantiateViewController(withIdentifier: "CPHomeView") as! CPHomeViewController

@@ -173,9 +173,9 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TIm-ed-Ds5">
+                                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TIm-ed-Ds5">
                                                 <rect key="frame" x="32" y="413" width="311" height="42"/>
-                                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="42" id="cSU-UO-wsv"/>
                                                 </constraints>
@@ -992,7 +992,7 @@
                                                 </constraints>
                                             </view>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3AQ-8U-RyN">
-                                                <rect key="frame" x="202.5" y="466.5" width="135" height="42"/>
+                                                <rect key="frame" x="193.5" y="466.5" width="144" height="42"/>
                                                 <color key="backgroundColor" name="AcceptGreen"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="42" id="sQI-Xz-ZcM"/>
@@ -1001,12 +1001,18 @@
                                                 <state key="normal" title="Next">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                        <integer key="value" value="10"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                                </userDefinedRuntimeAttributes>
                                                 <connections>
                                                     <action selector="NextButtonAction:" destination="Mzh-VX-JJP" eventType="touchUpInside" id="cl3-EW-jB6"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lmp-Ah-DRX">
-                                                <rect key="frame" x="37.5" y="466.5" width="135" height="42"/>
+                                                <rect key="frame" x="37.5" y="466.5" width="144" height="42"/>
                                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="42" id="Oxi-NJ-Yj2"/>
@@ -1015,6 +1021,12 @@
                                                 <state key="normal" title="Previous">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                        <integer key="value" value="10"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                                </userDefinedRuntimeAttributes>
                                                 <connections>
                                                     <action selector="PreviousButtonAction:" destination="Mzh-VX-JJP" eventType="touchUpInside" id="1dS-Br-v6D"/>
                                                 </connections>
@@ -1031,13 +1043,13 @@
                                             <constraint firstItem="s6T-Ro-aiX" firstAttribute="width" secondItem="Ld9-Vq-41N" secondAttribute="width" multiplier="0.8" id="Iov-bI-V0H"/>
                                             <constraint firstAttribute="trailing" secondItem="J0u-V6-IEy" secondAttribute="trailing" id="KUu-nJ-y2B"/>
                                             <constraint firstItem="O4M-LW-6Tl" firstAttribute="height" secondItem="s6T-Ro-aiX" secondAttribute="height" id="KpI-hG-xUp"/>
-                                            <constraint firstItem="lmp-Ah-DRX" firstAttribute="width" secondItem="s6T-Ro-aiX" secondAttribute="width" multiplier="0.45" id="Mnq-aL-Izl"/>
+                                            <constraint firstItem="lmp-Ah-DRX" firstAttribute="width" secondItem="s6T-Ro-aiX" secondAttribute="width" multiplier="0.48" id="Mnq-aL-Izl"/>
                                             <constraint firstItem="s6T-Ro-aiX" firstAttribute="top" secondItem="ePW-Yk-Cgm" secondAttribute="bottom" constant="15" id="Spp-5h-Ghc"/>
                                             <constraint firstItem="s6T-Ro-aiX" firstAttribute="centerX" secondItem="Ld9-Vq-41N" secondAttribute="centerX" id="WFG-Wf-Sm3"/>
                                             <constraint firstItem="3AQ-8U-RyN" firstAttribute="trailing" secondItem="s6T-Ro-aiX" secondAttribute="trailing" id="cLG-RC-pW8"/>
                                             <constraint firstItem="J0u-V6-IEy" firstAttribute="leading" secondItem="Ld9-Vq-41N" secondAttribute="leading" id="e0m-Hk-xzg"/>
                                             <constraint firstItem="O4M-LW-6Tl" firstAttribute="top" secondItem="s6T-Ro-aiX" secondAttribute="bottom" constant="15" id="lBR-jb-sZt"/>
-                                            <constraint firstItem="3AQ-8U-RyN" firstAttribute="width" secondItem="s6T-Ro-aiX" secondAttribute="width" multiplier="0.45" id="uSf-Bb-hQE"/>
+                                            <constraint firstItem="3AQ-8U-RyN" firstAttribute="width" secondItem="s6T-Ro-aiX" secondAttribute="width" multiplier="0.48" id="uSf-Bb-hQE"/>
                                             <constraint firstItem="lmp-Ah-DRX" firstAttribute="leading" secondItem="s6T-Ro-aiX" secondAttribute="leading" id="vU6-au-Q2V"/>
                                             <constraint firstItem="lmp-Ah-DRX" firstAttribute="centerY" secondItem="s6T-Ro-aiX" secondAttribute="centerY" id="yqX-xI-n9b"/>
                                         </constraints>

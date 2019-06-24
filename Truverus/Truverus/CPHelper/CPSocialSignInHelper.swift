@@ -105,6 +105,7 @@ extension CPSocialSignInHelper{
             
             defaults.set(loginResponse.response?.access_token, forKey: keys.accesstoken)
             defaults.set(loginResponse.response?.refresh_token, forKey: keys.refreshtoken)
+            defaults.set(loginResponse.response?.user_id, forKey: keys.RegisteredUserID)
             
             print("fb access token is saved successfully")
             //            customerID = loginResponse.subscriberBean?.subscriberId

@@ -17,6 +17,7 @@ class  productStruct {
         static var ImagesList = [String]()
         static var youtubeId = String()
         static var CommunityID = String()
+        static var productID = String()
         
     }
     

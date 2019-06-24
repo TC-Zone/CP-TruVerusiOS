@@ -57,7 +57,6 @@ class CPFeedbackSubViewController: UIViewController, UITextFieldDelegate , UITex
         self.SurveyTableView.register(UINib(nibName: "CPSurveyCompleatedTableViewCell", bundle: nil), forCellReuseIdentifier: "CompleatedSurveycell")
         
         
-        
         nextActionForCommon()
         
 //        PreviousButton.isEnabled = false
@@ -168,6 +167,7 @@ class CPFeedbackSubViewController: UIViewController, UITextFieldDelegate , UITex
             cell.QuestionNumber.text = "Question \(currentIndex ?? 1)"
             cell.qcodee = surveyModule.Syrvey[0].pages![0].elements![currentIndex - 1].qcode
             cell.qnumber = surveyModule.Syrvey[0].pages![0].elements![currentIndex - 1].name
+            cell.multiselect = surveyModule.Syrvey[0].pages![0].elements![currentIndex - 1].multiselect
             
             if surveyModule.Syrvey[0].pages![0].elements![currentIndex - 1].title != nil {
                 
@@ -383,7 +383,39 @@ class CPFeedbackSubViewController: UIViewController, UITextFieldDelegate , UITex
     
     @IBAction func NextButtonAction(_ sender: Any) {
         
-        nextActionForCommon()
+        
+        if self.NextButton.titleLabel?.text == "Complete" {
+            
+            let alert = UIAlertController(title: "Congratulations!!", message: "You have successfully completed the survey. Thank you.", preferredStyle: UIAlertController.Style.alert)
+            let okAction = UIAlertAction(title: "OK", style: UIAlertAction.Style.default) {
+                UIAlertAction in
+                NSLog("OK Pressed")
+                
+                if let parent = self.parent as? CPFeedbackViewController {
+                    let transition = CATransition()
+                    transition.type = CATransitionType.push
+                    transition.subtype = CATransitionSubtype.fromRight
+                    parent.view.layer.add(transition, forKey: nil)
+                    parent.handleBack()
+                }
+                self.currentIndex = 0
+                self.NextButton.isEnabled = true
+                self.NextButton.backgroundColor = UIColor(named: "AcceptGreen")
+                self.NextButton.setTitle("Next", for: UIControl.State.normal)
+                self.nextActionForCommon()
+                
+            }
+            alert.addAction(okAction)
+            self.present(alert, animated: true, completion: nil)
+            
+            //hujbj
+        } else {
+            
+            nextActionForCommon()
+            
+        }
+        
+        
         
     }
     
@@ -416,8 +448,15 @@ class CPFeedbackSubViewController: UIViewController, UITextFieldDelegate , UITex
                         
                         print("next block currentIndex:: \(currentIndex) and (elementscount! - 1) :: \((elementscount! - 1))")
                         type = surveyModule.Syrvey[0].pages![0].elements![currentIndex].type
+                        
+                        if currentIndex == 0 {
+                            PreviousButton.isEnabled = false
+                            PreviousButton.backgroundColor = UIColor.lightGray
+                            
+                        } else {
                         PreviousButton.isEnabled = true
                         PreviousButton.backgroundColor = UIColor(named: "CancelRed")
+                        }
                         currentIndex = currentIndex + 1
                         
                     }
@@ -440,8 +479,9 @@ class CPFeedbackSubViewController: UIViewController, UITextFieldDelegate , UITex
                             PreviousButton.backgroundColor = UIColor(named: "CancelRed")
                             currentIndex = currentIndex + 1
                             
-                            NextButton.isEnabled = false
-                            NextButton.backgroundColor = UIColor.lightGray
+                            //NextButton.isEnabled = false
+                            NextButton.backgroundColor = UIColor(named: "readmorecolor")
+                            NextButton.setTitle("Complete", for: UIControl.State.normal)
                             type = "Compleate"
                             currentIndex = currentIndex + 1
                             
@@ -679,6 +719,7 @@ class CPFeedbackSubViewController: UIViewController, UITextFieldDelegate , UITex
         
         NextButton.isEnabled = true
         NextButton.backgroundColor = UIColor(named: "AcceptGreen")
+        NextButton.setTitle("Next", for: UIControl.State.normal)
         
         let indexpath = NSIndexPath(item: 0, section: 0)
         

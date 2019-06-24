@@ -6,37 +6,71 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Trade Gothic LT Bold No. 2.ttf">
+            <string>TradeGothicLT-BoldTwo</string>
+        </array>
+        <array key="Trade Gothic LT.ttf">
+            <string>TradeGothicLT</string>
+        </array>
+    </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CompleatedSurveycell" rowHeight="304" id="KGk-i7-Jjw" customClass="CPSurveyCompleatedTableViewCell" customModule="Truverus" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="304"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CompleatedSurveycell" rowHeight="382" id="KGk-i7-Jjw" customClass="CPSurveyCompleatedTableViewCell" customModule="Truverus" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="382"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="303.5"/>
+                <rect key="frame" x="0.0" y="0.0" width="320" height="381.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Survey Compleated" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C9J-iy-Qkd">
-                        <rect key="frame" x="84.5" y="141.5" width="151" height="21"/>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="smileyface" translatesAutoresizingMaskIntoConstraints="NO" id="QGd-kd-2da">
+                        <rect key="frame" x="64" y="60" width="192" height="152.5"/>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You have successfully completed the survey" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OGI-Sh-mX6">
+                        <rect key="frame" x="19" y="277" width="282" height="42"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="151" id="H14-a8-dLU"/>
-                            <constraint firstAttribute="height" constant="21" id="dMh-oy-YNV"/>
+                            <constraint firstAttribute="height" constant="42" id="cCV-H7-7Md"/>
                         </constraints>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <fontDescription key="fontDescription" name="TradeGothicLT" family="TradeGothic LT" pointSize="14"/>
+                        <color key="textColor" name="TextGray"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Thank you" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C9J-iy-Qkd">
+                        <rect key="frame" x="113" y="241" width="94" height="26"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="94" id="MbX-Tm-EHS"/>
+                            <constraint firstAttribute="height" constant="26" id="NBv-Vm-ivj"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" name="TradeGothicLT-BoldTwo" family="TradeGothic LT" pointSize="21"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="C9J-iy-Qkd" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="0Rw-Qb-loU"/>
-                    <constraint firstItem="C9J-iy-Qkd" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="hT0-8x-trB"/>
+                    <constraint firstItem="OGI-Sh-mX6" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="6u9-F0-LwH"/>
+                    <constraint firstItem="QGd-kd-2da" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="60" id="89R-hW-yLF"/>
+                    <constraint firstItem="C9J-iy-Qkd" firstAttribute="top" secondItem="QGd-kd-2da" secondAttribute="bottom" constant="28.5" id="ClN-RZ-mil"/>
+                    <constraint firstItem="OGI-Sh-mX6" firstAttribute="width" secondItem="H2p-sc-9uM" secondAttribute="width" multiplier="0.88" id="PVm-uq-03F"/>
+                    <constraint firstItem="OGI-Sh-mX6" firstAttribute="top" secondItem="C9J-iy-Qkd" secondAttribute="bottom" constant="10" id="SEv-90-We3"/>
+                    <constraint firstItem="C9J-iy-Qkd" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="XPk-0z-eOE"/>
+                    <constraint firstItem="QGd-kd-2da" firstAttribute="width" secondItem="H2p-sc-9uM" secondAttribute="width" multiplier="0.6" id="kVg-e6-uSm"/>
+                    <constraint firstItem="QGd-kd-2da" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="qpo-Xc-4no"/>
+                    <constraint firstItem="QGd-kd-2da" firstAttribute="height" secondItem="H2p-sc-9uM" secondAttribute="height" multiplier="0.4" id="xoU-bb-odx"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
-            <point key="canvasLocation" x="137.68115942028987" y="145.98214285714286"/>
+            <point key="canvasLocation" x="137.68115942028987" y="172.09821428571428"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <image name="smileyface" width="100" height="100"/>
+        <namedColor name="TextGray">
+            <color red="0.30196078431372547" green="0.30196078431372547" blue="0.30196078431372547" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
 </document>

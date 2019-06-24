@@ -54,6 +54,7 @@ class CPProductScreenViewController: UIViewController, UITableViewDelegate, UITa
     var image4 = UIImageView()
     
     var communitiesArray : [String?] = []
+    var productsArray : [String?] = []
     
     
     
@@ -937,7 +938,7 @@ extension CPProductScreenViewController {
         do{
             let json = try JSONSerialization.jsonObject(with: data, options: [])
             
-            print("data in response :: \(json)")
+            print("data in response jhdbhjvvbj :: \(json)")
             guard let purchaseResponse: availablePurchasesBase = Mapper<availablePurchasesBase>().map(JSONObject: json) else {
                 return
             }
@@ -947,17 +948,21 @@ extension CPProductScreenViewController {
                 
                 let communitycount = purchaseResponse.content?.count
                 communitiesArray.removeAll()
+                productsArray.removeAll()
                 if communitycount ?? 0 > 0 && communitycount != nil {
                     
                     for i in 0...(communitycount! - 1) {
                         
                         communitiesArray.append("\(purchaseResponse.content?[i].productDetail?.product?.communityId ?? "")")
+                        productsArray.append("\(purchaseResponse.content?[i].productDetail?.product?.id ?? "")")
                         
                     }
                     
                     print("communities array is :: \(communitiesArray)")
+                    print("product lis array is :: \(productsArray)")
+                    print("current product is :: \(productStruct.productObj.productID)")
                     
-                    if communitiesArray.contains("\(productStruct.productObj.CommunityID)") {
+                    if productsArray.contains("\(productStruct.productObj.productID)") {
                         
                         StructProductRelatedData.purchaseAvailability = true
                         

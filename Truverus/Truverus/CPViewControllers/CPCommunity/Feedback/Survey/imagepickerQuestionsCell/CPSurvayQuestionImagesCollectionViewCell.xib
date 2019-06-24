@@ -24,7 +24,7 @@
                 <rect key="frame" x="0.0" y="0.0" width="117" height="152"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="FT1-gu-bgT">
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="noimage" translatesAutoresizingMaskIntoConstraints="NO" id="FT1-gu-bgT">
                         <rect key="frame" x="0.0" y="0.0" width="117" height="121.5"/>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3wb-wR-Tbw">
@@ -56,4 +56,7 @@
             <point key="canvasLocation" x="186.23188405797103" y="150"/>
         </collectionViewCell>
     </objects>
+    <resources>
+        <image name="noimage" width="480" height="480"/>
+    </resources>
 </document>

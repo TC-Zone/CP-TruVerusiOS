@@ -309,8 +309,10 @@ extension CPLoginViewController{
             guard let loginResponse: googleUserResponse = Mapper<googleUserResponse>().map(JSONObject: json) else {
                 return
             }
+            
+            
             self.dataSourceArray = [loginResponse]
-            defaults.set(nil, forKey: keys.RegisteredUserID)
+            defaults.set(loginResponse.response?.user_id, forKey: keys.RegisteredUserID)
             StructProductRelatedData.purchaseAvailability = false
             
             self.handleWebServiceData()

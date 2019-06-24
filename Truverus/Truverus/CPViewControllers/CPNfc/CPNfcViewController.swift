@@ -32,9 +32,9 @@ class CPNfcViewController: BaseViewController, NFCNDEFReaderSessionDelegate  {
   
 
     @IBAction func ScanButtonAction(_ sender: Any) {
-         // ValidateTag()
-        session = NFCNDEFReaderSession.init(delegate: self, queue: nil, invalidateAfterFirstRead: true)
-        session?.begin()
+         ValidateTag()
+//        session = NFCNDEFReaderSession.init(delegate: self, queue: nil, invalidateAfterFirstRead: true)
+//        session?.begin()
 //
     }
     
@@ -106,12 +106,12 @@ extension CPNfcViewController{
         let headers: [String: String] = [:]
         
         //Correct line for nfc reding
-        let url = NSString.init(format: "%@%@", UrlConstans.BASE_URL, UrlConstans.AUTHENTICATE_PRODUCT + "authCode=\(tagValue ?? "")") as String
+//        let url = NSString.init(format: "%@%@", UrlConstans.BASE_URL, UrlConstans.AUTHENTICATE_PRODUCT + "authCode=\(tagValue ?? "")") as String
         
-//        let url = NSString.init(format: "%@%@", UrlConstans.BASE_URL, UrlConstans.AUTHENTICATE_PRODUCT + "authCode=b8aa641cf33d28fe3b023cde08e4141692861c34faa7513c859a97897d0be94b636bcbacb69b5a58ef97748aa5ec940531f1e61dfd67080383aedf9f31fb69ca163228346710" ) as String
-//        tagValue = "b8aa641cf33d28fe3b023cde08e4141692861c34faa7513c859a97897d0be94b636bcbacb69b5a58ef97748aa5ec940531f1e61dfd67080383aedf9f31fb69ca163228346710"
-//        StructProductRelatedData.ProductTagCode = tagValue
-       // up to this point iys invalid
+        let url = NSString.init(format: "%@%@", UrlConstans.BASE_URL, UrlConstans.AUTHENTICATE_PRODUCT + "authCode=d9cb2170dace9fc64b321bcea94a5fcc509a324d79b55275118e24984517754ba694eae2905a7ba5060e7a16a5d37cd4829eba2b5694caf7b777ec90cb27c3a053268dc56528" ) as String
+        tagValue = "d9cb2170dace9fc64b321bcea94a5fcc509a324d79b55275118e24984517754ba694eae2905a7ba5060e7a16a5d37cd4829eba2b5694caf7b777ec90cb27c3a053268dc56528"
+        StructProductRelatedData.ProductTagCode = tagValue
+      //  up to this point iys invalid
         
         
         print("url is :: \(url)")
