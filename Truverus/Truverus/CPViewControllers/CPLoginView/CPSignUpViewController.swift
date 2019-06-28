@@ -310,7 +310,7 @@ class CPSignUpViewController: BaseViewController, UITextFieldDelegate, GIDSignIn
 
 extension CPSignUpViewController{
     private func getGoogleUser(){
-        SVProgressHUD.show()
+        showProgressHud()
         
         let headers: [String: String] = [:]
         
@@ -356,7 +356,7 @@ extension CPSignUpViewController{
     
     private func getRegisteredUser(name : String, email : String, password : String, mobileNumber : String){
        
-        SVProgressHUD.show()
+        showProgressHud()
         self.createaccountbutton.isEnabled = false
         self.createaccountbutton.backgroundColor = UIColor.lightGray
         ApiManager.shared().RegisterNewUser(name: name, email: email, password: password, mobileNumber: mobileNumber) { (response) in

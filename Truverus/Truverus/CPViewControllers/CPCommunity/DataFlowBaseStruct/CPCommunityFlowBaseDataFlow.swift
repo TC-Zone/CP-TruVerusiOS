@@ -28,3 +28,8 @@ struct feedbacksbase {
 struct surveyModule {
     static var Syrvey = [SurvayBase]()
 }
+
+struct comlistforfeedback {
+    static var comlistforfeedbackdata = [String]()
+    static var survList = [String]()
+}

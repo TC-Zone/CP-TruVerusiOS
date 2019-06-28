@@ -28,7 +28,7 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="uncheck" translatesAutoresizingMaskIntoConstraints="NO" id="gT8-Dl-TlZ">
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="radioicon_unselect" translatesAutoresizingMaskIntoConstraints="NO" id="gT8-Dl-TlZ">
                         <rect key="frame" x="16" y="12" width="20" height="20"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="20" id="h9b-Zo-JSW"/>
@@ -53,6 +53,6 @@
         </tableViewCell>
     </objects>
     <resources>
-        <image name="uncheck" width="14" height="14"/>
+        <image name="radioicon_unselect" width="40" height="40"/>
     </resources>
 </document>

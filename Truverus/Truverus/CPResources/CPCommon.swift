@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import SVProgressHUD
 
 class CPcommon {
     
@@ -129,4 +130,19 @@ extension UIView {
     @objc func dismissKeyboard() {
         self.endEditing(true)
     }
+}
+
+extension UIViewController {
+    
+    func showProgressHud() {
+        
+        SVProgressHUD.setDefaultStyle(.custom)
+        SVProgressHUD.setDefaultMaskType(.custom)
+        SVProgressHUD.setForegroundColor(UIColor.black)           //Ring Color
+        SVProgressHUD.setBackgroundColor(UIColor.clear)        //HUD Color
+        SVProgressHUD.setBackgroundLayerColor(UIColor.black.withAlphaComponent(0.5))
+        SVProgressHUD.show()
+        
+    }
+    
 }

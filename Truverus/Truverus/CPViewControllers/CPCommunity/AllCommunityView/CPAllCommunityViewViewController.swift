@@ -23,20 +23,66 @@ class CPAllCommunityViewViewController: UIViewController, UICollectionViewDelega
     let defaults = UserDefaults.standard
     
     
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         AllCommunitiesCollectionview.dataSource = self
         AllCommunitiesCollectionview.delegate = self
         
-
-        // Do any additional setup after loading the view.
+        communityStartUp()
+        
     }
     
     override func viewDidAppear(_ animated: Bool) {
         AllCommunitiesCollectionview.reloadData()
+    }
+    
+    
+    func communityStartUp() {
+        
+        
+        if defaults.value(forKey: keys.RegisteredUserID) != nil {
+            
+            getPurchasedProducts { (success) in
+                // load community main
+                
+                let count = productCollectionBucket.communityList.count
+                
+                if count > 0 {
+                    
+                    productCollectionBucket.communityNamelist.removeAll()
+                    productCollectionBucket.imageidlist.removeAll()
+                    
+                    for i in 0...(count - 1) {
+                        
+                        if productCollectionBucket.communityList[i] != "" {
+                            
+                            
+                            self.getCommunityData(communityID: "\(productCollectionBucket.communityList[i])", round: i)
+                            
+                        } else {
+                            
+                            print("com id was nil")
+                            
+                        }
+                        
+                    }
+                    
+                    
+                }
+                
+            }
+            
+            
+            
+        } else {
+            
+            print("user id was nil")
+            
+        }
+        
+       
+        
     }
     
     
@@ -154,7 +200,7 @@ class CPAllCommunityViewViewController: UIViewController, UICollectionViewDelega
 extension CPAllCommunityViewViewController {
     
     private func getCommunityData(CommunityID : String){
-        SVProgressHUD.show()
+        showProgressHud()
         
         let token = defaults.value(forKey: keys.accesstoken)
         
@@ -311,6 +357,239 @@ extension CPAllCommunityViewViewController {
     }
     
     
+    
+    
+    
+    private func getCommunityData(communityID : String, round : Int){
+        showProgressHud()
+        
+        let token = defaults.value(forKey: keys.accesstoken)
+        
+        
+        let tokenResult = validateToken(token: token)
+        
+        if tokenResult == true {
+            
+            if communityID != "" {
+                
+                
+                print("current access token is :: \(token ?? "")")
+                
+                let headers: [String: String] = ["Authorization": "Bearer "+(token as! String)]
+                
+                print("community recieved :: \(communityID)")
+                
+                let url = NSString.init(format: "%@%@", UrlConstans.BASE_URL, UrlConstans.COMMUNITY_DATA_VIEW + "\(communityID )") as String
+                
+                print("url is :: \(url)")
+                //        let parameters : [String : Any] = ["authCode=" : "89a9a3077550a1f6df9066a6091017a13e1a266e01e1b071093a4b75a84f338cf979056621a5d2a455c23ebeb2deb74b5cace5c9c6e10620a5741af3d67d5f1b2b752134e9c9"]
+                
+                let parameters : [String : Any] = [:]
+                
+                if let url = URL(string: url) {
+                    ApiManager.shared().makeRequestAlamofire(route: url, method: .get, autherized: false, parameter: parameters, header: headers){ (response) in
+                        SVProgressHUD.dismiss()
+                        switch response{
+                        case let .success(data):
+                            self.serializeCommunityDataResponse(data: data, round: round)
+                            print("hereee")
+                            print(response)
+                        case .failure(let error):
+                            print("\(error.errorCode)")
+                            print("\(error.description)")
+                            print("error status code :: \(error.statusCode)")
+                            if error.statusCode == 401 { // MARK -: Means access token is expired
+                                ApiManager.shared().RetrieveNewAccessToken(callback: { (response) in
+                                    switch response {
+                                    case let .success(data):
+                                        self.serializeNewAccessToken(data: data)
+                                        self.getCommunityData(communityID: communityID, round: round)
+                                        print(response)
+                                    case .failure(let error):
+                                        print("error in retrieving new access token :: \(error)")
+                                    }
+                                })
+                            }
+                        }
+                    }
+                } else {
+                    
+                    print("community id was nil")
+                    
+                }
+                
+            } else {
+                
+                
+                
+            }
+            
+        }
+        
+    }
+    
+    func serializeCommunityDataResponse(data: Data, round : Int) {
+        do{
+            let json = try JSONSerialization.jsonObject(with: data, options: [])
+            
+            print("data in response :: \(json)")
+            guard let CommunityResponse: CommunityData = Mapper<CommunityData>().map(JSONObject: json) else {
+                return
+            }
+            
+            
+            
+            print("status of community response :: \(CommunityResponse.status)")
+            print("status of community description :: \(CommunityResponse.content?.description)")
+            print("status of community name :: \(CommunityResponse.content?.name)")
+            print("status of community id :: \(CommunityResponse.content?.id)")
+            print("status of community status :: \(CommunityResponse.content?.status)")
+            print("status of community client id :: \(CommunityResponse.content?.client?.id)")
+            print("status of community client name :: \(CommunityResponse.content?.client?.name)")
+            
+            productCollectionBucket.featureCom.append(comListFeatures(comID: CommunityResponse.content?.id ?? "", ComName: CommunityResponse.content?.name ?? ""))
+            
+            let imageurl = NSString.init(format: "%@%@", UrlConstans.BASE_URL, UrlConstans.CLIENT_IMAGE_BY_ID + "\(CommunityResponse.content?.client?.id ?? "")") as String
+            
+            productCollectionBucket.communityNamelist.append(CommunityResponse.content?.name ?? "")
+            productCollectionBucket.imageidlist.append(imageurl)
+            
+            print("imageidlist is :: \(productCollectionBucket.imageidlist)")
+            print("com names is :: \(productCollectionBucket.communityNamelist)")
+            
+            print("round is :: \(round)")
+            print("bucket is :: \(productCollectionBucket.communityList.count)")
+            
+            if round == ((productCollectionBucket.communityList.count) - 1) {
+               
+                AllCommunitiesCollectionview.reloadData()
+                
+            }
+   
+            
+            
+        }catch {
+            print(error)
+        }
+    }
+    
+    
+    
+    
+    /////////////
+    
+    private func getPurchasedProducts(completion: @escaping (_ success: Bool) -> Void){
+        
+        showProgressHud()
+        
+        let headers: [String: String] = [:]
+        let userId = defaults.value(forKey: keys.RegisteredUserID)
+        
+        
+        if userId != nil {
+            
+            let url = NSString.init(format: "%@%@", UrlConstans.BASE_URL, UrlConstans.PURCHASED_PRODUCTS_BY_USER_ID + "\(userId ?? "")") as String
+            
+            print("url is :: \(url)")
+            
+            let parameters : [String : Any] = [:]
+            
+            if let url = URL(string: url) {
+                ApiManager.shared().makeRequestAlamofire(route: url, method: .get, autherized: true, parameter: parameters, header: headers){ (response) in
+                    SVProgressHUD.dismiss()
+                    switch response{
+                    case let .success(data):
+                        self.serializeproResponse(data: data)
+                        completion(true)
+                        print("hereee")
+                        print(response)
+                    case .failure(let error):
+                        print("fail errorr :::::: \(error.errorCode)")
+                        completion(false)
+                    }
+                }
+            }
+            
+        } else {
+            
+            SVProgressHUD.dismiss()
+            
+        }
+        
+        
+    }
+    
+    func serializeproResponse(data: Data) {
+        do{
+            let json = try JSONSerialization.jsonObject(with: data, options: [])
+            
+            print("data in response :: \(json)")
+            guard let proCollectionResponse: ProductCollectionBase = Mapper<ProductCollectionBase>().map(JSONObject: json) else {
+                return
+            }
+            
+            
+            
+            productCollectionBucket.communityList.removeAll()
+            productCollectionBucket.featureCom.removeAll()
+            
+            if proCollectionResponse.status == "OK" {
+                
+                if proCollectionResponse.content != nil {
+                    
+                    let count = proCollectionResponse.content?.count ?? 0
+                    
+                    if count > 0 {
+                        
+                        productCollectionBucket.communityNamelist.removeAll()
+                        productCollectionBucket.imageidlist.removeAll()
+                        comlistforfeedback.comlistforfeedbackdata.removeAll()
+                        
+                        for i in 0...(count - 1) {
+                            
+                            if proCollectionResponse.content?[i].productDetail?.product?.communityId != "" {
+                                
+                                
+                                if productCollectionBucket.communityList.contains(proCollectionResponse.content?[i].productDetail?.product?.communityId ?? "") {
+                                    
+                                    
+                                } else {
+                                    
+                                    productCollectionBucket.communityList.append(proCollectionResponse.content?[i].productDetail?.product?.communityId ?? "")
+                                    
+                                    
+                                    
+                                }
+                                
+                                comlistforfeedback.comlistforfeedbackdata.append(proCollectionResponse.content?[i].productDetail?.product?.communityId ?? "")
+                                
+                                
+                            } else {
+                                
+                                print("com id was nil")
+                                
+                            }
+                            
+                        }
+                        
+                        
+                    }
+                    
+                    print("community cpntent is empty")
+                    print("community array is \(productCollectionBucket.communityList)")
+                    
+                }
+                
+            }
+            
+            
+            
+        }catch {
+            print(error)
+        }
+    }
+    
+ 
 }
 
 

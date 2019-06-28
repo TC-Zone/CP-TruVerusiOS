@@ -164,7 +164,7 @@ extension CPCommunityMainViewController {
     
     
     private func getEventsData() {
-        SVProgressHUD.show()
+        showProgressHud()
         
         let access = defaults.value(forKey: keys.accesstoken)
         
@@ -236,7 +236,7 @@ extension CPCommunityMainViewController {
     
     
     private func getPromotionsData() {
-        SVProgressHUD.show()
+        showProgressHud()
 
         let access = defaults.value(forKey: keys.accesstoken)
 
@@ -309,7 +309,7 @@ extension CPCommunityMainViewController {
     
     private func getFeedbackData() {
         
-        SVProgressHUD.show()
+        showProgressHud()
         
         let access = defaults.value(forKey: keys.accesstoken)
         
@@ -364,7 +364,7 @@ extension CPCommunityMainViewController {
             print("data is :: \(data.description)")
             let json = try JSONSerialization.jsonObject(with: data, options: [])
             
-            print("data in response :: \(json)")
+            print("data in response of feedback is :: \(json)")
             guard let feedbacksResponse: FeedbacksData = Mapper<FeedbacksData>().map(JSONObject: json) else {
                 return
             }
@@ -379,236 +379,15 @@ extension CPCommunityMainViewController {
              FeedbackIndicationImage.image = UIImage(named: "zero feedbacks")
             }
             
-            getsurveyByFeedbackid()
-            
-        }catch {
-            print(error)
-        }
-    }
-    
-    
-    private func getsurveyByFeedbackid() {
-        
-        SVProgressHUD.show()
-        
-        let access = defaults.value(forKey: keys.accesstoken)
-        
-        let accessState = validateToken(token: access)
-        
-        if accessState == true && feedbackId != "" {
-            
-            
-            let headers: [String: String] = ["Authorization": "Bearer "+(access as! String)]
-            
-            let url = NSString.init(format: "%@%@", UrlConstans.BASE_URL, UrlConstans.VIEW_SURVAY_BY_FEEDBACK_ID + "\(feedbackId ?? "")") as String
-            
-            print("feed back url is :: \(url)")
-            //        let parameters : [String : Any] = ["authCode=" : "89a9a3077550a1f6df9066a6091017a13e1a266e01e1b071093a4b75a84f338cf979056621a5d2a455c23ebeb2deb74b5cace5c9c6e10620a5741af3d67d5f1b2b752134e9c9"]
-            
-            let parameters : [String : Any] = [:]
-            
-            if let url = URL(string: url) {
-                ApiManager.shared().makeRequestAlamofire(route: url, method: .get, autherized: false, parameter: parameters, header: headers){ (response) in
-                    SVProgressHUD.dismiss()
-                    switch response{
-                    case let .success(data):
-                        self.serializeSurvayIdfromFeedback(data: data)
-                        print("hereee")
-                        print(response)
-                    case .failure(let error):
-                        print("\(error.errorCode)")
-                        print("\(error.description)")
-                        print("error status code :: \(error.statusCode)")
-                        if error.statusCode == 401 { // MARK -: Means access token is expired
-                            ApiManager.shared().RetrieveNewAccessToken(callback: { (response) in
-                                switch response {
-                                case let .success(data):
-                                    self.serializeNewAccessToken(data: data)
-                                    self.getsurveyByFeedbackid()
-                                    print(response)
-                                case .failure(let error):
-                                    print("error in retrieving new access token :: \(error)")
-                                }
-                            })
-                        }
-                    }
-                }
-            }
-            
-        } else {
-            
-            print("something went wrong with feedback id")
-            
-        }
-        
-    }
-    
-    
-    func serializeSurvayIdfromFeedback(data: Data) {
-        do{
-            print("data is :: \(data.description)")
-            let json = try JSONSerialization.jsonObject(with: data, options: [])
-            
-            print("data in response :: \(json)")
-            guard let feedbacksSurveyResponse: survayByFeedbackData = Mapper<survayByFeedbackData>().map(JSONObject: json) else {
-                return
-            }
-            
-            if feedbacksSurveyResponse.content?.surveyId != "" {
-                
-                print("survay id is :: \(feedbacksSurveyResponse.content?.surveyId)")
-                self.SurvayID = feedbacksSurveyResponse.content?.surveyId
-            }
-            
-            getsurveyByid()
-            
-        }catch {
-            print(error)
-        }
-    }
-    
-    private func getsurveyByid() {
-        
-        SVProgressHUD.show()
-        self.explorebutton.isEnabled = false
-        self.explorebutton.backgroundColor = UIColor.lightGray
-        
-        if SurvayID != "" {
-            
-            
-            let headers: [String: String] = [:]
-            
-            let url = NSString.init(format: "%@%@", UrlConstans.BASE_URL, UrlConstans.GET_SURVAY_BY_ID + "\(SurvayID ?? "")") as String
-            
-            print("feed back url is :: \(url)")
-            //        let parameters : [String : Any] = ["authCode=" : "89a9a3077550a1f6df9066a6091017a13e1a266e01e1b071093a4b75a84f338cf979056621a5d2a455c23ebeb2deb74b5cace5c9c6e10620a5741af3d67d5f1b2b752134e9c9"]
-            
-            let parameters : [String : Any] = [:]
-            
-            if let url = URL(string: url) {
-                ApiManager.shared().makeRequestAlamofire(route: url, method: .get, autherized: false, parameter: parameters, header: headers){ (response) in
-                    SVProgressHUD.dismiss()
-                    switch response{
-                    case let .success(data):
-                        self.serializeSurvay(data: data)
-                        print("hereee")
-                        print(response)
-                    case .failure(let error):
-                        self.explorebutton.isEnabled = true
-                        self.explorebutton.backgroundColor = UIColor.black
-                        print("\(error.errorCode)")
-                        print("\(error.description)")
-                        print("error status code :: \(error.statusCode)")
-                        if error.statusCode == 401 { // MARK -: Means access token is expired
-                            ApiManager.shared().RetrieveNewAccessToken(callback: { (response) in
-                                switch response {
-                                case let .success(data):
-                                    self.serializeNewAccessToken(data: data)
-                                    self.getsurveyByid()
-                                    print(response)
-                                case .failure(let error):
-                                    print("error in retrieving new access token :: \(error)")
-                                }
-                            })
-                        }
-                    }
-                }
-            }
-            
-        } else {
-            
-            print("something went wrong with feedback id")
-            
-        }
-        
-    }
-    
-    
-    func serializeSurvay(data: Data) {
-        do{
-            print("data is :: \(data.description)")
-            let json = try JSONSerialization.jsonObject(with: data, options: [])
-            
-            print("data in response :: \(json)")
-            guard let SurveyResponse: SurvayData = Mapper<SurvayData>().map(JSONObject: json) else {
-                return
-            }
-            
-            if SurveyResponse.content?.jsonContent != "" {
-                
-                print("survay is :: \(SurveyResponse.content?.jsonContent)")
-                let returnedSuryay = SurveyResponse.content?.jsonContent
-                let returnedSuryayedit1 = returnedSuryay!.dropFirst(1)
-                print("edit 1 :: \(returnedSuryayedit1)")
-                let finalsurvayString = String(returnedSuryayedit1.dropLast(1)) as String
-                print("ready string for survay :: \(finalsurvayString)")
-                
-                let goodstring = finalsurvayString.unescaped
-                
-                print("good string is :: \(goodstring)")
-                
-                let dataaaa = Data(goodstring.utf8)
-//
-                do {
-                    let jsonsss = try JSONSerialization.jsonObject(with: dataaaa, options: [])
-                   
-                        print("recreated json :: \(jsonsss)") // use the json here
-                        guard let SurveyBase: SurvayBase = Mapper<SurvayBase>().map(JSONObject: jsonsss) else {
-                            return
-                        }
-                    
-                    surveyModule.Syrvey = [SurveyBase]
-                    
-                    if SurveyBase.pages![0].elements?.count != nil && (SurveyBase.pages![0].elements?.count ?? 0) > 0 {
-                        
-                        print("recreated response :: \(SurveyBase)")
-                        print("page count :: \(SurveyBase.pages?.count)")
-                        print("questions count :: \(SurveyBase.pages![0].elements?.count)")
-                        let elemente = SurveyBase.pages![0].elements
-                        let count = SurveyBase.pages![0].elements?.count
-                        
-                        for i in 0...(count! - 1) {
-                            
-                            print("type of question \(i) is :: \(elemente![i].type ?? "nothing")")
-                        }
-                        
-                    } else {
-                        
-                        
-                        
-                        
-                    }
-                    
-                    
-                    
-                } catch let error as NSError {
-                    print(error)
-                }
-                
-               
-                
-            }
-            
             self.explorebutton.isEnabled = true
             self.explorebutton.backgroundColor = UIColor.black
             
+            
         }catch {
             print(error)
         }
     }
-    
+  
     
 }
 
-extension String {
-    var unescaped: String {
-        let entities = ["\0", "\t", "\n", "\r", "\"", "\'", "\\"]
-        var current = self
-        for entity in entities {
-            let descriptionCharacters = entity.debugDescription.dropFirst().dropLast()
-            let description = String(descriptionCharacters)
-            current = current.replacingOccurrences(of: description, with: entity)
-        }
-        return current
-    }
-}

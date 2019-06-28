@@ -22,17 +22,7 @@ class CPCollectionViewController: UIViewController, UICollectionViewDelegate, UI
     
     var tempImgArray = [String]()
     
-    
-    
-    let productNames = ["Adidas Jacket","Guccie shoe","Rolex watch","Puffer Jacket"]
-    let productImages = [#imageLiteral(resourceName: "jursey"),#imageLiteral(resourceName: "Running"),#imageLiteral(resourceName: "watch"),#imageLiteral(resourceName: "blackJersy")]
-    
-    let jacketimages = [#imageLiteral(resourceName: "jursey"),#imageLiteral(resourceName: "nikejackShaded")]
-    let shoeimages = [#imageLiteral(resourceName: "Running"),#imageLiteral(resourceName: "shoe")]
-    let watchtimages = [#imageLiteral(resourceName: "watch"),#imageLiteral(resourceName: "rollexShaded")]
-    let jerceytimages = [#imageLiteral(resourceName: "blackJersy"),#imageLiteral(resourceName: "jacketShaded")]
-    
-    let titles = ["ADIDAS JACKET","GUCCI SHOE","ROLEX WATCH","NIKE WOMEN'S REVERSIBLE HEAVYWEIGHT PUFFER JACKET"]
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,7 +30,7 @@ class CPCollectionViewController: UIViewController, UICollectionViewDelegate, UI
         Collection.dataSource = self
         Collection.delegate = self
         
-        
+        //Collection.reloadData()
         
         let layout = self.Collection.collectionViewLayout as! UICollectionViewFlowLayout
         layout.sectionInset = UIEdgeInsets(top: 0, left: 6, bottom: 0, right: 6)
@@ -243,13 +233,7 @@ class CPCollectionViewController: UIViewController, UICollectionViewDelegate, UI
         let news = self.storyboard?.instantiateViewController(withIdentifier: "CPProductScreenVC") as! CPProductScreenViewController
         news.view.frame = self.view.bounds
         news.currentviewFlag = 1
-        
-        news.image1.image = nil
-        news.image2.image = nil
-        news.image3.image = nil
-        news.image4.image = nil
-        
-        
+  
         if (sender == "add") {
             
             
@@ -310,15 +294,7 @@ class CPCollectionViewController: UIViewController, UICollectionViewDelegate, UI
         
     }
     
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destination.
-     // Pass the selected object to the new view controller.
-     }
-     */
+
     
 }
 
@@ -341,14 +317,12 @@ extension CPCollectionViewController {
     
     
     private func getProductdata(productID : String , completion: @escaping (_ success: Bool) -> Void){
-        SVProgressHUD.show()
+        showProgressHud()
         
         let headers: [String: String] = [:]
         
         let url = NSString.init(format: "%@%@", UrlConstans.BASE_URL, UrlConstans.PRODUCT_DETAILS_VIEW + "\(productID)") as String
-        
-        print("url is :: \(url)")
-        //        let parameters : [String : Any] = ["authCode=" : "89a9a3077550a1f6df9066a6091017a13e1a266e01e1b071093a4b75a84f338cf979056621a5d2a455c23ebeb2deb74b5cace5c9c6e10620a5741af3d67d5f1b2b752134e9c9"]
+  
         
         let parameters : [String : Any] = [:]
         

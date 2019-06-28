@@ -14,7 +14,6 @@ import ObjectMapper
 class CPFeedbackSubViewController: UIViewController, UITextFieldDelegate , UITextViewDelegate, UITableViewDelegate, UITableViewDataSource {
     
     
-
     @IBOutlet weak var NameText: UITextField!
     @IBOutlet weak var AgeText: UITextField!
     @IBOutlet weak var DescriptionTextArea: UITextView!
@@ -41,6 +40,11 @@ class CPFeedbackSubViewController: UIViewController, UITextFieldDelegate , UITex
     var imageAnswerArray : [String : Any]?
     
     
+    var feedbackID : String!
+    
+    var backFlag : Bool!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -56,12 +60,29 @@ class CPFeedbackSubViewController: UIViewController, UITextFieldDelegate , UITex
         self.SurveyTableView.register(UINib(nibName: "CPNoSurveyTableViewCell", bundle: nil), forCellReuseIdentifier: "NoSurveyCell")
         self.SurveyTableView.register(UINib(nibName: "CPSurveyCompleatedTableViewCell", bundle: nil), forCellReuseIdentifier: "CompleatedSurveycell")
         
+        NotificationCenter.default.addObserver(self, selector: #selector(setdataWithServices), name: NSNotification.Name(rawValue: "loadfeed"), object: nil)
         
-        nextActionForCommon()
+    }
+    
+    
+    @objc func setdataWithServices() {
         
-//        PreviousButton.isEnabled = false
-//        PreviousButton.backgroundColor = UIColor.lightGray
-        // Do any additional setup after loading the view.
+       self.SurveyTableView.reloadData()
+        
+        
+
+            if surveyModule.Syrvey.isEmpty == false && surveyModule.Syrvey.count > 0{
+
+                currentIndex = 0
+
+             type = surveyModule.Syrvey[0].pages![0].elements![currentIndex].type
+                currentIndex = currentIndex + 1
+         
+        
+            }
+            
+        
+       
         
     }
     
@@ -86,13 +107,11 @@ class CPFeedbackSubViewController: UIViewController, UITextFieldDelegate , UITex
                 cell.AnswerText.text = ""
             }
             
-            
-            // Set up cell.label
             return cell
         } else if type == "radiogroup" {
             let cell = tableView.dequeueReusableCell(withIdentifier: "RadioCell") as! CPRadiogroupTableViewCell
            
-            print("choices count :: \(surveyModule.Syrvey[0].pages![0].elements![currentIndex - 1].choices?.count)")
+            print("choices count :: \(surveyModule.Syrvey[0].pages![0].elements![currentIndex - 1].choices?.count ?? 0)")
             let count = surveyModule.Syrvey[0].pages![0].elements![currentIndex - 1].choices?.count
             cell.questionnumber.text = "Question \(currentIndex ?? 1)"
             cell.Question.text = surveyModule.Syrvey[0].pages![0].elements![currentIndex - 1].title
@@ -100,13 +119,15 @@ class CPFeedbackSubViewController: UIViewController, UITextFieldDelegate , UITex
             cell.qnumber = surveyModule.Syrvey[0].pages![0].elements![currentIndex - 1].name
             
             cell.items.removeAll()
-            for i in 0...(count! - 1) {
-                
-                cell.items.append(surveyModule.Syrvey[0].pages![0].elements![currentIndex - 1].choices![i].text!)
-                print("items in radio :: \(cell.items)")
-                
-            }
             
+                for i in 0...(count! - 1) {
+                    
+                    cell.items.append(surveyModule.Syrvey[0].pages![0].elements![currentIndex - 1].choices![i].text!)
+                    print("items in radio :: \(cell.items)")
+                    
+                }
+            
+            cell.RadioTable.reloadData()
             
             if cell.answr.isEmpty == false {
                 
@@ -205,7 +226,6 @@ class CPFeedbackSubViewController: UIViewController, UITextFieldDelegate , UITex
                         }
                         
                     }
-                    //cell.ans.removeAll()
                     
                 }
                 
@@ -216,9 +236,6 @@ class CPFeedbackSubViewController: UIViewController, UITextFieldDelegate , UITex
             }
             
             
-            
-            
-            // Set up cell.button
             return cell
         } else if type == "rating" {
             let cell = tableView.dequeueReusableCell(withIdentifier: "ratingCell") as! CPRatingTableViewCell
@@ -298,8 +315,10 @@ class CPFeedbackSubViewController: UIViewController, UITextFieldDelegate , UITex
             for i in 0...(count! - 1) {
                 
                 cell.items.append(surveyModule.Syrvey[0].pages![0].elements![currentIndex - 1].choices![i].text!)
-                //gyg
+                
             }
+            
+            cell.CheckboxesTable.reloadData()
             
             if cell.ans.isEmpty == false {
                 
@@ -316,7 +335,6 @@ class CPFeedbackSubViewController: UIViewController, UITextFieldDelegate , UITex
                     }
                     
                     cell.CheckboxesTable.reloadData()
-                    //cell.ans.removeAll()
                     
                 }
                 
@@ -367,16 +385,37 @@ class CPFeedbackSubViewController: UIViewController, UITextFieldDelegate , UITex
     
     @IBAction func BackAction(_ sender: Any) {
         
+        if PreviousButton.backgroundColor == UIColor(named: "CancelRed") || NextButton.backgroundColor == UIColor(named: "AcceptGreen") {
+            
+            if let parent = self.parent as? CPFeedbackViewController {
+                let transition = CATransition()
+                transition.type = CATransitionType.push
+                transition.subtype = CATransitionSubtype.fromRight
+                parent.view.layer.add(transition, forKey: nil)
+                parent.handleBack()
+            }
+            self.currentIndex = 0
+            type = ""
+            //print("all removed")
+            //surveyModule.Syrvey.removeAll()
+//            nextActionForCommon()
+            //NotificationCenter.default.post(name: NSNotification.Name(rawValue: "loadfeedSurv"), object: nil)
+            
+            
+            
+            
+            
+        } else {
         
+            if let parent = self.parent as? CPFeedbackViewController {
+                let transition = CATransition()
+                transition.type = CATransitionType.push
+                transition.subtype = CATransitionSubtype.fromRight
+                parent.view.layer.add(transition, forKey: nil)
+                parent.handleBack()
+            }
         
-        if let parent = self.parent as? CPFeedbackViewController {
-            let transition = CATransition()
-            transition.type = CATransitionType.push
-            transition.subtype = CATransitionSubtype.fromRight
-            parent.view.layer.add(transition, forKey: nil)
-            parent.handleBack()
         }
-        
         
         
     }
@@ -402,13 +441,12 @@ class CPFeedbackSubViewController: UIViewController, UITextFieldDelegate , UITex
                 self.NextButton.isEnabled = true
                 self.NextButton.backgroundColor = UIColor(named: "AcceptGreen")
                 self.NextButton.setTitle("Next", for: UIControl.State.normal)
-                self.nextActionForCommon()
+
                 
             }
             alert.addAction(okAction)
             self.present(alert, animated: true, completion: nil)
             
-            //hujbj
         } else {
             
             nextActionForCommon()
@@ -754,8 +792,6 @@ class CPFeedbackSubViewController: UIViewController, UITextFieldDelegate , UITex
                 if currentIndex == (elementscount! - 1) || currentIndex - 1 < (elementscount! - 1) && surveyModule.Syrvey[0].pages![0].elements![currentIndex - 1].type != "" || currentIndex <= elementsCount! {
                     type = surveyModule.Syrvey[0].pages![0].elements![currentIndex - 1].type
                 
-                    // retrieve data and show
-                    
                     
                 } else {
                     type = "NoSurveyCell"
@@ -776,82 +812,9 @@ class CPFeedbackSubViewController: UIViewController, UITextFieldDelegate , UITex
          SurveyTableView.reloadData()
         
     }
-    
-    
-    
-    //    func InitTextFields(){
-//
-//        CreateTextFields(TextField: NameText)
-//        CreateTextFields(TextField: AgeText)
-//        createTextArea(TextField: DescriptionTextArea)
-//
-//
-//    }
-//
-//    func CreateTextFields(TextField : UITextField ) {
-//
-//
-//        let leftView = UIView()
-//        //leftView.addSubview(ImgView)
-//
-//        leftView.frame = CGRect(x: 0, y: 0, width: 30, height: 20)
-//        //ImgView.frame = CGRect(x: 11, y: 0, width: 15, height: 15)
-//
-//        TextField.leftView = leftView
-//        TextField.leftViewMode = .always
-//
-//
-//        TextField.layer.borderColor = UIColor(named: "TextGray")?.cgColor
-//        TextField.layer.borderWidth = 1.0
-//        TextField.layer.cornerRadius = 23
-//
-//    }
-//
-//    func createTextArea(TextField : UITextView) {
-//
-//
-//        TextField.layer.borderColor = UIColor(named: "TextGray")?.cgColor
-//        TextField.layer.borderWidth = 1.0
-//        TextField.layer.cornerRadius = 23
-//
-//        TextField.textContainerInset = UIEdgeInsets(top: 10, left: 5, bottom: 10, right: 5)
-//
-//    }
-//
-//    func settextDelegates() {
-//
-//        NameText.delegate = self
-//        AgeText.delegate = self
-//        DescriptionTextArea.delegate = self
-//    }
-//
-//
-//    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-//
-//        NameText.resignFirstResponder()
-//        AgeText.resignFirstResponder()
-//        DescriptionTextArea.resignFirstResponder()
-//
-//        return true
-//    }
-    
-//    func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
-//        if text == "\n" {
-//            textView.resignFirstResponder()
-//            return false
-//        }
-//        return true
-//    }
-    
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destination.
-     // Pass the selected object to the new view controller.
-     }
-     */
+
 
 }
+
+
 

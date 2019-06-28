@@ -277,7 +277,7 @@ class CPLoginViewController: UIViewController, UITextFieldDelegate, GIDSignInDel
 
 extension CPLoginViewController{
     private func getGoogleUser(){
-        SVProgressHUD.show()
+        showProgressHud()
         
         let headers: [String: String] = [:]
         
@@ -327,7 +327,7 @@ extension CPLoginViewController{
     private func getLoggedInUser(email : String, password : String){
         
         
-        SVProgressHUD.show()
+        showProgressHud()
         ApiManager.shared().logInUser(usernameinput: email, passwordinput: password) { (response) in
             switch response {
             case let .success(data):
@@ -434,7 +434,7 @@ extension CPLoginViewController{
     
     
     private func retrieveUserData() {
-        SVProgressHUD.show()
+        showProgressHud()
         
         let access = defaults.value(forKey: keys.accesstoken)
         
@@ -588,5 +588,8 @@ extension CPLoginViewController{
         self.present(alert, animated: true, completion: nil)
         
     }
+    
+    
+    
     
 }

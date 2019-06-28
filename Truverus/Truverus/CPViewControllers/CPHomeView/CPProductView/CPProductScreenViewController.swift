@@ -40,7 +40,7 @@ class CPProductScreenViewController: UIViewController, UITableViewDelegate, UITa
     
     var scroll = UIScrollView()
     
-    var images = [#imageLiteral(resourceName: "jursey"),#imageLiteral(resourceName: "blackJersy"),#imageLiteral(resourceName: "watch"),#imageLiteral(resourceName: "Running")]
+
     
     var MaximageCount = 4
     
@@ -282,7 +282,7 @@ class CPProductScreenViewController: UIViewController, UITableViewDelegate, UITa
             } else if (i == 1){
                 
                 if callingFrom == "collection" {
-                    image2.image = images[i]
+                    //image2.image = images[i]
                 } else {
                     if imgUrl != nil {
                         image2.kf.setImage(with: imgUrl)
@@ -297,7 +297,7 @@ class CPProductScreenViewController: UIViewController, UITableViewDelegate, UITa
             } else if (i == 2){
                 
                 if callingFrom == "collection" {
-                    image3.image = images[i]
+                   // image3.image = images[i]
                 } else {
                     if imgUrl != nil {
                         image3.kf.setImage(with: imgUrl)
@@ -312,7 +312,7 @@ class CPProductScreenViewController: UIViewController, UITableViewDelegate, UITa
             } else if (i == 3){
                 
                 if callingFrom == "collection" {
-                    image4.image = images[i]
+                 //   image4.image = images[i]
                 } else {
                     if imgUrl != nil {
                         image4.kf.setImage(with: imgUrl)
@@ -444,7 +444,7 @@ class CPProductScreenViewController: UIViewController, UITableViewDelegate, UITa
             if (productStruct.productObj.ImagesList.count < 2){
                 cell.PageControll.numberOfPages = 0
                 
-            } else if (images.count > 4){
+            } else if (productStruct.productObj.ImagesList.count  > 4){
                 cell.PageControll.numberOfPages = 4
             } else {
                 cell.PageControll.numberOfPages = productStruct.productObj.ImagesList.count
@@ -502,14 +502,7 @@ class CPProductScreenViewController: UIViewController, UITableViewDelegate, UITa
         }
         
     }
-    
-    func manageContent(){
-        
-        descriptionText = "When you think Nike, your mind can take you in so many different directions, but it all comes back to the When you think Nike, your mind can take you in so many different directions, but it When you think Nike, your mind can take you in so many different directions, but it all comes back to the When you think Nike, your mind can take you in so many different directions, but itWhen you think Nike, your mind can take you in so many different directions, but it all comes back to the When you think Nike, your mind can take you in so many different directions, but itWhen you think Nike, your mind can take you in so many different directions, but it all comes back to the When you think Nike, your mind can take you in so many different directions, but itWhen you think Nike, your mind can take you in so many different directions, but it all comes back to the When you think Nike, your mind can take you in so many different directions, but itWhen you think Nike, your mind can take you in so many different directions, but it all comes back to the When you think Nike, your mind can take you in so many different directions, but itWhen you think Nike, your mind can take you in so many different directions, but it all comes back to the When you think Nike, your mind can take you in so many different directions, but itWhen you think Nike, your mind can take you in so many different directions, but it all comes back to the When you think Nike, your mind can take you in so many different directions, but itWhen you think Nike, your mind can take you in so many different directions, but it all comes back to the When you think Nike, your mind can take you in so many different directions, but itWhen you think Nike, your mind can take you in so many different directions, but it all comes back to the When you think Nike, your mind can take you in so many different directions, but itWhen you think Nike, your mind can take you in so many different directions, but it all comes back to the When you think Nike, your mind can take you in so many different directions, but itWhen you think Nike, your mind can take you in so many different directions, but it all comes back to the When you think Nike, your mind can take you in so many different directions, but itWhen you think Nike, your mind can take you in so many different directions, but it all comes back to the When you think Nike, your mind can take you in so many different directions, but itWhen you think Nike, your mind can take you in so many different directions, but it all comes back to the When you think Nike, your mind can take you in so many different directions. "
-        
-        productname = "ADIDAS JERCEY"
-        
-    }
+  
     
 
 
@@ -520,7 +513,7 @@ class CPProductScreenViewController: UIViewController, UITableViewDelegate, UITa
 extension CPProductScreenViewController {
     
     private func getCommunityData(){
-        SVProgressHUD.show()
+        showProgressHud()
         
         let token = defaults.value(forKey: keys.accesstoken)
         
@@ -680,7 +673,7 @@ extension CPProductScreenViewController {
     
     
     private func getEventsData() {
-        SVProgressHUD.show()
+        showProgressHud()
         
         let access = defaults.value(forKey: keys.accesstoken)
         
@@ -751,7 +744,7 @@ extension CPProductScreenViewController {
     
     
     private func getPromotionsData() {
-        SVProgressHUD.show()
+        showProgressHud()
         
         let access = defaults.value(forKey: keys.accesstoken)
         
@@ -822,7 +815,7 @@ extension CPProductScreenViewController {
     
     private func getFeedbackData() {
         
-        SVProgressHUD.show()
+        showProgressHud()
         
         let access = defaults.value(forKey: keys.accesstoken)
         
@@ -893,7 +886,7 @@ extension CPProductScreenViewController {
  
     
     private func ValidatePurchaseData(){
-        SVProgressHUD.show()
+        showProgressHud()
         
         let headers: [String: String] = [:]
         

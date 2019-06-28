@@ -120,7 +120,7 @@ class CPPopupViewController: UIViewController {
 extension CPPopupViewController {
     
     private func getProductdata(){
-        SVProgressHUD.show()
+        showProgressHud()
         
         let headers: [String: String] = [:]
         
@@ -216,7 +216,7 @@ extension CPPopupViewController {
     }
     
     private func getPurchasedProducts(){
-        SVProgressHUD.show()
+        showProgressHud()
         
         let headers: [String: String] = [:]
         let userId = defaults.value(forKey: keys.RegisteredUserID)

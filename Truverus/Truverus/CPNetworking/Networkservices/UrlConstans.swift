@@ -34,4 +34,5 @@ struct UrlConstans {
     static var GET_PURCHASED_ITEMS : String        = "/product/api/productOps/soldProducts/"
     static var UPDATE_COMMUNITY_BY_PURCHASES : String = "/user/api/platform-users/communities/"
     static var PURCHASED_PRODUCTS_BY_USER_ID : String = "/product/api/productOps/soldProducts/"
+    static var IS_PURCHASED_BY_AUTHCODE : String   = "/product/api/productOps/isPurchased/"
 }

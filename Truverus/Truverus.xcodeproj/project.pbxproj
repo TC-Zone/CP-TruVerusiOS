@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0C9366DA22C0D6AB00562E7A /* CPispurchasedDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C9366D922C0D6AB00562E7A /* CPispurchasedDataModel.swift */; };
 		454A580AF15DF81C903B50A2 /* Pods_Truverus.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E56E34A7933A4FBFE8F88BB /* Pods_Truverus.framework */; };
 		C52D6FD622A8EEE100FFC562 /* CPDropdownTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C52D6FD422A8EEE100FFC562 /* CPDropdownTableViewCell.swift */; };
 		C52D6FD722A8EEE100FFC562 /* CPDropdownTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C52D6FD522A8EEE100FFC562 /* CPDropdownTableViewCell.xib */; };
@@ -180,6 +181,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0C9366D922C0D6AB00562E7A /* CPispurchasedDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CPispurchasedDataModel.swift; sourceTree = "<group>"; };
 		5E56E34A7933A4FBFE8F88BB /* Pods_Truverus.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Truverus.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A91101BB2D5F90C4EA4DE7D8 /* Pods-Truverus.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Truverus.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Truverus/Pods-Truverus.debug.xcconfig"; sourceTree = "<group>"; };
 		C52D6FD422A8EEE100FFC562 /* CPDropdownTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CPDropdownTableViewCell.swift; sourceTree = "<group>"; };
@@ -501,6 +503,7 @@
 				C59850FC22B7653600CE3AB6 /* CPAvailablePurchasedItemsResponse.swift */,
 				C59850FE22B7A0AC00CE3AB6 /* CPPurchaseProductDataModel.swift */,
 				C598510022B7D9C300CE3AB6 /* CPUpdateCommunityDataModel.swift */,
+				0C9366D922C0D6AB00562E7A /* CPispurchasedDataModel.swift */,
 			);
 			path = DataModels;
 			sourceTree = "<group>";
@@ -1284,6 +1287,7 @@
 				CEE91217229415F30000F3EE /* CPPopupViewController.swift in Sources */,
 				C52D6FDB22A9000400FFC562 /* CPImagepickerTableViewCell.swift in Sources */,
 				CE4C3A8D227DB393004443A2 /* CPShareAppTableViewCell.swift in Sources */,
+				0C9366DA22C0D6AB00562E7A /* CPispurchasedDataModel.swift in Sources */,
 				CEE911AE22893F480000F3EE /* CPPromotionsViewController.swift in Sources */,
 				CEA9EC28229FCF9200F5396A /* CPCommunityFlowBaseDataFlow.swift in Sources */,
 				CEE911BA228943D20000F3EE /* CPPromotionSubviewViewController.swift in Sources */,

@@ -46,7 +46,7 @@ class CPRadiogroupTableViewCell: UITableViewCell, UITableViewDataSource, UITable
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "RadioCell", for: indexPath) as! CPRadioCellTableViewCell
         cell.Answerlable.text = items[indexPath.row]
-        cell.RadioCheckimage.image = UIImage(named: "uncheck")
+        cell.RadioCheckimage.image = UIImage(named: "radioicon_unselect")
         
         return cell
     }
@@ -55,8 +55,8 @@ class CPRadiogroupTableViewCell: UITableViewCell, UITableViewDataSource, UITable
         
         let cell = tableView.cellForRow(at: indexPath) as! CPRadioCellTableViewCell
         
-        if cell.RadioCheckimage.image == UIImage(named: "uncheck") {
-            cell.RadioCheckimage.image = UIImage(named: "checkbox")
+        if cell.RadioCheckimage.image == UIImage(named: "radioicon_unselect") {
+            cell.RadioCheckimage.image = UIImage(named: "radioicon_select")
             
             answr.append(RadioAnswers(number: "\(indexPath.row)", answer: "\(items[indexPath.row])", qcode: qcodee))
             
@@ -76,14 +76,14 @@ class CPRadiogroupTableViewCell: UITableViewCell, UITableViewDataSource, UITable
                 if path?.row == indexPath.row {
                     
                 } else {
-                    visibleCell.RadioCheckimage.image = UIImage(named: "uncheck")
+                    visibleCell.RadioCheckimage.image = UIImage(named: "radioicon_unselect")
                 }
 
                 
             }
             
-        } else if cell.RadioCheckimage.image == UIImage(named: "checkbox") {
-            cell.RadioCheckimage.image = UIImage(named: "uncheck")
+        } else if cell.RadioCheckimage.image == UIImage(named: "radioicon_select") {
+            cell.RadioCheckimage.image = UIImage(named: "radioicon_unselect")
             
             
             for i in 0...((answr.count) - 1) {
@@ -104,7 +104,7 @@ class CPRadiogroupTableViewCell: UITableViewCell, UITableViewDataSource, UITable
                     for cell in tableView.visibleCells {
                         guard let visibleCell = cell as? CPRadioCellTableViewCell else { return }
                         
-                            visibleCell.RadioCheckimage.image = UIImage(named: "uncheck")
+                            visibleCell.RadioCheckimage.image = UIImage(named: "radioicon_unselect")
                         
                         
                     }

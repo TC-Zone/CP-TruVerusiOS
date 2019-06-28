@@ -41,7 +41,6 @@ class CPCustomTableViewCell: UITableViewCell {
     }
     
 
-    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
         
@@ -121,13 +120,18 @@ class CPCustomTableViewCell: UITableViewCell {
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         if appDelegate.state == "logedin" {
             
-            if StructProductRelatedData.purchaseAvailability == true  {
+            
+            IsPurchased { (success) in
                 
-                ShowValidateAlerts(message : "You alredy Purchased this product", title: "Sorry!")
-                
-            } else {
-                
-                PurchaseProduct()
+                if StructProductRelatedData.purchaseAvailability == true  {
+                    
+                    self.ShowValidateAlerts(message : "You alredy Purchased this product", title: "Sorry!")
+                    
+                } else {
+                    
+                    self.PurchaseProduct()
+                    
+                }
                 
             }
             
@@ -241,12 +245,6 @@ extension CPCustomTableViewCell {
                 }
                 
             }
-            
-            //        let url = NSString.init(format: "%@%@", UrlConstans.BASE_URL, UrlConstans.AUTHENTICATE_PRODUCT + "authCode=c5aac93022011753ce3b696ae6ee393d424c62407349ff0c3192eed54b2e053320e503475df6ae034712e1e0c961c51873e47de8c4876c85100bf87707e5efa5d04ef60af435" ) as String
-            
-            print("url is :: \(url)")
-            //        let parameters : [String : Any] = ["authCode=" : "89a9a3077550a1f6df9066a6091017a13e1a266e01e1b071093a4b75a84f338cf979056621a5d2a455c23ebeb2deb74b5cace5c9c6e10620a5741af3d67d5f1b2b752134e9c9"]
-            
             
             
         } else {
@@ -412,6 +410,89 @@ extension CPCustomTableViewCell {
         }
         
     }
+    
+    
+    private func IsPurchased(completion: @escaping (_ success: Bool) -> Void){
+        SVProgressHUD.setDefaultStyle(.custom)
+        SVProgressHUD.setDefaultMaskType(.custom)
+        SVProgressHUD.setForegroundColor(UIColor.black)           //Ring Color
+        SVProgressHUD.setBackgroundColor(UIColor.clear)        //HUD Color
+        SVProgressHUD.setBackgroundLayerColor(UIColor.black.withAlphaComponent(0.5))
+        SVProgressHUD.show()
+        
+        let headers: [String: String] = [:]
+        let userId = defaults.value(forKey: keys.RegisteredUserID)
+        
+        
+        if userId != nil && StructProductRelatedData.ProductTagCode != "" {
+            
+            let url = NSString.init(format: "%@%@", UrlConstans.BASE_URL, UrlConstans.IS_PURCHASED_BY_AUTHCODE + "\(userId ?? "")?" + "authCode=\(StructProductRelatedData.ProductTagCode)") as String
+            
+            print("url is :: \(url)")
+            
+            let parameters : [String : Any] = [:]
+            
+            if let url = URL(string: url) {
+                ApiManager.shared().makeRequestAlamofire(route: url, method: .get, autherized: true, parameter: parameters, header: headers){ (response) in
+                    SVProgressHUD.dismiss()
+                    switch response{
+                    case let .success(data):
+                        self.serializeproResponse(data: data)
+                        completion(true)
+                        print("hereee")
+                        print(response)
+                    case .failure(let error):
+                        print("fail errorr :::::: \(error.errorCode)")
+                        completion(false)
+                    }
+                }
+            }
+            
+        } else {
+            
+            SVProgressHUD.dismiss()
+            
+        }
+        
+        
+    }
+    
+    func serializeproResponse(data: Data) {
+        do{
+            let json = try JSONSerialization.jsonObject(with: data, options: [])
+            
+            print("data in is purchased response :: \(json)")
+            guard let isPurchaseResponse: IsPurchasedBase = Mapper<IsPurchasedBase>().map(JSONObject: json) else {
+                return
+            }
+            
+            if isPurchaseResponse.status == "OK" && isPurchaseResponse.statusCode == 200 {
+                
+                if isPurchaseResponse.content?.id != nil && isPurchaseResponse.content?.id != "" {
+                    
+                    StructProductRelatedData.purchaseAvailability = true
+                    
+                } else {
+                    
+                    StructProductRelatedData.purchaseAvailability = false
+                    
+                }
+                
+                
+            } else {
+                
+                StructProductRelatedData.purchaseAvailability = false
+                
+            }
+            //productsList = [proCollectionResponse]
+            
+            
+            
+        }catch {
+            print(error)
+        }
+    }
+    
     
     
 }
