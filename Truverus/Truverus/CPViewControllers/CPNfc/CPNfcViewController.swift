@@ -32,9 +32,9 @@ class CPNfcViewController: BaseViewController, NFCNDEFReaderSessionDelegate  {
   
 
     @IBAction func ScanButtonAction(_ sender: Any) {
-         ValidateTag()
-//        session = NFCNDEFReaderSession.init(delegate: self, queue: nil, invalidateAfterFirstRead: true)
-//        session?.begin()
+        // ValidateTag()
+        session = NFCNDEFReaderSession.init(delegate: self, queue: nil, invalidateAfterFirstRead: true)
+        session?.begin()
 //
     }
     
@@ -106,11 +106,11 @@ extension CPNfcViewController{
         let headers: [String: String] = [:]
         
         //Correct line for nfc reding
-//        let url = NSString.init(format: "%@%@", UrlConstans.BASE_URL, UrlConstans.AUTHENTICATE_PRODUCT + "authCode=\(tagValue ?? "")") as String
+        let url = NSString.init(format: "%@%@", UrlConstans.BASE_URL, UrlConstans.AUTHENTICATE_PRODUCT + "authCode=\(tagValue ?? "")") as String
         
-        let url = NSString.init(format: "%@%@", UrlConstans.BASE_URL, UrlConstans.AUTHENTICATE_PRODUCT + "authCode=ff3ef0e59db43394c5e3fb9f62ea8de34c7714277187b48022bf7da6aaeccee3cc47cd77ac6a207b8cbcbcec0d78f666ff2ee89ce14175a487daf7a9141d2c6324d2b39f3c3c" ) as String
-        tagValue = "ff3ef0e59db43394c5e3fb9f62ea8de34c7714277187b48022bf7da6aaeccee3cc47cd77ac6a207b8cbcbcec0d78f666ff2ee89ce14175a487daf7a9141d2c6324d2b39f3c3c"
-        StructProductRelatedData.ProductTagCode = tagValue
+//        let url = NSString.init(format: "%@%@", UrlConstans.BASE_URL, UrlConstans.AUTHENTICATE_PRODUCT + "authCode=ff3ef0e59db43394c5e3fb9f62ea8de34c7714277187b48022bf7da6aaeccee3cc47cd77ac6a207b8cbcbcec0d78f666ff2ee89ce14175a487daf7a9141d2c6324d2b39f3c3c" ) as String
+//        tagValue = "ff3ef0e59db43394c5e3fb9f62ea8de34c7714277187b48022bf7da6aaeccee3cc47cd77ac6a207b8cbcbcec0d78f666ff2ee89ce14175a487daf7a9141d2c6324d2b39f3c3c"
+//        StructProductRelatedData.ProductTagCode = tagValue
       //  up to this point iys invalid
         
         

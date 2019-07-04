@@ -44,6 +44,10 @@ class CPFeedbackSubViewController: UIViewController, UITextFieldDelegate , UITex
     
     var backFlag : Bool!
     
+    var currentPageNumber : Int! = 0
+    
+    var pageBreak : Bool!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -80,12 +84,9 @@ class CPFeedbackSubViewController: UIViewController, UITextFieldDelegate , UITex
          
         
             }
-            
         
-       
         
     }
-    
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 1
@@ -99,9 +100,9 @@ class CPFeedbackSubViewController: UIViewController, UITextFieldDelegate , UITex
             let cell = tableView.dequeueReusableCell(withIdentifier: "CPSurveyTextTypeCell") as! CPSurveyTextTypeQuestionTableViewCell
             
             cell.QuestionNumber.text = "Question \(currentIndex ?? 1)"
-            cell.Question.text = surveyModule.Syrvey[0].pages![0].elements![currentIndex - 1].title
-            cell.qcodee = surveyModule.Syrvey[0].pages![0].elements![currentIndex - 1].qcode
-            cell.qnumber = surveyModule.Syrvey[0].pages![0].elements![currentIndex - 1].name
+            cell.Question.text = surveyModule.Syrvey[0].pages![currentPageNumber].elements![currentIndex - 1].title
+            cell.qcodee = surveyModule.Syrvey[0].pages![currentPageNumber].elements![currentIndex - 1].qcode
+            cell.qnumber = surveyModule.Syrvey[0].pages![currentPageNumber].elements![currentIndex - 1].name
             
             if cell.AnswerText.text != "" {
                 cell.AnswerText.text = ""
@@ -110,19 +111,18 @@ class CPFeedbackSubViewController: UIViewController, UITextFieldDelegate , UITex
             return cell
         } else if type == "radiogroup" {
             let cell = tableView.dequeueReusableCell(withIdentifier: "RadioCell") as! CPRadiogroupTableViewCell
-           
-            print("choices count :: \(surveyModule.Syrvey[0].pages![0].elements![currentIndex - 1].choices?.count ?? 0)")
-            let count = surveyModule.Syrvey[0].pages![0].elements![currentIndex - 1].choices?.count
+
+            let count = surveyModule.Syrvey[0].pages![currentPageNumber].elements![currentIndex - 1].choices?.count
             cell.questionnumber.text = "Question \(currentIndex ?? 1)"
-            cell.Question.text = surveyModule.Syrvey[0].pages![0].elements![currentIndex - 1].title
-            cell.qcodee = surveyModule.Syrvey[0].pages![0].elements![currentIndex - 1].qcode
-            cell.qnumber = surveyModule.Syrvey[0].pages![0].elements![currentIndex - 1].name
+            cell.Question.text = surveyModule.Syrvey[0].pages![currentPageNumber].elements![currentIndex - 1].title
+            cell.qcodee = surveyModule.Syrvey[0].pages![currentPageNumber].elements![currentIndex - 1].qcode
+            cell.qnumber = surveyModule.Syrvey[0].pages![currentPageNumber].elements![currentIndex - 1].name
             
             cell.items.removeAll()
             
                 for i in 0...(count! - 1) {
                     
-                    cell.items.append(surveyModule.Syrvey[0].pages![0].elements![currentIndex - 1].choices![i].text!)
+                    cell.items.append(surveyModule.Syrvey[0].pages![currentPageNumber].elements![currentIndex - 1].choices![i].text!)
                     print("items in radio :: \(cell.items)")
                     
                 }
@@ -133,12 +133,12 @@ class CPFeedbackSubViewController: UIViewController, UITextFieldDelegate , UITex
                 
                 if ((cell.answr.count) - 1) >= 0 {
                     
-                    let res = cell.answr.filter {  $0.qcode == "\(surveyModule.Syrvey[0].pages![0].elements![currentIndex - 1].qcode ?? "")" }
+                    let res = cell.answr.filter {  $0.qcode == "\(surveyModule.Syrvey[0].pages![currentPageNumber].elements![currentIndex - 1].qcode ?? "")" }
                     
                     if res.count >= 0 {
                         
                         cell.answr.removeAll { (Answers) -> Bool in
-                            Answers.qcode == "\(surveyModule.Syrvey[0].pages![0].elements![currentIndex - 1].qcode ?? "")"
+                            Answers.qcode == "\(surveyModule.Syrvey[0].pages![currentPageNumber].elements![currentIndex - 1].qcode ?? "")"
                         }
                         
                     }
@@ -151,22 +151,21 @@ class CPFeedbackSubViewController: UIViewController, UITextFieldDelegate , UITex
             } else {
                 
             }
-            // Set up cell.button
             return cell
         } else if type == "dropdown" {
             let cell = tableView.dequeueReusableCell(withIdentifier: "dropdownCell") as! CPDropdownTableViewCell
             
-            print("choices count :: \(surveyModule.Syrvey[0].pages![0].elements![currentIndex - 1].choices?.count)")
-            let count = surveyModule.Syrvey[0].pages![0].elements![currentIndex - 1].choices?.count
+
+            let count = surveyModule.Syrvey[0].pages![currentPageNumber].elements![currentIndex - 1].choices?.count
             cell.QuestionNumber.text = "Question \(currentIndex ?? 1)"
-            cell.Question.text = surveyModule.Syrvey[0].pages![0].elements![currentIndex - 1].title
-            cell.qcodee = surveyModule.Syrvey[0].pages![0].elements![currentIndex - 1].qcode
-            cell.qnumber = surveyModule.Syrvey[0].pages![0].elements![currentIndex - 1].name
+            cell.Question.text = surveyModule.Syrvey[0].pages![currentPageNumber].elements![currentIndex - 1].title
+            cell.qcodee = surveyModule.Syrvey[0].pages![currentPageNumber].elements![currentIndex - 1].qcode
+            cell.qnumber = surveyModule.Syrvey[0].pages![currentPageNumber].elements![currentIndex - 1].name
             
             cell.list.removeAll()
             for i in 0...(count! - 1) {
                 
-                cell.list.append(surveyModule.Syrvey[0].pages![0].elements![currentIndex - 1].choices![i].text!)
+                cell.list.append(surveyModule.Syrvey[0].pages![currentPageNumber].elements![currentIndex - 1].choices![i].text!)
                 
             }
             
@@ -179,20 +178,18 @@ class CPFeedbackSubViewController: UIViewController, UITextFieldDelegate , UITex
                 
             }
             
-            
-            // Set up cell.button   imagepickerCell
             return cell
         } else if type == "imagepicker" {
             let cell = tableView.dequeueReusableCell(withIdentifier: "imagepickerCell") as! CPImagepickerTableViewCell
             
             cell.QuestionNumber.text = "Question \(currentIndex ?? 1)"
-            cell.qcodee = surveyModule.Syrvey[0].pages![0].elements![currentIndex - 1].qcode
-            cell.qnumber = surveyModule.Syrvey[0].pages![0].elements![currentIndex - 1].name
-            cell.multiselect = surveyModule.Syrvey[0].pages![0].elements![currentIndex - 1].multiselect
+            cell.qcodee = surveyModule.Syrvey[0].pages![currentPageNumber].elements![currentIndex - 1].qcode
+            cell.qnumber = surveyModule.Syrvey[0].pages![currentPageNumber].elements![currentIndex - 1].name
+            cell.multiselect = surveyModule.Syrvey[0].pages![currentPageNumber].elements![currentIndex - 1].multiselect
             
-            if surveyModule.Syrvey[0].pages![0].elements![currentIndex - 1].title != nil {
+            if surveyModule.Syrvey[0].pages![currentPageNumber].elements![currentIndex - 1].title != nil {
                 
-                cell.Question.text = surveyModule.Syrvey[0].pages![0].elements![currentIndex - 1].title
+                cell.Question.text = surveyModule.Syrvey[0].pages![currentPageNumber].elements![currentIndex - 1].title
                 
             } else {
                 
@@ -200,15 +197,15 @@ class CPFeedbackSubViewController: UIViewController, UITextFieldDelegate , UITex
                 
             }
             
-            let imageCount = surveyModule.Syrvey[0].pages![0].elements![currentIndex - 1].choices?.count
+            let imageCount = surveyModule.Syrvey[0].pages![currentPageNumber].elements![currentIndex - 1].choices?.count
             
             cell.imagenamelist.removeAll()
             cell.imagelist.removeAll()
             for i in 0...(imageCount! - 1) {
                 
-                cell.imagenamelist.append(surveyModule.Syrvey[0].pages![0].elements![currentIndex - 1].choices![i].text!)
-                cell.imagelist.append(surveyModule.Syrvey[0].pages![0].elements![currentIndex - 1].choices![i].imagelink!)
-                //gygfcfgcgcvhv
+                cell.imagenamelist.append(surveyModule.Syrvey[0].pages![currentPageNumber].elements![currentIndex - 1].choices![i].text!)
+                cell.imagelist.append(surveyModule.Syrvey[0].pages![currentPageNumber].elements![currentIndex - 1].choices![i].imagelink!)
+             
             }
             
             cell.imagecollectionview.reloadData()
@@ -217,12 +214,12 @@ class CPFeedbackSubViewController: UIViewController, UITextFieldDelegate , UITex
                 
                 if ((cell.selectedAnswerImages.count) - 1) >= 0 {
                     
-                    let res = cell.selectedAnswerImages.filter {  $0.qcode == "\(surveyModule.Syrvey[0].pages![0].elements![currentIndex - 1].qcode ?? "")" }
+                    let res = cell.selectedAnswerImages.filter {  $0.qcode == "\(surveyModule.Syrvey[0].pages![currentPageNumber].elements![currentIndex - 1].qcode ?? "")" }
                     
                     if res.count >= 0 {
                         
                         cell.selectedAnswerImages.removeAll { (Answers) -> Bool in
-                            Answers.qcode == "\(surveyModule.Syrvey[0].pages![0].elements![currentIndex - 1].qcode ?? "")"
+                            Answers.qcode == "\(surveyModule.Syrvey[0].pages![currentPageNumber].elements![currentIndex - 1].qcode ?? "")"
                         }
                         
                     }
@@ -241,12 +238,12 @@ class CPFeedbackSubViewController: UIViewController, UITextFieldDelegate , UITex
             let cell = tableView.dequeueReusableCell(withIdentifier: "ratingCell") as! CPRatingTableViewCell
             
             cell.QuestionNumber.text = "Question \(currentIndex ?? 1)"
-            cell.qcodee = surveyModule.Syrvey[0].pages![0].elements![currentIndex - 1].qcode
-            cell.qnumber = surveyModule.Syrvey[0].pages![0].elements![currentIndex - 1].name
+            cell.qcodee = surveyModule.Syrvey[0].pages![currentPageNumber].elements![currentIndex - 1].qcode
+            cell.qnumber = surveyModule.Syrvey[0].pages![currentPageNumber].elements![currentIndex - 1].name
             
-            if  surveyModule.Syrvey[0].pages![0].elements![currentIndex - 1].title != nil {
+            if  surveyModule.Syrvey[0].pages![currentPageNumber].elements![currentIndex - 1].title != nil {
                 
-                cell.Question.text = surveyModule.Syrvey[0].pages![0].elements![currentIndex - 1].title
+                cell.Question.text = surveyModule.Syrvey[0].pages![currentPageNumber].elements![currentIndex - 1].title
                 
             } else {
                 
@@ -254,7 +251,7 @@ class CPFeedbackSubViewController: UIViewController, UITextFieldDelegate , UITex
                 
             }
             
-            let count = surveyModule.Syrvey[0].pages![0].elements![currentIndex - 1].ratemax
+            let count = surveyModule.Syrvey[0].pages![currentPageNumber].elements![currentIndex - 1].ratemax
             
             if count != nil {
                 
@@ -285,36 +282,36 @@ class CPFeedbackSubViewController: UIViewController, UITextFieldDelegate , UITex
                 
             }
             
-            // Set up cell.button
+         
             return cell
         } else if type == "comment" {
             let cell = tableView.dequeueReusableCell(withIdentifier: "commentCell") as! CPCommentTableViewCell
             
             cell.QuestionNumber.text = "Question \(currentIndex ?? 1)"
-            cell.Question.text = surveyModule.Syrvey[0].pages![0].elements![currentIndex - 1].title
-            cell.qcodee = surveyModule.Syrvey[0].pages![0].elements![currentIndex - 1].qcode
-            cell.qnumber = surveyModule.Syrvey[0].pages![0].elements![currentIndex - 1].name
+            cell.Question.text = surveyModule.Syrvey[0].pages![currentPageNumber].elements![currentIndex - 1].title
+            cell.qcodee = surveyModule.Syrvey[0].pages![currentPageNumber].elements![currentIndex - 1].qcode
+            cell.qnumber = surveyModule.Syrvey[0].pages![currentPageNumber].elements![currentIndex - 1].name
             
             if cell.AnswerText.text != "" {
                 cell.AnswerText.text = ""
             }
             
-            // Set up cell.button
+            
             return cell
         } else if type == "checkbox" {
             let cell = tableView.dequeueReusableCell(withIdentifier: "checkboxCell") as! CPCheckboxTableViewCell
             
-            print("choices count :: \(surveyModule.Syrvey[0].pages![0].elements![currentIndex - 1].choices?.count)")
-            let count = surveyModule.Syrvey[0].pages![0].elements![currentIndex - 1].choices?.count
+
+            let count = surveyModule.Syrvey[0].pages![currentPageNumber].elements![currentIndex - 1].choices?.count
             cell.QuestionNumber.text = "Question \(currentIndex ?? 1)"
-            cell.Question.text = surveyModule.Syrvey[0].pages![0].elements![currentIndex - 1].title
-            cell.qcodee = surveyModule.Syrvey[0].pages![0].elements![currentIndex - 1].qcode
-            cell.qnumber = surveyModule.Syrvey[0].pages![0].elements![currentIndex - 1].name
+            cell.Question.text = surveyModule.Syrvey[0].pages![currentPageNumber].elements![currentIndex - 1].title
+            cell.qcodee = surveyModule.Syrvey[0].pages![currentPageNumber].elements![currentIndex - 1].qcode
+            cell.qnumber = surveyModule.Syrvey[0].pages![currentPageNumber].elements![currentIndex - 1].name
             
             cell.items.removeAll()
             for i in 0...(count! - 1) {
                 
-                cell.items.append(surveyModule.Syrvey[0].pages![0].elements![currentIndex - 1].choices![i].text!)
+                cell.items.append(surveyModule.Syrvey[0].pages![currentPageNumber].elements![currentIndex - 1].choices![i].text!)
                 
             }
             
@@ -324,12 +321,12 @@ class CPFeedbackSubViewController: UIViewController, UITextFieldDelegate , UITex
                 
                 if ((cell.ans.count) - 1) >= 0 {
                     
-                    let res = cell.ans.filter {  $0.qcode == "\(surveyModule.Syrvey[0].pages![0].elements![currentIndex - 1].qcode ?? "")" }
+                    let res = cell.ans.filter {  $0.qcode == "\(surveyModule.Syrvey[0].pages![currentPageNumber].elements![currentIndex - 1].qcode ?? "")" }
                     
                     if res.count >= 0 {
                         
                         cell.ans.removeAll { (Answers) -> Bool in
-                            Answers.qcode == "\(surveyModule.Syrvey[0].pages![0].elements![currentIndex - 1].qcode ?? "")"
+                            Answers.qcode == "\(surveyModule.Syrvey[0].pages![currentPageNumber].elements![currentIndex - 1].qcode ?? "")"
                         }
                         
                     }
@@ -343,14 +340,13 @@ class CPFeedbackSubViewController: UIViewController, UITextFieldDelegate , UITex
             }
             
             
-            // Set up cell.button
             return cell
         } else if type == "Compleate" {
             let cell = tableView.dequeueReusableCell(withIdentifier: "CompleatedSurveycell") as! CPSurveyCompleatedTableViewCell
             return cell
         } else {
             let cell = tableView.dequeueReusableCell(withIdentifier: "NoSurveyCell") as! CPNoSurveyTableViewCell
-            // Set up cell.textField
+            
             return cell
         }
         
@@ -395,16 +391,11 @@ class CPFeedbackSubViewController: UIViewController, UITextFieldDelegate , UITex
                 parent.handleBack()
             }
             self.currentIndex = 0
+            self.currentPageNumber = 0
             type = ""
-            //print("all removed")
-            //surveyModule.Syrvey.removeAll()
-//            nextActionForCommon()
-            //NotificationCenter.default.post(name: NSNotification.Name(rawValue: "loadfeedSurv"), object: nil)
-            
-            
-            
-            
-            
+            self.PreviousButton.isEnabled = false
+            self.PreviousButton.backgroundColor = UIColor.lightGray
+    
         } else {
         
             if let parent = self.parent as? CPFeedbackViewController {
@@ -438,9 +429,12 @@ class CPFeedbackSubViewController: UIViewController, UITextFieldDelegate , UITex
                     parent.handleBack()
                 }
                 self.currentIndex = 0
+                self.currentPageNumber = 0
                 self.NextButton.isEnabled = true
                 self.NextButton.backgroundColor = UIColor(named: "AcceptGreen")
                 self.NextButton.setTitle("Next", for: UIControl.State.normal)
+                self.PreviousButton.isEnabled = false
+                self.PreviousButton.backgroundColor = UIColor.lightGray
 
                 
             }
@@ -449,6 +443,7 @@ class CPFeedbackSubViewController: UIViewController, UITextFieldDelegate , UITex
             
         } else {
             
+          
             nextActionForCommon()
             
         }
@@ -460,32 +455,32 @@ class CPFeedbackSubViewController: UIViewController, UITextFieldDelegate , UITex
     
     func nextActionForCommon(){
         
-        print("index in outer block :: \(currentIndex)")
         
+        let pages : Int! = surveyModule.pagecount
         
+        if pages ?? 0 > 0 && pages == 1 {
+            currentPageNumber = 0
+        }
         
-        if currentIndex != nil {
+        if currentIndex != nil && currentPageNumber != nil {
             
-            if surveyModule.Syrvey[0].pages?.count != 0 && surveyModule.Syrvey[0].pages![0].elements?.count != 0 {
+            
+            if surveyModule.Syrvey[0].pages?.count != 0 && surveyModule.Syrvey[0].pages![currentPageNumber].elements?.count != 0 {
                 
-                let elementscount = surveyModule.Syrvey[0].pages![0].elements?.count
-                print("element count is :: \(elementscount)")
-                print("index in if block :: \(currentIndex)")
-                if currentIndex <= (elementscount! - 1) && surveyModule.Syrvey[0].pages![0].elements![currentIndex].type != "" {
+                let elementscount = surveyModule.Syrvey[0].pages![currentPageNumber].elements?.count
+
+                if currentIndex <= (elementscount! - 1) && surveyModule.Syrvey[0].pages![currentPageNumber].elements![currentIndex].type != "" {
                     
-                    print("validation results :: \(validateCellInputs())")
-                    print("is reqired was 11 :: \(surveyModule.Syrvey[0].pages![0].elements![currentIndex].isRequired)")
+
                     
-                    if surveyModule.Syrvey[0].pages![0].elements![currentIndex].isRequired == true && validateCellInputs() == false {
+                    if surveyModule.Syrvey[0].pages![currentPageNumber].elements![currentIndex].isRequired == true && validateCellInputs() == false {
                         
-                        print("is reqired was :: \(surveyModule.Syrvey[0].pages![0].elements![currentIndex].isRequired)")
                         
                         showValidationAlerts(message: "This Question is Required.")
                         
                     } else {
-                        
-                        print("next block currentIndex:: \(currentIndex) and (elementscount! - 1) :: \((elementscount! - 1))")
-                        type = surveyModule.Syrvey[0].pages![0].elements![currentIndex].type
+
+                        type = surveyModule.Syrvey[0].pages![currentPageNumber].elements![currentIndex].type
                         
                         if currentIndex == 0 {
                             PreviousButton.isEnabled = false
@@ -497,31 +492,49 @@ class CPFeedbackSubViewController: UIViewController, UITextFieldDelegate , UITex
                         }
                         currentIndex = currentIndex + 1
                         
+                        pageBreak = false
+                        
                     }
                     
                     
                 } else {
                     if currentIndex == elementscount! {
-                        if surveyModule.Syrvey[0].pages![0].elements![currentIndex - 1].isRequired == true && validateCellInputs() == false {
+                        if surveyModule.Syrvey[0].pages![currentPageNumber].elements![currentIndex - 1].isRequired == true && validateCellInputs() == false {
                             
-                            print("is reqired was :: \(surveyModule.Syrvey[0].pages![0].elements![currentIndex - 1].isRequired)")
-                            
-                            print("type is :: \(surveyModule.Syrvey[0].pages![0].elements![currentIndex - 1].type)")
+
                             showValidationAlerts(message: "This Question is Required.")
                             
                         } else {
                             
-                            print("next block currentIndex:: \(currentIndex - 1) and (elementscount! - 1) :: \((elementscount! - 1))")
-                            type = surveyModule.Syrvey[0].pages![0].elements![currentIndex - 1].type
-                            PreviousButton.isEnabled = true
-                            PreviousButton.backgroundColor = UIColor(named: "CancelRed")
-                            currentIndex = currentIndex + 1
                             
-                            //NextButton.isEnabled = false
-                            NextButton.backgroundColor = UIColor(named: "readmorecolor")
-                            NextButton.setTitle("Complete", for: UIControl.State.normal)
-                            type = "Compleate"
-                            currentIndex = currentIndex + 1
+                            if currentPageNumber >= (pages - 1) {
+                                
+                                
+                                type = surveyModule.Syrvey[0].pages![currentPageNumber].elements![currentIndex - 1].type
+                                PreviousButton.isEnabled = true
+                                PreviousButton.backgroundColor = UIColor(named: "CancelRed")
+                                currentIndex = currentIndex + 1
+                                
+                                NextButton.backgroundColor = UIColor(named: "readmorecolor")
+                                NextButton.setTitle("Complete", for: UIControl.State.normal)
+                                type = "Compleate"
+                                currentIndex = currentIndex + 1
+                                
+                            } else {
+                                
+                          
+                                currentPageNumber = currentPageNumber + 1
+                                currentIndex = 1
+                                
+                                type = surveyModule.Syrvey[0].pages![currentPageNumber].elements![currentIndex - 1].type
+
+                                
+                                pageBreak = true
+                                
+                                
+                            }
+                            
+                            
                             
                         }
                         
@@ -539,13 +552,13 @@ class CPFeedbackSubViewController: UIViewController, UITextFieldDelegate , UITex
             
             if surveyModule.Syrvey.isEmpty == false && surveyModule.Syrvey.count > 0{
                 
-                if surveyModule.Syrvey[0].pages?.count != nil && surveyModule.Syrvey[0].pages?.count != 0 && surveyModule.Syrvey[0].pages![0].elements?.count != nil && surveyModule.Syrvey[0].pages![0].elements?.count != 0 && surveyModule.Syrvey[0].pages![0].elements?[0].type != nil && surveyModule.Syrvey[0].pages![0].elements?[0].type != ""  {
+                if surveyModule.Syrvey[0].pages?.count != nil && surveyModule.Syrvey[0].pages?.count != 0 && surveyModule.Syrvey[0].pages![currentPageNumber].elements?.count != nil && surveyModule.Syrvey[0].pages![currentPageNumber].elements?.count != 0 && surveyModule.Syrvey[0].pages![currentPageNumber].elements?[0].type != nil && surveyModule.Syrvey[0].pages![currentPageNumber].elements?[0].type != ""  {
                     
-                    let elementscount = surveyModule.Syrvey[0].pages![0].elements?.count
+                    let elementscount = surveyModule.Syrvey[0].pages![currentPageNumber].elements?.count
                     currentIndex = 0
                     
                     if currentIndex <= (elementscount! - 1) {
-                        type = surveyModule.Syrvey[0].pages![0].elements![currentIndex].type
+                        type = surveyModule.Syrvey[0].pages![currentPageNumber].elements![currentIndex].type
                         
                         currentIndex = currentIndex + 1
                     } else {
@@ -568,7 +581,7 @@ class CPFeedbackSubViewController: UIViewController, UITextFieldDelegate , UITex
             
             
         }
-        
+
         SurveyTableView.reloadData()
         
     }
@@ -580,12 +593,11 @@ class CPFeedbackSubViewController: UIViewController, UITextFieldDelegate , UITex
         let thiscell = TableSurvay.cellForRow(at: indexpath as IndexPath)
 
         if thiscell?.reuseIdentifier == "CPSurveyTextTypeCell" {
-            print("in identified block")
+           
             let currentCell = TableSurvay.cellForRow(at: indexpath as IndexPath) as! CPSurveyTextTypeQuestionTableViewCell
             
-            print("answer was :: \(currentCell.AnswerText.text)")
             if currentCell.AnswerText.text.isEmpty != true && currentCell.AnswerText.text != "" && currentCell.AnswerText.text != "\n\n" {
-                print("answer was :: \(currentCell.AnswerText.text) qcode is :: \(currentCell.qcodee)")
+
                 return true
             } else {
                 print("no text found")
@@ -593,7 +605,6 @@ class CPFeedbackSubViewController: UIViewController, UITextFieldDelegate , UITex
             }
         } else if thiscell?.reuseIdentifier == "checkboxCell"{
             
-            print("in identified block")
             let currentCell = TableSurvay.cellForRow(at: indexpath as IndexPath) as! CPCheckboxTableViewCell
             
             if currentCell.ans.isEmpty == false {
@@ -629,14 +640,12 @@ class CPFeedbackSubViewController: UIViewController, UITextFieldDelegate , UITex
             
         } else if thiscell?.reuseIdentifier == "RadioCell"{
             
-            print("in identified block")
             let currentCell = TableSurvay.cellForRow(at: indexpath as IndexPath) as! CPRadiogroupTableViewCell
             
             if currentCell.answr.isEmpty == false {
                 
                 
                 if ((currentCell.answr.count) - 1) >= 0 {
-                    print("answers array \(currentCell.answr) ")
                     
                     
                     for i in 0...((currentCell.answr.count) - 1) {
@@ -658,13 +667,10 @@ class CPFeedbackSubViewController: UIViewController, UITextFieldDelegate , UITex
             
         } else if thiscell?.reuseIdentifier == "dropdownCell"{
             
-            print("in identified block")
             let currentCell = TableSurvay.cellForRow(at: indexpath as IndexPath) as! CPDropdownTableViewCell
             
             if currentCell.selectedAnswer.isEmpty == false && currentCell.selectedAnswer != "" {
-                
-                        print("selected answr from dropdown is :: \(currentCell.selectedAnswer) qcode is :: \(currentCell.qcodee)")
-                //currentCell.dropDown.reloadAllComponents()
+
                         
                 return true
                 
@@ -674,12 +680,12 @@ class CPFeedbackSubViewController: UIViewController, UITextFieldDelegate , UITex
             }
             
         } else if thiscell?.reuseIdentifier == "commentCell" {
-            print("in identified block")
+         
             let currentCell = TableSurvay.cellForRow(at: indexpath as IndexPath) as! CPCommentTableViewCell
             
-            print("answer was :: \(currentCell.AnswerText.text)")
+
             if currentCell.AnswerText.text.isEmpty != true && currentCell.AnswerText.text != "" && currentCell.AnswerText.text != "\n\n" {
-                print("answer was :: \(currentCell.AnswerText.text) qcode is :: \(currentCell.qcodee)")
+
                 return true
             } else {
                 print("no text found")
@@ -687,13 +693,12 @@ class CPFeedbackSubViewController: UIViewController, UITextFieldDelegate , UITex
             }
         } else if thiscell?.reuseIdentifier == "ratingCell"{
             
-            print("in identified block")
+
             let currentCell = TableSurvay.cellForRow(at: indexpath as IndexPath) as! CPRatingTableViewCell
             
             if currentCell.selectedRating.isEmpty == false && currentCell.selectedRating != "" {
                 
-                print("selected rating from picker is :: \(currentCell.selectedRating) qcode is :: \(currentCell.qcodee)")
-                //currentCell.dropDown.reloadAllComponents()
+
                 
                 return true
                 
@@ -702,16 +707,15 @@ class CPFeedbackSubViewController: UIViewController, UITextFieldDelegate , UITex
                 return false
             }
             
-        } else if thiscell?.reuseIdentifier == "imagepickerCell"{
+        } else if thiscell?.reuseIdentifier == "imagepickerCell" {
             
-            print("in identified block is :: \(thiscell?.reuseIdentifier)")
+
             let currentCell = TableSurvay.cellForRow(at: indexpath as IndexPath) as! CPImagepickerTableViewCell
             
             
             if currentCell.selectedAnswerImages.isEmpty == false {
                 
                 if ((currentCell.selectedAnswerImages.count) - 1) >= 0 {
-                    print("answers array \(currentCell.selectedAnswerImages) ")
                     
                     let has = currentCell.selectedAnswerImages.filter {  $0.qcode == "\(currentCell.qcodee ?? "")" }
                     
@@ -763,34 +767,72 @@ class CPFeedbackSubViewController: UIViewController, UITextFieldDelegate , UITex
         
         let thiscell = TableSurvay.cellForRow(at: indexpath as IndexPath)
         
-        if thiscell?.reuseIdentifier == "CompleatedSurveycell"{
+        if thiscell?.reuseIdentifier == "CompleatedSurveycell" {
             
              currentIndex = currentIndex - 1
             
         }
         
         
-        let elementsCount =  surveyModule.Syrvey[0].pages![0].elements?.count
-        currentIndex = currentIndex - 1
-        if currentIndex < 0 {
-            currentIndex = 0
+        
+        if pageBreak == true {
+
+            if currentPageNumber == 0 {
+                
+                
+            } else {
+                
+                currentPageNumber = currentPageNumber - 1
+                let lastQcode = surveyModule.Syrvey[0].pages![currentPageNumber].elements?.last?.qcode
+                let indexOflast = surveyModule.Syrvey[0].pages![currentPageNumber].elements?.firstIndex(where: { $0.qcode == lastQcode })
+                currentIndex = indexOflast
+                currentIndex = currentIndex + 2
+                
+            }
+            
+
+        } else {
+            
+            if currentPageNumber > 0 && currentIndex == 1 {
+                
+                let ind = surveyModule.Syrvey[0].pages![currentPageNumber - 1].elements?.count
+                
+                currentPageNumber = currentPageNumber - 1
+                currentIndex = ind! + 1
+                
+            }
+            
         }
         
-        if currentIndex == 1 {
-            PreviousButton.isEnabled = false
-            PreviousButton.backgroundColor = UIColor.lightGray
-        } else {
-            PreviousButton.isEnabled = true
-            PreviousButton.backgroundColor = UIColor(named: "CancelRed")
+        
+        let elementsCount =  surveyModule.Syrvey[0].pages![currentPageNumber].elements?.count
+        currentIndex = currentIndex - 1
+        
+        if currentPageNumber == 0 {
+           
+            
+            if currentIndex == 1 {
+                PreviousButton.isEnabled = false
+                PreviousButton.backgroundColor = UIColor.lightGray
+            } else {
+                PreviousButton.isEnabled = true
+                PreviousButton.backgroundColor = UIColor(named: "CancelRed")
+            }
+        } else if currentPageNumber > 0 {
+            
+            if currentIndex < 0 {
+                currentIndex = 0
+            }
+            
         }
         
         if elementsCount != 0 && currentIndex > 0 {
             
-            if surveyModule.Syrvey[0].pages?.count != 0 && surveyModule.Syrvey[0].pages![0].elements?.count != 0 {
+            if surveyModule.Syrvey[0].pages?.count != 0 && surveyModule.Syrvey[0].pages![currentPageNumber].elements?.count != 0 {
                 
-                let elementscount = surveyModule.Syrvey[0].pages![0].elements?.count
-                if currentIndex == (elementscount! - 1) || currentIndex - 1 < (elementscount! - 1) && surveyModule.Syrvey[0].pages![0].elements![currentIndex - 1].type != "" || currentIndex <= elementsCount! {
-                    type = surveyModule.Syrvey[0].pages![0].elements![currentIndex - 1].type
+                let elementscount = surveyModule.Syrvey[0].pages![currentPageNumber].elements?.count
+                if currentIndex == (elementscount! - 1) || currentIndex - 1 < (elementscount! - 1) && surveyModule.Syrvey[0].pages![currentPageNumber].elements![currentIndex - 1].type != "" || currentIndex <= elementsCount! {
+                    type = surveyModule.Syrvey[0].pages![currentPageNumber].elements![currentIndex - 1].type
                 
                     
                 } else {

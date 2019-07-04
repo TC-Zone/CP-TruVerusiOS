@@ -337,6 +337,7 @@ extension CPFeedbackViewController {
                     surveyModule.Syrvey = [SurveyBase]
                     
                     let pagecount = SurveyBase.pages?.count
+                     surveyModule.pagecount = pagecount
                     
                     if pagecount != nil && pagecount ?? 0 > 0 {
                         

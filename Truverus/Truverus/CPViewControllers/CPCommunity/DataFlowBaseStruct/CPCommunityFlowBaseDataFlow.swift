@@ -27,6 +27,7 @@ struct feedbacksbase {
 
 struct surveyModule {
     static var Syrvey = [SurvayBase]()
+    static var pagecount : Int!
 }
 
 struct comlistforfeedback {
