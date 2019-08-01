@@ -15,16 +15,32 @@ class CPHomeViewController: BaseViewController {
     @IBOutlet weak var CollectionContainer: UIView!
     
     let Transition = CPSlideInTransition()
+    var callingFrom : String!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        segmentController.buttonTapped(button: segmentController.buttons.last!)
+        if callingFrom == "MCOL" {
+            
+            CollectionContainer.alpha = 1
+            ProductContainer.alpha = 0
+            ShowSlideInSearchButton()
+            segmentController.buttonTapped(button: segmentController.buttons.last!)
+           
+            
+        } else if callingFrom == "PRO" {
+            
+            segmentController.isHidden = false
+            ProductContainer.alpha = 1
+            CollectionContainer.alpha = 0
+            segmentController.buttonTapped(button: segmentController.buttons.first!)
+            
+        } 
         
         addSlideMenuButton()
         addSlideSearchButton()
         validateSelectedIndex()
-        segmentController.isHidden = false
-        ProductContainer.alpha = 1
-        CollectionContainer.alpha = 0
+        
         
     }
     
@@ -51,6 +67,7 @@ class CPHomeViewController: BaseViewController {
             CollectionContainer.alpha = 1
             ProductContainer.alpha = 0
             ShowSlideInSearchButton()
+            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "loadProductsFromAPI"), object: nil)
         default:
             print("nothing in switch")
         }

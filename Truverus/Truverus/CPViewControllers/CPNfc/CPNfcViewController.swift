@@ -154,6 +154,7 @@ extension CPNfcViewController{
                 
                 vc.showAlert(alertType: .success)
                 vc.nfcArray = dataSourceArray
+                productStruct.productObj.authcode = (loginResponse.content?.authCode)!
                 
                 
                 

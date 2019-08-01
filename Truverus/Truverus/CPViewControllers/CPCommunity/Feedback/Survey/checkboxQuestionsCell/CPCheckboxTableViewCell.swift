@@ -83,7 +83,7 @@ class CPCheckboxTableViewCell: UITableViewCell , UITableViewDelegate, UITableVie
                         ans.removeAll { (Answers) -> Bool in
                             Answers.number == "\(indexPath.row)"
                         }
-                        
+                    
                     
                 } else {
                     

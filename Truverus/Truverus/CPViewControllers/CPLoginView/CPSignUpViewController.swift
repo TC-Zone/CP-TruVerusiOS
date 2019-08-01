@@ -116,7 +116,7 @@ class CPSignUpViewController: BaseViewController, UITextFieldDelegate, GIDSignIn
                                 showValidationAlerts(message: "Please check confirm password field")
                             }
                         } else {
-                            showValidationAlerts(message: "Please check password. at least one uppercase,  one digit, one lowercase, 8 characters long")
+                            showValidationAlerts(message: "Passwords must be at least 8 characters long and must contain at least one number,both lower and uppercase letters and special characters.")
                         }
                     } else {
                         showValidationAlerts(message: "Please check your email address")

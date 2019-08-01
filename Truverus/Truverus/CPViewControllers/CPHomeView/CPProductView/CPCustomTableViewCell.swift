@@ -80,8 +80,6 @@ class CPCustomTableViewCell: UITableViewCell {
             button.addTarget(self, action: #selector(actionButtonTapped(sender:)), for: .touchUpInside)
             
             
-            
-            
         } else {
             
             DescriptionTextArea.sizeToFit()
@@ -123,9 +121,17 @@ class CPCustomTableViewCell: UITableViewCell {
             
             IsPurchased { (success) in
                 
+                print("availability :: \(StructProductRelatedData.purchaseAvailability)")
+                
                 if StructProductRelatedData.purchaseAvailability == true  {
                     
-                    self.ShowValidateAlerts(message : "You alredy Purchased this product", title: "Sorry!")
+//                    print("ooooo yeeeeeeee fhffffh")
+//                    NotificationCenter.default.post(name: NSNotification.Name(rawValue: "loadProducts"), object: nil)
+                    
+//                    print("vvvvvvvvvvvvvvvvv33333")
+//                    NotificationCenter.default.post(name: NSNotification.Name(rawValue: "loadProductsFromAPI"), object: nil)
+                    
+                    self.ShowValidateAlerts(message : "This product is already purchased", title: "Sorry!")
                     
                 } else {
                     
@@ -211,11 +217,11 @@ extension CPCustomTableViewCell {
         
         let userid = defaults.value(forKey: keys.RegisteredUserID)
         
-        if userid != nil && StructProductRelatedData.ProductTagCode != "" {
+        if userid != nil && StructProductRelatedData.ProductTagCode != "" && productStruct.productObj.authcode != "" {
             
             
             //Correct line for nfc reding
-            let url = NSString.init(format: "%@%@", UrlConstans.BASE_URL, UrlConstans.PURCHASE_PRODUCT + "authCode=\(StructProductRelatedData.ProductTagCode)") as String
+            let url = NSString.init(format: "%@%@", UrlConstans.BASE_URL, UrlConstans.PURCHASE_PRODUCT + "authCode=\(productStruct.productObj.authcode)") as String
             
             
             if StructProfile.ProfilePicture.name != "" && productStruct.productObj.productTitle != ""{
@@ -240,6 +246,19 @@ extension CPCustomTableViewCell {
                             print("error code is :: \(error.errorCode)")
                             print("error type is :: \(error.errorType)")
                             print("error description is :: \(error.description)")
+                            
+                            if error.statusCode == 400 {
+       
+                                // purchased already was the previous message which is not valid
+                                self.ShowValidateAlerts(message : "error code 400 was returned", title: "Sorry!")
+                                
+                            }
+                            if error.statusCode == 403 {
+                                
+                                
+                                self.ShowValidateAlerts(message : "error 403 was returned. purchase will be made however", title: "Sorry!")
+                                
+                            }
                         }
                     }
                 }
@@ -278,6 +297,7 @@ extension CPCustomTableViewCell {
                 self.PurchaseButton.backgroundColor = UIColor.black
                
             } else {
+
                 
                 ShowValidateAlerts(message : "Something went wrong", title: "Sorry!")
                 self.PurchaseButton.isEnabled = true
@@ -336,6 +356,19 @@ extension CPCustomTableViewCell {
                                     print(response)
                                 case .failure(let error):
                                     print("error in retrieving new access token :: \(error)")
+                                    if error.statusCode == 400 {
+
+                                        //This product is already purchased was the massege here not okay
+                                        self.ShowValidateAlerts(message : "error code 400 recieved ", title: "Sorry something went wrong!")
+                                        
+                                    }
+                                    
+                                    if error.statusCode == 403 {
+                                        
+                                        
+                                        self.ShowValidateAlerts(message : "error 403 was returned. purchase will be made however", title: "Sorry!")
+                                        
+                                    }
                                 }
                             })
                         }
@@ -360,11 +393,28 @@ extension CPCustomTableViewCell {
             
             if UpdatedCommunityResponse.status == "OK" && UpdatedCommunityResponse.statusCode == 200 {
                 
-                ShowValidateAlerts(message : "Pruduct Purchased Successfully!", title: "Congradulations!")
+                print("ooooo yeeeeeeee fhffffh")
+                NotificationCenter.default.post(name: NSNotification.Name(rawValue: "loadProducts"), object: nil)
+                
+                NotificationCenter.default.post(name: NSNotification.Name(rawValue: "loadProductsFromAPI"), object: nil)
+                ShowValidateAlerts(message : "Pruduct Purchased Successfully!", title: "Congratulations!")
+                
+            } else if UpdatedCommunityResponse.statusCode == 400{
+                
+                ShowValidateAlerts(message : "Something went wrong!", title: "Sorry!")
+                
+            } else if UpdatedCommunityResponse.statusCode == 403 {
+                
+                NotificationCenter.default.post(name: NSNotification.Name(rawValue: "loadProducts"), object: nil)
+                
+                NotificationCenter.default.post(name: NSNotification.Name(rawValue: "loadProductsFromAPI"), object: nil)
+                self.ShowValidateAlerts(message : "error 403 was returned. purchase will be made however", title: "Sorry!")
                 
             } else {
+               
                 
-                ShowValidateAlerts(message : "Something went wrong", title: "Sorry!")
+                ShowValidateAlerts(message : "This product is already purchased!", title: "Sorry!")
+                
             }
             
             
@@ -424,9 +474,9 @@ extension CPCustomTableViewCell {
         let userId = defaults.value(forKey: keys.RegisteredUserID)
         
         
-        if userId != nil && StructProductRelatedData.ProductTagCode != "" {
+        if userId != nil && StructProductRelatedData.ProductTagCode != "" && productStruct.productObj.authcode != ""{
             
-            let url = NSString.init(format: "%@%@", UrlConstans.BASE_URL, UrlConstans.IS_PURCHASED_BY_AUTHCODE + "\(userId ?? "")?" + "authCode=\(StructProductRelatedData.ProductTagCode)") as String
+            let url = NSString.init(format: "%@%@", UrlConstans.BASE_URL, UrlConstans.IS_PURCHASED_BY_AUTHCODE + "\(userId ?? "")?" + "authCode=\(productStruct.productObj.authcode)") as String
             
             print("url is :: \(url)")
             

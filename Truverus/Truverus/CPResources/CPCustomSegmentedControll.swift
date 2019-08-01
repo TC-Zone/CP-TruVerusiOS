@@ -130,6 +130,7 @@ class CPCustomSegmentedControll: UIControl {
         
     }
     
+    
     @objc func buttonTapped(button: UIButton){
         
         for (buttonIndex, btn) in buttons.enumerated() {

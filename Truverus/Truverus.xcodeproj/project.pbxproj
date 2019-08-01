@@ -3,12 +3,20 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0C10249822E6C45400C487FB /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0C10249722E6C45300C487FB /* GoogleService-Info.plist */; };
+		0C10249A22E6FC2800C487FB /* CPcommonService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C10249922E6FC2800C487FB /* CPcommonService.swift */; };
+		0C10249C22E77A3300C487FB /* MobileUserViewDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C10249B22E77A3300C487FB /* MobileUserViewDataModel.swift */; };
+		0C10249E22E787EC00C487FB /* CPUpdateUserResponseModle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C10249D22E787EC00C487FB /* CPUpdateUserResponseModle.swift */; };
+		0C29192422F1749A006C88A4 /* CPuserFCMdataModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C29192322F1749A006C88A4 /* CPuserFCMdataModule.swift */; };
 		0C38456022CDFBFE00A44526 /* SurveyAnswerSheetBaseModle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C38455F22CDFBFE00A44526 /* SurveyAnswerSheetBaseModle.swift */; };
+		0C3AB27422F1BF6600ED3C49 /* CPSendRequestErrorModle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C3AB27322F1BF6600ED3C49 /* CPSendRequestErrorModle.swift */; };
+		0C80FC2322E86E4B002D20C5 /* CpProfileImageUpdateModle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C80FC2222E86E4B002D20C5 /* CpProfileImageUpdateModle.swift */; };
 		0C9366DA22C0D6AB00562E7A /* CPispurchasedDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C9366D922C0D6AB00562E7A /* CPispurchasedDataModel.swift */; };
+		0CDF952F22EECD0E00041B12 /* CPPushNotificationsModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CDF952E22EECD0E00041B12 /* CPPushNotificationsModule.swift */; };
 		454A580AF15DF81C903B50A2 /* Pods_Truverus.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E56E34A7933A4FBFE8F88BB /* Pods_Truverus.framework */; };
 		C52D6FD622A8EEE100FFC562 /* CPDropdownTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C52D6FD422A8EEE100FFC562 /* CPDropdownTableViewCell.swift */; };
 		C52D6FD722A8EEE100FFC562 /* CPDropdownTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C52D6FD522A8EEE100FFC562 /* CPDropdownTableViewCell.xib */; };
@@ -182,8 +190,16 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0C10249722E6C45300C487FB /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		0C10249922E6FC2800C487FB /* CPcommonService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CPcommonService.swift; sourceTree = "<group>"; };
+		0C10249B22E77A3300C487FB /* MobileUserViewDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MobileUserViewDataModel.swift; sourceTree = "<group>"; };
+		0C10249D22E787EC00C487FB /* CPUpdateUserResponseModle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CPUpdateUserResponseModle.swift; sourceTree = "<group>"; };
+		0C29192322F1749A006C88A4 /* CPuserFCMdataModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CPuserFCMdataModule.swift; sourceTree = "<group>"; };
 		0C38455F22CDFBFE00A44526 /* SurveyAnswerSheetBaseModle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveyAnswerSheetBaseModle.swift; sourceTree = "<group>"; };
+		0C3AB27322F1BF6600ED3C49 /* CPSendRequestErrorModle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CPSendRequestErrorModle.swift; sourceTree = "<group>"; };
+		0C80FC2222E86E4B002D20C5 /* CpProfileImageUpdateModle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CpProfileImageUpdateModle.swift; sourceTree = "<group>"; };
 		0C9366D922C0D6AB00562E7A /* CPispurchasedDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CPispurchasedDataModel.swift; sourceTree = "<group>"; };
+		0CDF952E22EECD0E00041B12 /* CPPushNotificationsModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CPPushNotificationsModule.swift; sourceTree = "<group>"; };
 		5E56E34A7933A4FBFE8F88BB /* Pods_Truverus.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Truverus.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A91101BB2D5F90C4EA4DE7D8 /* Pods-Truverus.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Truverus.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Truverus/Pods-Truverus.debug.xcconfig"; sourceTree = "<group>"; };
 		C52D6FD422A8EEE100FFC562 /* CPDropdownTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CPDropdownTableViewCell.swift; sourceTree = "<group>"; };
@@ -377,11 +393,12 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		0C38455D22CDFBBD00A44526 /* New Group */ = {
+		0C38455D22CDFBBD00A44526 /* CPCommonServices */ = {
 			isa = PBXGroup;
 			children = (
+				0C10249922E6FC2800C487FB /* CPcommonService.swift */,
 			);
-			path = "New Group";
+			path = CPCommonServices;
 			sourceTree = "<group>";
 		};
 		0C38455E22CDFBD300A44526 /* SurveyAnswerSheetDataModle */ = {
@@ -390,6 +407,14 @@
 				0C38455F22CDFBFE00A44526 /* SurveyAnswerSheetBaseModle.swift */,
 			);
 			path = SurveyAnswerSheetDataModle;
+			sourceTree = "<group>";
+		};
+		0CDF952D22EECCEC00041B12 /* PushNotifications */ = {
+			isa = PBXGroup;
+			children = (
+				0CDF952E22EECD0E00041B12 /* CPPushNotificationsModule.swift */,
+			);
+			path = PushNotifications;
 			sourceTree = "<group>";
 		};
 		119E1FBAC4E9C16F97CAE5D6 /* Pods */ = {
@@ -622,6 +647,7 @@
 		CE54A1802278012200C4BEE1 /* Truverus */ = {
 			isa = PBXGroup;
 			children = (
+				0CDF952D22EECCEC00041B12 /* PushNotifications */,
 				CEE911CB228A98B10000F3EE /* Truverus.entitlements */,
 				CE54A1F02278119400C4BEE1 /* CPResources */,
 				CEE911FF228EA52C0000F3EE /* CPNetworking */,
@@ -634,6 +660,7 @@
 				CE54A18B2278012300C4BEE1 /* Assets.xcassets */,
 				CE54A18D2278012300C4BEE1 /* LaunchScreen.storyboard */,
 				CE54A1902278012300C4BEE1 /* Info.plist */,
+				0C10249722E6C45300C487FB /* GoogleService-Info.plist */,
 				CE74F9D9228196E80009ABCD /* credentials.plist */,
 				CE54A1882278012200C4BEE1 /* Truverus.xcdatamodeld */,
 				CE74F9D42281525F0009ABCD /* FBSDKCoreKit.framework */,
@@ -741,7 +768,7 @@
 		CEE911A3228930D00000F3EE /* CPCommunity */ = {
 			isa = PBXGroup;
 			children = (
-				0C38455D22CDFBBD00A44526 /* New Group */,
+				0C38455D22CDFBBD00A44526 /* CPCommonServices */,
 				C5E2A1A922B8F50500FB7477 /* AllCommunityView */,
 				CEA9EC26229FCF6900F5396A /* DataFlowBaseStruct */,
 				CEA9EC1D229CFF2F00F5396A /* CommunityDataModel */,
@@ -911,6 +938,8 @@
 			children = (
 				CEF2372422842564006DB6AC /* CPTransferViewController.swift */,
 				CEF2372622842595006DB6AC /* Transfer.storyboard */,
+				0C29192322F1749A006C88A4 /* CPuserFCMdataModule.swift */,
+				0C3AB27322F1BF6600ED3C49 /* CPSendRequestErrorModle.swift */,
 			);
 			path = Transfer;
 			sourceTree = "<group>";
@@ -921,6 +950,9 @@
 				CEF23729228440A6006DB6AC /* MyAccount.storyboard */,
 				CEF2372B2284418D006DB6AC /* CPMyAccountViewController.swift */,
 				CEF2372D22844423006DB6AC /* CPEditAccountViewController.swift */,
+				0C10249B22E77A3300C487FB /* MobileUserViewDataModel.swift */,
+				0C10249D22E787EC00C487FB /* CPUpdateUserResponseModle.swift */,
+				0C80FC2222E86E4B002D20C5 /* CpProfileImageUpdateModle.swift */,
 			);
 			path = CPMyAccount;
 			sourceTree = "<group>";
@@ -1029,7 +1061,13 @@
 						CreatedOnToolsVersion = 10.1;
 						LastSwiftMigration = 1020;
 						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
 							com.apple.NearFieldCommunicationTagReading = {
+								enabled = 1;
+							};
+							com.apple.Push = {
 								enabled = 1;
 							};
 						};
@@ -1123,6 +1161,7 @@
 				CE54A1F5227813EE00C4BEE1 /* Main.storyboard in Resources */,
 				CEE911A52289311D0000F3EE /* CPCommunity.storyboard in Resources */,
 				CE54A1D022780BC700C4BEE1 /* Trade Gothic LT Light.ttf in Resources */,
+				0C10249822E6C45400C487FB /* GoogleService-Info.plist in Resources */,
 				CE4C3A92227DB393004443A2 /* CPLogin.storyboard in Resources */,
 				C52D6FE122A9132100FFC562 /* CPRatingTableViewCell.xib in Resources */,
 			);
@@ -1151,24 +1190,15 @@
 			files = (
 			);
 			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-Truverus/Pods-Truverus-resources.sh",
-				"${PODS_ROOT}/GoogleMaps/Maps/Frameworks/GoogleMaps.framework/Resources/GoogleMaps.bundle",
-				"${PODS_ROOT}/GooglePlaces/Frameworks/GooglePlaces.framework/Resources/GooglePlaces.bundle",
-				"${PODS_ROOT}/GoogleSignIn/Resources/GoogleSignIn.bundle",
+				"${PODS_ROOT}/Target Support Files/Pods-Truverus/Pods-Truverus-resources-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputFileListPaths = (
-			);
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleMaps.bundle",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GooglePlaces.bundle",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleSignIn.bundle",
+				"${PODS_ROOT}/Target Support Files/Pods-Truverus/Pods-Truverus-resources-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Truverus/Pods-Truverus-resources.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Truverus/Pods-Truverus-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		99C00E2F08FD6ABCBE5CA2E9 /* [CP] Embed Pods Frameworks */ = {
@@ -1177,42 +1207,15 @@
 			files = (
 			);
 			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-Truverus/Pods-Truverus-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
-				"${BUILT_PRODUCTS_DIR}/FlagPhoneNumber/FlagPhoneNumber.framework",
-				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
-				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
-				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
-				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
-				"${BUILT_PRODUCTS_DIR}/ReachabilitySwift/Reachability.framework",
-				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
-				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
-				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
-				"${BUILT_PRODUCTS_DIR}/TaggerKit/TaggerKit.framework",
-				"${BUILT_PRODUCTS_DIR}/XCDYouTubeKit/XCDYouTubeKit.framework",
+				"${PODS_ROOT}/Target Support Files/Pods-Truverus/Pods-Truverus-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-			);
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FlagPhoneNumber.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Reachability.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TaggerKit.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/XCDYouTubeKit.framework",
+				"${PODS_ROOT}/Target Support Files/Pods-Truverus/Pods-Truverus-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Truverus/Pods-Truverus-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Truverus/Pods-Truverus-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		E828718182C04DA0261577E9 /* [CP] Check Pods Manifest.lock */ = {
@@ -1265,6 +1268,7 @@
 				C544E66022A98D19002D9ECF /* CPVerifyEmailViewController.swift in Sources */,
 				C592F0CA22AA36020046C885 /* RegisterUserDataModel.swift in Sources */,
 				CEF2372E22844423006DB6AC /* CPEditAccountViewController.swift in Sources */,
+				0C80FC2322E86E4B002D20C5 /* CpProfileImageUpdateModle.swift in Sources */,
 				C5655F1A22A8D43F002A143E /* CPRadiogroupTableViewCell.swift in Sources */,
 				CEE9120A228EA6F80000F3EE /* SocialUserLogin.swift in Sources */,
 				CEE911B42289409A0000F3EE /* CPPromotionCollectionViewCell.swift in Sources */,
@@ -1294,7 +1298,9 @@
 				C52D6FE022A9132100FFC562 /* CPRatingTableViewCell.swift in Sources */,
 				CE4C3A8E227DB393004443A2 /* CPMenuTableViewCell.swift in Sources */,
 				CE15AA57228006B700881C8E /* BaseViewController.swift in Sources */,
+				0C3AB27422F1BF6600ED3C49 /* CPSendRequestErrorModle.swift in Sources */,
 				CEF2370E2282A5E6006DB6AC /* CPProductScreenViewController.swift in Sources */,
+				0C10249E22E787EC00C487FB /* CPUpdateUserResponseModle.swift in Sources */,
 				CE4C3A93227DB393004443A2 /* CPSignUpViewController.swift in Sources */,
 				CEF237102282A60F006DB6AC /* CPCustomTableViewCell.swift in Sources */,
 				CE54A205227AB2C200C4BEE1 /* CPUiViewTransitions.swift in Sources */,
@@ -1322,6 +1328,7 @@
 				C567DF0922B26C4500178963 /* CPCheckBoxeTableViewCell.swift in Sources */,
 				CEF2374B228557C1006DB6AC /* CPUserProfile.swift in Sources */,
 				CEA9EC1C229CF6AB00F5396A /* CPCommunityMainViewController.swift in Sources */,
+				0C10249C22E77A3300C487FB /* MobileUserViewDataModel.swift in Sources */,
 				C5A536D922AFAA920044B7E4 /* CPSurvayByFeedbackDataModel.swift in Sources */,
 				CEF2375D22859A0C006DB6AC /* CPInboxCollectionViewCell.swift in Sources */,
 				CEE911B2228940850000F3EE /* CPFeedbackCollectionViewCell.swift in Sources */,
@@ -1330,6 +1337,7 @@
 				C5E2A1AB22B8F52D00FB7477 /* CPAllCommunityViewViewController.swift in Sources */,
 				CE54A207227AC45D00C4BEE1 /* CPSlideInTransition.swift in Sources */,
 				CEE911B8228943BF0000F3EE /* CPFeedbackSubViewController.swift in Sources */,
+				0CDF952F22EECD0E00041B12 /* CPPushNotificationsModule.swift in Sources */,
 				C52D6FE522A914D700FFC562 /* CPCommentTableViewCell.swift in Sources */,
 				CEF23731228552C9006DB6AC /* PercistanceService.swift in Sources */,
 				CEA9EC23229FACFB00F5396A /* CPEventsDataModel.swift in Sources */,
@@ -1337,6 +1345,8 @@
 				CEF2370C2282A1A5006DB6AC /* CPParallaxTableView.swift in Sources */,
 				CEA9EC1F229CFF4F00F5396A /* CPCommunityDataModel.swift in Sources */,
 				CEE911BC228943E70000F3EE /* CPEventSubViewController.swift in Sources */,
+				0C29192422F1749A006C88A4 /* CPuserFCMdataModule.swift in Sources */,
+				0C10249A22E6FC2800C487FB /* CPcommonService.swift in Sources */,
 				CE3124362297C1B100D4049A /* CPNoProductViewController.swift in Sources */,
 				CEE91219229461780000F3EE /* CPServiceProductData.swift in Sources */,
 			);

@@ -74,22 +74,32 @@ extension CPSocialSignInHelper{
         
         let url = NSString.init(format: "%@%@", UrlConstans.BASE_URL, UrlConstans.SOCIAL_USER_SIGN_IN) as String
         
-        print("url is :: \(url)")
-        let parameters : [String :Any] = ["code" : CPSocialSignInHelper.idToken as Any, "authProvider" : "facebook"]
-        
-        if let url = URL(string: url) {
-            ApiManager.shared().makeRequestAlamofire(route: url, method: .post, autherized: true, parameter: parameters, header: headers){ (response) in
-                SVProgressHUD.dismiss()
-                switch response{
-                case let .success(data):
-                    self.serializeCheckUserStatusResponse(data: data)
-                    print("hereee")
-                    print(response)
-                case .failure(_):
-                    print("fail")
+        if CPSocialSignInHelper.idToken != nil && StructProfile.ProfilePicture.FCMToken != "not found" {
+            
+            print("url is :: \(url)")
+            let parameters : [String :Any] = ["code" : CPSocialSignInHelper.idToken as Any, "authProvider" : "facebook", "registerToken" : StructProfile.ProfilePicture.FCMToken]
+            
+            if let url = URL(string: url) {
+                ApiManager.shared().makeRequestAlamofire(route: url, method: .post, autherized: true, parameter: parameters, header: headers){ (response) in
+                    SVProgressHUD.dismiss()
+                    switch response{
+                    case let .success(data):
+                        self.serializeCheckUserStatusResponse(data: data)
+                        print("hereee")
+                        print(response)
+                    case .failure(_):
+                        print("fail")
+                    }
                 }
+            } else {
+                print("couldn't find all the parameters needed")
             }
+            
+            
         }
+        
+        
+        
     }
     
     static func serializeCheckUserStatusResponse(data: Data) {

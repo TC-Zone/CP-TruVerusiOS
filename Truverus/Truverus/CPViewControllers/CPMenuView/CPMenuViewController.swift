@@ -35,10 +35,10 @@ class CPMenuViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     let defaults = UserDefaults.standard
     
-    let MenuItems = ["HOME","MY ACCOUNT","NFC SCAN","INBOX","COMMUNITY","SETTINGS","HELP","PRIVECY AND TERMS","LOG OUT"]
-    let MenuItemIcons = [UIImage(named: "HomeMenuIcon"),UIImage(named: "AccountMenuIcon"),UIImage(named: "NFCMenuIcon"),UIImage(named: "InboxMenuIcon"),UIImage(named: "Feedback-1"),UIImage(named: "settings"),UIImage(named: "help-1"),UIImage(named: "data privacy"),UIImage(named: "log out-1")]
+    let MenuItems = ["HOME","MY ACCOUNT","MY COLLECTION","NFC SCAN","INBOX","COMMUNITY","SETTINGS","HELP","PRIVACY AND TERMS","LOG OUT"]
+    let MenuItemIcons = [UIImage(named: "HomeMenuIcon"),UIImage(named: "AccountMenuIcon"),UIImage(named: "mycollection_menu-1"),UIImage(named: "NFCMenuIcon"),UIImage(named: "InboxMenuIcon"),UIImage(named: "Feedback-1"),UIImage(named: "settings"),UIImage(named: "help-1"),UIImage(named: "data privacy"),UIImage(named: "log out-1")]
     
-    let LoggedoutMenuItems = ["HOME","NFC SCAN","SETTINGS","HELP","PRIVECY AND TERMS"]
+    let LoggedoutMenuItems = ["HOME","NFC SCAN","SETTINGS","HELP","PRIVACY AND TERMS"]
     let LoggedoutMenuItemIcons = [UIImage(named: "HomeMenuIcon"),UIImage(named: "NFCMenuIcon"),UIImage(named: "settings"),UIImage(named: "help-1"),UIImage(named: "data privacy")]
     
     override func viewDidLoad() {
@@ -49,6 +49,8 @@ class CPMenuViewController: UIViewController, UITableViewDelegate, UITableViewDa
         self.MenuTable.register(UINib(nibName: "CPShareAppTableViewCell", bundle: nil), forCellReuseIdentifier: "CPShareCell")
         ValidateMenuHeaderType()
         CreateProfilePic()
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(loadFromRemote), name: NSNotification.Name(rawValue: "updateMenu"), object: nil)
         
         let tap = UITapGestureRecognizer(target: self, action: #selector(self.handleTap(sender:)))
         let tap2 = UITapGestureRecognizer(target: self, action: #selector(self.handleTap(sender:)))
@@ -69,6 +71,12 @@ class CPMenuViewController: UIViewController, UITableViewDelegate, UITableViewDa
         // Do any additional setup after loading the view.
     }
     
+    
+    @objc func loadFromRemote() {
+        
+        MenuTable.reloadData()
+        
+    }
     
     @objc func handleTap(sender: UITapGestureRecognizer? = nil) {
         // handling code
@@ -107,7 +115,7 @@ class CPMenuViewController: UIViewController, UITableViewDelegate, UITableViewDa
         
         if (x == "logedin") {
             
-            count = 10
+            count = MenuItems.count + 1
             
         } else if (x == "logedout") {
             
@@ -122,13 +130,13 @@ class CPMenuViewController: UIViewController, UITableViewDelegate, UITableViewDa
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let x = appDelegate.state
-        
+        print("current index in menu :: \(indexPath.row)")
         
         if let sharecell = tableView.dequeueReusableCell(withIdentifier: "CPShareCell") as? CPShareAppTableViewCell {
             
             if (x == "logedin") {
                 
-                if (indexPath.row == 9) {
+                if (indexPath.row == 10) {
                     
                     return sharecell
                 }
@@ -149,7 +157,7 @@ class CPMenuViewController: UIViewController, UITableViewDelegate, UITableViewDa
             ValidateMenuHeaderType()
             if (x == "logedin") {
                 
-                if (indexPath.row == 5 || indexPath.row == 8){
+                if (indexPath.row == 6 || indexPath.row == 9){
                     cell.SeperatorView.isHidden = false
                     cell.MenuIcon.image = MenuItemIcons[indexPath.row]
                     cell.MenuTitle.text = MenuItems[indexPath.row]
@@ -189,7 +197,7 @@ class CPMenuViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat
     {
-        if (indexPath.row == 9) {
+        if (indexPath.row == 10) {
             
             return 75
             
@@ -203,7 +211,7 @@ class CPMenuViewController: UIViewController, UITableViewDelegate, UITableViewDa
             
             let homeStoryBoard : UIStoryboard = UIStoryboard(name: "CPHomeView", bundle: nil)
             let vc = homeStoryBoard.instantiateViewController(withIdentifier: "CPHomeView") as! CPHomeViewController
-            
+            vc.callingFrom = "PRO"
             validateMenuOption(vc: vc)
             
         }
@@ -220,13 +228,26 @@ class CPMenuViewController: UIViewController, UITableViewDelegate, UITableViewDa
             
             if indexPath.row == 2 {
                 
+                
+                let homeStoryBoard : UIStoryboard = UIStoryboard(name: "CPHomeView", bundle: nil)
+                let vc = homeStoryBoard.instantiateViewController(withIdentifier: "CPHomeView") as! CPHomeViewController
+                vc.callingFrom = "MCOL"
+                validateMenuOption(vc: vc)
+                
+//                NotificationCenter.default.post(name: NSNotification.Name(rawValue: "collection"), object: nil)
+//                NotificationCenter.default.post(Notification(name: Notification.Name(rawValue: "MessageReceived"),object: nil))
+                
+            }
+            
+            if indexPath.row == 3 {
+                
                 let homeStoryBoard : UIStoryboard = UIStoryboard(name: "NFC", bundle: nil)
                 let vc = homeStoryBoard.instantiateViewController(withIdentifier: "CPNFCView") as! CPNfcViewController
                 validateMenuOption(vc: vc)
                 
             }
             
-            if indexPath.row == 3 {
+            if indexPath.row == 4 {
                 
                 let homeStoryBoard : UIStoryboard = UIStoryboard(name: "Inbox", bundle: nil)
                 let vc = homeStoryBoard.instantiateViewController(withIdentifier: "CPInboxViewController") as! CPInboxViewController
@@ -234,7 +255,7 @@ class CPMenuViewController: UIViewController, UITableViewDelegate, UITableViewDa
                 
             }
             
-            if indexPath.row == 4 {
+            if indexPath.row == 5 {
                 
                 let story = UIStoryboard.init(name: "CPCommunity", bundle: nil)
                 let vc = story.instantiateViewController(withIdentifier: "AllCommunity") as! CPAllCommunityViewViewController
@@ -244,7 +265,7 @@ class CPMenuViewController: UIViewController, UITableViewDelegate, UITableViewDa
                 
             }
             
-            if indexPath.row == 5 {
+            if indexPath.row == 6 {
                 
                 let homeStoryBoard : UIStoryboard = UIStoryboard(name: "Settings", bundle: nil)
                 let vc = homeStoryBoard.instantiateViewController(withIdentifier: "CPSettingsViewController") as! CPSettingsViewController
@@ -252,7 +273,7 @@ class CPMenuViewController: UIViewController, UITableViewDelegate, UITableViewDa
                 
             }
             
-            if (indexPath.row == 8) {
+            if (indexPath.row == 9) {
                 
                 let alert = UIAlertController(title: "Message", message: "You are succesfully loggd out", preferredStyle: UIAlertController.Style.alert)
                 alert.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: nil))
@@ -272,6 +293,7 @@ class CPMenuViewController: UIViewController, UITableViewDelegate, UITableViewDa
                     defaults.set(nil, forKey: keys.accesstoken)
                     defaults.set(nil, forKey: keys.RegisteredUserID)
                     cleanProductStruct()
+                    vc.callingFrom = "PRO"
                     StructProductRelatedData.purchaseAvailability = false
                     self.navigationController?.pushViewController(vc, animated: true)
                     
@@ -283,6 +305,7 @@ class CPMenuViewController: UIViewController, UITableViewDelegate, UITableViewDa
                     defaults.set(nil, forKey: keys.accesstoken)
                     defaults.set(nil, forKey: keys.RegisteredUserID)
                     cleanProductStruct()
+                    vc.callingFrom = "PRO"
                     StructProductRelatedData.purchaseAvailability = false
                     self.navigationController?.pushViewController(vc, animated: true)
                     
@@ -293,6 +316,7 @@ class CPMenuViewController: UIViewController, UITableViewDelegate, UITableViewDa
                     defaults.set(nil, forKey: keys.RegisteredUserID)
                     defaults.set(nil, forKey: keys.RegisteredUserID)
                     cleanProductStruct()
+                    vc.callingFrom = "PRO"
                     StructProductRelatedData.purchaseAvailability = false 
                     self.navigationController?.pushViewController(vc, animated: true)
                 }

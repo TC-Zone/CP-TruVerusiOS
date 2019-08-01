@@ -11,9 +11,15 @@ import TaggerKit
 import AVFoundation
 import Photos
 import MobileCoreServices
+import Alamofire
+import ObjectMapper
+import SVProgressHUD
+import CoreData
+import Kingfisher
 
 class CPEditAccountViewController: UIViewController , UIPickerViewDelegate , UIPickerViewDataSource, UIScrollViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate , UITextFieldDelegate{
     
+    @IBOutlet weak var backgroundview: UIView!
     
     @IBOutlet weak var SportScroll: UIScrollView!
     @IBOutlet weak var SportTagContainer: UIView!
@@ -36,6 +42,7 @@ class CPEditAccountViewController: UIViewController , UIPickerViewDelegate , UIP
     @IBOutlet weak var NameTextfield: UITextField!
     @IBOutlet weak var ProfilePicture: UIImageView!
     @IBOutlet weak var ChangePhotoButton: UIButton!
+    @IBOutlet weak var UpdateButton: UIButton!
     
     var selectedGender : String?
     
@@ -50,9 +57,13 @@ class CPEditAccountViewController: UIViewController , UIPickerViewDelegate , UIP
     
     let sportTags = TKCollectionView()
     let allsporttags = TKCollectionView()
+    var registeruser = [RegisteredUserData]()
     
     var imagePicker : UIImagePickerController!
     
+    let defaults = UserDefaults.standard
+    
+   
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -65,6 +76,8 @@ class CPEditAccountViewController: UIViewController , UIPickerViewDelegate , UIP
         handlefashiontags()
         handleSporttags()
         
+        setremotevalues()
+        
         FashionInterestsTextField.addTarget(self, action: #selector(textFieldDidChange(_:)), for: UIControl.Event.editingChanged)
         FashionInterestsTextField.addTarget(self, action: #selector(textFieldDidEndChange(_:)), for: UIControl.Event.editingDidEnd)
         FashionInterestsTextField.addTarget(self, action: #selector(textFieldDidEndChange(_:)), for: UIControl.Event.editingDidEndOnExit)
@@ -75,7 +88,42 @@ class CPEditAccountViewController: UIViewController , UIPickerViewDelegate , UIP
         FashionScroll.delegate = self
         SportScroll.delegate = self
         
+        
+        let tapRecognizer = UITapGestureRecognizer(target: self, action: #selector(tapped(gestureRecognizer:)))
+        backgroundview.addGestureRecognizer(tapRecognizer)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(setremotevalues), name: NSNotification.Name(rawValue: "setvaluesforEdit"), object: nil)
+        
     }
+    
+    @objc func tapped(gestureRecognizer: UITapGestureRecognizer) {
+        // Remove the blue view.
+         self.view.endEditing(true)
+        doneClick()
+        onDoneButtonTapped()
+    }
+    
+    @objc func setremotevalues() {
+        print("im gone to fffff")
+        
+        if userProfileDataEdit.imageUrl != nil {
+            
+            ProfilePicture.kf.indicatorType = .activity
+            ProfilePicture.kf.setImage(with: userProfileDataEdit.imageUrl, options: [.transition(.fade(0.2))])
+            
+        }
+        
+        print("email on was ::: \(userProfileDataEdit.emailon ?? "")")
+        EmailTextField.text = StructProfile.ProfilePicture.email
+        AddressTextField.text = userProfileDataEdit.Addresson
+        BirthdayTextField.text = userProfileDataEdit.Birthdayon
+        GenderTextField.text = userProfileDataEdit.genderon
+        ContactNoTextField.text = userProfileDataEdit.contacton
+        NameTextfield.text = userProfileDataEdit.nameon
+        
+    }
+    
+    
     
     func settextDelegates() {
         
@@ -115,8 +163,14 @@ class CPEditAccountViewController: UIViewController , UIPickerViewDelegate , UIP
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
+        
+        doneClick()
+        onDoneButtonTapped()
+        
+        
     }
     
+   
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         
         AddressTextField.resignFirstResponder()
@@ -229,7 +283,18 @@ class CPEditAccountViewController: UIViewController , UIPickerViewDelegate , UIP
         GenderTextField.text = selectedGender
     }
     
-    
+    func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
+        if textField == GenderTextField {
+            // code which you want to execute when the user touch myTextField
+            return false
+        } else if textField == BirthdayTextField {
+            return false
+            
+        } else {
+            return true
+        }
+        
+    }
     
     func CreateProfilePic(){
         
@@ -387,6 +452,8 @@ class CPEditAccountViewController: UIViewController , UIPickerViewDelegate , UIP
         
         print("clicked acton")
         
+        doneClick()
+        
         picker = UIPickerView.init()
         picker.delegate = self
         picker.backgroundColor = UIColor.white
@@ -430,13 +497,15 @@ class CPEditAccountViewController: UIViewController , UIPickerViewDelegate , UIP
     @objc func onDoneButtonTapped() {
         
         UIView.beginAnimations(nil, context: nil)
-        UIView.setAnimationDuration(0.6)
+        UIView.setAnimationDuration(0.3)
         let transfrom = CGAffineTransform(translationX: 0, y: 200)
         picker.transform = transfrom
         toolBar.transform = transfrom
         UIView.commitAnimations()
         
     }
+    
+    
     
     
     @objc func BirthdayButtonAction(){
@@ -449,6 +518,7 @@ class CPEditAccountViewController: UIViewController , UIPickerViewDelegate , UIP
     
     func doDatePicker(){
         // DatePicker
+        onDoneButtonTapped()
         
         datePicker = UIDatePicker.init()
         datePicker.frame = CGRect.init(x: 0.0, y: UIScreen.main.bounds.size.height , width: UIScreen.main.bounds.size.width, height: UIScreen.main.bounds.size.height / 2.5)
@@ -505,7 +575,7 @@ class CPEditAccountViewController: UIViewController , UIPickerViewDelegate , UIP
         BirthdayTextField.text = selectedDate
         
         UIView.beginAnimations(nil, context: nil)
-        UIView.setAnimationDuration(0.6)
+        UIView.setAnimationDuration(0.3)
         let transfrom = CGAffineTransform(translationX: 0, y: 200)
         datePicker.transform = transfrom
         toolBar.transform = transfrom
@@ -517,7 +587,7 @@ class CPEditAccountViewController: UIViewController , UIPickerViewDelegate , UIP
     @objc func cancelClick() {
         
         UIView.beginAnimations(nil, context: nil)
-        UIView.setAnimationDuration(0.6)
+        UIView.setAnimationDuration(0.3)
         let transfrom = CGAffineTransform(translationX: 0, y: 200)
         datePicker.transform = transfrom
         toolBar.transform = transfrom
@@ -583,9 +653,42 @@ class CPEditAccountViewController: UIViewController , UIPickerViewDelegate , UIP
         ProfilePicture.contentMode = .scaleAspectFill
         ProfilePicture.image = chosenImage
         
+ 
+        
+        let imageData:NSData = ProfilePicture.image!.pngData()! as NSData
+        let imageStr = imageData.base64EncodedString(options: NSData.Base64EncodingOptions(rawValue: 0))
+        print("converted base 64 :: \(imageStr)")
+        
+        UpdateUserProfilePicture(base64 : imageStr)
+        
         dismiss(animated: true, completion: nil)
         
     }
+    
+    
+    
+    func ShowValidateAlerts(message : String, title : String) {
+        
+        let alertController = UIAlertController(title: title, message: message, preferredStyle: .actionSheet)
+        let okAction = UIAlertAction(title: "OK", style: UIAlertAction.Style.default) {
+            UIAlertAction in
+            NSLog("OK Pressed")
+        }
+        alertController.addAction(okAction)
+        self.present(alertController, animated: true, completion: nil)
+        
+    }
+    
+    
+    @IBAction func UpdateButtonAction(_ sender: Any) {
+        
+        UpdateUserData()
+        
+    }
+    
+ 
+    
+    
     /*
      // MARK: - Navigation
      
@@ -596,4 +699,315 @@ class CPEditAccountViewController: UIViewController , UIPickerViewDelegate , UIP
      }
      */
     
+}
+
+extension CPEditAccountViewController {
+    
+    private func UpdateUserData() {
+        SVProgressHUD.show()
+
+        var name : String?
+        var email : String?
+        var gender : String?
+        var Address : String?
+        var contact : String?
+        var Birthday : String?
+        
+
+        
+        if NameTextfield.text != "" {
+            name = NameTextfield.text
+        } else {
+            self.ShowValidateAlerts(message : "Name is reqired", title: "Sorry!")
+            
+        }
+        if EmailTextField.text != "" {
+            email = EmailTextField.text
+        } else {
+            self.ShowValidateAlerts(message : "Email is reqired", title: "Sorry!")
+            
+        }
+        if GenderTextField.text == "Male" {
+            gender = "M"
+        } else if GenderTextField.text == "Female" {
+            gender = "F"
+        } else {
+            gender = ""
+        }
+        
+        
+        contact = ContactNoTextField.text
+        Address = AddressTextField.text
+        Birthday = BirthdayTextField.text
+        
+        let access = defaults.value(forKey: keys.accesstoken)
+        
+        let accessState = validateToken(token: access)
+        
+        if accessState == true {
+            
+            
+            let headers: [String: String] = ["Authorization": "Bearer "+(access as! String)]
+            
+            let userid = defaults.value(forKey: keys.RegisteredUserID)
+            
+            print("mobileuserid is :: \(userid)")
+            //jbhjbbjbnb
+            
+            let url = NSString.init(format: "%@%@", UrlConstans.BASE_URL, UrlConstans.UPDATE_USER + "\(userid ?? "")") as String
+            
+            print("url is :: \(url)")
+            //        let parameters : [String : Any] = ["authCode=" : "89a9a3077550a1f6df9066a6091017a13e1a266e01e1b071093a4b75a84f338cf979056621a5d2a455c23ebeb2deb74b5cace5c9c6e10620a5741af3d67d5f1b2b752134e9c9"]
+            let Justuser = defaults.value(forKey: keys.justUserId)
+            print("just user id : \(Justuser)")
+            
+            let parameters : [String : Any] = [
+                    "id": Justuser as Any,
+                    "accountName": "\(name ?? "")",
+                    "email": "\(StructProfile.ProfilePicture.email)",
+                    "mobileUser": [
+                    "id": userid as Any,
+                    "address": "\(Address ?? "")",
+                        "mobileNumber": "\(contact ?? "")",
+                        "gender": "\(gender ?? "")",
+                        "birthday": "1994-07-05",
+                    "user": ["id": Justuser as Any]
+                ]
+                ] as [String : Any]
+
+            
+            if let url = URL(string: url) {
+                ApiManager.shared().makeRequestAlamofire(route: url, method: .put, autherized: false, parameter: parameters, header: headers){ (response) in
+                    SVProgressHUD.dismiss()
+                    switch response{
+                    case let .success(data):
+                        self.serializeUpdatedUserDataaResponse(data: data)
+                        print("hereee")
+                        print(response)
+                    case .failure(let error):
+                        print("\(error.errorCode)")
+                        print("\(error.description)")
+                        print("error status code :: \(error.statusCode)")
+                        if error.statusCode == 401 { // MARK -: Means access token is expired
+                            ApiManager.shared().RetrieveNewAccessToken(callback: { (response) in
+                                switch response {
+                                case let .success(data):
+                                    self.serializeNewAccessToken(data: data)
+                                    self.UpdateUserData()
+                                    print(response)
+                                case .failure(let error):
+                                    print("error in retrieving new access token :: \(error)")
+                                    if error.statusCode == 400 {
+                                        
+                                        
+                                        self.ShowValidateAlerts(message : "400 was returned", title: "Sorry!")
+                                        
+                                    }
+                                    
+                                    
+                                }
+                            })
+                        }
+                    }
+                }
+            }
+            
+        }
+        
+    }
+    
+    
+    func serializeUpdatedUserDataaResponse(data: Data) {
+        do{
+            print("data is :: \(data.description)")
+            let json = try JSONSerialization.jsonObject(with: data, options: [])
+            
+            print("data in response :: \(json)")
+            guard let UpdatedUserResponse: updateUserBase = Mapper<updateUserBase>().map(JSONObject: json) else {
+                return
+            }
+            
+            if UpdatedUserResponse.status == "OK" && UpdatedUserResponse.statusCode == 200 {
+                
+                PercistanceService.deleteAllRecords()
+                
+                let RegisteredLoggeduser = RegisteredUserData(context: PercistanceService.context)
+                
+                
+                RegisteredLoggeduser.firstname = UpdatedUserResponse.content?.user?.accountName
+                RegisteredLoggeduser.email = UpdatedUserResponse.content?.user?.email
+                
+                
+                PercistanceService.saveContext()
+                
+                print("user data saved to model")
+                
+                StructProfile.ProfilePicture.email = (UpdatedUserResponse.content?.user?.email)!
+                StructProfile.ProfilePicture.name = (UpdatedUserResponse.content?.user?.accountName)!
+
+                NotificationCenter.default.post(name: NSNotification.Name(rawValue: "updateMenu"), object: nil)
+                
+                self.ShowValidateAlerts(message : "Your data has been updated successfully!", title: "Congratulations!")
+                
+            }
+           
+        }catch {
+            print(error)
+        }
+    }
+    
+    func serializeNewAccessToken(data: Data) {
+        do{
+            print("data is :: \(data.description)")
+            let json = try JSONSerialization.jsonObject(with: data, options: [])
+            
+            print("data in response :: \(json)")
+            guard let newTokenResponse: RefreshAccessTokenData = Mapper<RefreshAccessTokenData>().map(JSONObject: json) else {
+                return
+            }
+            print("new Access token is :: \(newTokenResponse.access_token)")
+            defaults.set(newTokenResponse.access_token, forKey: "Access_Token")
+            print("new refresh token is :: \(newTokenResponse.refresh_token)")
+            defaults.set(newTokenResponse.refresh_token, forKey: "Refresh_Token")
+            print("User defaults updated!!")
+            
+        }catch {
+            print(error)
+        }
+        
+    }
+    
+    
+    private func validateToken(token : Any?) -> Bool {
+        
+        if token == nil {
+            // Create the alert controller
+            ShowValidateAlerts(message : "You are not logged in", title: "Sorry!")
+            
+            return false
+        } else {
+            return true
+        }
+        
+    }
+    
+    
+    private func UpdateUserProfilePicture(base64 : String){
+        SVProgressHUD.show()
+        
+        let access = defaults.value(forKey: keys.accesstoken)
+        let accessState = validateToken(token: access)
+        let user = defaults.value(forKey: keys.RegisteredUserID)
+        
+        
+        if accessState == true && user != nil {
+            
+            let headers: [String: String] = ["Authorization": "Bearer "+(access as! String)]
+            
+            
+            
+            let url = NSString.init(format: "%@%@", UrlConstans.BASE_URL, UrlConstans.UPDATE_USER_PROFILE_PICTURE) as String
+            
+            print("url is :: \(url)")
+            let parameters : [String :Any] = [
+                "id": "\(user ?? "")",
+                "profileImage": "\(NameTextfield.text ?? "").png",
+                "imageContent": "\(base64)"
+                ] as [String : Any]
+            
+            
+            if let url = URL(string: url) {
+                ApiManager.shared().makeRequestAlamofire(route: url, method: .post, autherized: true, parameter: parameters, header: headers){ (response) in
+                    SVProgressHUD.dismiss()
+                    switch response{
+                    case let .success(data):
+                        self.serializeCUpdatedUserProfilePictureResponse(data: data)
+                        print("hereee")
+                        print(response)
+                    case .failure(_):
+                        print("fail")
+                    }
+                }
+            }
+        }
+    }
+    
+    func serializeCUpdatedUserProfilePictureResponse(data: Data) {
+        do{
+            let json = try JSONSerialization.jsonObject(with: data, options: [])
+            
+            print("data in response :: \(json)")
+            guard let updatedProfilePictureResponse: UpdateProfilePicBase = Mapper<UpdateProfilePicBase>().map(JSONObject: json) else {
+                return
+            }
+            
+            if updatedProfilePictureResponse.status == "OK" && updatedProfilePictureResponse.statusCode == 200 {
+                
+                let cache = ImageCache.default
+                cache.clearMemoryCache()
+                cache.clearDiskCache { print("Done") }
+                StructProfile.ProfilePicture.ProfilePicURL = userProfileDataEdit.imageurlString ?? ""
+                
+                let managedContext = PercistanceService.persistentContainer.viewContext
+                let entity = NSEntityDescription.entity(forEntityName: "RegisteredUserData", in: managedContext)
+                let request = NSFetchRequest<NSFetchRequestResult>()
+                request.entity = entity
+                let predicate = NSPredicate(format: "(email = %@)", EmailTextField.text!)
+                request.predicate = predicate
+                do {
+                    var results =
+                        try managedContext.fetch(request)
+                    let objectUpdate = results[0] as! NSManagedObject
+                    objectUpdate.setValue(userProfileDataEdit.imageurlString, forKey: "picture")
+                    do {
+                        try managedContext.save()
+                       print("Done saving")
+                    }catch let error as NSError {
+                        print("error in persistant :: \(error.localizedFailureReason)")
+                    }
+                }
+                catch let error as NSError {
+                     print("error in persistant :: \(error.localizedFailureReason)")
+                }
+
+
+                
+                NotificationCenter.default.post(name: NSNotification.Name(rawValue: "loadImageWhenUpdated"), object: nil)
+                
+                ShowValidateAlerts(message: "Your profile picture has been successfully updated!", title: "Congratulations!")
+                
+            } else {
+                ShowValidateAlerts(message: "Sorry something went wrong!", title: "Sorry!")
+                
+            }
+            //            customerID = loginResponse.subscriberBean?.subscriberId
+            //            self.rssSubscrib()
+        }catch {
+            print(error)
+        }
+    }
+    
+    
+}
+
+
+struct userProfileDataEdit {
+    static var nameon : String?
+    static var emailon : String?
+    static var genderon : String?
+    static var Addresson : String?
+    static var contacton : String?
+    static var Birthdayon : String?
+    static var imageUrl : URL?
+    static var imageurlString : String?
+}
+
+
+extension ViewController : UIGestureRecognizerDelegate {
+    func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldReceive touch: UITouch) -> Bool {
+        if touch.view!.superview!.superclass! .isSubclass(of: UIButton.self) {
+            return false
+        }
+        return true
+    }
 }

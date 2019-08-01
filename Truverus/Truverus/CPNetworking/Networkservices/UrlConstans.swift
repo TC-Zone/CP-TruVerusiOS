@@ -9,7 +9,7 @@
 import Foundation
 
 struct UrlConstans {
-    
+   
     static let BASE_URL             : String = "https://authenticak84f365ea.ca1.hana.ondemand.com"
     
     static let SOCIAL_USER_SIGN_IN  : String = "/user/api/social"
@@ -35,4 +35,13 @@ struct UrlConstans {
     static var UPDATE_COMMUNITY_BY_PURCHASES : String = "/user/api/platform-users/communities/"
     static var PURCHASED_PRODUCTS_BY_USER_ID : String = "/product/api/productOps/soldProducts/"
     static var IS_PURCHASED_BY_AUTHCODE : String   = "/product/api/productOps/isPurchased/"
+    static var MOBILE_USER_VIEW_BY_ID              = "/user/api/mobile/userView/"
+    static var UPDATE_USER                         = "/user/api/mobile/userUpdate/"
+    static var GET_PROFILEPIC_BY_USER_ID           = "/user/api/downloads/user/"
+    static var UPDATE_USER_PROFILE_PICTURE         = "/user/api/platform-users/profileImage"
+    static var SEND_TRANSFER_REQUEST               = "/product/api/productOps/sendRequest"
+    static var GET_USER_FCMDATA_BY_NAME            = "/user/api/mobile/suggestion?accountName="
+    static var REFRESH_FCMTOKEN                    = "/user/api/mobile/fcmToken"
+    
+    
 }

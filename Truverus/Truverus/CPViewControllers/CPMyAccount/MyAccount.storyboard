@@ -89,7 +89,7 @@
                                                 <color key="textColor" name="TextAreaGray"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Male" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N7B-s5-smR">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N7B-s5-smR">
                                                 <rect key="frame" x="97.5" y="26" width="225" height="20"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="20" id="MMd-oQ-rRp"/>
@@ -115,7 +115,7 @@
                                                 <color key="textColor" name="TextAreaGray"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10-09-1992 (26 years)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bRE-Q5-MrO">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bRE-Q5-MrO">
                                                 <rect key="frame" x="97.5" y="101" width="225" height="20"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="20" id="0cj-ZF-gJf"/>
@@ -141,7 +141,7 @@
                                                 <color key="textColor" name="TextAreaGray"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="4940  St Jean Baptiste St, Quebec" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1HG-HU-Xl7">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1HG-HU-Xl7">
                                                 <rect key="frame" x="97.5" y="176" width="225" height="58"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="58" id="foC-kc-Tt2"/>
@@ -168,7 +168,7 @@
                                                 <color key="textColor" name="TextAreaGray"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="418-249-9852" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Ru-qX-m85">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Ru-qX-m85">
                                                 <rect key="frame" x="97.5" y="289" width="225" height="20"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="20" id="USd-MI-cyc"/>
@@ -194,7 +194,7 @@
                                                 <color key="textColor" name="TextAreaGray"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Engineer" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C3L-ZH-35q">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C3L-ZH-35q">
                                                 <rect key="frame" x="97.5" y="364" width="225" height="20"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="20" id="5w4-4P-EPr"/>
@@ -220,13 +220,11 @@
                                                 <color key="textColor" name="TextAreaGray"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Br-Zy-d7G">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Br-Zy-d7G">
                                                 <rect key="frame" x="97.5" y="439" width="225" height="58"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="58" id="Xis-a6-zSd"/>
                                                 </constraints>
-                                                <string key="text">New Trendes, Gucci, Armani, Nike,
-Jeans, Latest Trends, Vintage</string>
                                                 <fontDescription key="fontDescription" name="TradeGothicLT-BoldTwo" family="TradeGothic LT" pointSize="16"/>
                                                 <color key="textColor" name="TextGray"/>
                                                 <nil key="highlightedColor"/>
@@ -248,8 +246,8 @@ Jeans, Latest Trends, Vintage</string>
                                                 <color key="textColor" name="TextAreaGray"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Soccer, Hockey, Basketball" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IAL-8u-OTo">
-                                                <rect key="frame" x="97.5" y="552" width="225" height="19.5"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IAL-8u-OTo">
+                                                <rect key="frame" x="97.5" y="552" width="225" height="0.0"/>
                                                 <fontDescription key="fontDescription" name="TradeGothicLT-BoldTwo" family="TradeGothic LT" pointSize="16"/>
                                                 <color key="textColor" name="TextGray"/>
                                                 <nil key="highlightedColor"/>
@@ -459,7 +457,7 @@ Jeans, Latest Trends, Vintage</string>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="42" id="ZTG-cZ-tj8"/>
                                                 </constraints>
-                                                <nil key="textColor"/>
+                                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" name="AvenirNextLTPro-Regular" family="Avenir Next LT Pro" pointSize="15"/>
                                                 <textInputTraits key="textInputTraits" textContentType="name"/>
                                             </textField>
@@ -480,7 +478,7 @@ Jeans, Latest Trends, Vintage</string>
                                                 <color key="textColor" name="TextAreaGray"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GNa-5c-YK6">
+                                            <textField opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GNa-5c-YK6">
                                                 <rect key="frame" x="47" y="137" width="281" height="42"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="42" id="UXA-1y-BX0"/>
@@ -735,6 +733,9 @@ Jeans, Latest Trends, Vintage</string>
                                                     </userDefinedRuntimeAttribute>
                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
                                                 </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="UpdateButtonAction:" destination="K81-Lp-hK2" eventType="touchUpInside" id="VRf-yp-GDp"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -833,7 +834,7 @@ Jeans, Latest Trends, Vintage</string>
                                     <constraint firstAttribute="height" constant="54" id="ZRt-EJ-hYU"/>
                                 </constraints>
                             </view>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profilepic" translatesAutoresizingMaskIntoConstraints="NO" id="cUJ-VQ-hay">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="user icon" translatesAutoresizingMaskIntoConstraints="NO" id="cUJ-VQ-hay">
                                 <rect key="frame" x="133.5" y="30" width="108" height="108"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="108" id="a2g-h3-KXU"/>
@@ -902,6 +903,8 @@ Jeans, Latest Trends, Vintage</string>
                         <outlet property="SportScroll" destination="lNC-is-OXP" id="4xX-b6-PIm"/>
                         <outlet property="SportSearchContainer" destination="YGu-Dl-Dhb" id="m6C-Lf-w8s"/>
                         <outlet property="SportTagContainer" destination="Zbz-y9-hOz" id="zAd-zc-xth"/>
+                        <outlet property="UpdateButton" destination="qB9-Y9-aTS" id="RSq-al-itM"/>
+                        <outlet property="backgroundview" destination="huZ-mP-0eD" id="TtZ-Tz-wvk"/>
                         <outlet property="fashionContainer" destination="dTv-Vs-VaV" id="GI9-9t-qd3"/>
                         <outlet property="searchContainer" destination="pCJ-Qz-6kY" id="L7B-R0-TkO"/>
                     </connections>
@@ -930,6 +933,7 @@ Jeans, Latest Trends, Vintage</string>
         <image name="gender_edit" width="18" height="20"/>
         <image name="name_edit" width="14" height="16"/>
         <image name="profilepic" width="546" height="510"/>
+        <image name="user icon" width="89" height="89"/>
         <namedColor name="TextAreaGray">
             <color red="0.42745098039215684" green="0.43137254901960786" blue="0.44313725490196076" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

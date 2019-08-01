@@ -57,16 +57,28 @@ class CPProductScreenViewController: UIViewController, UITableViewDelegate, UITa
     var productsArray : [String?] = []
     
     
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        validateView()
-        NotificationCenter.default.addObserver(self, selector: #selector(setdataWithServices), name: NSNotification.Name(rawValue: "load"), object: nil)
+        if callingStatus.calling == "LOG" {
+            
+            self.NoDataViewContainer.alpha = 1
+            self.view.bringSubviewToFront(NoDataViewContainer)
+            
+        } else {
+            
+            self.NoDataViewContainer.alpha = 0
+            self.view.sendSubviewToBack(NoDataViewContainer)
+            validateView()
+            NotificationCenter.default.addObserver(self, selector: #selector(setdataWithServices), name: NSNotification.Name(rawValue: "load"), object: nil)
+            
+            
+        }
         
         // Do any additional setup after loading the view.
     }
+    
+    
     
     func validateView() {
         
@@ -931,7 +943,7 @@ extension CPProductScreenViewController {
         do{
             let json = try JSONSerialization.jsonObject(with: data, options: [])
             
-            print("data in response jhdbhjvvbj :: \(json)")
+            print("data in response of purchased data :: \(json)")
             guard let purchaseResponse: availablePurchasesBase = Mapper<availablePurchasesBase>().map(JSONObject: json) else {
                 return
             }
@@ -950,6 +962,7 @@ extension CPProductScreenViewController {
                         productsArray.append("\(purchaseResponse.content?[i].productDetail?.product?.id ?? "")")
                         
                     }
+                    
                     
                     print("communities array is :: \(communitiesArray)")
                     print("product lis array is :: \(productsArray)")
@@ -989,5 +1002,8 @@ extension CPProductScreenViewController {
     }
     
 }
-    
+
+struct callingStatus {
+    static var calling = String()
+}
 

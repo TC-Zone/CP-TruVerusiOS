@@ -16,6 +16,9 @@ import GoogleMaps
 import Alamofire
 import ObjectMapper
 import SVProgressHUD
+import Firebase
+import FirebaseMessaging
+import UserNotifications
 protocol AppDelegateRefreshTokenProtocol {
     func refreshAccessTokenOnBase(compeletion: @escaping(APIResult<Void>)->Void)
 }
@@ -29,9 +32,50 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
     let defaults = UserDefaults.standard
+    let gcmMessageIDKey = "gcm.message_id"
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        FirebaseApp.configure()
+        Messaging.messaging().delegate = self
+        
+        if #available(iOS 10.0, *) {
+            // For iOS 10 display notification (sent via APNS)
+            UNUserNotificationCenter.current().delegate = self
+            
+            let authOptions: UNAuthorizationOptions = [.alert, .badge, .sound]
+            UNUserNotificationCenter.current().requestAuthorization(
+                options: authOptions,
+                completionHandler: {_, _ in })
+        } else {
+            let settings: UIUserNotificationSettings =
+                UIUserNotificationSettings(types: [.alert, .badge, .sound], categories: nil)
+            application.registerUserNotificationSettings(settings)
+        }
+        
+        application.registerForRemoteNotifications()
+
+        
+        
+        if Messaging.messaging().fcmToken != nil {
+            print("FCM Token IS : \(Messaging.messaging().fcmToken ?? "nil found")")
+            
+            StructProfile.ProfilePicture.FCMToken = Messaging.messaging().fcmToken ?? "not found"
+            
+            if self.defaults.value(forKey: keys.RegisteredUserID) != nil {
+                print("user id is :: \(self.defaults.value(forKey: keys.RegisteredUserID) ?? "no user id found")")
+            } else {
+                print("user id not found on the device")
+            }
+            
+            
+        } else {
+            print("couldnt recieve FCM token")
+            
+        }
+        
+        
         
         if defaults.value(forKey: "Refresh_Token") != nil {
             
@@ -107,11 +151,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 
             }
             
-//            print("user is already logged in using facebook")
-//            CPSocialSignInHelper.fetchProfile()
+
             state = "logedin"
         } else if defaults.value(forKey: keys.RegisteredUserID) !=  nil {
             
+            print("im registered")
             
             let fetchRequest : NSFetchRequest<RegisteredUserData> = RegisteredUserData.fetchRequest()
             
@@ -132,6 +176,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             if (RegUserData.count != 0) {
                 
                 if img?.picture != nil {
+                    print("picture in user defaults :: \(img!.picture!)")
                     StructProfile.ProfilePicture.ProfilePicURL = img!.picture!
                 }
                 if img?.email != nil {
@@ -155,6 +200,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             state = "logedout"
         }
         
+     
         UIApplication.shared.statusBarStyle = .lightContent
         
         UINavigationBar.appearance().clipsToBounds = true
@@ -254,6 +300,78 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Saves changes in the application's managed object context before the application terminates.
         PercistanceService.saveContext()
     }
+    
+    func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable: Any]) {
+        // If you are receiving a notification message while your app is in the background,
+        // this callback will not be fired till the user taps on the notification launching the application.
+        // TODO: Handle data of notification
+        
+        // With swizzling disabled you must let Messaging know about the message, for Analytics
+        // Messaging.messaging().appDidReceiveMessage(userInfo)
+        
+        // Print message ID.
+        if let messageID = userInfo[gcmMessageIDKey] {
+            print("Message ID: \(messageID)")
+        }
+        
+        // Print full message.
+        print("here 02")
+        print(userInfo)
+    }
+    
+    func extractUserInfo(userInfo: [AnyHashable : Any]) -> (title: String, body: String) {
+        var info = (title: "", body: "")
+        guard let aps = userInfo["aps"] as? [String: Any] else { return info }
+        guard let alert = aps["alert"] as? [String: Any] else { return info }
+        let title = alert["title"] as? String ?? ""
+        let body = alert["body"] as? String ?? ""
+        info = (title: title, body: body)
+        return info
+    }
+    
+    func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable: Any],
+                     fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
+        // If you are receiving a notification message while your app is in the background,
+        // this callback will not be fired till the user taps on the notification launching the application.
+        // TODO: Handle data of notification
+        
+        // With swizzling disabled you must let Messaging know about the message, for Analytics
+        // Messaging.messaging().appDidReceiveMessage(userInfo)
+        
+        // Print message ID.
+        if let messageID = userInfo[gcmMessageIDKey] {
+            print("Message ID: \(messageID)")
+        }
+        
+        print("here 01")
+        
+        // Print full message.
+        print(userInfo)
+        
+        completionHandler(UIBackgroundFetchResult.newData)
+    }
+    
+    
+    func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
+        
+        Messaging.messaging().apnsToken = deviceToken
+        
+        let string1 = String(data: deviceToken, encoding: String.Encoding.utf8) ?? "Data could not be printed"
+        let theString:NSString = NSString(data: deviceToken, encoding: String.Encoding.ascii.rawValue)!
+       
+        print("apns token is :: \(theString)")
+        
+    }
+    
+  
+    
+    func messaging(_ messaging: Messaging, didRefreshRegistrationToken fcmToken: String) {
+        print(fcmToken)
+        Messaging.messaging().subscribe(toTopic: "myTitleTest")
+        print("subscribed to topic")
+    }
+    
+    
 
     func validateRefreshAccessToken() {
         
@@ -289,9 +407,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             guard let newTokenResponse: RefreshAccessTokenData = Mapper<RefreshAccessTokenData>().map(JSONObject: json) else {
                 return
             }
-            print("new Access token is :: \(newTokenResponse.access_token)")
+            
             defaults.set(newTokenResponse.access_token, forKey: "Access_Token")
-            print("new refresh token is :: \(newTokenResponse.refresh_token)")
+            
             defaults.set(newTokenResponse.refresh_token, forKey: "Refresh_Token")
             print("User defaults updated!!")
             
@@ -302,4 +420,98 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
 }
+
+@available(iOS 10, *)
+extension AppDelegate : UNUserNotificationCenterDelegate {
+    
+    // Receive displayed notifications for iOS 10 devices.
+    func userNotificationCenter(_ center: UNUserNotificationCenter,
+                                willPresent notification: UNNotification,
+                                withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
+        let userInfo = notification.request.content.userInfo
+        
+        // With swizzling disabled you must let Messaging know about the message, for Analytics
+        // Messaging.messaging().appDidReceiveMessage(userInfo)
+        
+        // Print message ID.
+        if let messageID = userInfo[gcmMessageIDKey] {
+            print("Message ID: \(messageID)")
+        }
+        
+        // Print full message.
+        print(userInfo)
+        
+        // Change this to your preferred presentation option
+        completionHandler([.alert])
+    }
+    
+    func userNotificationCenter(_ center: UNUserNotificationCenter,
+                                didReceive response: UNNotificationResponse,
+                                withCompletionHandler completionHandler: @escaping () -> Void) {
+        let userInfo = response.notification.request.content.userInfo
+        // Print message ID.
+        if let messageID = userInfo[gcmMessageIDKey] {
+            print("Message ID: \(messageID)")
+        }
+        
+        let info = self.extractUserInfo(userInfo: userInfo)
+        print(info.title)
+        print(info.body)
+        
+        
+        
+        switch UIApplication.shared.applicationState {
+        case .active:
+            //app is currently active, can update badges count here
+            break
+        case .inactive:
+            //app is transitioning from background to foreground (user taps notification), do what you need when user taps here
+            let navigationController = self.window?.rootViewController as? UINavigationController
+            let homeStoryBoard : UIStoryboard = UIStoryboard(name: "Inbox", bundle: nil)
+            let vc = homeStoryBoard.instantiateViewController(withIdentifier: "CPInboxViewController") as! CPInboxViewController
+            
+            navigationController?.pushViewController(vc, animated: true)
+            break
+        case .background:
+            //app is in background, if content-available key of your notification is set to 1, poll to your backend to retrieve data and update your interface here
+            let navigationController = self.window?.rootViewController as? UINavigationController
+            let storyBoard: UIStoryboard = UIStoryboard(name: "CPHomeView", bundle: nil)
+            let newViewController = storyBoard.instantiateViewController(withIdentifier: "CPHomeView") as! CPHomeViewController
+            navigationController?.pushViewController(newViewController, animated: true)
+            
+            break
+        default:
+            break
+        }
+
+        
+        
+        
+        print(userInfo)
+        
+        completionHandler()
+    }
+}
+
+extension AppDelegate : MessagingDelegate {
+    
+    func messaging(_ messaging: Messaging, didReceiveRegistrationToken fcmToken: String) {
+        print("Firebase registration token: \(fcmToken)")
+        
+        let dataDict:[String: String] = ["token": fcmToken]
+        NotificationCenter.default.post(name: Notification.Name("FCMToken"), object: nil, userInfo: dataDict)
+        
+        Messaging.messaging().subscribe(toTopic: "myTitleTest") { error in
+            print("Subscribed to test topic")}
+        // TODO: If necessary send token to application server.
+        // Note: This callback is fired at each app startup and whenever a new token is generated.
+    }
+    
+    func messaging(_ messaging: Messaging, didReceive remoteMessage: MessagingRemoteMessage) {
+        print("Message data", remoteMessage.appData)
+        
+    }
+    
+}
+
 

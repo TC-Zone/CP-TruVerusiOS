@@ -18,6 +18,7 @@ class  productStruct {
         static var youtubeId = String()
         static var CommunityID = String()
         static var productID = String()
+        static var authcode = String()
         
     }
     

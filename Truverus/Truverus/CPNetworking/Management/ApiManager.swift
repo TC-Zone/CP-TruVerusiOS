@@ -11,6 +11,7 @@ import Foundation
 import Alamofire
 import Reachability
 import SVProgressHUD
+import ObjectMapper
 
 extension ResponseError {
     static let noInternetConnection = ResponseError(error: NSLocalizedString("No internet connection", comment: ""), statusCode: -1)
@@ -223,7 +224,7 @@ class ApiManager {
             "accountName": name,
             "email": email,
             "password": password,
-            "mobileUser": ["mobileNumber": mobileNumber]
+            "mobileUser": ["registerToken": StructProfile.ProfilePicture.FCMToken,"mobileNumber": mobileNumber]
         ]
         
         print("parameters are :: \(parameters)")
@@ -361,6 +362,9 @@ class ApiManager {
             print("Reachabilty: ", "Unable to start notifier")
         }
     }
+    
+   
+    
 }
 
 
@@ -375,3 +379,7 @@ extension Request {
         return self
     }
 }
+
+
+
+

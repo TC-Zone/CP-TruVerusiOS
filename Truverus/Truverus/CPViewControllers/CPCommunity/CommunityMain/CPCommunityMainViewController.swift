@@ -22,6 +22,16 @@ class CPCommunityMainViewController: UIViewController {
     @IBOutlet weak var FeedbackIcon: UIImageView!
     @IBOutlet weak var FeedbackIndicationImage: UIImageView!
     @IBOutlet weak var explorebutton: UIButton!
+    @IBOutlet weak var FeedBackCountLabe: UILabel!
+    @IBOutlet weak var FeedbackButton: UIButton!
+    @IBOutlet weak var EventsButton: UIButton!
+    @IBOutlet weak var PromotionButton: UIButton!
+    
+    @IBOutlet weak var PromoView: UIView!
+    
+    @IBOutlet weak var EventView: UIView!
+    
+    @IBOutlet weak var FeedView: UIView!
     
     let defaults = UserDefaults.standard
     var CommunityArray = [CommunityData]()
@@ -42,6 +52,9 @@ class CPCommunityMainViewController: UIViewController {
         getEventsData()
         getPromotionsData()
         getFeedbackData()
+        createShape(sender: PromoView)
+        createShape(sender: EventView)
+        createShape(sender: FeedView)
 //        NotificationCenter.default.addObserver(self, selector: #selector(setdata), name: NSNotification.Name(rawValue: "loadComData"), object: nil)
         // Do any additional setup after loading the view.
     }
@@ -89,14 +102,63 @@ class CPCommunityMainViewController: UIViewController {
     
     @IBAction func ExploreButton(_ sender: Any) {
         
+        explore(call: "explo")
+        
+    }
+    
+    
+    func explore(call: String) {
+        
+       
+        
         let story = UIStoryboard.init(name: "CPCommunity", bundle: nil)
         let vc = story.instantiateViewController(withIdentifier: "CPCommunityHomeViewController") as! CPCommunityHomeViewController
+        
+        vc.callingFrom = call
         
         vc.EventsObject = EventsArray
         vc.PromoObject = PromoArray
         
         self.dismiss(animated: true, completion: nil)
         self.navigationController?.pushViewController(vc, animated: true)
+        
+    }
+    
+    @IBAction func PromoButton(_ sender: Any) {
+        explore(call: "Promo")
+        PromoView.backgroundColor = UIColor(named: "selectorcolor")
+        EventView.backgroundColor = UIColor.white
+        FeedView.backgroundColor = UIColor.white
+        
+    }
+    
+    @IBAction func EventButton(_ sender: Any) {
+        explore(call: "Eve")
+        PromoView.backgroundColor = UIColor.white
+        EventView.backgroundColor = UIColor(named: "selectorcolor")
+        FeedView.backgroundColor = UIColor.white
+    }
+    
+    @IBAction func FeedButton(_ sender: Any) {
+        explore(call: "Feed")
+        PromoView.backgroundColor = UIColor.white
+        EventView.backgroundColor = UIColor.white
+        FeedView.backgroundColor = UIColor(named: "selectorcolor")
+    }
+    
+    
+    
+    func createShape(sender: UIView) {
+        
+        sender.layer.shadowColor = UIColor.lightGray.cgColor
+        sender.layer.cornerRadius = 10
+        sender.layer.shadowOffset = CGSize(width: 0, height: 2.0)
+        sender.layer.shadowRadius = 5.0
+        sender.layer.shadowOpacity = 0.5
+        sender.layer.masksToBounds = false
+        sender.layer.shadowPath = UIBezierPath(roundedRect: sender.bounds, cornerRadius: (sender.layer.cornerRadius)).cgPath
+        sender.layer.backgroundColor = UIColor.white.cgColor
+        
     }
 
 
@@ -373,11 +435,12 @@ extension CPCommunityMainViewController {
             feedbacksbase.community = community
             self.feedbackId = feedbacksResponse.content![0].id
             print("promotionCount is :: \(feedbacksResponse.content?.count)")
-            if feedbacksResponse.content?.count != 0 {
-             FeedbackIndicationImage.image = UIImage(named: "feedback done")
-            } else {
-             FeedbackIndicationImage.image = UIImage(named: "zero feedbacks")
-            }
+//            if feedbacksResponse.content?.count != 0 {
+//             FeedbackIndicationImage.image = UIImage(named: "feedback done")
+//            } else {
+//             FeedbackIndicationImage.image = UIImage(named: "zero feedbacks")
+//            }
+            self.FeedBackCountLabe.text = "\(feedbacksResponse.content?.count ?? 0)"
             
             self.explorebutton.isEnabled = true
             self.explorebutton.backgroundColor = UIColor.black

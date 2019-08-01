@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CPCommunityHomeViewController: BaseViewController {
+class CPCommunityHomeViewController: UIViewController {
     
     @IBOutlet weak var SegmentControl: CPCustomSegmentedControll!
     
@@ -19,15 +19,41 @@ class CPCommunityHomeViewController: BaseViewController {
     var EventsObject = [EventsData]()
     var PromoObject = [PromotionsData]()
     
+    var callingFrom : String!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        addSlideMenuButton()
-        addSlideSearchButton()
-        
+ 
         FeedbackContainer.alpha = 1
         PromotionsContainer.alpha = 0
         EventsContainer.alpha = 0
+        
+        if callingFrom == "Eve" {
+            
+            SegmentControl.buttonTapped(button: SegmentControl.buttons.last!)
+            
+            FeedbackContainer.alpha = 0
+            PromotionsContainer.alpha = 1
+            EventsContainer.alpha = 0
+            
+        } else if callingFrom == "Promo" {
+            
+            SegmentControl.buttonTapped(button: SegmentControl.buttons[1])
+            
+            FeedbackContainer.alpha = 0
+            PromotionsContainer.alpha = 0
+            EventsContainer.alpha = 1
+            
+        } else if callingFrom == "Feed" {
+            
+            SegmentControl.buttonTapped(button: SegmentControl.buttons.first!)
+            
+            FeedbackContainer.alpha = 1
+            PromotionsContainer.alpha = 0
+            EventsContainer.alpha = 0
+            
+        }
+        
         
     }
     

@@ -11,7 +11,7 @@ import Alamofire
 import ObjectMapper
 import SVProgressHUD
 
-class CPAllCommunityViewViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
+class CPAllCommunityViewViewController: BaseViewController, UICollectionViewDelegate, UICollectionViewDataSource {
     
     var CommunityArray = [CommunityData]()
 
@@ -28,8 +28,10 @@ class CPAllCommunityViewViewController: UIViewController, UICollectionViewDelega
         
         AllCommunitiesCollectionview.dataSource = self
         AllCommunitiesCollectionview.delegate = self
-        
+        addSlideMenuButton()
         communityStartUp()
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(loadProducts), name: NSNotification.Name(rawValue: "loadProducts"), object: nil)
         
     }
     
@@ -37,6 +39,14 @@ class CPAllCommunityViewViewController: UIViewController, UICollectionViewDelega
         AllCommunitiesCollectionview.reloadData()
     }
     
+    
+    @objc func loadProducts () {
+        print("fuck fuck fuck")
+        let _ = getPurchasedProducts { (Bool) in
+            print("succeeeded purchased data collecting..resuming..")
+        }
+        
+    }
     
     func communityStartUp() {
         

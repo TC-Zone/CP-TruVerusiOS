@@ -104,6 +104,9 @@ struct keys {
     static let accesstoken = "Access_Token"
     static let refreshtoken = "Refresh_Token"
     static let RegisteredUserID = "userID"
+    static let justUserId = "JustUserID"
+    static let userIDforAll = "userIDforAll"
+    static let mobileUserId = "mobileUserId"
     
 }
 

@@ -36,11 +36,17 @@ class CPCollectionViewController: UIViewController, UICollectionViewDelegate, UI
         layout.sectionInset = UIEdgeInsets(top: 0, left: 6, bottom: 0, right: 6)
         layout.minimumInteritemSpacing = 1
         layout.itemSize = CGSize(width: (self.Collection.frame.size.width - 20) / 2, height: self.Collection.frame.size.height / 2)
+        NotificationCenter.default.addObserver(self, selector: #selector(loadPros), name: NSNotification.Name(rawValue: "loadProductsFromAPI"), object: nil)
         
         // Do any additional setup after loading the view.
     }
     
-    
+    @objc func loadPros() {
+        //print("i got here fuck yeaaaahhhh")
+        Collection.reloadData()
+        //print("i did the sss fuck yeaaaahhhh")
+        
+    }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
@@ -77,6 +83,7 @@ class CPCollectionViewController: UIViewController, UICollectionViewDelegate, UI
         if count > 0 {
             
             if  productCollectionBucket.productListBucket[0].content?[indexPath.row].productDetail?.product?.id != nil && productCollectionBucket.productListBucket[0].content?[indexPath.row].productDetail?.product?.id != "" {
+                
                 
                 print("product id sends :: \("\(productCollectionBucket.productListBucket[0].content?[indexPath.row].productDetail?.product?.id ?? "")")")
                 
@@ -161,6 +168,11 @@ class CPCollectionViewController: UIViewController, UICollectionViewDelegate, UI
                 //self.Collection.isHidden = false
                 
                 print("product id sends :: \("\(productCollectionBucket.productListBucket[0].content?[indexPath.row].productDetail?.product?.id ?? "")")")
+                
+                
+                
+                soldItemData.soldProductNumber = (productCollectionBucket.productListBucket[0].content?[indexPath.row].id)!
+                
                 
                 getProductdata(productID: "\(productCollectionBucket.productListBucket[0].content?[indexPath.row].productDetail?.product?.id ?? "")") { (success) in
                     
@@ -331,6 +343,9 @@ extension CPCollectionViewController {
                 SVProgressHUD.dismiss()
                 switch response{
                 case let .success(data):
+                    productStructforcommunity.productcollectionObj.productID = productID
+                    print("product actual :: \(productID)")
+                    print("current product id is :: \(productStructforcommunity.productcollectionObj.productID)")
                     self.serializeProductDataResponse(data: data)
                     completion(true)
                     print("hereee")
@@ -401,8 +416,6 @@ extension CPCollectionViewController {
             productStruct.productObj.ImagesList = (tempImgArray)
             
             
-            
-            
         }catch {
             print(error)
         }
@@ -419,6 +432,7 @@ class  productStructforcommunity {
         static var ProductDescription = String()
         static var ImagesList = [String]()
         static var youtubeId = String()
+        static var productID = String()
     }
     
     

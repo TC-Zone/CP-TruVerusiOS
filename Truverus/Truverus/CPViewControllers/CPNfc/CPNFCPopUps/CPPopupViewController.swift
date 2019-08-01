@@ -52,7 +52,7 @@ class CPPopupViewController: UIViewController {
         switch alertType {
         case .success:
             Image.image = UIImage(named: "Ok")
-            producttitle.text = "Congragulations!"
+            producttitle.text = "Congratulations!"
             Message.text = "Your product is genuine"
             popupButton.setTitle("Product View", for: .normal)
             print("success is accessed")
@@ -200,11 +200,13 @@ extension CPPopupViewController {
             productStruct.productObj.CommunityID = (productResponse.content?.communityId)!
             productStruct.productObj.productID = (productResponse.content?.id)!
             
+            
             print("pro is now is \((productResponse.content?.id)!)")
             
             let story = UIStoryboard.init(name: "CPHomeView", bundle: nil)
             let vc = story.instantiateViewController(withIdentifier: "CPHomeView") as! CPHomeViewController
-        
+            vc.callingFrom = "PRO"
+            callingStatus.calling = "PRO"
             self.navigationController?.pushViewController(vc, animated: true)
             
             NotificationCenter.default.post(name: NSNotification.Name(rawValue: "load"), object: nil)

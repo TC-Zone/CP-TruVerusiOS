@@ -252,11 +252,11 @@ class CPLoginViewController: UIViewController, UITextFieldDelegate, GIDSignInDel
    
     func back(){
         
-        
+        callingStatus.calling = "LOG"
         
         let story = UIStoryboard.init(name: "CPHomeView", bundle: nil)
         let vc = story.instantiateViewController(withIdentifier: "CPHomeView") as! CPHomeViewController
-        
+        vc.callingFrom = "PRO"
         self.navigationController?.pushViewController(vc, animated: true)
         NotificationCenter.default.post(name: NSNotification.Name(rawValue: "load"), object: nil)
 //        UIApplication.shared.keyWindow?.setRootViewController(vc, options: .init(direction: .toLeft, style: .easeIn))
@@ -283,22 +283,30 @@ extension CPLoginViewController{
         
         let url = NSString.init(format: "%@%@", UrlConstans.BASE_URL, UrlConstans.SOCIAL_USER_SIGN_IN) as String
         
-        print("url is :: \(url)")
-        let parameters : [String :Any] = ["code" : idToken as Any, "authProvider" : "google"]
-        
-        if let url = URL(string: url) {
-            ApiManager.shared().makeRequestAlamofire(route: url, method: .post, autherized: true, parameter: parameters, header: headers){ (response) in
-                SVProgressHUD.dismiss()
-                switch response{
-                case let .success(data):
-                    self.serializeCheckUserStatusResponse(data: data)
-                    print("hereee")
-                    print(response)
-                case .failure(_):
-                    print("fail")
+        if StructProfile.ProfilePicture.FCMToken != "not found" && idToken != "" {
+            
+            let parameters : [String :Any] = ["code" : idToken as Any, "authProvider" : "google", "registerToken" : StructProfile.ProfilePicture.FCMToken]
+            
+            if let url = URL(string: url) {
+                ApiManager.shared().makeRequestAlamofire(route: url, method: .post, autherized: true, parameter: parameters, header: headers){ (response) in
+                    SVProgressHUD.dismiss()
+                    switch response{
+                    case let .success(data):
+                        self.serializeCheckUserStatusResponse(data: data)
+                        print("hereee")
+                        print(response)
+                    case .failure(_):
+                        print("fail")
+                    }
                 }
             }
+            
+            
+        } else {
+            print("couldn't resolve all parameters needed")
         }
+        
+        
     }
     
     func serializeCheckUserStatusResponse(data: Data) {
@@ -312,6 +320,7 @@ extension CPLoginViewController{
             
             
             self.dataSourceArray = [loginResponse]
+            print("gotecec id :: \(loginResponse.response?.user_id)")
             defaults.set(loginResponse.response?.user_id, forKey: keys.RegisteredUserID)
             StructProductRelatedData.purchaseAvailability = false
             
@@ -368,7 +377,8 @@ extension CPLoginViewController{
                 
                 if userloginErrorResponse.error_description == "Bad credentials" {
                     
-                    showerrormessage(messege: "Invalid Credentials, please try again")
+                    showerrormessage(messege: "Invalid Credentials. Please try again!")
+                    
                     
                 } else if userloginErrorResponse.error_description == "User account is locked" {
                     
@@ -509,6 +519,16 @@ extension CPLoginViewController{
                 
                 RegisteredLoggeduser.firstname = userpackageResponse.content?.user?.accountName
                 RegisteredLoggeduser.email = userpackageResponse.content?.user?.email
+                
+                if userpackageResponse.content?.user?.profileImage != nil || userpackageResponse.content?.user?.profileImage != "" {
+                    
+                    print("image found on this users identity :: \(userpackageResponse.content?.user?.profileImage ?? "no image")")
+                    let imageurl = NSString.init(format: "%@%@", UrlConstans.BASE_URL, UrlConstans.GET_PROFILEPIC_BY_USER_ID + "\(userpackageResponse.content?.user?.id ?? "")") as String
+                    
+                    RegisteredLoggeduser.picture = imageurl
+                    StructProfile.ProfilePicture.ProfilePicURL = imageurl
+                    
+                }
                 
                 PercistanceService.saveContext()
                 

@@ -16,6 +16,7 @@ class StructProfile {
         static var email = String()
         static var accessToken = String()
         static var IDToken = String()
+        static var FCMToken = String()
     }
     
 }
@@ -48,6 +49,10 @@ struct productCollectionBucket {
     static var comData = [[String : String]]()
     static var featureCom = [comListFeatures]()
     
+}
+
+struct purchasedProductResponse {
+    static var purchasedDataBucket = [ProductCollectionBase]()
 }
 
 

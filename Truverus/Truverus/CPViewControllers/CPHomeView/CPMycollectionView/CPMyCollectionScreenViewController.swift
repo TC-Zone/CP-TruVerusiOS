@@ -61,6 +61,7 @@ class CPMyCollectionScreenViewController: UIViewController {
                 RequestsContainer.alpha = 0
                 
                 
+                
             } else if (x == "logedout") {
                 print("seteeee already")
                 nocollectioncontainer.alpha = 1
@@ -138,3 +139,4 @@ class CPMyCollectionScreenViewController: UIViewController {
      */
     
 }
+
