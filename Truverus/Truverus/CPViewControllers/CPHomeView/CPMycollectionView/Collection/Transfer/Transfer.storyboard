@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Trade Gothic LT Bold No. 2.ttf">
+            <string>TradeGothicLT-BoldTwo</string>
+        </array>
+        <array key="Trade Gothic LT.ttf">
+            <string>TradeGothicLT</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--Transfer View Controller-->
+        <scene sceneID="lq0-re-bvM">
+            <objects>
+                <viewController storyboardIdentifier="CPTransferVC" id="pL6-Ez-H4f" customClass="CPTransferViewController" customModule="Truverus" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="cby-5w-3Xt">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1Iw-5X-Bxi">
+                                <rect key="frame" x="0.0" y="20" width="375" height="40"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Transfer Ownership" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gWJ-gy-M5g">
+                                        <rect key="frame" x="33" y="11.5" width="138" height="17"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="17" id="E2d-GV-ejc"/>
+                                            <constraint firstAttribute="width" constant="138" id="LTA-x9-gpY"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="TradeGothicLT-BoldTwo" family="TradeGothic LT" pointSize="14"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="gWJ-gy-M5g" firstAttribute="centerY" secondItem="1Iw-5X-Bxi" secondAttribute="centerY" id="A1e-G4-DZk"/>
+                                    <constraint firstAttribute="height" constant="40" id="JgA-gw-aDP"/>
+                                    <constraint firstItem="gWJ-gy-M5g" firstAttribute="leading" secondItem="1Iw-5X-Bxi" secondAttribute="leading" constant="33" id="daU-74-cPv"/>
+                                </constraints>
+                            </view>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xM5-Cx-w1n">
+                                <rect key="frame" x="0.0" y="60" width="375" height="607"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sJN-K3-zkE">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DQM-FF-i2C">
+                                                <rect key="frame" x="37.5" y="437" width="300" height="42"/>
+                                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="42" id="CXy-MC-fOC"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="TradeGothicLT-BoldTwo" family="TradeGothic LT" pointSize="20"/>
+                                                <state key="normal" title="Transfer">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                        <integer key="value" value="20"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="TransferButton:" destination="pL6-Ez-H4f" eventType="touchUpInside" id="gTo-g8-Cf3"/>
+                                                </connections>
+                                            </button>
+                                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="U4N-ll-j68">
+                                                <rect key="frame" x="37.5" y="188" width="300" height="213"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="213" id="VGc-cF-EAh"/>
+                                                </constraints>
+                                            </tableView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select the community User" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xIW-oI-j3z">
+                                                <rect key="frame" x="30" y="80" width="167" height="17"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="17" id="IYP-v4-lzA"/>
+                                                    <constraint firstAttribute="width" constant="167" id="XtS-nW-8VR"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="TradeGothicLT" family="TradeGothic LT" pointSize="14"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Y28-hV-8TI">
+                                                <rect key="frame" x="37.5" y="132" width="300" height="42"/>
+                                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="42" id="FNx-SI-2BV"/>
+                                                </constraints>
+                                                <nil key="textColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" autocorrectionType="no" returnKeyType="done"/>
+                                            </textField>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstItem="U4N-ll-j68" firstAttribute="top" secondItem="Y28-hV-8TI" secondAttribute="bottom" constant="14" id="HAE-5u-4yb"/>
+                                            <constraint firstItem="DQM-FF-i2C" firstAttribute="centerX" secondItem="Y28-hV-8TI" secondAttribute="centerX" id="TM1-Yn-Ra8"/>
+                                            <constraint firstItem="xIW-oI-j3z" firstAttribute="top" secondItem="sJN-K3-zkE" secondAttribute="top" constant="80" id="TPW-f4-30f"/>
+                                            <constraint firstItem="Y28-hV-8TI" firstAttribute="width" secondItem="sJN-K3-zkE" secondAttribute="width" multiplier="0.8" id="TrU-DU-Ctp"/>
+                                            <constraint firstItem="DQM-FF-i2C" firstAttribute="top" secondItem="Y28-hV-8TI" secondAttribute="bottom" constant="263" id="ULw-jf-ROR"/>
+                                            <constraint firstItem="xIW-oI-j3z" firstAttribute="leading" secondItem="sJN-K3-zkE" secondAttribute="leading" constant="30" id="WIg-bL-lkd"/>
+                                            <constraint firstItem="Y28-hV-8TI" firstAttribute="centerX" secondItem="sJN-K3-zkE" secondAttribute="centerX" id="ga8-2c-f7j"/>
+                                            <constraint firstItem="Y28-hV-8TI" firstAttribute="top" secondItem="xIW-oI-j3z" secondAttribute="bottom" constant="35" id="hZN-4n-mpp"/>
+                                            <constraint firstItem="DQM-FF-i2C" firstAttribute="width" secondItem="Y28-hV-8TI" secondAttribute="width" id="hqt-9O-xPv"/>
+                                            <constraint firstItem="U4N-ll-j68" firstAttribute="width" secondItem="Y28-hV-8TI" secondAttribute="width" id="ki6-X1-ind"/>
+                                            <constraint firstItem="U4N-ll-j68" firstAttribute="centerX" secondItem="Y28-hV-8TI" secondAttribute="centerX" id="s3S-PB-REN"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="sJN-K3-zkE" firstAttribute="top" secondItem="xM5-Cx-w1n" secondAttribute="top" id="5fC-0V-ten"/>
+                                    <constraint firstItem="sJN-K3-zkE" firstAttribute="leading" secondItem="xM5-Cx-w1n" secondAttribute="leading" id="bWa-5X-eiD"/>
+                                    <constraint firstAttribute="bottom" secondItem="sJN-K3-zkE" secondAttribute="bottom" id="gHD-MR-Izw"/>
+                                    <constraint firstAttribute="trailing" secondItem="sJN-K3-zkE" secondAttribute="trailing" id="kqn-bU-LUX"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="xM5-Cx-w1n" firstAttribute="top" secondItem="1Iw-5X-Bxi" secondAttribute="bottom" id="6UP-b9-Mki"/>
+                            <constraint firstItem="sJN-K3-zkE" firstAttribute="width" secondItem="cby-5w-3Xt" secondAttribute="width" id="DxU-px-YX5"/>
+                            <constraint firstItem="xM5-Cx-w1n" firstAttribute="leading" secondItem="wqO-CF-L6T" secondAttribute="leading" id="MmJ-oq-tc2"/>
+                            <constraint firstItem="xM5-Cx-w1n" firstAttribute="bottom" secondItem="wqO-CF-L6T" secondAttribute="bottom" id="NFC-cX-BBS"/>
+                            <constraint firstItem="1Iw-5X-Bxi" firstAttribute="trailing" secondItem="wqO-CF-L6T" secondAttribute="trailing" id="PIR-ya-G3C"/>
+                            <constraint firstItem="xM5-Cx-w1n" firstAttribute="trailing" secondItem="wqO-CF-L6T" secondAttribute="trailing" id="PSY-8Z-FUe"/>
+                            <constraint firstItem="1Iw-5X-Bxi" firstAttribute="leading" secondItem="wqO-CF-L6T" secondAttribute="leading" id="QrV-Ax-qvb"/>
+                            <constraint firstItem="1Iw-5X-Bxi" firstAttribute="top" secondItem="wqO-CF-L6T" secondAttribute="top" id="eY4-hz-PRF"/>
+                            <constraint firstItem="sJN-K3-zkE" firstAttribute="height" secondItem="cby-5w-3Xt" secondAttribute="height" priority="250" id="v8v-kL-Vxe"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="wqO-CF-L6T"/>
+                    </view>
+                    <connections>
+                        <outlet property="SearchTable" destination="U4N-ll-j68" id="Yn9-8n-dFg"/>
+                        <outlet property="SearchTextField" destination="Y28-hV-8TI" id="OF6-0c-2KF"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vZx-TL-EwV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="132" y="89.505247376311857"/>
+        </scene>
+    </scenes>
+</document>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>488111033625-8oi8aeuslnkk3hhht66422tcfcu0so50.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.488111033625-8oi8aeuslnkk3hhht66422tcfcu0so50</string>
+	<key>API_KEY</key>
+	<string>AIzaSyCCtBD-3UStSojT0rKWmcyshetZO-_2heo</string>
+	<key>GCM_SENDER_ID</key>
+	<string>488111033625</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.teamclearpicture.Truverus</string>
+	<key>PROJECT_ID</key>
+	<string>truveruspushnotifications</string>
+	<key>STORAGE_BUCKET</key>
+	<string>truveruspushnotifications.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:488111033625:ios:b863cf1f3bb827ea</string>
+	<key>DATABASE_URL</key>
+	<string>https://truveruspushnotifications.firebaseio.com</string>
+</dict>
+</plist>
